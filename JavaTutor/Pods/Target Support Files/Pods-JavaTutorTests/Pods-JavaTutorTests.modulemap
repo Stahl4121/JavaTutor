@@ -1,0 +1,6 @@
+framework module Pods_JavaTutorTests {
+  umbrella header "Pods-JavaTutorTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,6 @@
+framework module Pods_JavaTutor {
+  umbrella header "Pods-JavaTutor-umbrella.h"
+
+  export *
+  module * { export * }
+}
