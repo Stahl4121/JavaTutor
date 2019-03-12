@@ -28,6 +28,7 @@
 		843971B222237C5900A96195 /* WelcomeScreenTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843971A922237C5900A96195 /* WelcomeScreenTVC.swift */; };
 		843971B322237C5900A96195 /* ModuleCatalogTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843971AA22237C5900A96195 /* ModuleCatalogTVC.swift */; };
 		9705A21531ABDBE279D27556 /* Pods_JavaTutor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6C7C90BF01055004AEF21BE /* Pods_JavaTutor.framework */; };
+		B2ED78FB22376A3E0034161B /* Lesson Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2ED78FA22376A3E0034161B /* Lesson Cell.swift */; };
 		C92BF4F110414500440261F8 /* Pods_JavaTutorUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ABCAF315590C89E756CDEC8 /* Pods_JavaTutorUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +80,7 @@
 		8ABCAF315590C89E756CDEC8 /* Pods_JavaTutorUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JavaTutorUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		950608B2E6DE8B93883519C4 /* Pods-JavaTutorUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JavaTutorUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JavaTutorUITests/Pods-JavaTutorUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A6C7C90BF01055004AEF21BE /* Pods_JavaTutor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JavaTutor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2ED78FA22376A3E0034161B /* Lesson Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Lesson Cell.swift"; sourceTree = "<group>"; };
 		C08DD5EE46EE0A4864299E43 /* Pods-JavaTutor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JavaTutor.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JavaTutor/Pods-JavaTutor.debug.xcconfig"; sourceTree = "<group>"; };
 		D0CD5ADCEE0925B58EFED663 /* Pods-JavaTutorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JavaTutorTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JavaTutorTests/Pods-JavaTutorTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -160,6 +162,7 @@
 				843971A322237C5900A96195 /* ExamTVC.swift */,
 				840B69BB222054EE0032B683 /* AppDelegate.swift */,
 				840B69BF222054EE0032B683 /* Main.storyboard */,
+				B2ED78FA22376A3E0034161B /* Lesson Cell.swift */,
 				840B69C2222054F10032B683 /* Assets.xcassets */,
 				840B69C4222054F10032B683 /* LaunchScreen.storyboard */,
 				840B69C7222054F10032B683 /* Info.plist */,
@@ -414,6 +417,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2ED78FB22376A3E0034161B /* Lesson Cell.swift in Sources */,
 				843971AE22237C5900A96195 /* LoginScreenVC.swift in Sources */,
 				4EF89A772237442100073203 /* ModuleCatalogVC.swift in Sources */,
 				843971AC22237C5900A96195 /* ExamTVC.swift in Sources */,
