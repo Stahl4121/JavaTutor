@@ -613,16 +613,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aod-V3-2YB">
-                                <rect key="frame" x="10" y="30" width="119" height="36"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <state key="normal" title="Back (Temp)">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <segue destination="H1d-57-l5k" kind="show" id="Hpd-gJ-6rm"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ktq-yJ-ysV">
                                 <rect key="frame" x="938" y="306" width="33" height="72"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
@@ -653,15 +643,12 @@
                             <constraint firstItem="S8q-Yg-h7g" firstAttribute="leading" secondItem="vGG-hL-Mwl" secondAttribute="leading" constant="31" id="nzT-g6-Gr4"/>
                             <constraint firstItem="vGG-hL-Mwl" firstAttribute="trailing" secondItem="S8q-Yg-h7g" secondAttribute="trailing" constant="33" id="pfs-0d-3B9"/>
                             <constraint firstItem="4aR-pR-Ncm" firstAttribute="top" secondItem="VwF-UC-cCk" secondAttribute="bottom" constant="25" id="q1S-cV-SyF"/>
-                            <constraint firstItem="Aod-V3-2YB" firstAttribute="leading" secondItem="vGG-hL-Mwl" secondAttribute="leading" constant="10" id="qka-7D-8KB"/>
                             <constraint firstItem="4aR-pR-Ncm" firstAttribute="leading" secondItem="rTG-au-D4K" secondAttribute="leading" id="w13-eS-QY7"/>
                             <constraint firstItem="vGG-hL-Mwl" firstAttribute="bottom" secondItem="WfV-6g-X8i" secondAttribute="bottom" constant="54" id="wLS-Vr-pce"/>
-                            <constraint firstItem="Aod-V3-2YB" firstAttribute="top" secondItem="vGG-hL-Mwl" secondAttribute="top" constant="10" id="z6Y-Vq-kdQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vGG-hL-Mwl"/>
                     </view>
                     <connections>
-                        <outlet property="TempBackButton" destination="Aod-V3-2YB" id="F3o-TW-Mgp"/>
                         <outlet property="lblHorizLine" destination="VwF-UC-cCk" id="CDf-Tr-MWA"/>
                         <outlet property="lblMod1" destination="S8q-Yg-h7g" id="1tO-2s-dh8"/>
                         <outlet property="lblMod2" destination="0al-WF-SLY" id="3sp-Fl-cZe"/>
@@ -731,16 +718,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8uv-Z1-lvR">
-                                <rect key="frame" x="10" y="10" width="119" height="36"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <state key="normal" title="Back (Temp)">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <segue destination="msK-Tq-i1u" kind="show" id="VNp-lS-F6t"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tAC-jh-KOX">
                                 <rect key="frame" x="937" y="284" width="33" height="72"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
@@ -766,11 +743,9 @@
                             <constraint firstItem="7xe-ll-mG9" firstAttribute="top" secondItem="26Z-Yl-PBh" secondAttribute="top" constant="260" id="b7w-Xi-gug"/>
                             <constraint firstItem="8QD-iE-RvD" firstAttribute="trailing" secondItem="qIb-HX-BOc" secondAttribute="trailing" constant="769" id="bj5-BG-aJR"/>
                             <constraint firstItem="7xe-ll-mG9" firstAttribute="centerX" secondItem="26Z-Yl-PBh" secondAttribute="centerX" id="cXu-U3-smd"/>
-                            <constraint firstItem="8uv-Z1-lvR" firstAttribute="leading" secondItem="8QD-iE-RvD" secondAttribute="leading" constant="10" id="d8m-pS-VGd"/>
                             <constraint firstItem="eY5-zU-mg7" firstAttribute="top" secondItem="ggQ-bT-67R" secondAttribute="bottom" constant="37" id="dyN-AT-3gb"/>
                             <constraint firstItem="7xe-ll-mG9" firstAttribute="leading" secondItem="ggQ-bT-67R" secondAttribute="leading" id="fL4-YN-aeq"/>
                             <constraint firstItem="Lbh-uF-ylY" firstAttribute="leading" secondItem="8QD-iE-RvD" secondAttribute="leading" constant="52" id="fRT-ne-bn7"/>
-                            <constraint firstItem="8uv-Z1-lvR" firstAttribute="top" secondItem="26Z-Yl-PBh" secondAttribute="top" constant="10" id="g1d-hO-huM"/>
                             <constraint firstItem="7xe-ll-mG9" firstAttribute="trailing" secondItem="ggQ-bT-67R" secondAttribute="trailing" id="iII-V1-hop"/>
                             <constraint firstItem="Lbh-uF-ylY" firstAttribute="top" secondItem="bUL-xw-I3F" secondAttribute="bottom" constant="14" id="sbF-7P-RbK"/>
                             <constraint firstItem="8QD-iE-RvD" firstAttribute="trailing" secondItem="tAC-jh-KOX" secondAttribute="trailing" constant="54" id="xIg-Nv-Bns"/>
@@ -785,7 +760,6 @@
                         <outlet property="lblOtherThing" destination="eY5-zU-mg7" id="uHi-Nn-xKT"/>
                         <outlet property="lblThis" destination="ggQ-bT-67R" id="0bc-RW-14E"/>
                         <outlet property="nextButton" destination="tAC-jh-KOX" id="HSq-Z1-o4l"/>
-                        <outlet property="tempBackBtn" destination="8uv-Z1-lvR" id="J7C-xy-fBB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nIG-ho-HXq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -814,24 +788,12 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Smh-VD-L8P">
-                                            <rect key="frame" x="36" y="453" width="119" height="36"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                            <state key="normal" title="Back (Temp)">
-                                                <color key="titleColor" red="0.85882352939999995" green="0.49019607840000001" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </state>
-                                            <connections>
-                                                <segue destination="WR9-0f-9Xf" kind="show" id="FC4-aP-5GW"/>
-                                            </connections>
-                                        </button>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="Smh-VD-L8P" firstAttribute="leading" secondItem="ZRd-Gk-Bf7" secondAttribute="leadingMargin" constant="16" id="8FA-g4-Zmm"/>
                                         <constraint firstItem="5wF-gW-JAL" firstAttribute="trailing" secondItem="ZRd-Gk-Bf7" secondAttribute="trailingMargin" id="Ab6-cl-g87"/>
                                         <constraint firstItem="5wF-gW-JAL" firstAttribute="bottom" secondItem="ZRd-Gk-Bf7" secondAttribute="bottomMargin" id="FrO-f6-axY"/>
                                         <constraint firstItem="5wF-gW-JAL" firstAttribute="top" secondItem="ZRd-Gk-Bf7" secondAttribute="topMargin" constant="9" id="R2c-xV-h8n"/>
                                         <constraint firstItem="5wF-gW-JAL" firstAttribute="leading" secondItem="ZRd-Gk-Bf7" secondAttribute="leadingMargin" id="jai-sP-grK"/>
-                                        <constraint firstItem="Smh-VD-L8P" firstAttribute="bottom" secondItem="ZRd-Gk-Bf7" secondAttribute="bottomMargin" id="p9I-9V-ugL"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -855,9 +817,4 @@
         <image name="profile.png" width="37" height="39"/>
         <image name="study.png" width="33" height="41"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="FC4-aP-5GW"/>
-        <segue reference="rWr-gI-W3b"/>
-        <segue reference="ryJ-Fa-i2L"/>
-    </inferredMetricsTieBreakers>
 </document>
