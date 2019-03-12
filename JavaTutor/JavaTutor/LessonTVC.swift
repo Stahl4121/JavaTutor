@@ -24,23 +24,34 @@ class LessonTVC: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return 1
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "lessonCell", for: indexPath) as! Lesson_Cell
+        cell.txtLbl.text = "Here is a Java program to display the message \"Hello World!\". Don't expect to understand what's going on here just yet; some of it you won't really understand until a few chapters from now:\n" +
+        "**/ A program to display the message\n" +
+        " *  \"Hello World!\" on standard output.\n" +
+        " */ \n" +
+        "public class HelloWorld {\n" +
+        "\n" +
+        "   public static void main(String[] args) {\n" +
+        "   System.out.println(\"Hello World!\");\n" +
+        "   }\n" +
+        "}\n   // end of class HelloWorld" +
+        "The command that actually displays the message is:\n" +
+        "System.out.println(\"Hello World!\");"
+        
         // Configure the cell...
 
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
