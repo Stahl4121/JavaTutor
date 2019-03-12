@@ -11,20 +11,19 @@
 		1D16A5582221FF3900FC3248 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D16A5562221FF3900FC3248 /* GoogleService-Info.plist */; };
 		1D16A5592221FF3900FC3248 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D16A5562221FF3900FC3248 /* GoogleService-Info.plist */; };
 		203A6F2E093C231CBEF612E2 /* Pods_JavaTutorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D5F25F720D9643CB6D585E4 /* Pods_JavaTutorTests.framework */; };
+		8408DDA62237639800C7DF57 /* StudyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8408DDA52237639800C7DF57 /* StudyVC.swift */; };
 		840B69BC222054EE0032B683 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840B69BB222054EE0032B683 /* AppDelegate.swift */; };
 		840B69C1222054EE0032B683 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 840B69BF222054EE0032B683 /* Main.storyboard */; };
 		840B69C3222054F10032B683 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 840B69C2222054F10032B683 /* Assets.xcassets */; };
 		840B69C6222054F10032B683 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 840B69C4222054F10032B683 /* LaunchScreen.storyboard */; };
 		840B69D1222054F10032B683 /* JavaTutorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840B69D0222054F10032B683 /* JavaTutorTests.swift */; };
 		840B69DC222054F10032B683 /* JavaTutorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840B69DB222054F10032B683 /* JavaTutorUITests.swift */; };
-		843971AB22237C5900A96195 /* WelcomeBackTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843971A222237C5900A96195 /* WelcomeBackTVC.swift */; };
 		843971AC22237C5900A96195 /* ExamTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843971A322237C5900A96195 /* ExamTVC.swift */; };
 		843971AD22237C5900A96195 /* LessonTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843971A422237C5900A96195 /* LessonTVC.swift */; };
 		843971AE22237C5900A96195 /* LoginScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843971A522237C5900A96195 /* LoginScreenVC.swift */; };
 		843971AF22237C5900A96195 /* QuizTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843971A622237C5900A96195 /* QuizTVC.swift */; };
 		843971B022237C5900A96195 /* RecentActivityTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843971A722237C5900A96195 /* RecentActivityTVC.swift */; };
 		843971B122237C5900A96195 /* StatisticsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843971A822237C5900A96195 /* StatisticsVC.swift */; };
-		843971B222237C5900A96195 /* WelcomeScreenTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843971A922237C5900A96195 /* WelcomeScreenTVC.swift */; };
 		843971B322237C5900A96195 /* ModuleCatalogTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843971AA22237C5900A96195 /* ModuleCatalogTVC.swift */; };
 		9705A21531ABDBE279D27556 /* Pods_JavaTutor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6C7C90BF01055004AEF21BE /* Pods_JavaTutor.framework */; };
 		C92BF4F110414500440261F8 /* Pods_JavaTutorUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ABCAF315590C89E756CDEC8 /* Pods_JavaTutorUITests.framework */; };
@@ -53,6 +52,7 @@
 		56C900E77F7C22DFE35A44C1 /* Pods-JavaTutor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JavaTutor.release.xcconfig"; path = "Pods/Target Support Files/Pods-JavaTutor/Pods-JavaTutor.release.xcconfig"; sourceTree = "<group>"; };
 		7A2DB7FF4DD5D457BCB9A8E4 /* Pods-JavaTutorUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JavaTutorUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JavaTutorUITests/Pods-JavaTutorUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7D5F25F720D9643CB6D585E4 /* Pods_JavaTutorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JavaTutorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8408DDA52237639800C7DF57 /* StudyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyVC.swift; sourceTree = "<group>"; };
 		840B69B8222054EE0032B683 /* JavaTutor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JavaTutor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		840B69BB222054EE0032B683 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		840B69C0222054EE0032B683 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -65,14 +65,12 @@
 		840B69D7222054F10032B683 /* JavaTutorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JavaTutorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		840B69DB222054F10032B683 /* JavaTutorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JavaTutorUITests.swift; sourceTree = "<group>"; };
 		840B69DD222054F10032B683 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		843971A222237C5900A96195 /* WelcomeBackTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeBackTVC.swift; sourceTree = "<group>"; };
 		843971A322237C5900A96195 /* ExamTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamTVC.swift; sourceTree = "<group>"; };
 		843971A422237C5900A96195 /* LessonTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonTVC.swift; sourceTree = "<group>"; };
 		843971A522237C5900A96195 /* LoginScreenVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginScreenVC.swift; sourceTree = "<group>"; };
 		843971A622237C5900A96195 /* QuizTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizTVC.swift; sourceTree = "<group>"; };
 		843971A722237C5900A96195 /* RecentActivityTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentActivityTVC.swift; sourceTree = "<group>"; };
 		843971A822237C5900A96195 /* StatisticsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsVC.swift; sourceTree = "<group>"; };
-		843971A922237C5900A96195 /* WelcomeScreenTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeScreenTVC.swift; sourceTree = "<group>"; };
 		843971AA22237C5900A96195 /* ModuleCatalogTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleCatalogTVC.swift; sourceTree = "<group>"; };
 		8ABCAF315590C89E756CDEC8 /* Pods_JavaTutorUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JavaTutorUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		950608B2E6DE8B93883519C4 /* Pods-JavaTutorUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JavaTutorUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JavaTutorUITests/Pods-JavaTutorUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -148,11 +146,10 @@
 			isa = PBXGroup;
 			children = (
 				843971A522237C5900A96195 /* LoginScreenVC.swift */,
-				843971A922237C5900A96195 /* WelcomeScreenTVC.swift */,
 				843971A722237C5900A96195 /* RecentActivityTVC.swift */,
 				843971A822237C5900A96195 /* StatisticsVC.swift */,
-				843971A222237C5900A96195 /* WelcomeBackTVC.swift */,
 				843971AA22237C5900A96195 /* ModuleCatalogTVC.swift */,
+				8408DDA52237639800C7DF57 /* StudyVC.swift */,
 				843971A422237C5900A96195 /* LessonTVC.swift */,
 				843971A622237C5900A96195 /* QuizTVC.swift */,
 				843971A322237C5900A96195 /* ExamTVC.swift */,
@@ -412,14 +409,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				843971AE22237C5900A96195 /* LoginScreenVC.swift in Sources */,
+				8408DDA62237639800C7DF57 /* StudyVC.swift in Sources */,
 				843971AC22237C5900A96195 /* ExamTVC.swift in Sources */,
 				843971AF22237C5900A96195 /* QuizTVC.swift in Sources */,
-				843971AB22237C5900A96195 /* WelcomeBackTVC.swift in Sources */,
 				843971B322237C5900A96195 /* ModuleCatalogTVC.swift in Sources */,
 				843971B122237C5900A96195 /* StatisticsVC.swift in Sources */,
 				843971B022237C5900A96195 /* RecentActivityTVC.swift in Sources */,
 				840B69BC222054EE0032B683 /* AppDelegate.swift in Sources */,
-				843971B222237C5900A96195 /* WelcomeScreenTVC.swift in Sources */,
 				843971AD22237C5900A96195 /* LessonTVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -598,7 +594,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = JavaTutor/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = GCC.JavaTutor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -613,7 +612,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = JavaTutor/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = GCC.JavaTutor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -629,7 +631,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = JavaTutorTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = GCC.JavaTutorTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -646,7 +652,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = JavaTutorTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = GCC.JavaTutorTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -662,7 +672,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = JavaTutorUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = GCC.JavaTutorUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -678,7 +692,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = JavaTutorUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = GCC.JavaTutorUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;

@@ -1,21 +1,18 @@
 //
-//  WelcomeScreenVC.swift
+//  StudyVC.swift
 //  JavaTutor
 //
-//  Created by Emily Wasylenko on 2/22/19.
+//  Created by Logan Stahl on 3/11/19.
 //  Copyright © 2019 Logan Stahl. All rights reserved.
 //
 
 import UIKit
 
-class WelcomeScreenTVC: UITableViewController {
-
+class StudyVC: UIViewController {
+        
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
-    
 
     /*
     // MARK: - Navigation
