@@ -238,7 +238,7 @@
                             <outlet property="delegate" destination="Wuy-RE-lDA" id="zHA-Di-Zub"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Activity" id="5M0-FB-h8i"/>
+                    <tabBarItem key="tabBarItem" title="Activity" image="activity.png" id="5M0-FB-h8i"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3mG-Bc-Uzv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -254,7 +254,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="uBL-V8-t2h"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Statistics" id="ZeR-eN-rPn"/>
+                    <tabBarItem key="tabBarItem" title="Statistics" image="profile.png" id="ZeR-eN-rPn"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JyC-kd-aA3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -581,7 +581,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ed4-26-O9b"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Study" id="uLc-Qd-OXy"/>
+                    <tabBarItem key="tabBarItem" title="Study" image="study.png" id="uLc-Qd-OXy"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NTm-el-rSh" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="lne-F7-kwc" userLabel="Module Catalog Tap">
@@ -815,6 +815,11 @@
             <point key="canvasLocation" x="257" y="1505"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="activity.png" width="36" height="39"/>
+        <image name="profile.png" width="37" height="39"/>
+        <image name="study.png" width="33" height="41"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="VNp-lS-F6t"/>
         <segue reference="Hpd-gJ-6rm"/>
