@@ -12,6 +12,8 @@
 		1D16A5592221FF3900FC3248 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D16A5562221FF3900FC3248 /* GoogleService-Info.plist */; };
 		203A6F2E093C231CBEF612E2 /* Pods_JavaTutorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D5F25F720D9643CB6D585E4 /* Pods_JavaTutorTests.framework */; };
 		8408DDAA2237CD9E00C7DF57 /* ModuleCatalogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8408DDA92237CD9E00C7DF57 /* ModuleCatalogVC.swift */; };
+		8408DDAC2237D05300C7DF57 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8408DDAB2237D05300C7DF57 /* SignUpVC.swift */; };
+		8408DDAE2237D30000C7DF57 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8408DDAD2237D30000C7DF57 /* BaseTabBarController.swift */; };
 		840B69BC222054EE0032B683 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840B69BB222054EE0032B683 /* AppDelegate.swift */; };
 		840B69C1222054EE0032B683 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 840B69BF222054EE0032B683 /* Main.storyboard */; };
 		840B69C3222054F10032B683 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 840B69C2222054F10032B683 /* Assets.xcassets */; };
@@ -54,6 +56,8 @@
 		7D5F25F720D9643CB6D585E4 /* Pods_JavaTutorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JavaTutorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8408DDA52237639800C7DF57 /* StudyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyVC.swift; sourceTree = "<group>"; };
 		8408DDA92237CD9E00C7DF57 /* ModuleCatalogVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleCatalogVC.swift; sourceTree = "<group>"; };
+		8408DDAB2237D05300C7DF57 /* SignUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		8408DDAD2237D30000C7DF57 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		840B69B8222054EE0032B683 /* JavaTutor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JavaTutor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		840B69BB222054EE0032B683 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		840B69C0222054EE0032B683 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -146,6 +150,7 @@
 		840B69BA222054EE0032B683 /* JavaTutor */ = {
 			isa = PBXGroup;
 			children = (
+				8408DDAB2237D05300C7DF57 /* SignUpVC.swift */,
 				8408DDA92237CD9E00C7DF57 /* ModuleCatalogVC.swift */,
 				843971A522237C5900A96195 /* LoginScreenVC.swift */,
 				843971A722237C5900A96195 /* RecentActivityTVC.swift */,
@@ -161,6 +166,7 @@
 				840B69C7222054F10032B683 /* Info.plist */,
 				1D16A5562221FF3900FC3248 /* GoogleService-Info.plist */,
 				843971AA22237C5900A96195 /* ModuleCatalogTVC.swift */,
+				8408DDAD2237D30000C7DF57 /* BaseTabBarController.swift */,
 			);
 			path = JavaTutor;
 			sourceTree = "<group>";
@@ -416,8 +422,10 @@
 				843971B322237C5900A96195 /* ModuleCatalogTVC.swift in Sources */,
 				843971B122237C5900A96195 /* StatisticsVC.swift in Sources */,
 				843971B022237C5900A96195 /* RecentActivityTVC.swift in Sources */,
+				8408DDAE2237D30000C7DF57 /* BaseTabBarController.swift in Sources */,
 				840B69BC222054EE0032B683 /* AppDelegate.swift in Sources */,
 				8408DDAA2237CD9E00C7DF57 /* ModuleCatalogVC.swift in Sources */,
+				8408DDAC2237D05300C7DF57 /* SignUpVC.swift in Sources */,
 				843971AD22237C5900A96195 /* LessonTVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

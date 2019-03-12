@@ -1,20 +1,22 @@
 //
-//  StudyVC.swift
+//  BaseTabBarController.swift
 //  JavaTutor
 //
-//  Created by Logan Stahl on 3/11/19.
+//  Created by Logan Stahl on 3/12/19.
 //  Copyright © 2019 Logan Stahl. All rights reserved.
 //
 
 import UIKit
 
-class StudyVC: UIViewController {
+class BaseTabBarController: UITabBarController {
     
-    @IBAction func prepareForUnwind(segue:UIStoryboardSegue){}
+    @IBInspectable var defaultIndex: Int = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        selectedIndex = defaultIndex
     }
+    
 
     /*
     // MARK: - Navigation
