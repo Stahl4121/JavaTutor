@@ -27,7 +27,7 @@ class LessonVC: UIViewController {
     
     @IBOutlet weak var tempBackBtn: UIButton!
     
-    
+    @IBOutlet weak var nextButton: UIButton!
     
     
     
@@ -85,9 +85,7 @@ class LessonVC: UIViewController {
         view.addSubview(lblThis)
         view.addSubview(lblOtherThing)
         view.addSubview(tempBackBtn)
-        
-        
-      
+        view.addSubview(nextButton)
     }
     
     override func didReceiveMemoryWarning() {
