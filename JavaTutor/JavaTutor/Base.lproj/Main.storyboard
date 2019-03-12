@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QEC-g4-UXr">
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QEC-g4-UXr">
                                 <rect key="frame" x="0.0" y="631" width="615" height="137"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GET STARTED" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ghR-dW-ItT">
@@ -27,7 +27,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="glP-Lr-tN5">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="glP-Lr-tN5">
                                         <rect key="frame" x="0.0" y="0.0" width="1024" height="137"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="1024" id="CJf-vi-ut0"/>
@@ -114,24 +114,10 @@
                                 <fontDescription key="fontDescription" name="MyanmarSangamMN" family="Myanmar Sangam MN" pointSize="25"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi, welcome to AP Study." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l7C-xq-rq3">
-                                <rect key="frame" x="0.0" y="140" width="1024" height="60"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="clip" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="diA-6a-3Yb">
-                                <rect key="frame" x="354" y="208" width="316" height="60"/>
-                                <string key="text">Please fill out the fields below and we'll get started!
-</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dmI-EO-P7T">
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dmI-EO-P7T">
                                 <rect key="frame" x="613" y="631" width="411" height="137"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YDk-NF-8fC">
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YDk-NF-8fC">
                                         <rect key="frame" x="618" y="0.0" width="406" height="137"/>
                                         <color key="backgroundColor" red="0.76862745099999996" green="0.4431372549" blue="0.29411764709999999" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
@@ -145,6 +131,18 @@
                                     <constraint firstAttribute="bottom" secondItem="YDk-NF-8fC" secondAttribute="bottom" id="jw5-tG-dNn"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello! Welcome to AP Study!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TMQ-uW-Qrv">
+                                <rect key="frame" x="199.5" y="50" width="625" height="63"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="46"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please fill out the fields below and we'll get started!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="siS-eo-iVt">
+                                <rect key="frame" x="243" y="133" width="538" height="31"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.19607843137254902" green="0.27843137254901962" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -152,40 +150,37 @@
                             <constraint firstItem="qo6-T7-17q" firstAttribute="trailing" secondItem="1FF-eg-tF8" secondAttribute="trailing" constant="360" id="3Se-ue-u0q"/>
                             <constraint firstItem="qo6-T7-17q" firstAttribute="trailing" secondItem="iZI-fj-W3Q" secondAttribute="trailing" constant="360" id="4pC-EX-eFf"/>
                             <constraint firstItem="YCQ-lp-SIn" firstAttribute="leading" secondItem="qo6-T7-17q" secondAttribute="leading" constant="60" id="5a5-S0-xgI"/>
-                            <constraint firstItem="diA-6a-3Yb" firstAttribute="centerX" secondItem="l7C-xq-rq3" secondAttribute="centerX" id="6Fs-UX-bMv"/>
                             <constraint firstItem="dmI-EO-P7T" firstAttribute="leading" secondItem="QEC-g4-UXr" secondAttribute="trailing" constant="-2" id="D6F-oM-9Iu"/>
-                            <constraint firstItem="diA-6a-3Yb" firstAttribute="top" secondItem="l7C-xq-rq3" secondAttribute="bottom" constant="8" id="E6l-kl-RoA"/>
                             <constraint firstItem="bDM-Y5-31s" firstAttribute="leading" secondItem="qo6-T7-17q" secondAttribute="leading" constant="60" id="F54-40-Icj"/>
                             <constraint firstItem="qo6-T7-17q" firstAttribute="bottom" secondItem="QEC-g4-UXr" secondAttribute="bottom" id="FVa-ft-SW0"/>
                             <constraint firstItem="qo6-T7-17q" firstAttribute="trailing" secondItem="bDM-Y5-31s" secondAttribute="trailing" constant="360" id="IZY-aa-c11"/>
-                            <constraint firstItem="l7C-xq-rq3" firstAttribute="width" secondItem="vOC-iy-ji6" secondAttribute="width" id="IwI-fP-vIo"/>
                             <constraint firstItem="Jsq-Ag-g2N" firstAttribute="leading" secondItem="qo6-T7-17q" secondAttribute="leading" constant="103" id="MgL-0s-iUE"/>
-                            <constraint firstItem="l7C-xq-rq3" firstAttribute="top" secondItem="qo6-T7-17q" secondAttribute="top" constant="120" id="Mgg-Mr-g0L"/>
                             <constraint firstItem="1HR-tV-Vgn" firstAttribute="leading" secondItem="qo6-T7-17q" secondAttribute="leading" constant="103" id="MmV-gF-9Qs"/>
                             <constraint firstItem="stA-WT-iuE" firstAttribute="top" secondItem="iZI-fj-W3Q" secondAttribute="bottom" constant="-1" id="Q1f-mI-ULG"/>
+                            <constraint firstItem="siS-eo-iVt" firstAttribute="centerX" secondItem="vOC-iy-ji6" secondAttribute="centerX" id="Tjj-bY-OY8"/>
                             <constraint firstItem="dmI-EO-P7T" firstAttribute="leading" secondItem="QEC-g4-UXr" secondAttribute="trailing" constant="-2" id="VOo-Nd-y0s"/>
                             <constraint firstItem="qo6-T7-17q" firstAttribute="trailing" secondItem="dmI-EO-P7T" secondAttribute="trailing" id="X9b-CH-Ghe"/>
+                            <constraint firstItem="TMQ-uW-Qrv" firstAttribute="centerX" secondItem="vOC-iy-ji6" secondAttribute="centerX" id="Xmr-hn-bK9"/>
                             <constraint firstItem="qo6-T7-17q" firstAttribute="trailing" secondItem="1HR-tV-Vgn" secondAttribute="trailing" constant="360" id="YgF-8L-Fb2"/>
-                            <constraint firstItem="qo6-T7-17q" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="diA-6a-3Yb" secondAttribute="trailing" symbolic="YES" id="aK1-aS-kVH"/>
                             <constraint firstItem="1FF-eg-tF8" firstAttribute="leading" secondItem="qo6-T7-17q" secondAttribute="leading" constant="103" id="aRh-kA-tqu"/>
                             <constraint firstItem="stA-WT-iuE" firstAttribute="top" secondItem="YCQ-lp-SIn" secondAttribute="bottom" constant="76" id="aq1-zq-mUM"/>
                             <constraint firstItem="dmI-EO-P7T" firstAttribute="top" secondItem="QEC-g4-UXr" secondAttribute="top" id="eyP-Md-BZ4"/>
                             <constraint firstItem="qo6-T7-17q" firstAttribute="trailing" secondItem="glP-Lr-tN5" secondAttribute="trailing" id="fKp-Tk-Ajo"/>
                             <constraint firstItem="bDM-Y5-31s" firstAttribute="top" secondItem="stA-WT-iuE" secondAttribute="bottom" constant="82" id="gFm-wK-Ct7"/>
                             <constraint firstItem="QEC-g4-UXr" firstAttribute="top" secondItem="bDM-Y5-31s" secondAttribute="bottom" constant="119" id="hcq-qc-1IZ"/>
+                            <constraint firstItem="siS-eo-iVt" firstAttribute="top" secondItem="TMQ-uW-Qrv" secondAttribute="bottom" constant="20" id="iq7-Xl-amU"/>
                             <constraint firstItem="qo6-T7-17q" firstAttribute="trailing" secondItem="Jsq-Ag-g2N" secondAttribute="trailing" constant="360" id="jcX-qc-QKr"/>
                             <constraint firstItem="bDM-Y5-31s" firstAttribute="top" secondItem="Jsq-Ag-g2N" secondAttribute="bottom" constant="-1" id="joz-31-WeJ"/>
                             <constraint firstItem="YCQ-lp-SIn" firstAttribute="top" secondItem="13q-L2-VV6" secondAttribute="bottom" constant="74" id="kyh-fW-hwM"/>
-                            <constraint firstItem="QEC-g4-UXr" firstAttribute="leading" secondItem="l7C-xq-rq3" secondAttribute="leading" id="li5-dn-YPQ"/>
                             <constraint firstItem="YCQ-lp-SIn" firstAttribute="centerX" secondItem="stA-WT-iuE" secondAttribute="centerX" id="luB-ls-MIV"/>
                             <constraint firstItem="13q-L2-VV6" firstAttribute="centerX" secondItem="YCQ-lp-SIn" secondAttribute="centerX" id="mL4-78-UTY"/>
                             <constraint firstItem="stA-WT-iuE" firstAttribute="centerX" secondItem="bDM-Y5-31s" secondAttribute="centerX" id="nbq-yJ-PuG"/>
+                            <constraint firstItem="TMQ-uW-Qrv" firstAttribute="top" secondItem="qo6-T7-17q" secondAttribute="top" constant="30" id="ofB-Sp-Pp4"/>
                             <constraint firstItem="glP-Lr-tN5" firstAttribute="leading" secondItem="qo6-T7-17q" secondAttribute="leading" id="pL7-6c-vLb"/>
                             <constraint firstItem="13q-L2-VV6" firstAttribute="top" secondItem="1HR-tV-Vgn" secondAttribute="bottom" constant="-1" id="vUq-5E-F2d"/>
                             <constraint firstItem="iZI-fj-W3Q" firstAttribute="leading" secondItem="qo6-T7-17q" secondAttribute="leading" constant="103" id="wAh-Io-Hih"/>
                             <constraint firstItem="13q-L2-VV6" firstAttribute="leading" secondItem="qo6-T7-17q" secondAttribute="leading" constant="60" id="xjn-DH-Bog"/>
                             <constraint firstItem="YCQ-lp-SIn" firstAttribute="top" secondItem="1FF-eg-tF8" secondAttribute="bottom" constant="-1" id="y2d-G4-6BF"/>
-                            <constraint firstItem="l7C-xq-rq3" firstAttribute="centerX" secondItem="qo6-T7-17q" secondAttribute="centerX" id="zOz-H1-QqE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qo6-T7-17q"/>
                     </view>
@@ -862,7 +857,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="FC4-aP-5GW"/>
-        <segue reference="VNp-lS-F6t"/>
-        <segue reference="Hpd-gJ-6rm"/>
+        <segue reference="rWr-gI-W3b"/>
+        <segue reference="ryJ-Fa-i2L"/>
     </inferredMetricsTieBreakers>
 </document>
