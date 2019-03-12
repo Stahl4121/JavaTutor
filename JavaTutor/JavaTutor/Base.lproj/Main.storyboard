@@ -211,7 +211,7 @@
         <!--View Controller-->
         <scene sceneID="MQj-Ex-Fqb">
             <objects>
-                <viewController id="msK-Tq-i1u" customClass="ViewController" customModule="JavaTutorScreen" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="msK-Tq-i1u" customClass="ViewController" customModule="JavaTutor" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="74Y-1G-igS">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
