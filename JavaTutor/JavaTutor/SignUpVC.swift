@@ -75,18 +75,18 @@ class SignUpVC: UIViewController {
                     createUser(email: emailField.text!, pass: pass1Field.text!)
                     performSegue(withIdentifier: "signedUp", sender: nil)
                 } else {
-                    let alert = UIAlertController(title: "Alert", message: "Passwords do not match.", preferredStyle: UIAlertController.Style.alert)
-                    self.present(alert, animated: true, completion: nil)
+                    //let alert = UIAlertController(title: "Alert", message: "Passwords do not match.", preferredStyle: UIAlertController.Style.alert)
+                    //self.present(alert, animated: true, completion: nil)
                 }
             } else {
-                let alert = UIAlertController(title: "Alert", message: "Please enter a valid email address.", preferredStyle: UIAlertController.Style.alert)
-                self.present(alert, animated: true, completion: nil)
+                //let alert = UIAlertController(title: "Alert", message: "Please enter a valid email address.", preferredStyle: UIAlertController.Style.alert)
+                //self.present(alert, animated: true, completion: nil)
             }
             
             
         } else {
-            let alert = UIAlertController(title: "Alert", message: "Please enter your first name.", preferredStyle: UIAlertController.Style.alert)
-            self.present(alert, animated: true, completion: nil)
+            //let alert = UIAlertController(title: "Alert", message: "Please enter your first name.", preferredStyle: UIAlertController.Style.alert)
+            //self.present(alert, animated: true, completion: nil)
         }
         
         
