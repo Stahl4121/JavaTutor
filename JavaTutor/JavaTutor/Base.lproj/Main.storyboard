@@ -217,69 +217,72 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Module Catalog" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rTG-au-D4K">
-                                <rect key="frame" x="53" y="80" width="567" height="55"/>
+                                <rect key="frame" x="53" y="80" width="301" height="55"/>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="40"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Browse the collection of modules." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4aR-pR-Ncm">
-                                <rect key="frame" x="53" y="190" width="318" height="28"/>
+                                <rect key="frame" x="53" y="190" width="918" height="28"/>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="—————————" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VwF-UC-cCk">
                                 <rect key="frame" x="53" y="137" width="567" height="28"/>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="  Module 2                                         " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0al-WF-SLY">
-                                <rect key="frame" x="31" y="391" width="688" height="112"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Module 1                                         " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S8q-Yg-h7g">
+                                <rect key="frame" x="31" y="282" width="960" height="120"/>
                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="JFN-sH-O7q"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="40"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Module 3                                         " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WfV-6g-X8i">
-                                <rect key="frame" x="31" y="527" width="688" height="112"/>
+                                <rect key="frame" x="32" y="594" width="960" height="120"/>
                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="112" id="IHs-AG-yyf"/>
+                                    <constraint firstAttribute="height" constant="120" id="0of-VE-Hpv"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="40"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Module 1                                         " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S8q-Yg-h7g">
-                                <rect key="frame" x="31" y="258" width="688" height="112"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="  Module 2                                         " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0al-WF-SLY">
+                                <rect key="frame" x="31" y="437" width="960" height="120"/>
                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="112" id="XGS-vf-NdG"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="40"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.80218274109999999" green="0.231407054" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="vGG-hL-Mwl" firstAttribute="trailing" secondItem="VwF-UC-cCk" secondAttribute="trailing" constant="404" id="4Jl-uS-dtP"/>
-                            <constraint firstItem="S8q-Yg-h7g" firstAttribute="top" secondItem="4aR-pR-Ncm" secondAttribute="bottom" constant="40" id="4uX-zd-UTV"/>
-                            <constraint firstItem="vGG-hL-Mwl" firstAttribute="trailing" secondItem="S8q-Yg-h7g" secondAttribute="trailing" constant="305" id="DSk-1x-BAS"/>
-                            <constraint firstItem="vGG-hL-Mwl" firstAttribute="trailing" secondItem="0al-WF-SLY" secondAttribute="trailing" constant="305" id="Gpf-ks-bAo"/>
-                            <constraint firstItem="vGG-hL-Mwl" firstAttribute="bottom" secondItem="WfV-6g-X8i" secondAttribute="bottom" constant="129" id="JFY-g3-ocB"/>
+                            <constraint firstItem="4aR-pR-Ncm" firstAttribute="centerX" secondItem="74Y-1G-igS" secondAttribute="centerX" id="8ia-IY-NQU"/>
+                            <constraint firstItem="WfV-6g-X8i" firstAttribute="top" secondItem="0al-WF-SLY" secondAttribute="bottom" constant="37" id="9bu-bX-fSm"/>
+                            <constraint firstItem="0al-WF-SLY" firstAttribute="top" secondItem="S8q-Yg-h7g" secondAttribute="bottom" constant="35" id="DKi-ov-waw"/>
                             <constraint firstItem="VwF-UC-cCk" firstAttribute="top" secondItem="74Y-1G-igS" secondAttribute="top" constant="137" id="N3U-7U-28W"/>
-                            <constraint firstItem="VwF-UC-cCk" firstAttribute="trailing" secondItem="rTG-au-D4K" secondAttribute="trailing" id="Pec-7o-Rqg"/>
-                            <constraint firstItem="S8q-Yg-h7g" firstAttribute="top" secondItem="VwF-UC-cCk" secondAttribute="bottom" constant="93" id="Sq5-Pd-Hea"/>
-                            <constraint firstItem="S8q-Yg-h7g" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="WfV-6g-X8i" secondAttribute="leading" id="VFC-T8-klE"/>
-                            <constraint firstItem="vGG-hL-Mwl" firstAttribute="trailing" secondItem="WfV-6g-X8i" secondAttribute="trailing" constant="305" id="Yig-SX-xfx"/>
-                            <constraint firstItem="S8q-Yg-h7g" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="0al-WF-SLY" secondAttribute="leading" id="bdO-Hh-0ue"/>
+                            <constraint firstItem="rTG-au-D4K" firstAttribute="top" secondItem="vGG-hL-Mwl" secondAttribute="top" constant="60" id="RDd-1M-tA3"/>
+                            <constraint firstItem="S8q-Yg-h7g" firstAttribute="top" secondItem="4aR-pR-Ncm" secondAttribute="bottom" constant="64" id="SPf-fd-PC4"/>
+                            <constraint firstItem="WfV-6g-X8i" firstAttribute="leading" secondItem="vGG-hL-Mwl" secondAttribute="leading" constant="32" id="Ubu-ye-19Z"/>
+                            <constraint firstItem="S8q-Yg-h7g" firstAttribute="leading" secondItem="0al-WF-SLY" secondAttribute="leading" id="b5I-9z-RCf"/>
                             <constraint firstItem="VwF-UC-cCk" firstAttribute="leading" secondItem="vGG-hL-Mwl" secondAttribute="leading" constant="53" id="ddI-l0-DTa"/>
-                            <constraint firstItem="VwF-UC-cCk" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="4aR-pR-Ncm" secondAttribute="leading" id="l7G-1n-lI3"/>
-                            <constraint firstItem="0al-WF-SLY" firstAttribute="top" secondItem="S8q-Yg-h7g" secondAttribute="bottom" constant="21" id="mqm-T2-I4t"/>
-                            <constraint firstItem="S8q-Yg-h7g" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vGG-hL-Mwl" secondAttribute="leading" id="nBr-vd-Xo1"/>
-                            <constraint firstItem="VwF-UC-cCk" firstAttribute="top" secondItem="rTG-au-D4K" secondAttribute="bottom" constant="2" id="oG4-0L-Gmz"/>
-                            <constraint firstItem="WfV-6g-X8i" firstAttribute="top" secondItem="0al-WF-SLY" secondAttribute="bottom" constant="24" id="qRE-Zd-6Tc"/>
-                            <constraint firstItem="VwF-UC-cCk" firstAttribute="leading" secondItem="rTG-au-D4K" secondAttribute="leading" id="qtp-MV-8Ng"/>
-                            <constraint firstItem="vGG-hL-Mwl" firstAttribute="trailing" secondItem="4aR-pR-Ncm" secondAttribute="trailing" constant="653" id="sFE-M8-grb"/>
+                            <constraint firstItem="4aR-pR-Ncm" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="rTG-au-D4K" secondAttribute="trailing" id="fQ8-48-jKv"/>
+                            <constraint firstItem="S8q-Yg-h7g" firstAttribute="trailing" secondItem="0al-WF-SLY" secondAttribute="trailing" id="fwd-eR-guP"/>
+                            <constraint firstItem="4aR-pR-Ncm" firstAttribute="leading" secondItem="VwF-UC-cCk" secondAttribute="leading" id="j6q-bP-aiR"/>
+                            <constraint firstItem="4aR-pR-Ncm" firstAttribute="centerX" secondItem="WfV-6g-X8i" secondAttribute="centerX" id="kbU-fP-NGr"/>
+                            <constraint firstItem="S8q-Yg-h7g" firstAttribute="leading" secondItem="vGG-hL-Mwl" secondAttribute="leading" constant="31" id="nzT-g6-Gr4"/>
+                            <constraint firstItem="vGG-hL-Mwl" firstAttribute="trailing" secondItem="S8q-Yg-h7g" secondAttribute="trailing" constant="33" id="pfs-0d-3B9"/>
+                            <constraint firstItem="4aR-pR-Ncm" firstAttribute="top" secondItem="VwF-UC-cCk" secondAttribute="bottom" constant="25" id="q1S-cV-SyF"/>
+                            <constraint firstItem="4aR-pR-Ncm" firstAttribute="leading" secondItem="rTG-au-D4K" secondAttribute="leading" id="w13-eS-QY7"/>
+                            <constraint firstItem="vGG-hL-Mwl" firstAttribute="bottom" secondItem="WfV-6g-X8i" secondAttribute="bottom" constant="54" id="wLS-Vr-pce"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vGG-hL-Mwl"/>
                     </view>
@@ -294,7 +297,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xe8-3f-yKn" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2219" y="-3"/>
+            <point key="canvasLocation" x="2218.9453125" y="-3.125"/>
         </scene>
     </scenes>
 </document>

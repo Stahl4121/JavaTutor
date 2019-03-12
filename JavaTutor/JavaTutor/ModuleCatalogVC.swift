@@ -32,7 +32,7 @@ class ViewController: UIViewController {
         //draw header rectangle
         let k = Draw(frame: CGRect(
             origin: CGPoint(x: 0, y: 0),
-            size: CGSize(width: 850, height: 250)))
+            size: CGSize(width: 1040, height: 250)))
         
         self.view.addSubview(k)
         
