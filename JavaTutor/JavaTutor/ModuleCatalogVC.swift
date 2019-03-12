@@ -9,7 +9,6 @@
 import UIKit
 
 class ModuleCatalogVC: UIViewController {
-
     @IBOutlet weak var lblModuleCat: UILabel!
     
     @IBOutlet weak var lblHorizLine: UILabel!
@@ -78,6 +77,8 @@ class ModuleCatalogVC: UIViewController {
         view.addSubview(TempBackButton)
         
     }
+    
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
