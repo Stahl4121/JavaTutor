@@ -2,14 +2,14 @@
 //  ModuleCatalogVC.swift
 //  JavaTutor
 //
-//  Created by Emily Wasylenko on 3/11/19.
+//  Created by Logan Stahl on 3/12/19.
 //  Copyright © 2019 Logan Stahl. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
-    
+class ModuleCatalogVC: UIViewController {
+
     @IBOutlet weak var lblModuleCat: UILabel!
     
     @IBOutlet weak var lblHorizLine: UILabel!

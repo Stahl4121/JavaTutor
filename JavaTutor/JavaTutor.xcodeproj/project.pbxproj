@@ -11,8 +11,7 @@
 		1D16A5582221FF3900FC3248 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D16A5562221FF3900FC3248 /* GoogleService-Info.plist */; };
 		1D16A5592221FF3900FC3248 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D16A5562221FF3900FC3248 /* GoogleService-Info.plist */; };
 		203A6F2E093C231CBEF612E2 /* Pods_JavaTutorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D5F25F720D9643CB6D585E4 /* Pods_JavaTutorTests.framework */; };
-		8408DDA62237639800C7DF57 /* StudyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8408DDA52237639800C7DF57 /* StudyVC.swift */; };
-		4EF89A772237442100073203 /* ModuleCatalogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF89A762237442100073203 /* ModuleCatalogVC.swift */; };
+		8408DDAA2237CD9E00C7DF57 /* ModuleCatalogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8408DDA92237CD9E00C7DF57 /* ModuleCatalogVC.swift */; };
 		840B69BC222054EE0032B683 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840B69BB222054EE0032B683 /* AppDelegate.swift */; };
 		840B69C1222054EE0032B683 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 840B69BF222054EE0032B683 /* Main.storyboard */; };
 		840B69C3222054F10032B683 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 840B69C2222054F10032B683 /* Assets.xcassets */; };
@@ -49,12 +48,12 @@
 
 /* Begin PBXFileReference section */
 		1D16A5562221FF3900FC3248 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		4EF89A762237442100073203 /* ModuleCatalogVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleCatalogVC.swift; sourceTree = "<group>"; };
 		542301E042D50BB0C58A497A /* Pods-JavaTutorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JavaTutorTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JavaTutorTests/Pods-JavaTutorTests.release.xcconfig"; sourceTree = "<group>"; };
 		56C900E77F7C22DFE35A44C1 /* Pods-JavaTutor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JavaTutor.release.xcconfig"; path = "Pods/Target Support Files/Pods-JavaTutor/Pods-JavaTutor.release.xcconfig"; sourceTree = "<group>"; };
 		7A2DB7FF4DD5D457BCB9A8E4 /* Pods-JavaTutorUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JavaTutorUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JavaTutorUITests/Pods-JavaTutorUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7D5F25F720D9643CB6D585E4 /* Pods_JavaTutorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JavaTutorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8408DDA52237639800C7DF57 /* StudyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyVC.swift; sourceTree = "<group>"; };
+		8408DDA92237CD9E00C7DF57 /* ModuleCatalogVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleCatalogVC.swift; sourceTree = "<group>"; };
 		840B69B8222054EE0032B683 /* JavaTutor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JavaTutor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		840B69BB222054EE0032B683 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		840B69C0222054EE0032B683 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -147,11 +146,11 @@
 		840B69BA222054EE0032B683 /* JavaTutor */ = {
 			isa = PBXGroup;
 			children = (
+				8408DDA92237CD9E00C7DF57 /* ModuleCatalogVC.swift */,
 				843971A522237C5900A96195 /* LoginScreenVC.swift */,
 				843971A722237C5900A96195 /* RecentActivityTVC.swift */,
 				843971A822237C5900A96195 /* StatisticsVC.swift */,
 				8408DDA52237639800C7DF57 /* StudyVC.swift */,
-			    4EF89A762237442100073203 /* ModuleCatalogVC.swift */,
 				843971A422237C5900A96195 /* LessonTVC.swift */,
 				843971A622237C5900A96195 /* QuizTVC.swift */,
 				843971A322237C5900A96195 /* ExamTVC.swift */,
@@ -418,6 +417,7 @@
 				843971B122237C5900A96195 /* StatisticsVC.swift in Sources */,
 				843971B022237C5900A96195 /* RecentActivityTVC.swift in Sources */,
 				840B69BC222054EE0032B683 /* AppDelegate.swift in Sources */,
+				8408DDAA2237CD9E00C7DF57 /* ModuleCatalogVC.swift in Sources */,
 				843971AD22237C5900A96195 /* LessonTVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
