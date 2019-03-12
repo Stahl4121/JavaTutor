@@ -208,10 +208,10 @@
             </objects>
             <point key="canvasLocation" x="2219" y="686"/>
         </scene>
-        <!--View Controller-->
+        <!--Module Catalog-->
         <scene sceneID="MQj-Ex-Fqb">
             <objects>
-                <viewController id="msK-Tq-i1u" customClass="ViewController" customModule="JavaTutorScreen" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="msK-Tq-i1u" customClass="ModuleCatalog" customModule="JavaTutor" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="74Y-1G-igS">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -261,6 +261,14 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tQI-4G-zah">
+                                <rect key="frame" x="32" y="282" width="960" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="WR9-0f-9Xf" kind="show" identifier="unwindToModuleCatalogue" id="JiH-gv-Eeg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.80218274109999999" green="0.231407054" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -298,6 +306,99 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xe8-3f-yKn" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2218.9453125" y="-3.125"/>
+        </scene>
+        <!--LessonVC-->
+        <scene sceneID="z3a-GE-njE">
+            <objects>
+                <viewController id="WR9-0f-9Xf" customClass="LessonVC" customModule="JavaTutor" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="26Z-Yl-PBh">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lesson List" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qIb-HX-BOc">
+                                <rect key="frame" x="52" y="53" width="203" height="55"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="40"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="—————————" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bUL-xw-I3F">
+                                <rect key="frame" x="52" y="110" width="567" height="28"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a lesson to get started!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lbh-uF-ylY">
+                                <rect key="frame" x="52" y="152" width="918" height="28"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  The Venerable &quot;Hello World!&quot;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7xe-ll-mG9" userLabel="Variables">
+                                <rect key="frame" x="32" y="260" width="960" height="120"/>
+                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="syu-DH-atM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="40"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  The Other Thing" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eY5-zU-mg7">
+                                <rect key="frame" x="33" y="572" width="960" height="120"/>
+                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="lo5-3K-bNE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="40"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="  This! That!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ggQ-bT-67R">
+                                <rect key="frame" x="32" y="415" width="960" height="120"/>
+                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="uES-bg-z02"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="40"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.80218274109999999" green="0.231407054" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="7xe-ll-mG9" firstAttribute="top" secondItem="Lbh-uF-ylY" secondAttribute="bottom" constant="80" id="1zj-PM-30V"/>
+                            <constraint firstItem="Lbh-uF-ylY" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="bUL-xw-I3F" secondAttribute="leading" id="BWB-3U-EeQ"/>
+                            <constraint firstItem="8QD-iE-RvD" firstAttribute="trailing" secondItem="bUL-xw-I3F" secondAttribute="trailing" constant="405" id="Etv-Ai-aII"/>
+                            <constraint firstItem="ggQ-bT-67R" firstAttribute="top" secondItem="7xe-ll-mG9" secondAttribute="bottom" constant="35" id="Fu8-0J-sI5"/>
+                            <constraint firstItem="8QD-iE-RvD" firstAttribute="trailing" secondItem="Lbh-uF-ylY" secondAttribute="trailing" constant="54" id="HDg-id-MEd"/>
+                            <constraint firstItem="eY5-zU-mg7" firstAttribute="leading" secondItem="8QD-iE-RvD" secondAttribute="leading" constant="33" id="ImD-Ce-h1Y"/>
+                            <constraint firstItem="qIb-HX-BOc" firstAttribute="top" secondItem="8QD-iE-RvD" secondAttribute="top" constant="33" id="MPJ-ub-AB8"/>
+                            <constraint firstItem="8QD-iE-RvD" firstAttribute="trailing" secondItem="eY5-zU-mg7" secondAttribute="trailing" constant="31" id="Mmv-GU-Vkp"/>
+                            <constraint firstItem="7xe-ll-mG9" firstAttribute="leading" secondItem="8QD-iE-RvD" secondAttribute="leading" constant="32" id="S4L-0s-AzH"/>
+                            <constraint firstItem="Lbh-uF-ylY" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="qIb-HX-BOc" secondAttribute="leading" id="Ve9-SJ-0G2"/>
+                            <constraint firstItem="7xe-ll-mG9" firstAttribute="top" secondItem="26Z-Yl-PBh" secondAttribute="top" constant="260" id="b7w-Xi-gug"/>
+                            <constraint firstItem="8QD-iE-RvD" firstAttribute="trailing" secondItem="qIb-HX-BOc" secondAttribute="trailing" constant="769" id="bj5-BG-aJR"/>
+                            <constraint firstItem="7xe-ll-mG9" firstAttribute="centerX" secondItem="26Z-Yl-PBh" secondAttribute="centerX" id="cXu-U3-smd"/>
+                            <constraint firstItem="eY5-zU-mg7" firstAttribute="top" secondItem="ggQ-bT-67R" secondAttribute="bottom" constant="37" id="dyN-AT-3gb"/>
+                            <constraint firstItem="7xe-ll-mG9" firstAttribute="leading" secondItem="ggQ-bT-67R" secondAttribute="leading" id="fL4-YN-aeq"/>
+                            <constraint firstItem="Lbh-uF-ylY" firstAttribute="leading" secondItem="8QD-iE-RvD" secondAttribute="leading" constant="52" id="fRT-ne-bn7"/>
+                            <constraint firstItem="7xe-ll-mG9" firstAttribute="trailing" secondItem="ggQ-bT-67R" secondAttribute="trailing" id="iII-V1-hop"/>
+                            <constraint firstItem="Lbh-uF-ylY" firstAttribute="top" secondItem="bUL-xw-I3F" secondAttribute="bottom" constant="14" id="sbF-7P-RbK"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="8QD-iE-RvD"/>
+                    </view>
+                    <connections>
+                        <outlet property="lblChooseLesson" destination="Lbh-uF-ylY" id="hbw-ol-38w"/>
+                        <outlet property="lblHelloWorld" destination="7xe-ll-mG9" id="m6m-PP-VYH"/>
+                        <outlet property="lblHorizLine" destination="bUL-xw-I3F" id="DbS-ZI-59O"/>
+                        <outlet property="lblLessonList" destination="qIb-HX-BOc" id="Bs8-0A-H4r"/>
+                        <outlet property="lblOtherThing" destination="eY5-zU-mg7" id="uHi-Nn-xKT"/>
+                        <outlet property="lblThis" destination="ggQ-bT-67R" id="0bc-RW-14E"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nIG-ho-HXq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2889" y="-329"/>
         </scene>
     </scenes>
 </document>

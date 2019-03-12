@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ModuleCatalog: UIViewController {
     
     @IBOutlet weak var lblModuleCat: UILabel!
     
@@ -76,6 +76,8 @@ class ViewController: UIViewController {
         view.addSubview(lblMod3)
         
     }
+    
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
