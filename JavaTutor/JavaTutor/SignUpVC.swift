@@ -64,14 +64,8 @@ class SignUpVC: UIViewController {
        
         
         if nameField.text != "" {
-            
-            
-
-            
             if (emailField.text?.contains("@"))! {
-                
-                
-                if (pass1Field.text == pass2Field.text) {
+                if (pass1Field.text == pass2Field.text && (pass1Field.text?.count)! >= 6) {
                     createUser(email: emailField.text!, pass: pass1Field.text!)
                     performSegue(withIdentifier: "signedUp", sender: nil)
                 } else {
@@ -90,8 +84,7 @@ class SignUpVC: UIViewController {
         }
         
         
-        
-        
+    
     }
    
     
