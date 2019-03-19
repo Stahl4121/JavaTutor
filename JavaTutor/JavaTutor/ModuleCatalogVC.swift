@@ -22,7 +22,7 @@ class ModuleCatalogVC: UIViewController {
     @IBOutlet weak var lblMod3: UILabel!
     
     @IBOutlet weak var nextButton: UIButton!
-    @IBOutlet weak var TempBackButton: UIButton!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -75,7 +75,6 @@ class ModuleCatalogVC: UIViewController {
         view.addSubview(lblMod1)
         view.addSubview(lblMod2)
         view.addSubview(lblMod3)
-        view.addSubview(TempBackButton)
         view.addSubview(nextButton)
     }
     

@@ -12,6 +12,9 @@
 		1D16A5592221FF3900FC3248 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D16A5562221FF3900FC3248 /* GoogleService-Info.plist */; };
 		203A6F2E093C231CBEF612E2 /* Pods_JavaTutorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D5F25F720D9643CB6D585E4 /* Pods_JavaTutorTests.framework */; };
 		4EF89A792237534C00073203 /* LessonVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF89A782237534C00073203 /* LessonVC.swift */; };
+		840179DE224083390006EB11 /* StudyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840179DD224083390006EB11 /* StudyVC.swift */; };
+		840179E2224096400006EB11 /* ModuleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840179E1224096400006EB11 /* ModuleCell.swift */; };
+		840179E42240995A0006EB11 /* DataRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840179E32240995A0006EB11 /* DataRepo.swift */; };
 		8408DDAA2237CD9E00C7DF57 /* ModuleCatalogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8408DDA92237CD9E00C7DF57 /* ModuleCatalogVC.swift */; };
 		8408DDAC2237D05300C7DF57 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8408DDAB2237D05300C7DF57 /* SignUpVC.swift */; };
 		8408DDAE2237D30000C7DF57 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8408DDAD2237D30000C7DF57 /* BaseTabBarController.swift */; };
@@ -23,7 +26,6 @@
 		840B69DC222054F10032B683 /* JavaTutorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840B69DB222054F10032B683 /* JavaTutorUITests.swift */; };
 		843971AC22237C5900A96195 /* ExamTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843971A322237C5900A96195 /* ExamTVC.swift */; };
 		843971AD22237C5900A96195 /* LessonTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843971A422237C5900A96195 /* LessonTVC.swift */; };
-		843971AE22237C5900A96195 /* LoginScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843971A522237C5900A96195 /* LoginScreenVC.swift */; };
 		843971AF22237C5900A96195 /* QuizTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843971A622237C5900A96195 /* QuizTVC.swift */; };
 		843971B022237C5900A96195 /* RecentActivityTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843971A722237C5900A96195 /* RecentActivityTVC.swift */; };
 		843971B122237C5900A96195 /* StatisticsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843971A822237C5900A96195 /* StatisticsVC.swift */; };
@@ -60,6 +62,9 @@
 		56C900E77F7C22DFE35A44C1 /* Pods-JavaTutor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JavaTutor.release.xcconfig"; path = "Pods/Target Support Files/Pods-JavaTutor/Pods-JavaTutor.release.xcconfig"; sourceTree = "<group>"; };
 		7A2DB7FF4DD5D457BCB9A8E4 /* Pods-JavaTutorUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JavaTutorUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JavaTutorUITests/Pods-JavaTutorUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7D5F25F720D9643CB6D585E4 /* Pods_JavaTutorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JavaTutorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		840179DD224083390006EB11 /* StudyVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudyVC.swift; sourceTree = "<group>"; };
+		840179E1224096400006EB11 /* ModuleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleCell.swift; sourceTree = "<group>"; };
+		840179E32240995A0006EB11 /* DataRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRepo.swift; sourceTree = "<group>"; };
 		8408DDA92237CD9E00C7DF57 /* ModuleCatalogVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleCatalogVC.swift; sourceTree = "<group>"; };
 		8408DDAB2237D05300C7DF57 /* SignUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		8408DDAD2237D30000C7DF57 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
@@ -77,7 +82,6 @@
 		840B69DD222054F10032B683 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		843971A322237C5900A96195 /* ExamTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamTVC.swift; sourceTree = "<group>"; };
 		843971A422237C5900A96195 /* LessonTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonTVC.swift; sourceTree = "<group>"; };
-		843971A522237C5900A96195 /* LoginScreenVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginScreenVC.swift; sourceTree = "<group>"; };
 		843971A622237C5900A96195 /* QuizTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizTVC.swift; sourceTree = "<group>"; };
 		843971A722237C5900A96195 /* RecentActivityTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentActivityTVC.swift; sourceTree = "<group>"; };
 		843971A822237C5900A96195 /* StatisticsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsVC.swift; sourceTree = "<group>"; };
@@ -159,12 +163,12 @@
 		840B69BA222054EE0032B683 /* JavaTutor */ = {
 			isa = PBXGroup;
 			children = (
+				840179DD224083390006EB11 /* StudyVC.swift */,
 				8489D0D82237FAC400435F34 /* activity.png */,
 				8489D0D92237FAC500435F34 /* profile.png */,
 				8489D0D72237FAC400435F34 /* study.png */,
 				8408DDAB2237D05300C7DF57 /* SignUpVC.swift */,
 				8408DDA92237CD9E00C7DF57 /* ModuleCatalogVC.swift */,
-				843971A522237C5900A96195 /* LoginScreenVC.swift */,
 				843971A722237C5900A96195 /* RecentActivityTVC.swift */,
 				843971A822237C5900A96195 /* StatisticsVC.swift */,
 				4EF89A782237534C00073203 /* LessonVC.swift */,
@@ -178,8 +182,10 @@
 				1D16A5562221FF3900FC3248 /* GoogleService-Info.plist */,
 				843971A422237C5900A96195 /* LessonTVC.swift */,
 				843971AA22237C5900A96195 /* ModuleCatalogTVC.swift */,
+				840179E32240995A0006EB11 /* DataRepo.swift */,
 				8408DDAD2237D30000C7DF57 /* BaseTabBarController.swift */,
 				8489D0DD2237FF8F00435F34 /* LessonCell.swift */,
+				840179E1224096400006EB11 /* ModuleCell.swift */,
 			);
 			path = JavaTutor;
 			sourceTree = "<group>";
@@ -432,7 +438,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				843971AE22237C5900A96195 /* LoginScreenVC.swift in Sources */,
 				843971AC22237C5900A96195 /* ExamTVC.swift in Sources */,
 				843971AF22237C5900A96195 /* QuizTVC.swift in Sources */,
 				843971B322237C5900A96195 /* ModuleCatalogTVC.swift in Sources */,
@@ -440,11 +445,14 @@
 				843971B022237C5900A96195 /* RecentActivityTVC.swift in Sources */,
 				8408DDAE2237D30000C7DF57 /* BaseTabBarController.swift in Sources */,
 				840B69BC222054EE0032B683 /* AppDelegate.swift in Sources */,
+				840179E2224096400006EB11 /* ModuleCell.swift in Sources */,
 				8408DDAA2237CD9E00C7DF57 /* ModuleCatalogVC.swift in Sources */,
 				8489D0DE2237FF8F00435F34 /* LessonCell.swift in Sources */,
 				8408DDAC2237D05300C7DF57 /* SignUpVC.swift in Sources */,
 				4EF89A792237534C00073203 /* LessonVC.swift in Sources */,
 				843971AD22237C5900A96195 /* LessonTVC.swift in Sources */,
+				840179E42240995A0006EB11 /* DataRepo.swift in Sources */,
+				840179DE224083390006EB11 /* StudyVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
