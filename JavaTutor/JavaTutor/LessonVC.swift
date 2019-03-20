@@ -84,8 +84,6 @@ class LessonVC: UIViewController {
         view.addSubview(lblHelloWorld)
         view.addSubview(lblThis)
         view.addSubview(lblOtherThing)
-        view.addSubview(tempBackBtn)
-        view.addSubview(nextButton)
     }
     
     override func didReceiveMemoryWarning() {

@@ -10,6 +10,7 @@ import Foundation
 
 class DataRepo: NSObject {
     let moduleNames = ["NONE","SHALL","PASS"]
+    let lessonNames = ["The Venerable \"Hello World\"","This! That!","The Other Thing", "Quiz"]
     
     static let instance = DataRepo()
     
