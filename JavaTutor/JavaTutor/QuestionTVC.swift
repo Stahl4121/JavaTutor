@@ -67,18 +67,22 @@ class QuestionTVC: UITableViewController {
             
             if repo.questions[module][selectedQuestion].correctIdx == row {
                 child.numCorrect = self.numCorrect + 1
+                child.numIncorrect = self.numIncorrect
             }
             else{
                 child.numIncorrect = self.numIncorrect + 1
+                child.numCorrect = self.numCorrect
             }
         }
         
         if let child = segue.destination as? QuizResultsVC {
             if repo.questions[module][selectedQuestion].correctIdx == row {
                 child.numCorrect = self.numCorrect + 1
+                child.numIncorrect = self.numIncorrect
             }
             else{
                 child.numIncorrect = self.numIncorrect + 1
+                child.numCorrect = self.numCorrect
             }
         }
         
