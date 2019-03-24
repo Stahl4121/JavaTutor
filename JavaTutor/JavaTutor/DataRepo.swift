@@ -14,7 +14,7 @@ class DataRepo: NSObject {
     var lessonNames: [[String]] { get {
         var names = [[String]]()
         names.append(["The Venerable \"Hello World\"","This! That!","The Other Thing"])
-        names.append([])
+        names.append(["test","testing","tesssttting"])
         
         return names
         }}

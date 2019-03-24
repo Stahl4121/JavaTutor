@@ -16,12 +16,15 @@ class QuestionTVC: UITableViewController {
     var selectedQuestion: Int = 0
     var numCorrect: Int = 0
     var numIncorrect: Int = 0
-
+        
+    @IBOutlet weak var lblQuestionHeading: UILabel!
     @IBOutlet weak var lblQuestion: UILabel!
     
     override func viewDidLoad() {
+        lblQuestionHeading.text = "Question #\(selectedQuestion+1)"
         lblQuestion.text = repo.questions[module][selectedQuestion].question
         repo.questions[module][selectedQuestion].shuffleAnswers()
+        
         super.viewDidLoad()
     }
     
@@ -49,18 +52,14 @@ class QuestionTVC: UITableViewController {
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String?, sender: Any?) -> Bool {
-        if let ident = identifier {
-            if ident == "nextQuestionSegue" {
-                if selectedQuestion == (repo.questions[module].count - 1){
-                    performSegue(withIdentifier: "endQuizSegue", sender: nil)
-                    return false
-                }
-            }
+        if selectedQuestion == (repo.questions[module].count - 1){
+            performSegue(withIdentifier: "endQuizSegue", sender: nil)
+            return false
         }
         return true
     }
     
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if let child = segue.destination as? QuestionTVC {
             child.module = self.module
@@ -83,6 +82,6 @@ class QuestionTVC: UITableViewController {
             }
         }
         
-     }
+    }
     
 }

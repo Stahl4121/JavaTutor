@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ModuleCatalogTVC: UITableViewController {
+class ModuleListTVC: UITableViewController {
     let repo = DataRepo.instance
     
     var row: Int = 0
@@ -44,7 +44,7 @@ class ModuleCatalogTVC: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if let child = segue.destination as? QuestionTVC {
+        if let child = segue.destination as? LessonListTVC {
             child.module = row
         }
     }

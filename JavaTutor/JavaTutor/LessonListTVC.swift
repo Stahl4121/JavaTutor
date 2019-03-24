@@ -30,18 +30,18 @@ class LessonListTVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return repo.lessonNames.count + 1
+        return repo.lessonNames[module].count + 1
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if indexPath.row == repo.lessonNames.count{
+        if indexPath.row == repo.lessonNames[module].count{
             return tableView.dequeueReusableCell(withIdentifier: "quizCell", for: indexPath)
         }
         else{
             let cell = tableView.dequeueReusableCell(withIdentifier: "lessonListCell", for: indexPath) as! LessonListCell
         
-            cell.lblLessonTitle?.text = "\(repo.lessonNames[indexPath.row])"
+            cell.lblLessonTitle?.text = "\(repo.lessonNames[module][indexPath.row])"
         
             return cell
             //TODO

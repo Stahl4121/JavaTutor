@@ -12,29 +12,38 @@ class QuizResultsVC: UIViewController {
     
     var numCorrect: Int = 0
     var numIncorrect: Int = 0
-
+    
     @IBOutlet weak var lblNumCorrect: UILabel!
     @IBOutlet weak var lblNumIncorrect: UILabel!
     @IBOutlet weak var lblScore: UILabel!
-
+    
     
     override func viewDidLoad() {
+        
+        //Remove questions from the nav controller, so user cannot re-enter quiz
+        var navigationArray = self.navigationController?.viewControllers //To get all UIViewController stack as Array
+        for _ in 1...(numCorrect+numIncorrect){
+            navigationArray!.remove(at: (navigationArray?.count)! - 2) // To remove previous UIViewController
+        }
+        self.navigationController?.viewControllers = navigationArray!
+        
+        
         lblNumCorrect.text = String(numCorrect)
         lblNumIncorrect.text = String(numIncorrect)
-        lblScore.text = String(format: "%.2f", Double(numCorrect/(numCorrect+numIncorrect)))
-
+        lblScore.text = String(Int((numCorrect/(numCorrect+numIncorrect))*100))
+        
         super.viewDidLoad()
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
