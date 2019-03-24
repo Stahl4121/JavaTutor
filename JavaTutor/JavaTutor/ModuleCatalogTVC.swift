@@ -11,11 +11,18 @@ import UIKit
 class ModuleCatalogTVC: UITableViewController {
     let repo = DataRepo.instance
     
+    var row: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
     // MARK: - Table view data source
+    
+    override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        row = indexPath.row
+        return indexPath
+    }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -34,15 +41,12 @@ class ModuleCatalogTVC: UITableViewController {
         
         return cell
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        
+        if let child = segue.destination as? QuestionTVC {
+            child.module = row
+        }
     }
-    */
 
 }

@@ -14,6 +14,10 @@
 		840179DE224083390006EB11 /* StudyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840179DD224083390006EB11 /* StudyVC.swift */; };
 		840179E2224096400006EB11 /* ModuleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840179E1224096400006EB11 /* ModuleCell.swift */; };
 		840179E42240995A0006EB11 /* DataRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840179E32240995A0006EB11 /* DataRepo.swift */; };
+		8401944E2246F614005B9EAE /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8401944D2246F614005B9EAE /* Question.swift */; };
+		840194502246F90A005B9EAE /* QuestionTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8401944F2246F909005B9EAE /* QuestionTVC.swift */; };
+		840194522246F9AD005B9EAE /* AnswerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840194512246F9AD005B9EAE /* AnswerCell.swift */; };
+		8401945422470736005B9EAE /* QuizResultsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8401945322470736005B9EAE /* QuizResultsVC.swift */; };
 		8408DDAA2237CD9E00C7DF57 /* ModuleCatalogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8408DDA92237CD9E00C7DF57 /* ModuleCatalogVC.swift */; };
 		8408DDAC2237D05300C7DF57 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8408DDAB2237D05300C7DF57 /* SignUpVC.swift */; };
 		8408DDAE2237D30000C7DF57 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8408DDAD2237D30000C7DF57 /* BaseTabBarController.swift */; };
@@ -33,7 +37,6 @@
 		8489D0DA2237FAC500435F34 /* study.png in Resources */ = {isa = PBXBuildFile; fileRef = 8489D0D72237FAC400435F34 /* study.png */; };
 		8489D0DB2237FAC500435F34 /* activity.png in Resources */ = {isa = PBXBuildFile; fileRef = 8489D0D82237FAC400435F34 /* activity.png */; };
 		8489D0DC2237FAC500435F34 /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 8489D0D92237FAC500435F34 /* profile.png */; };
-		8489D0DE2237FF8F00435F34 /* LessonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8489D0DD2237FF8F00435F34 /* LessonCell.swift */; };
 		9705A21531ABDBE279D27556 /* Pods_JavaTutor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6C7C90BF01055004AEF21BE /* Pods_JavaTutor.framework */; };
 		C92BF4F110414500440261F8 /* Pods_JavaTutorUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ABCAF315590C89E756CDEC8 /* Pods_JavaTutorUITests.framework */; };
 /* End PBXBuildFile section */
@@ -64,6 +67,10 @@
 		840179DD224083390006EB11 /* StudyVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudyVC.swift; sourceTree = "<group>"; };
 		840179E1224096400006EB11 /* ModuleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleCell.swift; sourceTree = "<group>"; };
 		840179E32240995A0006EB11 /* DataRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRepo.swift; sourceTree = "<group>"; };
+		8401944D2246F614005B9EAE /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		8401944F2246F909005B9EAE /* QuestionTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTVC.swift; sourceTree = "<group>"; };
+		840194512246F9AD005B9EAE /* AnswerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerCell.swift; sourceTree = "<group>"; };
+		8401945322470736005B9EAE /* QuizResultsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizResultsVC.swift; sourceTree = "<group>"; };
 		8408DDA92237CD9E00C7DF57 /* ModuleCatalogVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleCatalogVC.swift; sourceTree = "<group>"; };
 		8408DDAB2237D05300C7DF57 /* SignUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		8408DDAD2237D30000C7DF57 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
@@ -89,7 +96,6 @@
 		8489D0D72237FAC400435F34 /* study.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = study.png; sourceTree = "<group>"; };
 		8489D0D82237FAC400435F34 /* activity.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = activity.png; sourceTree = "<group>"; };
 		8489D0D92237FAC500435F34 /* profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile.png; sourceTree = "<group>"; };
-		8489D0DD2237FF8F00435F34 /* LessonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonCell.swift; sourceTree = "<group>"; };
 		8ABCAF315590C89E756CDEC8 /* Pods_JavaTutorUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JavaTutorUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		950608B2E6DE8B93883519C4 /* Pods-JavaTutorUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JavaTutorUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JavaTutorUITests/Pods-JavaTutorUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A6C7C90BF01055004AEF21BE /* Pods_JavaTutor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JavaTutor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -181,11 +187,14 @@
 				1D16A5562221FF3900FC3248 /* GoogleService-Info.plist */,
 				843971AA22237C5900A96195 /* ModuleCatalogTVC.swift */,
 				840DBD9D2241D281000145B6 /* LessonListTVC.swift */,
+				8401944F2246F909005B9EAE /* QuestionTVC.swift */,
 				840179E32240995A0006EB11 /* DataRepo.swift */,
 				8408DDAD2237D30000C7DF57 /* BaseTabBarController.swift */,
 				840DBD9F2241D589000145B6 /* LessonListCell.swift */,
+				840194512246F9AD005B9EAE /* AnswerCell.swift */,
 				840179E1224096400006EB11 /* ModuleCell.swift */,
-				8489D0DD2237FF8F00435F34 /* LessonCell.swift */,
+				8401944D2246F614005B9EAE /* Question.swift */,
+				8401945322470736005B9EAE /* QuizResultsVC.swift */,
 			);
 			path = JavaTutor;
 			sourceTree = "<group>";
@@ -438,6 +447,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				840194522246F9AD005B9EAE /* AnswerCell.swift in Sources */,
+				8401944E2246F614005B9EAE /* Question.swift in Sources */,
+				8401945422470736005B9EAE /* QuizResultsVC.swift in Sources */,
+				840194502246F90A005B9EAE /* QuestionTVC.swift in Sources */,
 				843971AC22237C5900A96195 /* ExamTVC.swift in Sources */,
 				843971AF22237C5900A96195 /* QuizTVC.swift in Sources */,
 				843971B322237C5900A96195 /* ModuleCatalogTVC.swift in Sources */,
@@ -448,7 +461,6 @@
 				840179E2224096400006EB11 /* ModuleCell.swift in Sources */,
 				840DBD9E2241D281000145B6 /* LessonListTVC.swift in Sources */,
 				8408DDAA2237CD9E00C7DF57 /* ModuleCatalogVC.swift in Sources */,
-				8489D0DE2237FF8F00435F34 /* LessonCell.swift in Sources */,
 				8408DDAC2237D05300C7DF57 /* SignUpVC.swift in Sources */,
 				840179E42240995A0006EB11 /* DataRepo.swift in Sources */,
 				840179DE224083390006EB11 /* StudyVC.swift in Sources */,
