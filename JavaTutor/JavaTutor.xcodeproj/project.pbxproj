@@ -22,7 +22,6 @@
 		840B69D1222054F10032B683 /* JavaTutorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840B69D0222054F10032B683 /* JavaTutorTests.swift */; };
 		840B69DC222054F10032B683 /* JavaTutorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840B69DB222054F10032B683 /* JavaTutorUITests.swift */; };
 		843971AC22237C5900A96195 /* ExamTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843971A322237C5900A96195 /* ExamTVC.swift */; };
-		843971AD22237C5900A96195 /* LessonTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843971A422237C5900A96195 /* LessonTVC.swift */; };
 		843971AE22237C5900A96195 /* LoginScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843971A522237C5900A96195 /* LoginScreenVC.swift */; };
 		843971AF22237C5900A96195 /* QuizTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843971A622237C5900A96195 /* QuizTVC.swift */; };
 		843971B022237C5900A96195 /* RecentActivityTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843971A722237C5900A96195 /* RecentActivityTVC.swift */; };
@@ -33,6 +32,7 @@
 		8489D0DC2237FAC500435F34 /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 8489D0D92237FAC500435F34 /* profile.png */; };
 		8489D0DE2237FF8F00435F34 /* LessonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8489D0DD2237FF8F00435F34 /* LessonCell.swift */; };
 		9705A21531ABDBE279D27556 /* Pods_JavaTutor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6C7C90BF01055004AEF21BE /* Pods_JavaTutor.framework */; };
+		B2E79CA322481ADF0077EC9D /* LessonWeb.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E79CA222481ADF0077EC9D /* LessonWeb.swift */; };
 		C92BF4F110414500440261F8 /* Pods_JavaTutorUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ABCAF315590C89E756CDEC8 /* Pods_JavaTutorUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -76,7 +76,6 @@
 		840B69DB222054F10032B683 /* JavaTutorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JavaTutorUITests.swift; sourceTree = "<group>"; };
 		840B69DD222054F10032B683 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		843971A322237C5900A96195 /* ExamTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamTVC.swift; sourceTree = "<group>"; };
-		843971A422237C5900A96195 /* LessonTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonTVC.swift; sourceTree = "<group>"; };
 		843971A522237C5900A96195 /* LoginScreenVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginScreenVC.swift; sourceTree = "<group>"; };
 		843971A622237C5900A96195 /* QuizTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizTVC.swift; sourceTree = "<group>"; };
 		843971A722237C5900A96195 /* RecentActivityTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentActivityTVC.swift; sourceTree = "<group>"; };
@@ -89,6 +88,7 @@
 		8ABCAF315590C89E756CDEC8 /* Pods_JavaTutorUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JavaTutorUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		950608B2E6DE8B93883519C4 /* Pods-JavaTutorUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JavaTutorUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JavaTutorUITests/Pods-JavaTutorUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A6C7C90BF01055004AEF21BE /* Pods_JavaTutor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JavaTutor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2E79CA222481ADF0077EC9D /* LessonWeb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonWeb.swift; sourceTree = SOURCE_ROOT; };
 		C08DD5EE46EE0A4864299E43 /* Pods-JavaTutor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JavaTutor.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JavaTutor/Pods-JavaTutor.debug.xcconfig"; sourceTree = "<group>"; };
 		D0CD5ADCEE0925B58EFED663 /* Pods-JavaTutorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JavaTutorTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JavaTutorTests/Pods-JavaTutorTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -170,13 +170,13 @@
 				4EF89A782237534C00073203 /* LessonVC.swift */,
 				843971A622237C5900A96195 /* QuizTVC.swift */,
 				843971A322237C5900A96195 /* ExamTVC.swift */,
+				B2E79CA222481ADF0077EC9D /* LessonWeb.swift */,
 				840B69BB222054EE0032B683 /* AppDelegate.swift */,
 				840B69BF222054EE0032B683 /* Main.storyboard */,
 				840B69C2222054F10032B683 /* Assets.xcassets */,
 				840B69C4222054F10032B683 /* LaunchScreen.storyboard */,
 				840B69C7222054F10032B683 /* Info.plist */,
 				1D16A5562221FF3900FC3248 /* GoogleService-Info.plist */,
-				843971A422237C5900A96195 /* LessonTVC.swift */,
 				843971AA22237C5900A96195 /* ModuleCatalogTVC.swift */,
 				8408DDAD2237D30000C7DF57 /* BaseTabBarController.swift */,
 				8489D0DD2237FF8F00435F34 /* LessonCell.swift */,
@@ -442,9 +442,9 @@
 				840B69BC222054EE0032B683 /* AppDelegate.swift in Sources */,
 				8408DDAA2237CD9E00C7DF57 /* ModuleCatalogVC.swift in Sources */,
 				8489D0DE2237FF8F00435F34 /* LessonCell.swift in Sources */,
+				B2E79CA322481ADF0077EC9D /* LessonWeb.swift in Sources */,
 				8408DDAC2237D05300C7DF57 /* SignUpVC.swift in Sources */,
 				4EF89A792237534C00073203 /* LessonVC.swift in Sources */,
-				843971AD22237C5900A96195 /* LessonTVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
