@@ -9,29 +9,71 @@
 import Foundation
 
 class DataRepo: NSObject {
-    var moduleNames = ["NONE","SHALL","PASS"]
     
-    var lessonNames: [[String]] { get {
-        var names = [[String]]()
-        names.append(["The Venerable \"Hello World\"","This! That!","The Other Thing"])
-        names.append(["test","testing","tesssttting"])
-        
-        return names
-        }}
+    let moduleNames = ["NONE","SHALL","PASS"]
+    var lessonNames: [[String]]
+    var questions: [[Question]]
     
-    var questions: [[Question]] {get {
-        var q = [[Question]]()
-        q.append([Question(data: ["Mod1Question1","CorAns","Ans2","Ans3","Ans4"]),Question(data: ["Mod1Question2","CorAns","Ans2","Ans3","Ans4"])])
-        
-        q.append([Question(data: ["Mod2Question1","CorAns","Ans2","Ans3","Ans4"]),Question(data: ["Mod2Question2","CorAns","Ans2","Ans3","Ans4"])])
-
-        return q
-        
-        }}
+    var fileUrl: URL?
     
     static let instance = DataRepo()
-    
+
     private override init() {
+        questions = [[Question]]()
+        lessonNames = [[String]]()
         super.init()
+        
+        loadQuestions()
+        loadLessonNames()
+    }
+    
+    func loadLessonNames(){
+        lessonNames.append(["The Venerable \"Hello World\"","This! That!","The Other Thing"])
+        lessonNames.append(["Mod2Les1","Mod2Les2","Mod2Les3"])
+        lessonNames.append(["Mod3Les1","Mod3Les2"])
+    }
+    
+    func loadQuestions(){
+        var allQuestions = [Question]()
+        
+        let path = Bundle.main.path(forResource: "questions", ofType: "json")
+        if let filePath = path {
+            fileUrl = URL(fileURLWithPath: filePath)
+        }
+        else {
+            fileUrl = nil
+        }
+        
+        do {
+            if let url = fileUrl {
+                // Grab JSON contents
+                let contents = try Data(contentsOf: url)
+                let questionArray = try JSONSerialization.jsonObject(with: contents, options: .mutableContainers) as! [[String: Any]]
+
+                // Append each ranking to the array
+                for question in questionArray {
+                    let temp = Question()
+                    
+                    for (key, value) in question {
+                        if Question.fields.contains(key) {
+                            temp.setValue(value, forKey: key)
+                        }
+                    }
+                    
+                    temp.shuffleAnswers()
+                    allQuestions.append(temp)
+                }
+                
+                // Sort by the specified order
+                for i in 1...(moduleNames.count){
+                    questions.append(allQuestions.filter({$0.module == i}))
+                }
+            }
+            else {
+                print("Bad file path")
+            }
+        } catch {
+            print("Error getting file info")
+        }
     }
 }

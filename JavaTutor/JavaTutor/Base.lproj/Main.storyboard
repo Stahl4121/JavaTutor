@@ -833,7 +833,6 @@
         <!--Quiz-->
         <scene sceneID="3rX-s4-3xa">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="w3f-PL-DCX" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="6cE-Dt-Hah" customClass="QuestionTVC" customModule="JavaTutor" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="105" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="GEq-nf-yGw">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
@@ -930,6 +929,7 @@
                         <segue destination="mb4-WI-RFk" kind="show" identifier="endQuizSegue" id="vdI-1A-LkK"/>
                     </connections>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w3f-PL-DCX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="224" y="2177"/>
         </scene>
