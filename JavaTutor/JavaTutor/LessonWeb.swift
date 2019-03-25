@@ -26,12 +26,10 @@ class LessonWeb: UIViewController, WKUIDelegate {
         
         webTitle.title = modName
         
-        //testing HTML Loading
+        //HTML Loading
         if let url = Bundle.main.url(forResource: "\(modNum).\(modLesson)", withExtension: ".html", subdirectory: "Sprint 1 HTML") {
             webV.loadFileURL(url, allowingReadAccessTo: url.deletingLastPathComponent())
         }
-        
-        //Add Lesson name as page title
         
         // Do any additional setup after loading the view.
     }
