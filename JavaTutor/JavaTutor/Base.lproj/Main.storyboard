@@ -1010,20 +1010,20 @@
                                     <rect key="frame" x="0.0" y="0.0" width="1024" height="104.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&gt;" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JrW-LK-s94">
-                                            <rect key="frame" x="986" y="27.5" width="18" height="50"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JrW-LK-s94">
+                                            <rect key="frame" x="914" y="27.5" width="90" height="50"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="50" id="N9m-lw-g4U"/>
-                                                <constraint firstAttribute="width" constant="18" id="cZx-RR-nxF"/>
+                                                <constraint firstAttribute="width" constant="90" id="cZx-RR-nxF"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="46"/>
+                                            <fontDescription key="fontDescription" name="Arial-BoldItalicMT" family="Arial" pointSize="25"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{Answer Text}" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vy0-a4-ATd">
-                                            <rect key="frame" x="20" y="12.5" width="950" height="80"/>
+                                            <rect key="frame" x="20" y="12.5" width="850" height="80"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="80" id="EVz-vd-kVe"/>
-                                                <constraint firstAttribute="width" constant="950" id="rzC-Lh-Gm4"/>
+                                                <constraint firstAttribute="width" constant="850" id="rzC-Lh-Gm4"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="24"/>
                                             <nil key="highlightedColor"/>
