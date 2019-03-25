@@ -166,7 +166,7 @@
                             <constraint firstItem="dmI-EO-P7T" firstAttribute="top" secondItem="QEC-g4-UXr" secondAttribute="top" id="eyP-Md-BZ4"/>
                             <constraint firstItem="qo6-T7-17q" firstAttribute="trailing" secondItem="glP-Lr-tN5" secondAttribute="trailing" id="fKp-Tk-Ajo"/>
                             <constraint firstItem="bDM-Y5-31s" firstAttribute="top" secondItem="stA-WT-iuE" secondAttribute="bottom" constant="82" id="gFm-wK-Ct7"/>
-                            <constraint firstItem="N8t-xU-4US" firstAttribute="centerX" secondItem="qo6-T7-17q" secondAttribute="centerX" id="gaF-t4-zVi"/>
+                            <constraint firstAttribute="centerX" secondItem="qo6-T7-17q" secondAttribute="centerX" id="gaF-t4-zVi"/>
                             <constraint firstItem="QEC-g4-UXr" firstAttribute="top" secondItem="bDM-Y5-31s" secondAttribute="bottom" constant="119" id="hcq-qc-1IZ"/>
                             <constraint firstItem="siS-eo-iVt" firstAttribute="top" secondItem="TMQ-uW-Qrv" secondAttribute="bottom" constant="20" id="iq7-Xl-amU"/>
                             <constraint firstItem="qo6-T7-17q" firstAttribute="trailing" secondItem="Jsq-Ag-g2N" secondAttribute="trailing" constant="360" id="jcX-qc-QKr"/>
@@ -193,7 +193,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n1Y-6a-MWk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="854" y="-2172"/>
+            <point key="canvasLocation" x="881" y="-2173"/>
         </scene>
         <!--Module List-->
         <scene sceneID="w9W-hH-zGU">
@@ -1384,13 +1384,12 @@
                     <connections>
                         <outlet property="emailField" destination="k8T-bR-ytW" id="RFy-As-bVg"/>
                         <outlet property="passwordField" destination="XKz-5D-7Wg" id="EVN-TI-Z4g"/>
-                        <segue destination="5Ao-gX-NtL" kind="show" identifier="loggedIn" id="jF6-CB-QV7"/>
                         <segue destination="Zis-bS-fNO" kind="show" identifier="toSignUp" id="wAO-JU-3cm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f1Z-Hv-vDP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="905" y="-759"/>
+            <point key="canvasLocation" x="140" y="-2173"/>
         </scene>
     </scenes>
     <resources>

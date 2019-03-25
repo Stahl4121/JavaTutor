@@ -27,6 +27,7 @@
 		840B69C6222054F10032B683 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 840B69C4222054F10032B683 /* LaunchScreen.storyboard */; };
 		840B69D1222054F10032B683 /* JavaTutorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840B69D0222054F10032B683 /* JavaTutorTests.swift */; };
 		840B69DC222054F10032B683 /* JavaTutorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840B69DB222054F10032B683 /* JavaTutorUITests.swift */; };
+		840D84ED22492C8400AE58E1 /* LoginScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840D84EC22492C8400AE58E1 /* LoginScreenVC.swift */; };
 		840DBD9E2241D281000145B6 /* LessonListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840DBD9D2241D281000145B6 /* LessonListTVC.swift */; };
 		840DBDA02241D589000145B6 /* LessonListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840DBD9F2241D589000145B6 /* LessonListCell.swift */; };
 		843971B022237C5900A96195 /* RecentActivityTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843971A722237C5900A96195 /* RecentActivityTVC.swift */; };
@@ -86,6 +87,7 @@
 		840B69D7222054F10032B683 /* JavaTutorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JavaTutorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		840B69DB222054F10032B683 /* JavaTutorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JavaTutorUITests.swift; sourceTree = "<group>"; };
 		840B69DD222054F10032B683 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		840D84EC22492C8400AE58E1 /* LoginScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenVC.swift; sourceTree = "<group>"; };
 		840DBD9D2241D281000145B6 /* LessonListTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonListTVC.swift; sourceTree = "<group>"; };
 		840DBD9F2241D589000145B6 /* LessonListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonListCell.swift; sourceTree = "<group>"; };
 		843971A722237C5900A96195 /* RecentActivityTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentActivityTVC.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 				8408DDAD2237D30000C7DF57 /* BaseTabBarController.swift */,
 				84CB7035224846A300CEE082 /* questions.json */,
 				84CB703A22487E5000CEE082 /* names.json */,
+				840D84EC22492C8400AE58E1 /* LoginScreenVC.swift */,
 			);
 			path = JavaTutor;
 			sourceTree = "<group>";
@@ -459,6 +462,7 @@
 				8408DDAE2237D30000C7DF57 /* BaseTabBarController.swift in Sources */,
 				840B69BC222054EE0032B683 /* AppDelegate.swift in Sources */,
 				840179E2224096400006EB11 /* ModuleCell.swift in Sources */,
+				840D84ED22492C8400AE58E1 /* LoginScreenVC.swift in Sources */,
 				840DBD9E2241D281000145B6 /* LessonListTVC.swift in Sources */,
 				8408DDAC2237D05300C7DF57 /* SignUpVC.swift in Sources */,
 				840179E42240995A0006EB11 /* DataRepo.swift in Sources */,
