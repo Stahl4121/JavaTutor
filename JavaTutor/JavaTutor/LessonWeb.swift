@@ -13,27 +13,26 @@ class LessonWeb: UIViewController, WKUIDelegate {
     
     var modName: String = ""
     var modNum: Int = 0
-    var modRow: Int = 0
+    var modLesson: Int = 0
     
     @IBOutlet weak var webV: WKWebView!
+    @IBOutlet weak var webTitle: UINavigationItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print("\(modNum)")
-        print("\(modRow)")
+        print("\(modLesson)")
         print("\(modName)")
         
-        /*
-        //test URL
-        let myURL = URL(string: "https://www.youtube.com")
-        let myReq = URLRequest(url: myURL!)
-        webV.load(myReq)
-        */
+        webTitle.title = modName
         
         //testing HTML Loading
-        if let url = Bundle.main.url(forResource: "sec1.1", withExtension: ".html", subdirectory: "Sprint 1 HTML") {
+        if let url = Bundle.main.url(forResource: "\(modNum).\(modLesson)", withExtension: ".html", subdirectory: "Sprint 1 HTML") {
             webV.loadFileURL(url, allowingReadAccessTo: url.deletingLastPathComponent())
         }
+        
+        //Add Lesson name as page title
+        
         // Do any additional setup after loading the view.
     }
     

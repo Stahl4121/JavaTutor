@@ -14,6 +14,8 @@ class LessonListTVC: UITableViewController {
     var row: Int = 0
     var module: Int = 0
     
+    var lessonSelected: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -22,6 +24,7 @@ class LessonListTVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         row = indexPath.row
+        lessonSelected = "\(repo.lessonNames[module][indexPath.row])"
         return indexPath
     }
     
@@ -36,13 +39,13 @@ class LessonListTVC: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if indexPath.row == repo.lessonNames[module].count{
+            
             return tableView.dequeueReusableCell(withIdentifier: "quizCell", for: indexPath)
         }
         else{
             let cell = tableView.dequeueReusableCell(withIdentifier: "lessonListCell", for: indexPath) as! LessonListCell
-        
             cell.lblLessonTitle?.text = "\(repo.lessonNames[module][indexPath.row])"
-        
+            
             return cell
             //TODO
             //cell.isCompleted = false
@@ -57,9 +60,9 @@ class LessonListTVC: UITableViewController {
         }
         
         if let child = segue.destination as? LessonWeb {
-            child.modName = "Test"
+            child.modName = lessonSelected
             child.modNum = self.module + 1
-            child.modRow = self.row + 1
+            child.modLesson = self.row + 1
         }
     }
     
