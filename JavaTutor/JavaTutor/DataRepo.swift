@@ -14,6 +14,14 @@ class DataRepo: NSObject {
     var lessonNames: [[String]]
     var questions: [[Question]]
     
+    @objc dynamic var recentActivities: [String]
+    
+    var username: String
+    
+    var continueTopic: String
+    var improveTopic: String
+    var brushUpTopic: String
+    
     var fileUrl: URL?
     
     static let instance = DataRepo()
@@ -21,10 +29,34 @@ class DataRepo: NSObject {
     private override init() {
         questions = [[Question]]()
         lessonNames = [[String]]()
+        recentActivities = [String]()
+        username = String()
+        continueTopic = "No topic has been started."
+        improveTopic = String()
+        brushUpTopic = String()
+        
         super.init()
         
+        addObserver(self, forKeyPath: "recentActivities", options: .new, context: nil)
+        
+        updateStudyScreenData()
         loadQuestions()
         loadLessonNames()
+    }
+    
+     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if keyPath == "recentActivities" {
+            if !recentActivities.isEmpty {
+                continueTopic = recentActivities[0]
+            }
+        }
+    }
+    
+    func updateStudyScreenData(){
+        //TODO: NEED TO GET/CALCULATE THESE
+        username = "{Name}"
+        improveTopic = "{Topic to be improved}"
+        brushUpTopic = "(Topic to be brushed}"
     }
     
     func loadLessonNames(){

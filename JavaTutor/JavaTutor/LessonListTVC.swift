@@ -55,6 +55,13 @@ class LessonListTVC: UITableViewController {
             child.module = self.module
             child.selectedQuestion = 0
         }
+        else{
+            //Update recent activities list 
+            if let index = repo.recentActivities.firstIndex(of: repo.lessonNames[module][row]){
+                repo.recentActivities.remove(at: index)
+            }
+            repo.recentActivities.insert(repo.lessonNames[module][row], at: 0)
+        }
     }
     
 }
