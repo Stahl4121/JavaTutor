@@ -28,10 +28,6 @@ class StudyVC: UIViewController {
         repo.addObserver(self, forKeyPath: "recentActivities", options: .new, context: nil)
     }
     
-    deinit {
-        repo.removeObserver(self, forKeyPath: "recentActivities")
-    }
-    
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         lblContinueTopic.text = repo.continueTopic
 
