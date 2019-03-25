@@ -269,6 +269,14 @@
                                     <segue destination="WR9-0f-9Xf" kind="show" identifier="unwindToModuleCatalogue" id="JiH-gv-Eeg"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hf0-v0-RaV">
+                                <rect key="frame" x="32" y="437" width="960" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="WR9-0f-9Xf" kind="show" id="Wpm-3w-DfL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.80218274109999999" green="0.231407054" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -401,4 +409,7 @@
             <point key="canvasLocation" x="2889" y="-329"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Wpm-3w-DfL"/>
+    </inferredMetricsTieBreakers>
 </document>
