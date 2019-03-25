@@ -10,7 +10,7 @@ import Foundation
 
 class DataRepo: NSObject {
     
-    let moduleNames = ["NONE","SHALL","PASS"]
+    let moduleNames = ["Module One Name","Module Two Name"]
     var lessonNames: [[String]]
     var questions: [[Question]]
     
@@ -30,7 +30,6 @@ class DataRepo: NSObject {
     func loadLessonNames(){
         lessonNames.append(["The Venerable \"Hello World\"","This! That!","The Other Thing"])
         lessonNames.append(["Mod2Les1","Mod2Les2","Mod2Les3"])
-        lessonNames.append(["Mod3Les1","Mod3Les2"])
     }
     
     func loadQuestions(){
@@ -66,7 +65,7 @@ class DataRepo: NSObject {
                 
                 // Sort by the specified order
                 for i in 1...(moduleNames.count){
-                    questions.append(allQuestions.filter({$0.module == i}))
+                    questions.append(allQuestions.filter({$0.module == i}).shuffled())
                 }
             }
             else {

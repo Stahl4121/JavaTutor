@@ -30,7 +30,8 @@ class QuizResultsVC: UIViewController {
         
         lblNumCorrect.text = String(numCorrect)
         lblNumIncorrect.text = String(numIncorrect)
-        lblScore.text = "\(Int((numCorrect/(numCorrect+numIncorrect))*100))%"
+        lblScore.text = "\(Int(((Double(numCorrect)/Double(numCorrect+numIncorrect))*100).rounded()))%"
+        
         
         super.viewDidLoad()
     }
