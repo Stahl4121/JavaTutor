@@ -26,7 +26,9 @@ shuffle(module_2);
 function getQuestion(module) {
     let q = modules[module].pop();
     modules[module].unshift(q);
-    return JSON.stringify(generate(q));
+    let question = generate(q);
+    question.module = module;
+    return JSON.stringify(question);
 };
 
 let evalfy = code => eval(
