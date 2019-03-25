@@ -79,7 +79,15 @@ class DataRepo: NSObject {
             if let url = fileUrl {
                 // Grab JSON contents
                 let contents = try Data(contentsOf: url)
-                let questionArray = try JSONSerialization.jsonObject(with: contents, options: .mutableContainers) as! [[String: Any]]
+                var questionArray = try JSONSerialization.jsonObject(with: contents, options: .mutableContainers) as! [[String: Any]]
+                
+                // Add in generated questions
+                let qGen = QGen()
+                
+                for _ in 1...10 {
+                    let data = qGen.getQuestion(module: 2).data(using: .utf8)!
+                    questionArray.append(try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as! [String: Any])
+                }
 
                 // Append each ranking to the array
                 for question in questionArray {
