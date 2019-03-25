@@ -1,5 +1,5 @@
 //
-//  RecentActivityTVC.swift
+//  ModuleCatalogTVC.swift
 //  JavaTutor
 //
 //  Created by Emily Wasylenko on 2/22/19.
@@ -8,43 +8,35 @@
 
 import UIKit
 
-class RecentActivityTVC: UITableViewController {
+class ModuleListTVC: UITableViewController {
     let repo = DataRepo.instance
     
     var row: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        repo.addObserver(self, forKeyPath: "recentActivities", options: .new, context: nil)
     }
-    
-    deinit {
-        repo.removeObserver(self, forKeyPath: "recentActivities")
-    }
-    
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        tableView.reloadData()
-    }
+
+    // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         row = indexPath.row
         return indexPath
     }
-    
+
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-    
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return repo.recentActivities.count
+        return repo.moduleNames.count
     }
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "moduleCell", for: indexPath) as! ModuleCell
         
-        cell.lblModuleTitle?.text = "\(repo.recentActivities[indexPath.row])"
+        cell.lblModuleTitle?.text = "Module \(indexPath.row + 1): \(repo.moduleNames[indexPath.row])"
         cell.lblPercComp?.text = "{#}%"
         
         return cell
@@ -54,6 +46,13 @@ class RecentActivityTVC: UITableViewController {
         
         if let child = segue.destination as? LessonListTVC {
             child.module = row
+            
+            //Update recent activities list
+            if let index = repo.recentActivities.firstIndex(of: repo.moduleNames[row]){
+                repo.recentActivities.remove(at: index)
+            }
+            repo.recentActivities.insert(repo.moduleNames[row], at: 0)
         }
     }
+
 }

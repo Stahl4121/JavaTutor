@@ -1,14 +1,13 @@
 //
-//  ModuleCatalogTVC.swift
-//  JavaTutor
+//  LessonListTVC.swift
+//  
 //
-//  Created by Emily Wasylenko on 2/22/19.
-//  Copyright © 2019 Logan Stahl. All rights reserved.
+//  Created by Logan Stahl on 3/19/19.
 //
 
 import UIKit
 
-class ModuleCatalogTVC: UITableViewController {
+class LessonListTVC: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -1,0 +1,13 @@
+{
+    "moduleNames":["Mod1Name","Mod2Name"],
+    "lessonNames":[
+        {
+            "module":1,
+            "names":["Mod1Lesson1Name","Mod1Lesson2Name"]
+        },
+        {
+            "module":2,
+            "names":["Mod2Lesson1Name","Mod2Lesson2Name"]
+        }
+    ]
+}
