@@ -35,6 +35,7 @@
 		8489D0DB2237FAC500435F34 /* activity.png in Resources */ = {isa = PBXBuildFile; fileRef = 8489D0D82237FAC400435F34 /* activity.png */; };
 		8489D0DC2237FAC500435F34 /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 8489D0D92237FAC500435F34 /* profile.png */; };
 		84CB7036224846A300CEE082 /* questions.json in Sources */ = {isa = PBXBuildFile; fileRef = 84CB7035224846A300CEE082 /* questions.json */; };
+		84CB7037224851B800CEE082 /* questions.json in Resources */ = {isa = PBXBuildFile; fileRef = 84CB7035224846A300CEE082 /* questions.json */; };
 		9705A21531ABDBE279D27556 /* Pods_JavaTutor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6C7C90BF01055004AEF21BE /* Pods_JavaTutor.framework */; };
 		C92BF4F110414500440261F8 /* Pods_JavaTutorUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ABCAF315590C89E756CDEC8 /* Pods_JavaTutorUITests.framework */; };
 /* End PBXBuildFile section */
@@ -329,6 +330,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84CB7037224851B800CEE082 /* questions.json in Resources */,
 				840B69C6222054F10032B683 /* LaunchScreen.storyboard in Resources */,
 				1D16A5572221FF3900FC3248 /* GoogleService-Info.plist in Resources */,
 				8489D0DA2237FAC500435F34 /* study.png in Resources */,
