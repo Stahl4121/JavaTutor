@@ -346,7 +346,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o5M-R9-dvb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="256.640625" y="685.9375"/>
+            <point key="canvasLocation" x="-381" y="720"/>
         </scene>
         <!--Statistics-->
         <scene sceneID="78D-DG-w53">
@@ -697,7 +697,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
-                            <color key="backgroundColor" red="0.49019607840000001" green="0.60784313729999995" blue="0.64705882349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" red="0.49019607843137253" green="0.47058823529411764" blue="0.64705882349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstItem="1Pm-cF-acG" firstAttribute="top" secondItem="OI3-tM-OVe" secondAttribute="top" constant="40" id="03r-GR-Sgx"/>
                                 <constraint firstItem="GYt-VX-agn" firstAttribute="leading" secondItem="1Pm-cF-acG" secondAttribute="leading" id="CWU-kT-1xL"/>
@@ -753,7 +753,7 @@
                                             </userDefinedRuntimeAttributes>
                                         </view>
                                     </subviews>
-                                    <color key="backgroundColor" red="0.84313725490000002" green="0.96078431369999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" red="0.84313725490000002" green="0.84313725490196079" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstItem="poI-ei-wOa" firstAttribute="centerY" secondItem="ENl-g8-fq7" secondAttribute="centerY" id="HU0-cq-wc4"/>
                                         <constraint firstItem="poI-ei-wOa" firstAttribute="centerX" secondItem="ENl-g8-fq7" secondAttribute="centerX" id="ZC3-0F-RR5"/>
@@ -774,11 +774,11 @@
                                             <rect key="frame" x="47" y="21" width="930" height="120"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quiz" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fYb-6f-cZe">
-                                                    <rect key="frame" x="20" y="35" width="87" height="50"/>
+                                                    <rect key="frame" x="20" y="35" width="108.5" height="50"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="50" id="VMs-Du-rrZ"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="40"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-HeavyOblique" family="Avenir" pointSize="50"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&gt;" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L1K-Jf-3JD">
@@ -808,7 +808,7 @@
                                             </userDefinedRuntimeAttributes>
                                         </view>
                                     </subviews>
-                                    <color key="backgroundColor" red="0.84313725490000002" green="0.96078431369999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" red="0.84313725490000002" green="0.78431372549019607" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstItem="GpJ-Yb-jX1" firstAttribute="centerX" secondItem="XoS-Uk-bW1" secondAttribute="centerX" id="1gp-8C-L17"/>
                                         <constraint firstItem="GpJ-Yb-jX1" firstAttribute="centerY" secondItem="XoS-Uk-bW1" secondAttribute="centerY" id="mT3-vQ-lYl"/>
@@ -828,7 +828,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SjG-lJ-yGp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="257" y="1419"/>
+            <point key="canvasLocation" x="257" y="720"/>
         </scene>
         <!--Quiz-->
         <scene sceneID="3rX-s4-3xa">
@@ -866,7 +866,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
-                            <color key="backgroundColor" red="0.49019607840000001" green="0.60784313729999995" blue="0.64705882349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" red="0.49019607843137253" green="0.60784313725490191" blue="0.52941176470588236" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstItem="6Z1-OL-pDU" firstAttribute="leading" secondItem="9oL-8z-Qcg" secondAttribute="leading" id="5GI-wh-cwq"/>
                                 <constraint firstItem="9oL-8z-Qcg" firstAttribute="leading" secondItem="C3T-IR-F22" secondAttribute="leading" constant="25" id="D8N-tQ-8ee"/>
@@ -903,7 +903,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <color key="backgroundColor" red="0.84313725490000002" green="0.96078431369999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" red="0.84313725490000002" green="0.96078431369999995" blue="0.88235294117647056" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="JrW-LK-s94" secondAttribute="trailing" constant="20" id="Vwm-52-yXb"/>
                                         <constraint firstItem="JrW-LK-s94" firstAttribute="centerY" secondItem="R6p-EV-u1N" secondAttribute="centerY" id="mh8-vL-U1l"/>
@@ -931,7 +931,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w3f-PL-DCX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="224" y="2177"/>
+            <point key="canvasLocation" x="-381" y="1468"/>
         </scene>
         <!--Study Screen-->
         <scene sceneID="a2j-oB-EQQ">
@@ -1024,7 +1024,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GM4-9W-Ukg" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="2PH-D4-a05" userLabel="Tap Module Catalog"/>
             </objects>
-            <point key="canvasLocation" x="942" y="2177"/>
+            <point key="canvasLocation" x="257" y="1468"/>
         </scene>
     </scenes>
     <resources>
