@@ -36,6 +36,8 @@
 		8489D0DC2237FAC500435F34 /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 8489D0D92237FAC500435F34 /* profile.png */; };
 		9705A21531ABDBE279D27556 /* Pods_JavaTutor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6C7C90BF01055004AEF21BE /* Pods_JavaTutor.framework */; };
 		B2E79CA5224830F10077EC9D /* LessonWeb.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E79CA4224830F10077EC9D /* LessonWeb.swift */; };
+		B2E79CA72248440D0077EC9D /* TextScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E79CA62248440D0077EC9D /* TextScreen.swift */; };
+		B2E79CAB2248663A0077EC9D /* Sprint 1 HTML in Resources */ = {isa = PBXBuildFile; fileRef = B2E79CAA224866390077EC9D /* Sprint 1 HTML */; };
 		C92BF4F110414500440261F8 /* Pods_JavaTutorUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ABCAF315590C89E756CDEC8 /* Pods_JavaTutorUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -95,6 +97,8 @@
 		950608B2E6DE8B93883519C4 /* Pods-JavaTutorUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JavaTutorUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JavaTutorUITests/Pods-JavaTutorUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A6C7C90BF01055004AEF21BE /* Pods_JavaTutor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JavaTutor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2E79CA4224830F10077EC9D /* LessonWeb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonWeb.swift; sourceTree = "<group>"; };
+		B2E79CA62248440D0077EC9D /* TextScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextScreen.swift; sourceTree = "<group>"; };
+		B2E79CAA224866390077EC9D /* Sprint 1 HTML */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "Sprint 1 HTML"; path = "../../../../../Desktop/Sprint 1 HTML"; sourceTree = "<group>"; };
 		C08DD5EE46EE0A4864299E43 /* Pods-JavaTutor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JavaTutor.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JavaTutor/Pods-JavaTutor.debug.xcconfig"; sourceTree = "<group>"; };
 		D0CD5ADCEE0925B58EFED663 /* Pods-JavaTutorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JavaTutorTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JavaTutorTests/Pods-JavaTutorTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -175,11 +179,13 @@
 				840DBD9D2241D281000145B6 /* LessonListTVC.swift */,
 				840DBD9F2241D589000145B6 /* LessonListCell.swift */,
 				B2E79CA4224830F10077EC9D /* LessonWeb.swift */,
+				B2E79CA62248440D0077EC9D /* TextScreen.swift */,
 				8401944F2246F909005B9EAE /* QuestionTVC.swift */,
 				840194512246F9AD005B9EAE /* AnswerCell.swift */,
 				8401945322470736005B9EAE /* QuizResultsVC.swift */,
 				840B69C2222054F10032B683 /* Assets.xcassets */,
 				8401944D2246F614005B9EAE /* Question.swift */,
+				B2E79CAA224866390077EC9D /* Sprint 1 HTML */,
 				840179E32240995A0006EB11 /* DataRepo.swift */,
 				8489D0D72237FAC400435F34 /* study.png */,
 				8489D0D92237FAC500435F34 /* profile.png */,
@@ -332,6 +338,7 @@
 				840B69C6222054F10032B683 /* LaunchScreen.storyboard in Resources */,
 				1D16A5572221FF3900FC3248 /* GoogleService-Info.plist in Resources */,
 				8489D0DA2237FAC500435F34 /* study.png in Resources */,
+				B2E79CAB2248663A0077EC9D /* Sprint 1 HTML in Resources */,
 				840B69C3222054F10032B683 /* Assets.xcassets in Resources */,
 				8489D0DB2237FAC500435F34 /* activity.png in Resources */,
 				840B69C1222054EE0032B683 /* Main.storyboard in Resources */,
@@ -441,6 +448,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2E79CA72248440D0077EC9D /* TextScreen.swift in Sources */,
 				840194522246F9AD005B9EAE /* AnswerCell.swift in Sources */,
 				8401944E2246F614005B9EAE /* Question.swift in Sources */,
 				8401945422470736005B9EAE /* QuizResultsVC.swift in Sources */,

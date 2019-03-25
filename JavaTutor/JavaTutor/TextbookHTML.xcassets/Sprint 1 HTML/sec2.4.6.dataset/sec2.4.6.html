@@ -1,0 +1,125 @@
+
+<!-- saved from url=(0041)http://math.hws.edu/javanotes8/c2/s4.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Javanotes 8.0, Section 2.4 -- Text Input and Output</title>
+<link type="text/css" rel="stylesheet" href="./sec2.4.6_files/javanotes.css">
+</head>
+<body>
+<div class="page">
+
+<hr class="break">
+<h3 class="subsection_title">
+<a name="basics.4.6">2.4.6&nbsp;&nbsp;Using Scanner for Input</a>
+</h3>
+
+
+<p>
+<span class="classname">TextIO</span> makes it easy to get input from the user.
+However, since it is not a standard class, you have to remember to make
+<span class="code">TextIO.java</span> available to any program that uses it.  Another option for input
+is the <span class="classname">Scanner</span> class.
+One advantage of using <span class="classname">Scanner</span> is that it's
+a standard part of Java and so is always there when you want it.</p>
+
+
+<p>It's not that hard to use a <span class="classname">Scanner</span> for user input, and it has
+some nice features, but using it requires some
+syntax that will not be introduced until Chapter&nbsp;4</a> and 
+Chapter&nbsp;5</a>.  I'll tell you how to do it here, without explaining why
+it works.  You won't understand all the syntax at this point.
+(<span class="classname">Scanners</span> will be covered in more detail in Subsection&nbsp;11.1.5</a>.)</p>
+
+
+<p>First, since <span class="classname">Scanner</span> is defined in the package <span class="classname">java.util</span>,
+you should add the following
+import directive to your program at the beginning of the source code file, before the "public class...":</p>
+
+
+<pre>import java.util.Scanner;</pre>
+
+
+<p>Then include the following statement at the beginning of your <span class="code">main()</span> routine:</p>
+
+
+<pre>Scanner stdin = new Scanner( System.in );</pre>
+
+
+<p>This creates a variable named <span class="code">stdin</span> of type <span class="classname">Scanner</span>.
+(You can use a different name for the variable if you want; "stdin" stands for "standard input.")
+You can then use <span class="code">stdin</span> in your program to access a variety of subroutines for
+reading user input.  For example, the function <span class="code">stdin.nextInt()</span> reads one value of type
+<span class="ptype">int</span> from the user and returns it.  It is almost the same as <span class="code">TextIO.getInt()</span>
+except for two things:  If the value entered by the user is not a legal <span class="ptype">int</span>, then
+<span class="code">stdin.nextInt()</span> will crash rather than prompt the user to re-enter the value.
+And the integer entered by the user must be followed by a blank space or by an end-of-line,
+whereas <span class="code">TextIO.getInt()</span> will stop reading at any character that is not a digit.
+</p>
+
+
+<p>There are corresponding methods for reading other types of data, including
+<span class="code">stdin.nextDouble()</span>, <span class="code">stdin.nextLong()</span>, and <span class="code">stdin.nextBoolean()</span>.
+(<span class="code">stdin.nextBoolean()</span> will only accept "true" or "false" as input.)  These subroutines
+can read more than one value from a line, so they are more similar to the "get" versions of
+<span class="classname">TextIO</span> subroutines rather than the "getln" versions.  The method
+<span class="code">stdin.nextLine()</span> is equivalent to <span class="code">TextIO.getln()</span>, and
+<span class="code">stdin.next()</span>, like <span class="code">TextIO.getWord()</span>, returns a string of 
+non-blank characters.</p>
+
+
+<p>As a simple example, here is a sample program that uses <span class="classname">Scanner</span> instead of <span class="classname">TextIO</span> for user
+input:
+</p>
+
+
+<pre><span class="newcode">import java.util.Scanner;</span>
+
+public class Interest2WithScanner {
+   
+   public static void main(String[] args) {
+      
+      <span class="newcode">Scanner stdin = new Scanner( System.in );</span>  // Create the Scanner.
+      
+      double principal;  // The value of the investment.
+      double rate;       // The annual interest rate.
+      double interest;   // The interest earned during the year.
+      
+      System.out.print("Enter the initial investment: ");
+      <span class="newcode">principal = stdin.nextDouble();</span>
+      
+      System.out.print("Enter the annual interest rate (as a decimal): ");
+      <span class="newcode">rate = stdin.nextDouble();</span>
+      
+      interest = principal * rate;       // Compute this year's interest.
+      principal = principal + interest;  // Add it to principal.
+      
+      System.out.printf("The amount of interest is $%1.2f%n", interest);
+      System.out.printf("The value after one year is $%1.2f%n", principal);
+      
+   } // end of main()
+   
+} // end of class Interest2WithScanner</pre>
+
+
+<p>Note the inclusion of the two lines given above to import <span class="code">Scanner</span> and
+create <span class="code">stdin</span>.  Also note the substitution of
+<span class="code">stdin.nextDouble()</span> for <span class="code">TextIO.getlnDouble()</span>.  (In fact,
+<span class="code">stdin.nextDouble()</span> is really equivalent to <span class="code">TextIO.getDouble()</span>
+rather than to the "getln" version, but this will not affect the behavior of the
+program as long as the user types just one number on each line of input.)</p>
+
+
+<p>I will continue to use <span class="classname">TextIO</span> for input for the time
+being, but I will give a few more examples of using <span class="classname">Scanner</span>
+in the on-line solutions to the end-of-chapter exercises.  There will be more
+detailed coverage of <span class="classname">Scanner</span> later.</p>
+
+
+
+
+</div>
+<hr>
+</div>
+
+
+<div id="UMS_TOOLTIP" style="position: absolute; cursor: pointer; z-index: 2147483647; background: transparent; top: -100000px; left: -100000px;"></div></body><umsdataelement id="UMSSendDataEventElement"></umsdataelement><div id="TAG_ID4TOOLBAR_UMS_GUID" style="display: none;">FCF325EE-82C8-EF65-75C1-665E5D0F2122</div><div id="tmtoolbar_ums_injected" style="display: none;">init_ums</div></html>

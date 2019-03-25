@@ -1,0 +1,282 @@
+
+<!-- saved from url=(0041)http://math.hws.edu/javanotes8/c2/s4.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Javanotes 8.0, Section 2.4 -- Text Input and Output</title>
+<link type="text/css" rel="stylesheet" href="./sec2.4.3_files/javanotes.css">
+</head>
+<body>
+<div class="page">
+
+<hr class="break">
+<h3 class="subsection_title">
+<a name="basics.4.2">2.4.2&nbsp;&nbsp;A First Text Input Example</a>
+</h3>
+
+
+<p>For some unfathomable reason, Java 
+has traditionally made it difficult to read data typed in by the user of a program.
+You've already seen that output can be displayed to the user using the
+subroutine <span class="code">System.out.print</span>. This subroutine is part of a predefined
+object called <span class="code">System.out</span>. The purpose of this object is precisely to
+display output to the user.  There is a corresponding object called
+<span class="code">System.in</span> that exists to read data input by the user, but it provides
+only very primitive input facilities, and it requires some advanced Java
+programming skills to use it effectively.</p>
+
+
+<p>Java 5.0 finally made input a little easier with a
+new <span class="classname">Scanner</span> class. However, it requires some knowledge of
+object-oriented programming to use this class, so it's not ideal for use
+here at the beginning of this course.  Java&nbsp;6 introduced the <span class="classname">Console</span>
+class for communicating with the user, but <span class="classname">Console</span>
+has its own problems. (It is not always available, and it can only read
+strings, not numbers.)  Furthermore, in my opinion,
+<span class="classname">Scanner</span> and <span class="classname">Console</span> still don't get things quite right.
+Nevertheless, I will introduce <span class="classname">Scanner</span> briefly at the end of this
+section, in case you want to start using it now.  However, we start with my own version
+of text input.</p>
+
+
+<p>Fortunately, it is possible to <b>extend</b> Java by
+creating new classes that provide subroutines that are not available in the
+standard part of the language. As soon as a new class is
+available, the subroutines that it contains can be used in exactly the same way
+as built-in routines.  Along these lines, I've written a class named <span class="classname">TextIO</span> that defines
+subroutines for reading values typed by the user. The subroutines in this class
+make it possible to get input from the standard input object,
+<span class="code">System.in</span>, without knowing about the advanced aspects of Java that are
+needed to use <span class="classname">Scanner</span>
+or to use <span class="code">System.in</span> directly.</p>
+
+
+<p>
+<span class="classname">TextIO</span> is defined in a "package" named <span class="classname">textio</span>.
+This means that when you look for the file <span class="code">TextIO.java</span>, you will find it inside
+a folder named <span class="classname">textio</span>.  Furthermore, it means that a program that uses
+<span class="classname">TextIO</span> must "import" it from the <span class="classname">textio</span> package.
+This is done with the import directive 
+</p>
+
+
+<pre>import textio.TextIO;</pre>
+
+
+<p>This directive must come before the "public class" that begins your program.  Most of
+Java's standard classes are defined in packages and are imported into programs in the same way.</p>
+
+
+<p>To use the <span class="classname">TextIO</span> class, you must make sure that the class is
+available to your program. What this means depends on the Java programming
+environment that you are using.  In general, you just have to
+add the folder <span class="sourceref"><a href="http://math.hws.edu/javanotes8/source/chapter2/textio">textio</a></span> to the same folder that contains
+your main program.  This folder contains the file <span class="sourceref"><a href="http://math.hws.edu/javanotes8/source/chapter2/textio/TextIO.java">TextIO.java</a></span>.
+See <a href="http://math.hws.edu/javanotes8/c2/s6.html">Section&nbsp;2.6</a> for information about how to use <span class="classname">TextIO</span>.</p>
+
+
+<p>The input routines in the <span class="classname">TextIO</span> class are static member functions.
+(Static member functions were introduced in the <a href="http://math.hws.edu/javanotes8/c2/s3.html">previous section</a>.) 
+Let's suppose that you want your program to read an integer typed
+in by the user. The <span class="classname">TextIO</span> class contains a static member function
+named <span class="code">getlnInt</span> that you can use for this purpose. Since this function is
+contained in the <span class="classname">TextIO</span> class, you have to refer to it in your program
+as <span class="code">TextIO.getlnInt</span>. The function has no parameters, so a complete call to the
+function takes the form "<span class="code">TextIO.getlnInt()</span>". This function call
+represents the <span class="ptype">int</span> value typed by the user, and you have to do
+something with the returned value, such as assign it to a variable. For
+example, if <span class="code">userInput</span> is a variable of type <span class="ptype">int</span> (created with
+a declaration statement "<span class="code">int&nbsp;userInput;</span>"), then you could use the
+assignment statement</p>
+
+
+<pre>userInput = TextIO.getlnInt();</pre>
+
+
+<p>When the computer executes this statement, it will wait for the user to type
+in an integer value. The user must type a number and press return before the program can
+continue.  The value that the user typed will then be returned by the function, and it
+will be stored in the variable, <span class="code">userInput</span>. Here is a complete program
+that uses <span class="code">TextIO.getlnInt</span> to read a number typed by the user and then
+prints out the square of that number.  Note the <span class="code">import</span> directive on the
+first line:</p>
+
+
+<pre>import textio.TextIO;
+
+/**
+ * A program that reads an integer that is typed in by the
+ * user and computes and prints the square of that integer.
+ */ 
+public class PrintSquare {
+    
+     public static void main(String[] args) {
+ 
+        int userInput;  // The number input by the user.
+        int square;     // The userInput, multiplied by itself.
+        
+        System.out.print("Please type a number: ");
+        userInput = TextIO.getlnInt();
+        square = userInput * userInput;
+
+        System.out.println();
+        System.out.println("The number that you entered was " + userInput);
+        System.out.println("The square of that number is " + square);
+        System.out.println();
+        
+     } // end of main()
+  
+} //end of class PrintSquare</pre>
+
+
+<p>When you run this program, it
+will display the message "Please type a number:" and will pause until you type
+a response, including a carriage return after the number.  Note that it is
+good style to output a question or some other prompt to the user before reading
+input.  Otherwise, the user will have no way of knowing exactly what the 
+computer is waiting for, or even that it is waiting for the user to do something.
+</p>
+   
+
+   
+   
+
+<hr class="break">
+<h3 class="subsection_title">
+<a name="basics.4.3">2.4.3&nbsp;&nbsp;Basic TextIO Input Functions</a>
+</h3>
+
+
+
+<p>
+<span class="classname">TextIO</span> includes a variety of functions for inputting values
+of various types.  Here are the functions that you are
+most likely to use:</p>
+
+
+<pre>j = TextIO.getlnInt();     // Reads a value of type int.
+y = TextIO.getlnDouble();  // Reads a value of type double.
+a = TextIO.getlnBoolean(); // Reads a value of type boolean.
+c = TextIO.getlnChar();    // Reads a value of type char.
+w = TextIO.getlnWord();    // Reads one "word" as a value of type String.
+s = TextIO.getln();        // Reads an entire input line as a String.</pre>
+
+
+<p>For these statements to be legal, the variables on the left side of each
+assignment statement must already be declared and must be of the same type as 
+that returned by the function on the right side.  Note carefully that
+these functions do not have parameters.  The values that they return come
+from outside the program, typed in by the user as the program is running.
+To "capture" that data so that you can use it in your program, you have
+to assign the return value of the function to a variable.  You will then
+be able to refer to the user's input value by using the name of the variable.</p>
+
+
+<p>When you call one of these functions, you are guaranteed that it will return
+a legal value of the correct type. If the user types in an illegal value as
+input—for example, if you ask for an <span class="ptype">int</span> and the user types in a
+non-numeric character or a
+number that is outside the legal range of values that can be stored
+in a variable of type <span class="ptype">int</span>—then the computer will
+ask the user to re-enter the value, and your program never sees the first,
+illegal value that the user entered.  For <span class="code">TextIO.getlnBoolean()</span>,
+the user is allowed to type in any of the following: true, false, t, f, yes, no, y,
+n, 1, or 0.  Furthermore, they can use either upper or lower case letters.
+In any case, the user's input is interpreted as a true/false value.  It's
+convenient to use <span class="code">TextIO.getlnBoolean()</span> to read the user's
+response to a Yes/No question.</p>
+
+
+<p>You'll notice that there are two input functions that return Strings. The
+first, <span class="code">getlnWord()</span>, returns a string consisting of non-blank characters
+only. When it is called, it skips over any spaces and carriage returns typed in
+by the user. Then it reads non-blank characters until it gets to the next space
+or carriage return. It returns a <span class="classname">String</span> consisting of all the
+non-blank characters that it has read. The second input function,
+<span class="code">getln()</span>, simply returns a string consisting of all the characters
+typed in by the user, including spaces, up to the next carriage return. It gets
+an entire line of input text. The carriage return itself is not returned as
+part of the input string, but it is read and discarded by the computer. Note
+that the String returned by <span class="code">TextIO.getln()</span> might be the <span class="newword">empty string</span>, 
+<span class="code">""</span>, which contains no characters at
+all.  You will get this return value if the user simply presses return, without
+typing anything else first.</p>
+
+
+<p>
+<span class="code">TextIO.getln()</span> does <b>not</b> skip blanks
+or end-of-lines before reading a value.  But the input functions <span class="code">getlnInt()</span>, 
+<span class="code">getlnDouble()</span>, <span class="code">getlnBoolean()</span>, and
+<span class="code">getlnChar()</span> behave like <span class="code">getlnWord()</span> in that they will skip
+past any blanks and carriage returns in the input before reading a value.  When one
+of these functions skips over an end-of-line, it outputs a '?' to let the user know
+that more input is expected.</p>
+
+
+<p>Furthermore, if the user types extra characters on the line after the
+input value, <b>all the extra characters will be discarded, along with
+the carriage return at the end of the line</b>.  If the
+program executes another input function, the user will have to type in
+another line of input, even if they had typed more than one value on the previous line.  
+It might not sound like a good idea to discard any
+of the user's input, but it turns out to be the safest thing to do in most
+programs.</p>
+
+
+<hr class="break">
+
+
+<p>Using <span class="classname">TextIO</span> for input and output, we can now improve the program
+from <a href="http://math.hws.edu/javanotes8/c2/s2.html">Section&nbsp;2.2</a> for computing the value of an investment.
+We can have the user type in the initial value of the investment and the
+interest rate. The result is a much more useful program—for one thing, it
+makes sense to run it more than once!  Note that this program uses formatted
+output to print out monetary values in their correct format.</p>
+
+
+<pre>import textio.TextIO;
+
+/**
+ * This class implements a simple program that will compute
+ * the amount of interest that is earned on an investment over
+ * a period of one year.  The initial amount of the investment
+ * and the interest rate are input by the user.  The value of
+ * the investment at the end of the year is output.  The
+ * rate must be input as a decimal, not a percentage (for
+ * example, 0.05 rather than 5).
+ */
+public class Interest2 {
+
+   public static void main(String[] args) {
+   
+       double principal;  // The value of the investment.
+       double rate;       // The annual interest rate.
+       double interest;   // The interest earned during the year.
+       
+       System.out.print("Enter the initial investment: ");
+       principal = TextIO.getlnDouble();
+       
+       System.out.print("Enter the annual interest rate (as a decimal): ");
+       rate = TextIO.getlnDouble();
+       
+       interest = principal * rate;       // Compute this year's interest.
+       principal = principal + interest;  // Add it to principal.
+       
+       System.out.printf("The amount of interest is $%1.2f%n", interest);
+       System.out.printf("The value after one year is $%1.2f%n", principal);
+       
+   } // end of main()
+      
+} // end of class Interest2</pre>
+
+
+<p>(You might be wondering why there is only one output routine, <span class="code">System.out.println</span>,
+which can output data values of any type, while there is a
+separate input routine for each data type. For the output function, the computer can
+tell what type of value is being output by looking at the parameter.  However, the input
+routines don't have parameters, so the different input routines can only be
+distinguished by having different names.)</p>
+
+</div>
+
+
+<div id="UMS_TOOLTIP" style="position: absolute; cursor: pointer; z-index: 2147483647; background: transparent; top: -100000px; left: -100000px;"></div></body><umsdataelement id="UMSSendDataEventElement"></umsdataelement><div id="TAG_ID4TOOLBAR_UMS_GUID" style="display: none;">FCF325EE-82C8-EF65-75C1-665E5D0F2122</div><div id="tmtoolbar_ums_injected" style="display: none;">init_ums</div></html>

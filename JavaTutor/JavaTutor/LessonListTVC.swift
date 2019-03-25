@@ -55,6 +55,12 @@ class LessonListTVC: UITableViewController {
             child.module = self.module
             child.selectedQuestion = 0
         }
+        
+        if let child = segue.destination as? LessonWeb {
+            child.modName = "Test"
+            child.modNum = self.module + 1
+            child.modRow = self.row + 1
+        }
     }
     
 }

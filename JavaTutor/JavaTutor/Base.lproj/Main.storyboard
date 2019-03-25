@@ -761,6 +761,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="lblLessonTitle" destination="1k3-ih-eoO" id="sSO-FT-5Hv"/>
+                                    <segue destination="3eJ-my-PxL" kind="show" id="8IZ-Tl-M0T"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="quizCell" rowHeight="162" id="0fz-I2-hrN">
@@ -933,17 +934,16 @@
             </objects>
             <point key="canvasLocation" x="224" y="2177"/>
         </scene>
-        <!--View Controller-->
+        <!--Lesson Web-->
         <scene sceneID="2s6-Fd-tDj">
             <objects>
-                <viewController id="3eJ-my-PxL" sceneMemberID="viewController">
+                <viewController id="3eJ-my-PxL" customClass="LessonWeb" customModule="JavaTutor" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ncd-Sq-3Aw">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Q9-jt-g6g">
-                                <rect key="frame" x="392" y="320" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Q9-jt-g6g" customClass="TextScreen" customModule="JavaTutor" customModuleProvider="target">
+                                <rect key="frame" x="28" y="93" width="968" height="582"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -952,12 +952,21 @@
                             </wkWebView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="0Q9-jt-g6g" firstAttribute="centerY" secondItem="Ncd-Sq-3Aw" secondAttribute="centerY" id="3wg-tK-GHp"/>
+                            <constraint firstItem="0Q9-jt-g6g" firstAttribute="top" secondItem="Mjb-LB-95R" secondAttribute="top" constant="23" id="Szx-hn-4ct"/>
+                            <constraint firstItem="0Q9-jt-g6g" firstAttribute="centerX" secondItem="Ncd-Sq-3Aw" secondAttribute="centerX" id="T2N-0A-Zjh"/>
+                            <constraint firstItem="0Q9-jt-g6g" firstAttribute="leading" secondItem="Mjb-LB-95R" secondAttribute="leading" constant="28" id="kgg-WD-DU5"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Mjb-LB-95R"/>
                     </view>
+                    <connections>
+                        <outlet property="webV" destination="0Q9-jt-g6g" id="MuA-9h-ado"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ETh-7h-4nm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1000" y="1419"/>
+            <point key="canvasLocation" x="999.60937499999989" y="1418.75"/>
         </scene>
         <!--Study Screen-->
         <scene sceneID="a2j-oB-EQQ">

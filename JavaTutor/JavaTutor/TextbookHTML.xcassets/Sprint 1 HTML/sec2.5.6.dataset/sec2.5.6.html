@@ -1,0 +1,169 @@
+
+<!-- saved from url=(0041)http://math.hws.edu/javanotes8/c2/s5.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Javanotes 8.0, Section 2.5 -- Details of Expressions</title>
+<link type="text/css" rel="stylesheet" href="./sec2.5.6_files/javanotes.css">
+</head>
+<body>
+<div class="page">
+
+<hr class="break">
+<h3 class="subsection_title">
+<a name="basics.5.6">2.5.6&nbsp;&nbsp;Assignment Operators and Type Conversion</a>
+</h3>
+
+
+<p>You are already familiar with the assignment statement, which uses the
+symbol "=" to assign the value of an expression to a variable. In fact, = is
+really an operator in the sense that an assignment can itself be used as an
+expression or as part of a more complex expression. The value of an assignment
+such as <span class="code">A=B</span> is the same as the value that is assigned to <span class="code">A</span>.
+So, if you want to assign the value of <span class="code">B</span> to <span class="code">A</span> and test at the
+same time whether that value is zero, you could say:</p>
+
+
+<pre>if ( (A=B) == 0 )...</pre>
+
+
+<p>Usually, I would say, <b>don't do things like that</b>!</p>
+
+
+<p>In general, the type of the expression on the right-hand side of an
+assignment statement must be the same as the type of the variable on the
+left-hand side. However, in some cases, the computer will automatically convert
+the value computed by the expression to match the type of the variable.
+Consider the list of numeric types: <span class="ptype">byte</span>, <span class="ptype">short</span>,
+<span class="ptype">int</span>, <span class="ptype">long</span>, <span class="ptype">float</span>, <span class="ptype">double</span>. A value of a type
+that occurs earlier in this list can be converted automatically to a value that
+occurs later. For example:</p>
+
+
+<pre>int A;
+double X;
+short B;
+A = 17;
+X = A;    // OK; A is converted to a double
+B = A;    // illegal; no automatic conversion
+          //       from int to short</pre>
+
+
+<p>The idea is that conversion should only be done automatically when it can be
+done without changing the semantics of the value. Any <span class="ptype">int</span> can be
+converted to a <span class="ptype">double</span> with the same numeric value. However, there are
+<span class="ptype">int</span> values that lie outside the legal range of <span class="ptype">shorts</span>. There
+is simply no way to represent the <span class="ptype">int</span> 100000 as a <span class="ptype">short</span>, for
+example, since the largest value of type <span class="ptype">short</span> is 32767.</p>
+
+
+<p>In some cases, you might want to force a conversion that wouldn't be done
+automatically. For this, you can use what is called a <span class="newword">type cast</span>. 
+A type cast is indicated by putting a type name, in
+parentheses, in front of the value you want to convert. For example,</p>
+
+
+<pre>int A;
+short B;
+A = 17;
+B = (short)A;  // OK; A is explicitly type cast
+               //      to a value of type short</pre>
+
+
+<p>You can do type casts from any numeric type to any other numeric type.
+However, you should note that you might change the numeric value of a number by
+type-casting it. For example, <span class="code">(short)100000</span> is -31072. (The -31072 is
+obtained by taking the 4-byte <span class="ptype">int</span> 100000 and throwing away two of
+those bytes to obtain a <span class="ptype">short</span>—you've lost the real information that
+was in those two bytes.)</p>
+
+
+<p>When you type-cast a real number to an integer, the fractional part is
+discarded.  For example, <span class="code">(int)7.9453</span> is <span class="code">7</span>.
+As another example of type casts, consider the problem of getting a random
+integer between 1 and 6. The function <span class="code">Math.random()</span> gives a real
+number between 0.0 and 0.9999..., and so <span class="code">6*Math.random()</span> is between
+0.0 and 5.999.... The type-cast operator, <span class="code">(int)</span>, can be used to
+convert this to an integer: <span class="code">(int)(6*Math.random())</span>. Thus,
+<span class="code">(int)(6*Math.random())</span> is one of the integers 0, 1, 2, 3, 4, and 5. To
+get a number between 1 and 6, we can add 1: "<span class="code">(int)(6*Math.random())&nbsp;+&nbsp;1</span>".
+(The parentheses around <span class="code">6*Math.random()</span> are necessary because of precedence
+rules; without the parentheses, the type cast operator would apply only to the <span class="code">6</span>.)</p>
+
+
+<p>The type <span class="ptype">char</span> is almost an integer type.  You can assign <span class="ptype">char</span>
+values to <span class="ptype">int</span> variables, and you can assign integer constants in the
+range 0 to 65535 to <span class="ptype">char</span> variables.  You can also use explicit type-casts between 
+<span class="ptype">char</span> and the numeric types.  For example, <span class="code">(char)97</span> is <span class="code">'a'</span>, 
+<span class="code">(int)'+'</span> is <span class="code">43</span>, and (char)('A'&nbsp;+&nbsp;2) is&nbsp;'C'.</p>
+
+
+<hr class="break">
+
+
+<p>Type conversion between <span class="classname">String</span> and other types cannot be done
+with type-casts.  One way to convert a value of any type into a string is to concatenate
+it with an empty string.  For example, <span class="code">""&nbsp;+&nbsp;42</span> is the string <span class="code">"42"</span>.
+But a better way is to use the function <span class="code">String.valueOf(x)</span>, a static member function
+in the <span class="classname">String</span> class.  <span class="code">String.valueOf(x)</span> returns the value of
+<span class="code">x</span>, converted into a string.  For example, <span class="code">String.valueOf(42)</span> is
+the string <span class="code">"42"</span>, and if <span class="code">ch</span> is a <span class="ptype">char</span> variable, then
+<span class="code">String.valueOf(ch)</span> is a string of length one containing the single character that
+is the value of <span class="code">ch</span>.</p>
+
+
+<p>It is also possible to convert certain strings into values of other types.  For example,
+the string <span class="code">"10"</span> should be convertible into the
+<span class="ptype">int</span> value 10, and  the string <span class="code">"17.42e-2"</span> into
+the <span class="ptype">double</span> value 0.1742.  In Java, these conversions
+are handled by built-in functions.</p>
+   
+
+<p>The standard class <span class="classname">Integer</span> contains
+a static member function for converting from <span class="classname">String</span> 
+to <span class="ptype">int</span>. In particular, if <span class="code">str</span> is any expression of type <span class="classname">String</span>,
+then  <span class="code">Integer.parseInt(str)</span> is a function call that attempts to convert the
+value of <span class="code">str</span> into a value of type <span class="ptype">int</span>.  For example,
+the value of <span class="code">Integer.parseInt("10")</span> is the <span class="ptype">int</span> value 10.
+If the parameter to <span class="code">Integer.parseInt</span> does not represent a legal <span class="ptype">int</span>
+value, then an error occurs.
+</p>
+   
+
+<p>Similarly, the standard class <span class="classname">Double</span> includes
+a function <span class="code">Double.parseDouble</span>.  If <span class="code">str</span> is a <span class="classname">String</span>,
+then the function call <span class="code">Double.parseDouble(str)</span> tries to convert <span class="code">str</span>
+into a value of type <span class="ptype">double</span>.  An error occurs if <span class="code">str</span> does not
+represent a legal <span class="ptype">double</span> value.</p>
+
+
+<hr class="break">
+
+
+<p>Getting back to assignment statements, 
+Java has several variations on the assignment operator, which exist to save
+typing. For example, "<span class="code">A&nbsp;+=&nbsp;B</span>" is defined 
+to be the same as "<span class="code">A&nbsp;=&nbsp;A&nbsp;+&nbsp;B</span>". 
+Every operator in Java that applies to two operands, except for the relational operators, gives rise to a
+similar assignment operator. For example:</p>
+
+
+<pre>x -= y;     // same as:   x = x - y;
+x *= y;     // same as:   x = x * y;
+x /= y;     // same as:   x = x / y;
+x %= y;     // same as:   x = x % y;
+q &amp;&amp;= p;    // same as:   q = q &amp;&amp; p;  (for booleans q and p)</pre>
+
+
+<p>The combined assignment operator <span class="code">+=</span> even works with strings. Recall that when the <span class="code">+</span>
+operator is used with a string as one of the operands, it represents
+concatenation. Since <span class="code">str += x</span> is equivalent to <span class="code">str&nbsp;=&nbsp;str&nbsp;+&nbsp;x</span>,
+when <span class="code">+=</span> is used with a string on the left-hand side, it appends the
+value on the right-hand side onto the string. For example, if <span class="code">str</span> has
+the value "tire", then the statement <span class="code">str&nbsp;+=&nbsp;'d';</span> changes the value of
+<span class="code">str</span> to "tired".</p>
+
+
+</div>
+
+
+<div id="UMS_TOOLTIP" style="position: absolute; cursor: pointer; z-index: 2147483647; background: transparent; top: -100000px; left: -100000px;"></div></body><umsdataelement id="UMSSendDataEventElement"></umsdataelement><div id="TAG_ID4TOOLBAR_UMS_GUID" style="display: none;">F9FF9282-533A-5A64-9276-66EC81B15D07</div><div id="tmtoolbar_ums_injected" style="display: none;">init_ums</div></html>
