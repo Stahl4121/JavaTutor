@@ -20,9 +20,6 @@ class LessonWeb: UIViewController, WKUIDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("\(modNum)")
-        print("\(modLesson)")
-        print("\(modName)")
         
         webTitle.title = modName
         
