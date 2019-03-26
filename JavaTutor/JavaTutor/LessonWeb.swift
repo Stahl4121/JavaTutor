@@ -24,7 +24,7 @@ class LessonWeb: UIViewController, WKUIDelegate {
         webTitle.title = modName
         
         //HTML Loading
-        if let url = Bundle.main.url(forResource: "\(modNum).\(modLesson)", withExtension: ".html", subdirectory: "Sprint1HTML") {
+        if let url = Bundle.main.url(forResource: "\(modNum).\(modLesson)", withExtension: ".html") {
             webV.loadFileURL(url, allowingReadAccessTo: url.deletingLastPathComponent())
         }
         

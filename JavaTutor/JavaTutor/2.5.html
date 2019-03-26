@@ -1,0 +1,192 @@
+
+<!-- saved from url=(0041)http://math.hws.edu/javanotes8/c2/s3.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Javanotes 8.0, Section 2.3 -- Strings, Classes, Objects, and Subroutines</title>
+<link type="text/css" rel="stylesheet" href="./sec2.3.3_files/javanotes.css">
+</head>
+<body>
+<div class="page">
+
+
+<hr class="break">
+<h3 class="subsection_title">
+<a name="basics.3.3">2.3.3&nbsp;&nbsp;Operations on Strings</a>
+</h3>
+
+
+<p>
+<span class="classname">String</span> is a class, and a value of type <span class="classname">String</span> is an object. 
+That object contains data, namely the sequence of characters that make up the string. It also contains
+subroutines. All of these subroutines are in fact functions. For example, every string object contains
+a function named <span class="code">length</span>  that computes the number of characters in that string. Suppose
+that <span class="code">advice</span> is a variable that refers to a <span class="classname">String</span>. For example,
+<span class="code">advice</span> might have been declared and assigned a value as follows:</p>
+
+
+<pre>String advice;
+advice = "Seize the day!";</pre>
+
+
+<p>Then <span class="code">advice.length()</span> is a function call that returns the number of
+characters in the string "Seize the day!".  In this case, the return value would be 14.
+In general, for any variable <span class="code">str</span> of type  <span class="classname">String</span>, 
+the value of <span class="code">str.length()</span> is an
+<span class="ptype">int</span> equal to the number of characters in the string.
+Note that this function has no parameter; the particular string whose length
+is being computed is the value of <span class="code">str</span>.  The <span class="code">length</span> subroutine is defined by
+the class <span class="classname">String</span>, and it can be used with any value of type
+<span class="classname">String</span>. It can even be used with <span class="classname">String</span> literals, which are,
+after all, just constant values of type <span class="classname">String</span>. For example, you could
+have a program count the characters in "Hello World" for you by saying</p>
+
+
+<pre>System.out.print("The number of characters in ");
+System.out.print("the string \"Hello World\" is ");
+System.out.println( "Hello World".length() );</pre>
+
+
+<p>The <span class="classname">String</span> class defines a lot of functions. Here are some that you
+might find useful. Assume that <span class="code">s1</span> and <span class="code">s2</span> are variables of
+type <span class="classname">String</span>:</p>
+
+
+<ul>
+
+<li>
+<span class="code">s1.equals(s2)</span> is a function that returns a <span class="ptype">boolean</span> value.
+It returns <span class="code">true</span> if <span class="code">s1</span> consists of exactly the same sequence
+of characters as <span class="code">s2</span>, and returns <span class="code">false</span> otherwise.</li>
+
+
+<li>
+<span class="code">s1.equalsIgnoreCase(s2)</span> is another boolean-valued function that
+checks whether <span class="code">s1</span> is the same string as <span class="code">s2</span>, but this function
+considers upper and lower case letters to be equivalent. Thus, if <span class="code">s1</span>
+is "cat", then <span class="code">s1.equals("Cat")</span> is <span class="code">false</span>, while
+<span class="code">s1.equalsIgnoreCase("Cat")</span> is <span class="code">true</span>.</li>
+
+
+<li>
+<span class="code">s1.length()</span>, as mentioned above, is an integer-valued function
+that gives the number of characters in <span class="code">s1</span>.</li>
+
+
+<li>
+<span class="code">s1.charAt(N)</span>, where <span class="code">N</span> is an integer, returns a value of
+type <span class="ptype">char</span>. It returns the Nth character in the string.
+Positions are numbered starting with 0, so <span class="code">s1.charAt(0)</span> is actually
+the first character, <span class="code">s1.charAt(1)</span> is the second, and so on. The final
+position is <span class="code">s1.length()&nbsp;-&nbsp;1</span>. For example, the value of
+<span class="code">"cat".charAt(1)</span> is 'a'. An error occurs if the value of the parameter
+is less than zero or is greater than or equal to <span class="code">s1.length()</span>.</li>
+
+
+<li>
+<span class="code">s1.substring(N,M)</span>, where <span class="code">N</span> and <span class="code">M</span> are integers,
+returns a value of type <span class="classname">String</span>. The returned value consists of the
+characters of <span class="code">s1</span> in positions <span class="code">N</span>, <span class="code">N+1</span>,...,
+<span class="code">M-1</span>. Note that the character in position <span class="code">M</span> is not included.
+The returned value is called a substring of <span class="code">s1</span>.
+The subroutine <span class="code">s1.substring(N)</span> returns the substring of <span class="code">s1</span>
+consisting of characters starting at position <span class="code">N</span> up until the end of
+the string.</li>
+
+
+<li>
+<span class="code">s1.indexOf(s2)</span> returns an integer. If <span class="code">s2</span> occurs as a
+substring of <span class="code">s1</span>, then the returned value is the starting position of
+that substring. Otherwise, the returned value is -1. You can also use
+<span class="code">s1.indexOf(ch)</span> to search for a <span class="ptype">char</span>, <span class="code">ch</span>, in
+<span class="code">s1</span>. To find the first occurrence of <span class="code">x</span> at or after position
+<span class="code">N</span>, you can use <span class="code">s1.indexOf(x,N)</span>.  To find the last occurance of
+<span class="code">x</span> in <span class="code">s1</span>, use <span class="code">s1.lastIndexOf(x)</span>.</li>
+
+
+<li>
+<span class="code">s1.compareTo(s2)</span> is an integer-valued function that compares the
+two strings. If the strings are equal, the value returned is zero. If
+<span class="code">s1</span> is less than <span class="code">s2</span>, the value returned is a number less than
+zero, and if <span class="code">s1</span> is greater than <span class="code">s2</span>, the value returned is
+some number greater than zero. There is also a function <span class="code">s1.compareToIgnoreCase(s2)</span>.
+(If both of the strings consist entirely of
+lower case letters, or if they consist entirely of upper case letters, 
+then "less than" and "greater than" refer to alphabetical
+order. Otherwise, the ordering is more complicated.)</li>
+
+
+<li>
+<span class="code">s1.toUpperCase()</span> is a <span class="classname">String</span>-valued function that returns
+a new string that is equal to <span class="code">s1</span>, except that any lower case letters
+in <span class="code">s1</span> have been converted to upper case. For example,
+<span class="code">"Cat".toUpperCase()</span> is the string <span class="code">"CAT"</span>. There is also a function
+<span class="code">s1.toLowerCase()</span>.</li>
+
+
+<li>
+<span class="code">s1.trim()</span> is a <span class="classname">String</span>-valued function that returns a new
+string that is equal to <span class="code">s1</span> except that any non-printing characters
+such as spaces and tabs have been trimmed from the beginning and from the end
+of the string. Thus, if <span class="code">s1</span> has the value <span class="code">"fred&nbsp;&nbsp;"</span>, then
+<span class="code">s1.trim()</span> is the string <span class="code">"fred"</span>, with the spaces at the end removed.</li>
+
+</ul>
+
+
+<p>For the functions <span class="code">s1.toUpperCase()</span>, <span class="code">s1.toLowerCase()</span>, and
+<span class="code">s1.trim()</span>, note that the value of <span class="code">s1</span> is <b>not</b> changed. Instead
+a new string is created and returned as the value of the function. The returned
+value could be used, for example, in an assignment statement such as "<span class="code">smallLetters =
+s1.toLowerCase();</span>".  To change the value of <span class="code">s1</span>, you could
+use an assignment "<span class="code">s1 = s1.toLowerCase();</span>".</p>
+
+
+<hr class="break">
+
+
+<p>Here is another extremely useful fact about strings: You can use the plus
+operator, <span class="code">+</span>, to <span class="newword">concatenate</span> two strings. The
+concatenation of two strings is a new string consisting of all the characters
+of the first string followed by all the characters of the second string. For
+example, <span class="code">"Hello" + "World"</span> evaluates to <span class="code">"HelloWorld"</span>. (Gotta watch those
+spaces, of course—if you want a space in the concatenated string, it has to be
+somewhere in the input data, as in <span class="code">"Hello&nbsp;" + "World"</span>.)</p>
+   
+
+<p>Let's suppose that <span class="code">name</span> is a variable of type
+<span class="classname">String</span> and that it already refers to the name of the person using the
+program. Then, the program could greet the user by executing the statement:</p>
+
+
+<pre>System.out.println("Hello, "  +  name  +  ".  Pleased to meet you!");</pre>
+
+
+<p>Even more surprising is that you can actually concatenate values of <b>any</b>
+type onto a <span class="classname">String</span> using the <span class="code">+</span> operator. The value
+is converted to a string, just as it would be if you printed it
+to the standard output, and then that string is concatenated with the other string. For
+example, the expression <span class="code">"Number"&nbsp;+&nbsp;42</span> evaluates to the string <span class="code">"Number42"</span>. And
+the statements</p>
+
+
+<pre>System.out.print("After ");
+System.out.print(years);
+System.out.print(" years, the value is ");
+System.out.print(principal);</pre>
+
+
+<p>can be replaced by the single statement:</p>
+
+
+<pre>System.out.print("After " + years + 
+                    " years, the value is " + principal);</pre>
+
+
+<p>Obviously, this is very convenient. It would have shortened some of the
+examples presented earlier in this chapter.</p>
+
+
+</div>
+
+
+<div id="UMS_TOOLTIP" style="position: absolute; cursor: pointer; z-index: 2147483647; background: transparent; top: -100000px; left: -100000px;"></div></body><umsdataelement id="UMSSendDataEventElement"></umsdataelement><div id="TAG_ID4TOOLBAR_UMS_GUID" style="display: none;">0DA501AF-D548-0E68-9BA9-72F9CC1FE08A</div><div id="tmtoolbar_ums_injected" style="display: none;">init_ums</div></html>

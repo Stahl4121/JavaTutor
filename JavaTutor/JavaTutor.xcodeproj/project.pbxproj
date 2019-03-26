@@ -41,7 +41,24 @@
 		8ED5F5352249762D002A01C1 /* index.js in Resources */ = {isa = PBXBuildFile; fileRef = 8ED5F5342249762C002A01C1 /* index.js */; };
 		8ED5F5372249763C002A01C1 /* QGen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED5F5362249763C002A01C1 /* QGen.swift */; };
 		9705A21531ABDBE279D27556 /* Pods_JavaTutor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6C7C90BF01055004AEF21BE /* Pods_JavaTutor.framework */; };
-		B205E1522249DD5B00393F77 /* Sprint1HTML in Resources */ = {isa = PBXBuildFile; fileRef = B205E1512249DD5B00393F77 /* Sprint1HTML */; };
+		B2441A0C224A61D4003B7E37 /* 2.2.html in Resources */ = {isa = PBXBuildFile; fileRef = B24419FA224A61D0003B7E37 /* 2.2.html */; };
+		B2441A0D224A61D4003B7E37 /* 2.14.html in Resources */ = {isa = PBXBuildFile; fileRef = B24419FB224A61D0003B7E37 /* 2.14.html */; };
+		B2441A0E224A61D4003B7E37 /* 1.2.html in Resources */ = {isa = PBXBuildFile; fileRef = B24419FC224A61D0003B7E37 /* 1.2.html */; };
+		B2441A0F224A61D4003B7E37 /* 2.11.html in Resources */ = {isa = PBXBuildFile; fileRef = B24419FD224A61D0003B7E37 /* 2.11.html */; };
+		B2441A10224A61D4003B7E37 /* 1.1.html in Resources */ = {isa = PBXBuildFile; fileRef = B24419FE224A61D1003B7E37 /* 1.1.html */; };
+		B2441A11224A61D4003B7E37 /* 2.15.html in Resources */ = {isa = PBXBuildFile; fileRef = B24419FF224A61D1003B7E37 /* 2.15.html */; };
+		B2441A12224A61D4003B7E37 /* 2.4.html in Resources */ = {isa = PBXBuildFile; fileRef = B2441A00224A61D1003B7E37 /* 2.4.html */; };
+		B2441A13224A61D4003B7E37 /* 2.13.html in Resources */ = {isa = PBXBuildFile; fileRef = B2441A01224A61D1003B7E37 /* 2.13.html */; };
+		B2441A14224A61D4003B7E37 /* 2.9.html in Resources */ = {isa = PBXBuildFile; fileRef = B2441A02224A61D2003B7E37 /* 2.9.html */; };
+		B2441A15224A61D4003B7E37 /* 2.16.html in Resources */ = {isa = PBXBuildFile; fileRef = B2441A03224A61D2003B7E37 /* 2.16.html */; };
+		B2441A16224A61D4003B7E37 /* 2.10.html in Resources */ = {isa = PBXBuildFile; fileRef = B2441A04224A61D2003B7E37 /* 2.10.html */; };
+		B2441A17224A61D4003B7E37 /* 2.1.html in Resources */ = {isa = PBXBuildFile; fileRef = B2441A05224A61D2003B7E37 /* 2.1.html */; };
+		B2441A18224A61D4003B7E37 /* 2.5.html in Resources */ = {isa = PBXBuildFile; fileRef = B2441A06224A61D3003B7E37 /* 2.5.html */; };
+		B2441A19224A61D4003B7E37 /* 2.6.html in Resources */ = {isa = PBXBuildFile; fileRef = B2441A07224A61D3003B7E37 /* 2.6.html */; };
+		B2441A1A224A61D4003B7E37 /* 2.12.html in Resources */ = {isa = PBXBuildFile; fileRef = B2441A08224A61D3003B7E37 /* 2.12.html */; };
+		B2441A1B224A61D4003B7E37 /* 2.7.html in Resources */ = {isa = PBXBuildFile; fileRef = B2441A09224A61D3003B7E37 /* 2.7.html */; };
+		B2441A1C224A61D4003B7E37 /* 2.8.html in Resources */ = {isa = PBXBuildFile; fileRef = B2441A0A224A61D3003B7E37 /* 2.8.html */; };
+		B2441A1D224A61D4003B7E37 /* 2.3.html in Resources */ = {isa = PBXBuildFile; fileRef = B2441A0B224A61D4003B7E37 /* 2.3.html */; };
 		B2E79CA5224830F10077EC9D /* LessonWeb.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E79CA4224830F10077EC9D /* LessonWeb.swift */; };
 		B2E79CA72248440D0077EC9D /* TextScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E79CA62248440D0077EC9D /* TextScreen.swift */; };
 		C92BF4F110414500440261F8 /* Pods_JavaTutorUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ABCAF315590C89E756CDEC8 /* Pods_JavaTutorUITests.framework */; };
@@ -107,7 +124,24 @@
 		8ED5F5362249763C002A01C1 /* QGen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QGen.swift; sourceTree = "<group>"; };
 		950608B2E6DE8B93883519C4 /* Pods-JavaTutorUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JavaTutorUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JavaTutorUITests/Pods-JavaTutorUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A6C7C90BF01055004AEF21BE /* Pods_JavaTutor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JavaTutor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B205E1512249DD5B00393F77 /* Sprint1HTML */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Sprint1HTML; path = "../../../../../OneDrive/Documents/COMP 350/Sprint 1 HTML/Sprint1HTML"; sourceTree = "<group>"; };
+		B24419FA224A61D0003B7E37 /* 2.2.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = 2.2.html; sourceTree = "<group>"; };
+		B24419FB224A61D0003B7E37 /* 2.14.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = 2.14.html; sourceTree = "<group>"; };
+		B24419FC224A61D0003B7E37 /* 1.2.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = 1.2.html; sourceTree = "<group>"; };
+		B24419FD224A61D0003B7E37 /* 2.11.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = 2.11.html; sourceTree = "<group>"; };
+		B24419FE224A61D1003B7E37 /* 1.1.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = 1.1.html; sourceTree = "<group>"; };
+		B24419FF224A61D1003B7E37 /* 2.15.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = 2.15.html; sourceTree = "<group>"; };
+		B2441A00224A61D1003B7E37 /* 2.4.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = 2.4.html; sourceTree = "<group>"; };
+		B2441A01224A61D1003B7E37 /* 2.13.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = 2.13.html; sourceTree = "<group>"; };
+		B2441A02224A61D2003B7E37 /* 2.9.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = 2.9.html; sourceTree = "<group>"; };
+		B2441A03224A61D2003B7E37 /* 2.16.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = 2.16.html; sourceTree = "<group>"; };
+		B2441A04224A61D2003B7E37 /* 2.10.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = 2.10.html; sourceTree = "<group>"; };
+		B2441A05224A61D2003B7E37 /* 2.1.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = 2.1.html; sourceTree = "<group>"; };
+		B2441A06224A61D3003B7E37 /* 2.5.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = 2.5.html; sourceTree = "<group>"; };
+		B2441A07224A61D3003B7E37 /* 2.6.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = 2.6.html; sourceTree = "<group>"; };
+		B2441A08224A61D3003B7E37 /* 2.12.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = 2.12.html; sourceTree = "<group>"; };
+		B2441A09224A61D3003B7E37 /* 2.7.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = 2.7.html; sourceTree = "<group>"; };
+		B2441A0A224A61D3003B7E37 /* 2.8.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = 2.8.html; sourceTree = "<group>"; };
+		B2441A0B224A61D4003B7E37 /* 2.3.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = 2.3.html; sourceTree = "<group>"; };
 		B2E79CA4224830F10077EC9D /* LessonWeb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonWeb.swift; sourceTree = "<group>"; };
 		B2E79CA62248440D0077EC9D /* TextScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextScreen.swift; sourceTree = "<group>"; };
 		C08DD5EE46EE0A4864299E43 /* Pods-JavaTutor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JavaTutor.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JavaTutor/Pods-JavaTutor.debug.xcconfig"; sourceTree = "<group>"; };
@@ -190,7 +224,6 @@
 				840DBD9D2241D281000145B6 /* LessonListTVC.swift */,
 				840DBD9F2241D589000145B6 /* LessonListCell.swift */,
 				B2E79CA4224830F10077EC9D /* LessonWeb.swift */,
-				B205E1512249DD5B00393F77 /* Sprint1HTML */,
 				B2E79CA62248440D0077EC9D /* TextScreen.swift */,
 				8401944F2246F909005B9EAE /* QuestionTVC.swift */,
 				840194512246F9AD005B9EAE /* AnswerCell.swift */,
@@ -210,6 +243,24 @@
 				84CB703A22487E5000CEE082 /* names.json */,
 				8ED5F5362249763C002A01C1 /* QGen.swift */,
 				8ED5F5342249762C002A01C1 /* index.js */,
+				B24419FE224A61D1003B7E37 /* 1.1.html */,
+				B24419FC224A61D0003B7E37 /* 1.2.html */,
+				B2441A05224A61D2003B7E37 /* 2.1.html */,
+				B24419FA224A61D0003B7E37 /* 2.2.html */,
+				B2441A0B224A61D4003B7E37 /* 2.3.html */,
+				B2441A00224A61D1003B7E37 /* 2.4.html */,
+				B2441A06224A61D3003B7E37 /* 2.5.html */,
+				B2441A07224A61D3003B7E37 /* 2.6.html */,
+				B2441A09224A61D3003B7E37 /* 2.7.html */,
+				B2441A0A224A61D3003B7E37 /* 2.8.html */,
+				B2441A02224A61D2003B7E37 /* 2.9.html */,
+				B2441A04224A61D2003B7E37 /* 2.10.html */,
+				B24419FD224A61D0003B7E37 /* 2.11.html */,
+				B2441A08224A61D3003B7E37 /* 2.12.html */,
+				B2441A01224A61D1003B7E37 /* 2.13.html */,
+				B24419FB224A61D0003B7E37 /* 2.14.html */,
+				B24419FF224A61D1003B7E37 /* 2.15.html */,
+				B2441A03224A61D2003B7E37 /* 2.16.html */,
 				840D84EC22492C8400AE58E1 /* LoginScreenVC.swift */,
 			);
 			path = JavaTutor;
@@ -351,16 +402,33 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B205E1522249DD5B00393F77 /* Sprint1HTML in Resources */,
 				84CB7037224851B800CEE082 /* questions.json in Resources */,
+				B2441A0D224A61D4003B7E37 /* 2.14.html in Resources */,
+				B2441A1B224A61D4003B7E37 /* 2.7.html in Resources */,
+				B2441A1C224A61D4003B7E37 /* 2.8.html in Resources */,
+				B2441A11224A61D4003B7E37 /* 2.15.html in Resources */,
 				840B69C6222054F10032B683 /* LaunchScreen.storyboard in Resources */,
+				B2441A13224A61D4003B7E37 /* 2.13.html in Resources */,
+				B2441A10224A61D4003B7E37 /* 1.1.html in Resources */,
 				1D16A5572221FF3900FC3248 /* GoogleService-Info.plist in Resources */,
+				B2441A16224A61D4003B7E37 /* 2.10.html in Resources */,
+				B2441A0E224A61D4003B7E37 /* 1.2.html in Resources */,
+				B2441A19224A61D4003B7E37 /* 2.6.html in Resources */,
 				8489D0DA2237FAC500435F34 /* study.png in Resources */,
 				84CB703B22487E5000CEE082 /* names.json in Resources */,
 				8ED5F5352249762D002A01C1 /* index.js in Resources */,
+				B2441A0F224A61D4003B7E37 /* 2.11.html in Resources */,
 				840B69C3222054F10032B683 /* Assets.xcassets in Resources */,
+				B2441A17224A61D4003B7E37 /* 2.1.html in Resources */,
 				8489D0DB2237FAC500435F34 /* activity.png in Resources */,
+				B2441A14224A61D4003B7E37 /* 2.9.html in Resources */,
+				B2441A15224A61D4003B7E37 /* 2.16.html in Resources */,
 				840B69C1222054EE0032B683 /* Main.storyboard in Resources */,
+				B2441A1A224A61D4003B7E37 /* 2.12.html in Resources */,
+				B2441A12224A61D4003B7E37 /* 2.4.html in Resources */,
+				B2441A18224A61D4003B7E37 /* 2.5.html in Resources */,
+				B2441A0C224A61D4003B7E37 /* 2.2.html in Resources */,
+				B2441A1D224A61D4003B7E37 /* 2.3.html in Resources */,
 				8489D0DC2237FAC500435F34 /* profile.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
