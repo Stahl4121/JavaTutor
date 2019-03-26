@@ -29,9 +29,9 @@ class StudyVC: UIViewController {
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        lblContinueTopic.text = repo.continueTopic
-
-        //view.setNeedsDisplay() 
+        if !repo.recentActivities.isEmpty {
+            lblContinueTopic.text = repo.recentActivities[0]
+        }
     }
     /*
     // MARK: - Navigation

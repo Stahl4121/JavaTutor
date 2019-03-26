@@ -110,6 +110,12 @@ class DataRepo: NSObject {
                 for i in 1...(moduleNames.count){
                     questions.append(allQuestions.filter({$0.module == i}).shuffled())
                 }
+                for i in 0...(moduleNames.count-1){
+                    if questions[i].isEmpty{
+                        questions[i].append(Question(module: i+1, question: "What is the answer to this question?", answers: ["The Correct Answer", "An Incorrect Answer", "Another Incorrect Answer", "Yet Another Incorrect Answer"], correctIdx: 0))
+                    }
+                }
+                
             }
             else {
                 print("Bad file path")
