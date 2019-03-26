@@ -58,11 +58,11 @@ class LessonListTVC: UITableViewController {
             child.module = self.module
             child.selectedQuestion = 0
         }
-        
         if let child = segue.destination as? LessonWeb {
             child.modName = lessonSelected
             child.modNum = self.module + 1
             child.modLesson = self.row + 1
+        }
         else{
             //Update recent activities list 
             if let index = repo.recentActivities.firstIndex(of: repo.lessonNames[module][row]){
@@ -71,5 +71,4 @@ class LessonListTVC: UITableViewController {
             repo.recentActivities.insert(repo.lessonNames[module][row], at: 0)
         }
     }
-    
 }
