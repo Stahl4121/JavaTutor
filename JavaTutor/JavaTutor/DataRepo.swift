@@ -61,7 +61,7 @@ class DataRepo: NSObject {
     
     func loadLessonNames(){
         lessonNames.append(["What Makes a Good Program?", "Java Programming Environment"])
-        lessonNames.append(["Char Literals", "String Literals", "Variables", "Operations on a String", "Built in Functions", "What is a Class?", "What is an Object?", "I/O", "Basic Output", "Basic Input", "What is an Expression?", "Increment/Decrement", "Relational Operators", "Boolean Operators", "Assignment Operators", "Precedence Rules"])
+        lessonNames.append(["Primitive Data Types", "Char Literals", "String Literals", "Variables", "Operations on a String", "Built in Functions", "What is a Class?", "What is an Object?", "I/O", "Basic Output", "Basic Input", "What is an Expression?", "Increment/Decrement", "Relational Operators", "Boolean Operators", "Assignment Operators", "Precedence Rules"])
         lessonNames.append(["What is a Block?", "If Statement", "While Loop", "Do...While Loop", "Break and Continue", "For Loop", "Nested For Loop", "Switch", "Exceptions", "Try...Catch!"])
         lessonNames.append(["What is an Array?", "Creating Arrays", "Arrays and For Loops", "Common Array Pitfalls", "2-Dimensional Arrays"])
         lessonNames.append(["Black Box", "Static Subroutines and Variables", "Subroutine Definitions", "Calling Subroutines", "Subroutines in Programs", "Member Variables", "Formal and Actual Parameters", "Overloading", "Array Parameters", "Command Line Arguments"])
