@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VsZ-N6-9GW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VsZ-N6-9GW">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
@@ -1096,7 +1096,7 @@
             </objects>
             <point key="canvasLocation" x="999.60937499999989" y="1418.75"/>
         </scene>
-        <!--Study Screen-->
+        <!--Quiz Results Screen-->
         <scene sceneID="a2j-oB-EQQ">
             <objects>
                 <viewController title="Study Screen" id="mb4-WI-RFk" userLabel="Quiz Results Screen" customClass="QuizResultsVC" customModule="JavaTutor" customModuleProvider="target" sceneMemberID="viewController">
@@ -1494,6 +1494,6 @@
         <image name="study.png" width="16.5" height="20.5"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="sTF-1J-hbQ"/>
+        <segue reference="8aR-rA-gmn"/>
     </inferredMetricsTieBreakers>
 </document>
