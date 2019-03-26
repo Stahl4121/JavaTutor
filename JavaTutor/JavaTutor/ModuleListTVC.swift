@@ -46,6 +46,12 @@ class ModuleListTVC: UITableViewController {
         
         if let child = segue.destination as? LessonListTVC {
             child.module = row
+            
+            //Update recent activities list
+            if let index = repo.recentActivities.firstIndex(of: repo.moduleNames[row]){
+                repo.recentActivities.remove(at: index)
+            }
+            repo.recentActivities.insert(repo.moduleNames[row], at: 0)
         }
     }
 

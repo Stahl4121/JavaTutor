@@ -9,43 +9,31 @@
 import Foundation
 
 class Question: NSObject {
-    static let fields = ["question", "answers", "correctIdx"]
+    static let fields = ["module", "question", "answers", "correctIdx"]
     
-    var question: String
-    var answers: [String]
-    var correctIdx: Int
+    @objc var module: Int
+    @objc var question: String
+    @objc var answers: [String]
+    @objc var correctIdx: Int
     
     override init() {
+        module = 0
         question = ""
         answers = []
         correctIdx = 0
         super.init()
     }
     
-    init(question: String, answers: [String], correctIdx: Int) {
+    init(module: Int, question: String, answers: [String], correctIdx: Int) {
+        self.module = module
         self.question = question
         self.answers = answers
         self.correctIdx = correctIdx
-    }
-    
-    init(data: [String]){
-        var temp = data
-        self.question = temp.remove(at: 0)
-        self.answers = temp
-        self.correctIdx = 0
     }
     
     func shuffleAnswers() {
         let correctAns = answers[correctIdx]
         answers.shuffle()
         correctIdx = answers.firstIndex(of: correctAns)!
-    }
-    
-    func toDictionary() -> [String: Any] {
-        return [
-            "question": question,
-            "answers": answers,
-            "correctIdx": correctIdx
-        ]
     }
 }

@@ -63,6 +63,12 @@ class LessonListTVC: UITableViewController {
             child.modName = lessonSelected
             child.modNum = self.module + 1
             child.modLesson = self.row + 1
+        else{
+            //Update recent activities list 
+            if let index = repo.recentActivities.firstIndex(of: repo.lessonNames[module][row]){
+                repo.recentActivities.remove(at: index)
+            }
+            repo.recentActivities.insert(repo.lessonNames[module][row], at: 0)
         }
     }
     

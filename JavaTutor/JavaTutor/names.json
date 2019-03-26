@@ -1,0 +1,14 @@
+//This is the structure of the module and lesson names JSON, but it is not currently being read from in the project. The values are currently hardcoded into DataRepo.swift
+{
+    "moduleNames":["Mod1Name","Mod2Name"],
+    "lessonNames":[
+        {
+            "module":1,
+            "names":["Mod1Lesson1Name","Mod1Lesson2Name"]
+        },
+        {
+            "module":2,
+            "names":["Mod2Lesson1Name","Mod2Lesson2Name"]
+        }
+    ]
+}

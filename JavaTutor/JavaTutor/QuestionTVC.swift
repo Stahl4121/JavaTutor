@@ -52,7 +52,8 @@ class QuestionTVC: UITableViewController {
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String?, sender: Any?) -> Bool {
-        if selectedQuestion == (repo.questions[module].count - 1){
+        //End quiz at the last question, or after 10 questions
+        if selectedQuestion == (repo.questions[module].count - 1) || selectedQuestion == 9 {
             performSegue(withIdentifier: "endQuizSegue", sender: nil)
             return false
         }

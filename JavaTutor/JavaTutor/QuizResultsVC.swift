@@ -19,6 +19,7 @@ class QuizResultsVC: UIViewController {
     
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         
         //Remove questions from the nav controller, so user cannot re-enter quiz
         var navigationArray = self.navigationController?.viewControllers //To get all UIViewController stack as Array
@@ -30,9 +31,8 @@ class QuizResultsVC: UIViewController {
         
         lblNumCorrect.text = String(numCorrect)
         lblNumIncorrect.text = String(numIncorrect)
-        lblScore.text = "\(Int((numCorrect/(numCorrect+numIncorrect))*100))%"
+        lblScore.text = "\(Int(((Double(numCorrect)/Double(numCorrect+numIncorrect))*100).rounded()))%"
         
-        super.viewDidLoad()
     }
     
     

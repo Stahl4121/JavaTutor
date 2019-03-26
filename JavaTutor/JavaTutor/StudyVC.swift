@@ -9,13 +9,30 @@
 import UIKit
 
 class StudyVC: UIViewController {
+    let repo = DataRepo.instance
     
-    @IBAction func prepareForUnwind(segue:UIStoryboardSegue){}
+    @IBOutlet weak var lblContinueTopic: UILabel!
+    @IBOutlet weak var lblImproveTopic: UILabel!
+    
+    @IBOutlet weak var lblBrushTopic: UILabel!
+    @IBOutlet weak var lblWelcomeBack: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
 
+        lblContinueTopic.text = repo.continueTopic
+        lblImproveTopic.text = repo.improveTopic
+        lblBrushTopic.text = repo.brushUpTopic
+        lblWelcomeBack.text = "Welcome back, \(repo.username)!"
+        
+        repo.addObserver(self, forKeyPath: "recentActivities", options: .new, context: nil)
+    }
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        lblContinueTopic.text = repo.continueTopic
+
+        //view.setNeedsDisplay() 
+    }
     /*
     // MARK: - Navigation
 

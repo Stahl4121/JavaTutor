@@ -8,6 +8,7 @@ target 'JavaTutor' do
   # Pods for JavaTutor
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
+  pod 'Firebase/Database'
 
   target 'JavaTutorTests' do
     inherit! :search_paths

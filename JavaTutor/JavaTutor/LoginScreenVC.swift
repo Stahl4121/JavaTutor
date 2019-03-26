@@ -7,24 +7,54 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginScreenVC: UIViewController {
-
+    
+    @IBOutlet weak var emailField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        let gen = QGen()
+        print(gen.getQuestion(module: 2))
+        
+        emailField.attributedPlaceholder = NSAttributedString(string: "Username",
+                                                              attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        passwordField.attributedPlaceholder = NSAttributedString(string: "Password",
+                                                                 attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func loginPressed(_ sender: Any) {
+        
+        let email : String = emailField.text!
+        let pass : String = passwordField.text!
+        
+        Auth.auth().signIn(withEmail: email, password: pass) { [weak self] user, error in
+            guard let strongSelf = self else { return }
+            self?.performSegue(withIdentifier: "loggedIn", sender: nil)
+        }
+        
     }
-    */
-
+    
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
+    @IBAction func toSignUp(_ sender: Any) {
+        
+        self.performSegue(withIdentifier: "toSignUp", sender: nil)
+        
+    }
 }
