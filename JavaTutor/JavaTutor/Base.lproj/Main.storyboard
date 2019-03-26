@@ -934,10 +934,10 @@
             </objects>
             <point key="canvasLocation" x="224" y="2177"/>
         </scene>
-        <!--Title-->
+        <!--Lesson Web-->
         <scene sceneID="2s6-Fd-tDj">
             <objects>
-                <viewController id="3eJ-my-PxL" customClass="LessonWeb" customModule="JavaTutor" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Lesson Web" id="3eJ-my-PxL" customClass="LessonWeb" customModule="JavaTutor" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ncd-Sq-3Aw">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
