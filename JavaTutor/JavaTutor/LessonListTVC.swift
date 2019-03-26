@@ -14,8 +14,6 @@ class LessonListTVC: UITableViewController {
     var row: Int = 0
     var module: Int = 0
     
-    var lessonSelected: String = ""
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -66,9 +64,9 @@ class LessonListTVC: UITableViewController {
         }
         
         if let child = segue.destination as? LessonWeb {
-            child.modName = lessonSelected
+            child.lessonName = repo.lessonNames[module][row]
             child.modNum = self.module + 1
-            child.modLesson = self.row + 1
+            child.lessonNum = self.row + 1
         }
         
     }

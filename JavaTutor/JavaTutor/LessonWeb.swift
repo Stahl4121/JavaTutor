@@ -11,9 +11,9 @@ import WebKit
 
 class LessonWeb: UIViewController, WKUIDelegate {
     
-    var modName: String = ""
+    var lessonName: String = ""
     var modNum: Int = 0
-    var modLesson: Int = 0
+    var lessonNum: Int = 0
     
     @IBOutlet weak var webV: WKWebView!
     @IBOutlet weak var webTitle: UINavigationItem!
@@ -21,10 +21,10 @@ class LessonWeb: UIViewController, WKUIDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        webTitle.title = modName
+        webTitle.title = lessonName
         
         //HTML Loading
-        if let url = Bundle.main.url(forResource: "\(modNum).\(modLesson)", withExtension: ".html") {
+        if let url = Bundle.main.url(forResource: "\(modNum).\(lessonNum)", withExtension: ".html") {
             webV.loadFileURL(url, allowingReadAccessTo: url.deletingLastPathComponent())
         }
         

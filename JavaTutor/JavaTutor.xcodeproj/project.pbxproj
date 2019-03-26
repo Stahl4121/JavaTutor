@@ -217,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				840179DD224083390006EB11 /* StudyVC.swift */,
+				840D84EC22492C8400AE58E1 /* LoginScreenVC.swift */,
 				8408DDAB2237D05300C7DF57 /* SignUpVC.swift */,
 				843971A722237C5900A96195 /* RecentActivityTVC.swift */,
 				843971A822237C5900A96195 /* StatisticsVC.swift */,
@@ -264,7 +265,6 @@
 				B24419FB224A61D0003B7E37 /* 2.14.html */,
 				B24419FF224A61D1003B7E37 /* 2.15.html */,
 				B2441A03224A61D2003B7E37 /* 2.16.html */,
-				840D84EC22492C8400AE58E1 /* LoginScreenVC.swift */,
 			);
 			path = JavaTutor;
 			sourceTree = "<group>";
