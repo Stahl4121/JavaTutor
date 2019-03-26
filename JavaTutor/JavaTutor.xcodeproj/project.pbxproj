@@ -35,6 +35,7 @@
 		8489D0DA2237FAC500435F34 /* study.png in Resources */ = {isa = PBXBuildFile; fileRef = 8489D0D72237FAC400435F34 /* study.png */; };
 		8489D0DB2237FAC500435F34 /* activity.png in Resources */ = {isa = PBXBuildFile; fileRef = 8489D0D82237FAC400435F34 /* activity.png */; };
 		8489D0DC2237FAC500435F34 /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 8489D0D92237FAC500435F34 /* profile.png */; };
+		84C4085B224A6A770069A1E2 /* javanotes.css in Resources */ = {isa = PBXBuildFile; fileRef = 84C4085A224A6A760069A1E2 /* javanotes.css */; };
 		84CB7036224846A300CEE082 /* questions.json in Sources */ = {isa = PBXBuildFile; fileRef = 84CB7035224846A300CEE082 /* questions.json */; };
 		84CB7037224851B800CEE082 /* questions.json in Resources */ = {isa = PBXBuildFile; fileRef = 84CB7035224846A300CEE082 /* questions.json */; };
 		84CB703B22487E5000CEE082 /* names.json in Resources */ = {isa = PBXBuildFile; fileRef = 84CB703A22487E5000CEE082 /* names.json */; };
@@ -117,6 +118,7 @@
 		8489D0D72237FAC400435F34 /* study.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = study.png; sourceTree = "<group>"; };
 		8489D0D82237FAC400435F34 /* activity.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = activity.png; sourceTree = "<group>"; };
 		8489D0D92237FAC500435F34 /* profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile.png; sourceTree = "<group>"; };
+		84C4085A224A6A760069A1E2 /* javanotes.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = javanotes.css; path = "TextbookHTML.xcassets/Sprint 1 HTML/sec1/javanotes.dataset/javanotes.css"; sourceTree = "<group>"; };
 		84CB7035224846A300CEE082 /* questions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = questions.json; sourceTree = "<group>"; };
 		84CB703A22487E5000CEE082 /* names.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = names.json; sourceTree = "<group>"; };
 		8ABCAF315590C89E756CDEC8 /* Pods_JavaTutorUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JavaTutorUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -243,6 +245,7 @@
 				84CB703A22487E5000CEE082 /* names.json */,
 				8ED5F5362249763C002A01C1 /* QGen.swift */,
 				8ED5F5342249762C002A01C1 /* index.js */,
+				84C4085A224A6A760069A1E2 /* javanotes.css */,
 				B24419FE224A61D1003B7E37 /* 1.1.html */,
 				B24419FC224A61D0003B7E37 /* 1.2.html */,
 				B2441A05224A61D2003B7E37 /* 2.1.html */,
@@ -424,6 +427,7 @@
 				B2441A14224A61D4003B7E37 /* 2.9.html in Resources */,
 				B2441A15224A61D4003B7E37 /* 2.16.html in Resources */,
 				840B69C1222054EE0032B683 /* Main.storyboard in Resources */,
+				84C4085B224A6A770069A1E2 /* javanotes.css in Resources */,
 				B2441A1A224A61D4003B7E37 /* 2.12.html in Resources */,
 				B2441A12224A61D4003B7E37 /* 2.4.html in Resources */,
 				B2441A18224A61D4003B7E37 /* 2.5.html in Resources */,
