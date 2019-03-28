@@ -14,7 +14,7 @@
         <scene sceneID="14O-Cx-hga">
             <objects>
                 <viewController storyboardIdentifier="SignUp" id="Zis-bS-fNO" customClass="SignUpVC" customModule="JavaTutor" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="vOC-iy-ji6">
+                    <view key="view" contentMode="scaleToFill" id="vOC-iy-ji6" customClass="UIControl">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -92,6 +92,9 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="MyanmarSangamMN" family="Myanmar Sangam MN" pointSize="25"/>
                                 <textInputTraits key="textInputTraits" textContentType="name"/>
+                                <connections>
+                                    <action selector="touchNameField:" destination="Zis-bS-fNO" eventType="touchUpInside" id="Xug-2V-WqU"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1FF-eg-tF8">
                                 <rect key="frame" x="103" y="309" width="561" height="40"/>
@@ -99,6 +102,9 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="MyanmarSangamMN" family="Myanmar Sangam MN" pointSize="25"/>
                                 <textInputTraits key="textInputTraits" textContentType="email"/>
+                                <connections>
+                                    <action selector="touchNameField:" destination="Zis-bS-fNO" eventType="touchUpInside" id="uvR-Qw-Yq2"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iZI-fj-W3Q">
                                 <rect key="frame" x="103" y="387" width="561" height="40"/>
@@ -106,6 +112,9 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="MyanmarSangamMN" family="Myanmar Sangam MN" pointSize="25"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <connections>
+                                    <action selector="touchNameField:" destination="Zis-bS-fNO" eventType="touchUpInside" id="sgh-Wz-P72"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jsq-Ag-g2N">
                                 <rect key="frame" x="103" y="471" width="561" height="40"/>
@@ -113,6 +122,9 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="MyanmarSangamMN" family="Myanmar Sangam MN" pointSize="25"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <connections>
+                                    <action selector="touchNameField:" destination="Zis-bS-fNO" eventType="touchUpInside" id="vFR-fM-u9z"/>
+                                </connections>
                             </textField>
                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dmI-EO-P7T">
                                 <rect key="frame" x="613" y="631" width="411" height="137"/>
@@ -197,6 +209,9 @@
                             <constraint firstItem="YCQ-lp-SIn" firstAttribute="top" secondItem="1FF-eg-tF8" secondAttribute="bottom" constant="-1" id="y2d-G4-6BF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qo6-T7-17q"/>
+                        <connections>
+                            <action selector="backgroundTap:" destination="Zis-bS-fNO" eventType="touchUpInside" id="hew-PO-gZm"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="emailField" destination="1FF-eg-tF8" id="gGR-Lh-bNE"/>
@@ -1338,7 +1353,7 @@
         <scene sceneID="w5c-Vb-PYq">
             <objects>
                 <viewController storyboardIdentifier="Login" id="VsZ-N6-9GW" customClass="LoginScreenVC" customModule="JavaTutor" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="PBV-Wk-jd7">
+                    <view key="view" contentMode="scaleToFill" id="PBV-Wk-jd7" customClass="UIControl">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -1384,6 +1399,9 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="MyanmarSangamMN" family="Myanmar Sangam MN" pointSize="25"/>
                                 <textInputTraits key="textInputTraits" textContentType="email"/>
+                                <connections>
+                                    <action selector="touchNameField:" destination="VsZ-N6-9GW" eventType="touchUpInside" id="jm4-ua-chJ"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XKz-5D-7Wg">
                                 <rect key="frame" x="103" y="340" width="561" height="40"/>
@@ -1391,6 +1409,9 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="MyanmarSangamMN" family="Myanmar Sangam MN" pointSize="25"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <connections>
+                                    <action selector="touchNameField:" destination="VsZ-N6-9GW" eventType="touchDragInside" id="Wfk-9a-lJT"/>
+                                </connections>
                             </textField>
                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p2Z-bv-CxT">
                                 <rect key="frame" x="613" y="631" width="411" height="137"/>
@@ -1477,6 +1498,9 @@
                             <constraint firstItem="thw-LQ-XmC" firstAttribute="leading" secondItem="qgg-t7-SdE" secondAttribute="leading" constant="60" id="yNZ-hk-lD8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qgg-t7-SdE"/>
+                        <connections>
+                            <action selector="backgroundTap:" destination="VsZ-N6-9GW" eventType="touchUpInside" id="pDN-Hs-e9B"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="emailField" destination="k8T-bR-ytW" id="RFy-As-bVg"/>
@@ -1494,6 +1518,6 @@
         <image name="study.png" width="33" height="41"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="8aR-rA-gmn"/>
+        <segue reference="sTF-1J-hbQ"/>
     </inferredMetricsTieBreakers>
 </document>

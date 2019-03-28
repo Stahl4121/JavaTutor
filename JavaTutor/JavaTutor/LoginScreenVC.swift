@@ -9,10 +9,27 @@
 import UIKit
 import Firebase
 
-class LoginScreenVC: UIViewController {
+class LoginScreenVC: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
+    
+    
+    @IBAction func touchNameField(_ textField: UITextField) {
+        textField.becomeFirstResponder()
+    }
+    
+    @IBAction func backgroundTap(_ sender: Any?) {
+        self.view.endEditing(true)
+    }
+    
+    //DOES NOT CURRENTLY WORK
+    //Dismiss keyboard when return button is pressed
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        emailField.resignFirstResponder()
+        passwordField.resignFirstResponder()
+        return true
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         let gen = QGen()

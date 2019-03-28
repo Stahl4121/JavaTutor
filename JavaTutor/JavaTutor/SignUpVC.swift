@@ -12,7 +12,7 @@ import FirebaseDatabase
 
 var ref: DatabaseReference!
 
-class SignUpVC: UIViewController {
+class SignUpVC: UIViewController, UITextFieldDelegate {
     
     
     
@@ -24,7 +24,24 @@ class SignUpVC: UIViewController {
     
     var handle: AuthStateDidChangeListenerHandle?
     
+    @IBAction func touchNameField(_ textField: UITextField) {
+        textField.becomeFirstResponder()
+    }
     
+    @IBAction func backgroundTap(_ sender: Any?) {
+        self.view.endEditing(true)
+    }
+    
+    //DOES NOT CURRENTLY WORK
+    //Dismiss keyboard when return button is pressed
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        nameField.resignFirstResponder()
+        emailField.resignFirstResponder()
+        pass1Field.resignFirstResponder()
+        pass2Field.resignFirstResponder()
+
+        return true
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         pass1Field.textContentType = .oneTimeCode
