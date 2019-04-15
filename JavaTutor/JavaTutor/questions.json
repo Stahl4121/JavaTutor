@@ -2,391 +2,469 @@
     {
         "module":1,
         "question":"What does JVM stand for?",
-        "answers":["Java Virtual Machine", "Java Visualization Methods", "Jesuits Visiting Maryland", "Java’s Very Majestic"]
+        "answers":["Java Virtual Machine", "Java Visualization Methods", "Jesuits Visiting Maryland", "Java’s Very Majestic"],
+        "bloomValue":1
     },
     {
         "module":1,
         "question":"Why is the JVM useful?",
-        "answers":["It makes Java platform independent", "It purges the system of filthy python code", "It proactively patches runtime errors", "It makes syntax cleaner"]
+        "answers":["It makes Java platform independent", "It purges the system of filthy python code", "It proactively patches runtime errors", "It makes syntax cleaner"],
+        "bloomValue":1
     },
     {
         "module":1,
         "question":"How can you store the value \"8.0\"?",
-        "answers":["double boi = 8.0;", "int boi = 8.0", "String boi = 8.0", "Map<Integer", "ArrayList<TriangularBois>> boi = 8.0"]
+        "answers":["double boi = 8.0;", "int boi = 8.0", "String boi = 8.0", "Map<Integer", "ArrayList<TriangularBois>> boi = 8.0"],
+        "bloomValue":1
     },
     {
         "module":1,
         "question":"Which is the correct method header?",
-        "answers":["public static void main(String[] args)", "public void static main(String[] args)", "public static main(String args)", "public"]
+        "answers":["public static void main(String[] args)", "public void static main(String[] args)", "public static main(String args)", "public"],
+        "bloomValue":1
     },
     {
         "module":1,
         "question":"What are the two basic aspects of programming?",
-        "answers":["Data and Instructions", "Loops and Variables", "Logic and Syntax", "Logic and Variables"]
+        "answers":["Data and Instructions", "Loops and Variables", "Logic and Syntax", "Logic and Variables"],
+        "bloomValue":1
     },
     {
         "module":1,
         "question":"Which boolean expression will return false?",
-        "answers":["(3 <= 2)", "(‘a’ == ‘a’ )", "(9.1 > 8.9)", "(2 < 5)"]
+        "answers":["(3 <= 2)", "(‘a’ == ‘a’ )", "(9.1 > 8.9)", "(2 < 5)"],
+        "bloomValue":1
     },
     {
         "module":2,
         "question":"Which is the smallest data type?",
-        "answers":["short", "int", "byte", "long"]
+        "answers":["short", "int", "byte", "long"],
+        "bloomValue":1
     },
     {
         "module":2,
         "question":"Which is the largest data type?",
-        "answers":["long", "int", "byte", "char"]
+        "answers":["long", "int", "byte", "char"],
+        "bloomValue":1
     },
     {
         "module":2,
         "question":"Which is not a primitive data type?",
-        "answers":["String", "char", "float", "int"]
+        "answers":["String", "char", "float", "int"],
+        "bloomValue":1
     },
     {
         "module":2,
         "question":"Which is not a primitive data type?",
-        "answers":["String", "double", "float", "int"]
+        "answers":["String", "double", "float", "int"],
+        "bloomValue":1
     },
     {
         "module":2,
         "question":"Which is not a primitive data type?",
-        "answers":["String", "short", "boolean", "int"]
+        "answers":["String", "short", "boolean", "int"],
+        "bloomValue":1
     },
     {
         "module":2,
         "question":"Which is incorrect?",
-        "answers":["char c = a;", "char c = ‘a’;", "char c = ‘3’;", "char c = ‘?’;"]
+        "answers":["char c = a;", "char c = ‘a’;", "char c = ‘3’;", "char c = ‘?’;"],
+        "bloomValue":1
     },
     {
         "module":2,
         "question":"Which is incorrect?",
-        "answers":["char c = \"v\";", "char c = ‘v’;", "char c = ‘9’;", "char c = ‘\\n’;"]
+        "answers":["char c = \"v\";", "char c = ‘v’;", "char c = ‘9’;", "char c = ‘\\n’;"],
+        "bloomValue":1
     },
     {
         "module":2,
         "question":"Which is incorrect?",
-        "answers":["char c = ‘hi’;", "char c = ‘a’;", "char c = ‘ ’;", "char c = ‘\\t’;"]
+        "answers":["char c = ‘hi’;", "char c = ‘a’;", "char c = ‘ ’;", "char c = ‘\\t’;"],
+        "bloomValue":1
     },
     {
         "module":2,
         "question":"Which is incorrect?",
-        "answers":["int i = 30.9;", "int i = 2;", "String s = \"30.9\";", "double d = 3;"]
+        "answers":["int i = 30.9;", "int i = 2;", "String s = \"30.9\";", "double d = 3;"],
+        "bloomValue":1
     },
     {
         "module":2,
         "question":"What will this print, if var = \"blah\"? System.out.print(\"Hello\" + var + \"Bye!\");",
-        "answers":["HelloblahBye!", "Hello blah bye!", "Hello blah Bye!", "HelloblahBye"]
+        "answers":["HelloblahBye!", "Hello blah bye!", "Hello blah Bye!", "HelloblahBye"],
+        "bloomValue":1
     },
     {
         "module":2,
         "question":"What will this print, if String var = \"blah\":  System.out.print(\"Hello\\t\" + var + \"\\tBye!\");",
-        "answers":["Hello     blah     Bye!", "Hello blah Bye!", "Hello\\tblah\\tBye!", "Hello\\t blah \\tBye!"]
+        "answers":["Hello     blah     Bye!", "Hello blah Bye!", "Hello\\tblah\\tBye!", "Hello\\t blah \\tBye!"],
+        "bloomValue":1
     },
     {
         "module":2,
         "question":"What will this print?  System.out.print(\"1+2+3\");",
-        "answers":["1+2+3", "\"1+2+3\"", "123", "6"]
+        "answers":["1+2+3", "\"1+2+3\"", "123", "6"],
+        "bloomValue":1
     },
     {
         "module":2,
         "question":"What will this print?  System.out.print(\"1\" + \"2\" + \"3\");",
-        "answers":["123", "\"1\" + \"2\" + \"3\"", "1 + 2 + 3", "6"]
+        "answers":["123", "\"1\" + \"2\" + \"3\"", "1 + 2 + 3", "6"],
+        "bloomValue":1
     },
     {
         "module":2,
         "question":"What will this print?  System.out.print(1+2+3);",
-        "answers":["6", "\"1+2+3\"", "123", "1+2+3"]
+        "answers":["6", "\"1+2+3\"", "123", "1+2+3"],
+        "bloomValue":1
     },
     {
         "module":2,
         "question":"What will this print?  System.out.print(1+a+3);",
-        "answers":["6", "\"1+2+3\"", "123", "1+2+3"]
+        "answers":["6", "\"1+2+3\"", "123", "1+2+3"],
+        "bloomValue":1
     },
     {
         "module":2,
         "question":"How do you get user input?",
-        "answers":["Use a Scanner", "System.out.print()", "System.in.print()", "cin << x"]
+        "answers":["Use a Scanner", "System.out.print()", "System.in.print()", "cin << x"],
+        "bloomValue":1
     },
     {
         "module":2,
         "question":"Which Scanner set-up is correct?",
-        "answers":["Scanner scnr = new Scanner(System.in);", "Scanner = new Scanner(System.in);", "Scanner scnr = Scanner(System.in);", "scanf(System.in(cin<<x)).in;"]
+        "answers":["Scanner scnr = new Scanner(System.in);", "Scanner = new Scanner(System.in);", "Scanner scnr = Scanner(System.in);", "scanf(System.in(cin<<x)).in;"],
+        "bloomValue":1
     },
     {
         "module":2,
         "question":"int h = 9; int i = h++; What is the value of i?",
-        "answers":["10", "9", "11", "9.1"]
+        "answers":["10", "9", "11", "9.1"],
+        "bloomValue":1
     },
     {
         "module":2,
         "question":"int i = 0; int j = ++i; What is the value of j?",
-        "answers":["1", "2", "-1", "0.1"]
+        "answers":["1", "2", "-1", "0.1"],
+        "bloomValue":1
     },
     {
         "module":2,
         "question":"int h = -5; int i = h++; What is the value of i?",
-        "answers":["-4", "5", "-6", "-3"]
+        "answers":["-4", "5", "-6", "-3"],
+        "bloomValue":1
     },
     {
         "module":2,
         "question":"int i = -16; int j = ++i; What is the value of j?",
-        "answers":["-15", "-17", "16", "-14"]
+        "answers":["-15", "-17", "16", "-14"],
+        "bloomValue":1
     },
     {
         "module":2,
         "question":"int h = 9; int i = h--; What is the value of i?",
-        "answers":["8", "10", "-9", "8.9"]
+        "answers":["8", "10", "-9", "8.9"],
+        "bloomValue":1
     },
     {
         "module":2,
         "question":"int i = 0; int j = --i; What is the value of j?",
-        "answers":["-1", "1", "0", "0.1"]
+        "answers":["-1", "1", "0", "0.1"],
+        "bloomValue":1
     },
     {
         "module":2,
         "question":"int h = -5; int i = h--; What is the value of i?",
-        "answers":["-6", "5", "-4", "-3"]
+        "answers":["-6", "5", "-4", "-3"],
+        "bloomValue":1
     },
     {
         "module":2,
         "question":"int i = -41; int j = --i; What is the value of j?",
-        "answers":["-42", "41", "-40", "40"]
+        "answers":["-42", "41", "-40", "40"],
+        "bloomValue":1
     },
     {
         "module":2,
         "question":"int a = 9, and int b = 2. What is the value of the expression (a!=b)?",
-        "answers":["true", "false", "invalid syntax", "runtime error"]
+        "answers":["true", "false", "invalid syntax", "runtime error"],
+        "bloomValue":1
     },
     {
         "module":2,
         "question":"int a = 7, and int b = 2. What is the value of the expression (a==b)?",
-        "answers":["false", "true", "invalid syntax", "runtime error"]
+        "answers":["false", "true", "invalid syntax", "runtime error"],
+        "bloomValue":1
     },
     {
         "module":2,
         "question":"int a = 9, and double b = 9.0. What is the value of the expression (a==b)?",
-        "answers":["true", "false", "invalid syntax", "runtime error"]
+        "answers":["true", "false", "invalid syntax", "runtime error"],
+        "bloomValue":1
     },
     {
         "module":2,
         "question":"double a = 4.4, and int b = 4. What is the value of the expression (a==b)?",
-        "answers":["false", "true", "invalid syntax", "runtime error"]
+        "answers":["false", "true", "invalid syntax", "runtime error"],
+        "bloomValue":1
     },
     {
         "module":2,
         "question":"int a = 9, and int b = 8. What is the value of the expression (a==b)?",
-        "answers":["false", "true", "invalid syntax", "runtime error"]
+        "answers":["false", "true", "invalid syntax", "runtime error"],
+        "bloomValue":1
     },
     {
         "module":2,
         "question":"double a = 4.0, and int b = 4. What is the value of the expression (a=!b)?",
-        "answers":["invalid syntax", "true", "runtime error", "false"]
+        "answers":["invalid syntax", "true", "runtime error", "false"],
+        "bloomValue":1
     },
     {
         "module":2,
         "question":"int a = 4, and char b = ‘4’. What is the value of the expression (a==b)?",
-        "answers":["false", "true", "invalid code", "runtime error"]
+        "answers":["false", "true", "invalid code", "runtime error"],
+        "bloomValue":1
     },
     {
         "module":2,
         "question":"int a = 6, and char b = ‘4’. What is the value of the expression (a==b)?",
-        "answers":["false", "true", "invalid code", "runtime error"]
+        "answers":["false", "true", "invalid code", "runtime error"],
+        "bloomValue":1
     },
     {
         "module":2,
         "question":"double a = 4.9, and char b = ‘4’. What is the value of the expression (a==b)?",
-        "answers":["false", "true", "invalid code", "runtime error"]
+        "answers":["false", "true", "invalid code", "runtime error"],
+        "bloomValue":1
     },
     {
         "module":2,
         "question":"int a = 8, and int b = 2. What is the value of the expression (a!=b)?",
-        "answers":["true", "false", "invalid syntax", "runtime error"]
+        "answers":["true", "false", "invalid syntax", "runtime error"],
+        "bloomValue":1
     },
     {
         "module":2,
         "question":"int a = 8, and int b = 22. What is the value of the expression (a!=b)?",
-        "answers":["true", "false", "invalid syntax", "runtime error"]
+        "answers":["true", "false", "invalid syntax", "runtime error"],
+        "bloomValue":1
     },
     {
         "module":2,
         "question":"int a = 8, and int b = 8. What is the value of the expression (a!=b)?",
-        "answers":["false", "true", "invalid syntax", "runtime error"]
+        "answers":["false", "true", "invalid syntax", "runtime error"],
+        "bloomValue":1
     },
     {
         "module":2,
         "question":"int a = 7, and int b = 2. What is the value of the expression (a<b)?",
-        "answers":["false", "true", "invalid syntax", "runtime error"]
+        "answers":["false", "true", "invalid syntax", "runtime error"],
+        "bloomValue":1
     },
     {
         "module":2,
         "question":"int a = 9, and double b = 9.0. What is the value of the expression (a>b)?",
-        "answers":["true", "false", "invalid syntax", "runtime error"]
+        "answers":["true", "false", "invalid syntax", "runtime error"],
+        "bloomValue":1
     },
     {
         "module":2,
         "question":"double a = 4.4, and int b = 4. What is the value of the expression (a>b)?",
-        "answers":["false", "true", "invalid syntax", "runtime error"]
+        "answers":["false", "true", "invalid syntax", "runtime error"],
+        "bloomValue":1
     },
     {
         "module":2,
         "question":"int a = 9, and int b = 8. What is the value of the expression (a<b)?",
-        "answers":["false", "true", "invalid syntax", "runtime error"]
+        "answers":["false", "true", "invalid syntax", "runtime error"],
+        "bloomValue":1
     },
     {
         "module":2,
         "question":"double a = 4.0, and int b = 4. What is the value of the expression (a=>b)?",
-        "answers":["invalid syntax", "true", "runtime error", "false"]
+        "answers":["invalid syntax", "true", "runtime error", "false"],
+        "bloomValue":1
     },
     {
         "module":2,
         "question":"int a = 4, and char b = ‘4’. What is the value of the expression (a>=b)?",
-        "answers":["true", "false", "invalid code", "runtime error"]
+        "answers":["true", "false", "invalid code", "runtime error"],
+        "bloomValue":1
     },
     {
         "module":2,
         "question":"int a = 6, and char b = ‘4’. What is the value of the expression (a<=b)?",
-        "answers":["false", "true", "invalid code", "runtime error"]
+        "answers":["false", "true", "invalid code", "runtime error"],
+        "bloomValue":1
     },
     {
         "module":2,
         "question":"double a = 4.9, and char b = ‘4’. What is the value of the expression (a>=b)?",
-        "answers":["true", "false", "invalid code", "runtime error"]
+        "answers":["true", "false", "invalid code", "runtime error"],
+        "bloomValue":1
     },
     {
         "module":2,
         "question":"String a = \"allardice\", and String b = \"mattson\". What is the value of the expression (a>b)?",
-        "answers":["invalid code", "false", "true", "runtime error"]
+        "answers":["invalid code", "false", "true", "runtime error"],
+        "bloomValue":1
     },
     {
         "module":2,
         "question":"String a = \"Java\", and String b = \"Python\". What is the value of the expression (a==b)?",
-        "answers":["false", "true", "invalid code", "runtime error"]
+        "answers":["false", "true", "invalid code", "runtime error"],
+        "bloomValue":1
     },
     {
         "module":2,
         "question":"String a = \"Java\", and String b = \"Java\". What is the value of the expression (a==b)?",
-        "answers":["true", "false", "invalid code", "runtime error"]
+        "answers":["true", "false", "invalid code", "runtime error"],
+        "bloomValue":1
     },
     {
         "module":2,
         "question":"What does the following symbol mean?  &&  ",
-        "answers":["Boolean AND", "Boolean OR", "Boolean NOT", "Boo! It’s a ghost"]
+        "answers":["Boolean AND", "Boolean OR", "Boolean NOT", "Boo! It’s a ghost"],
+        "bloomValue":1
     },
     {
         "module":2,
         "question":"What does the following symbol mean?  ||  ",
-        "answers":["Boolean OR", "Boolean AND", "Boolean NOT", "Boolean Eleven"]
+        "answers":["Boolean OR", "Boolean AND", "Boolean NOT", "Boolean Eleven"],
+        "bloomValue":1
     },
     {
         "module":2,
         "question":"What does the following symbol mean?  !  ",
-        "answers":["Boolean NOT", "Boolean OR", "Boolean AND", "Exclamation mark used by the JVM to denote angry, horrified screaming at the runtime errors generated by inexperienced programmers."]
+        "answers":["Boolean NOT", "Boolean OR", "Boolean AND", "Exclamation mark used by the JVM to denote angry, horrified screaming at the runtime errors generated by inexperienced programmers."],
+        "bloomValue":1
     },
     {
         "module":2,
         "question":"Evaluate the following statement, if x = 0:  !!(x>1)",
-        "answers":["False", "True", "big oof", "Invalid code"]
+        "answers":["False", "True", "big oof", "Invalid code"],
+        "bloomValue":1
     },
     {
         "module":2,
         "question":"Evaluate the following statement, if x = 0:  (x==0)!!!!!!!!! ",
-        "answers":["Invalid syntax", "True", "X EQUALS ZERO!!!!!!!!!", "true, but yelled really loudly"]
+        "answers":["Invalid syntax", "True", "X EQUALS ZERO!!!!!!!!!", "true, but yelled really loudly"],
+        "bloomValue":1
     },
     {
         "module":2,
         "question":"Evaluate the following statement, if x = 0 and y = 4: ((x>=0) && (y>5))",
-        "answers":["false", "true", "invalid code", "your mom"]
+        "answers":["false", "true", "invalid code", "your mom"],
+        "bloomValue":1
     },
     {
         "module":2,
         "question":"Evaluate the following statement, if x = 1 and y = 1: ((x>=0) || (y>5))",
-        "answers":["true", "false", "invalid code", "do you think if we asked really nicely, tim mattson would come speak at GCC?"]
+        "answers":["true", "false", "invalid code", "do you think if we asked really nicely, tim mattson would come speak at GCC?"],
+        "bloomValue":1
     },
     {
         "module":2,
         "question":"Evaluate the following statement, if x = 1 and y = 4: ((x>=0) && !(y>5))",
-        "answers":["true", "false", "invalid code", "panicked screech"]
+        "answers":["true", "false", "invalid code", "panicked screech"],
+        "bloomValue":1
     },
     {
         "module":2,
         "question":"Evaluate the following statement, if x = 8 and y = -7: (!(x>=0) && (y<5))",
-        "answers":["false", "true", "invalid code", "panicked screech"]
+        "answers":["false", "true", "invalid code", "panicked screech"],
+        "bloomValue":1
     },
     {
         "module":2,
         "question":"Evaluate the following statement, if x = 5: x%3",
-        "answers":["2", "1/2", "5/3", "1"]
+        "answers":["2", "1/2", "5/3", "1"],
+        "bloomValue":1
     },
     {
         "module":2,
         "question":"Evaluate the following statement, if x = 2: x%17",
-        "answers":["2", "2/17", "7", "-1"]
+        "answers":["2", "2/17", "7", "-1"],
+        "bloomValue":1
     },
     {
         "module":2,
         "question":"Evaluate the following statement, if x = 1 and y = 4: x%y",
-        "answers":["1", "1/4", "2", "0"]
+        "answers":["1", "1/4", "2", "0"],
+        "bloomValue":1
     },
     {
         "module":2,
         "question":"Evaluate the following statement, if x = 10 and y = 4: x%y",
-        "answers":["2", "5/2", "6", "1"]
+        "answers":["2", "5/2", "6", "1"],
+        "bloomValue":1
     },
     {
         "module":2,
         "question":"Evaluate the following statement, if x = 1: x%2",
-        "answers":["1", "1/2", "2", "0"]
+        "answers":["1", "1/2", "2", "0"],
+        "bloomValue":1
     },
     {
         "module":2,
         "question":"Evaluate the following statement, if x = 2: x%2",
-        "answers":["0", "1/2", "2", "1"]
+        "answers":["0", "1/2", "2", "1"],
+        "bloomValue":1
     },
     {
         "module":2,
         "question":"Evaluate the following statement, if x = 8: x%2",
-        "answers":["0", "4", "2", "6"]
+        "answers":["0", "4", "2", "6"],
+        "bloomValue":1
     },
     {
         "module":2,
         "question":"Given int a, double x, and short b, which type conversion is illegal if A = 16?",
-        "answers":["b = a", "x = a", "x = 16.0", "a = 11"]
+        "answers":["b = a", "x = a", "x = 16.0", "a = 11"],
+        "bloomValue":1
     },
     {
         "module":2,
         "question":"Given int a, double x, and short b, which type conversion is illegal if a = 11?",
-        "answers":["b = a", "x = a", "b=(short)a", "x = (double)a"]
+        "answers":["b = a", "x = a", "b=(short)a", "x = (double)a"],
+        "bloomValue":1
     },
     {
         "module":2,
         "question":"Given int a, double x, and char b, which type conversion is illegal if a = 1?",
-        "answers":["b = a", "b = (char)a", "x = a", "a += 11"]
+        "answers":["b = a", "b = (char)a", "x = a", "a += 11"],
+        "bloomValue":1
     },
     {
         "module":2,
         "question":"Which operator takes precedence in an expression?",
-        "answers":["unary", "multiplication", "division", "addition"]
+        "answers":["unary", "multiplication", "division", "addition"],
+        "bloomValue":1
     },
     {
         "module":2,
         "question":"Which operator takes precedence in an expression?",
-        "answers":["subtraction", "equality", "inequality", "boolean OR"]
+        "answers":["subtraction", "equality", "inequality", "boolean OR"],
+        "bloomValue":1
     },
     {
         "module":2,
         "question":"Which operator takes precedence in an expression?",
-        "answers":["equality", "boolean AND", "conditional operator", "assignment operator"]
+        "answers":["equality", "boolean AND", "conditional operator", "assignment operator"],
+        "bloomValue":1
     },
     {
         "module":2,
         "question":"Which operator takes precedence in an expression?",
-        "answers":["++", "&&", "||", "%="]
+        "answers":["++", "&&", "||", "%="],
+        "bloomValue":1
     },
     {
         "module":2,
         "question":"Which operator takes precedence in an expression?",
-        "answers":["*/", "+", "!=", "+="]
+        "answers":["*/", "+", "!=", "+="],
+        "bloomValue":1
     }
 ]

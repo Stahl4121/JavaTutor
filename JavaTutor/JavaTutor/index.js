@@ -1,3 +1,5 @@
+//TODO: Add a bloomValue storage variable of 2!!
+
 let module_2 = [
     {
         question: 'Which type is valid in the following code snippet?',

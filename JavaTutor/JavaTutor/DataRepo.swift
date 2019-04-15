@@ -14,6 +14,7 @@ class DataRepo: NSObject {
     var lessonNames: [[String]]
     var questions: [[Question]]
     
+    
     @objc dynamic var recentActivities: [String]
     
     var username: String
@@ -112,7 +113,7 @@ class DataRepo: NSObject {
                 }
                 for i in 0...(moduleNames.count-1){
                     if questions[i].isEmpty{
-                        questions[i].append(Question(module: i+1, question: "What is the answer to this question?", answers: ["The Correct Answer", "An Incorrect Answer", "Another Incorrect Answer", "Yet Another Incorrect Answer"], correctIdx: 0))
+                        questions[i].append(Question(module: i+1, question: "What is the answer to this question?", answers: ["The Correct Answer", "An Incorrect Answer", "Another Incorrect Answer", "Yet Another Incorrect Answer"], correctIdx: 0, bloomValue: 1))
                     }
                 }
                 
