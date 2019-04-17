@@ -14,7 +14,6 @@ class DataRepo: NSObject {
     var lessonNames: [[String]]
     var questions: [[Question]]
     
-    
     @objc dynamic var recentActivities: [String]
     
     var username: String
@@ -24,6 +23,13 @@ class DataRepo: NSObject {
     var brushUpTopic: String
     
     var fileUrl: URL?
+    
+    //The index of each array represents the 
+    
+    var correctQuestionsPerModule: [Int]
+    var incorrectQuestionsPerModule: [Int]
+    var bloomsTaxCorrect: [Int]
+    var bloomsTaxIncorrect: [Int]
     
     static let instance = DataRepo()
 
@@ -35,6 +41,10 @@ class DataRepo: NSObject {
         continueTopic = "No topic has been started."
         improveTopic = String()
         brushUpTopic = String()
+        correctQuestionsPerModule = [0,0,0]
+        incorrectQuestionsPerModule = [0,0,0]
+        bloomsTaxCorrect = [Int]()
+        bloomsTaxIncorrect = [Int]()
         
         super.init()
         
@@ -124,5 +134,7 @@ class DataRepo: NSObject {
         } catch {
             print("Error getting file info")
         }
-    }
+    }//end loadQuestions()
+    
+
 }
