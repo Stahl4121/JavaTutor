@@ -10,8 +10,12 @@ import UIKit
 
 class QuizResultsVC: UIViewController {
     
+    let repo = DataRepo.instance
+    var moduleNum: Int = 0
     var numCorrect: Int = 0
     var numIncorrect: Int = 0
+    var bloomCorrectLevels: [Int] = [0, 0, 0]
+    var bloomIncorrectLevels: [Int] = [0, 0, 0]
     
     @IBOutlet weak var lblNumCorrect: UILabel!
     @IBOutlet weak var lblNumIncorrect: UILabel!
@@ -20,6 +24,7 @@ class QuizResultsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         //Remove questions from the nav controller, so user cannot re-enter quiz
         var navigationArray = self.navigationController?.viewControllers //To get all UIViewController stack as Array
@@ -32,9 +37,23 @@ class QuizResultsVC: UIViewController {
         lblNumCorrect.text = String(numCorrect)
         lblNumIncorrect.text = String(numIncorrect)
         lblScore.text = "\(Int(((Double(numCorrect)/Double(numCorrect+numIncorrect))*100).rounded()))%"
+     
+        updateDataRepo()
         
     }
     
+    
+    func updateDataRepo(){
+        repo.correctQuestionsPerModule[moduleNum] = repo.correctQuestionsPerModule[moduleNum] + self.numCorrect
+        
+        //repeat for all the other variables
+        repo.incorrectQuestionsPerModule[moduleNum] = repo.incorrectQuestionsPerModule[moduleNum] + self.numIncorrect
+        
+        repo.bloomsTaxCorrect = repo.bloomsTaxCorrect + self.bloomCorrectLevels
+        
+        repo.bloomsTaxIncorrect = repo.bloomsTaxIncorrect + self.bloomIncorrectLevels
+        
+    }
     
     /*
      // MARK: - Navigation

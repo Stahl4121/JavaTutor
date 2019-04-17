@@ -24,6 +24,13 @@ class DataRepo: NSObject {
     
     var fileUrl: URL?
     
+    //The index of each array represents the 
+    
+    var correctQuestionsPerModule: [Int]
+    var incorrectQuestionsPerModule: [Int]
+    var bloomsTaxCorrect: [Int]
+    var bloomsTaxIncorrect: [Int]
+    
     static let instance = DataRepo()
 
     private override init() {
@@ -34,6 +41,10 @@ class DataRepo: NSObject {
         continueTopic = "No topic has been started."
         improveTopic = String()
         brushUpTopic = String()
+        correctQuestionsPerModule = [0,0,0]
+        incorrectQuestionsPerModule = [0,0,0]
+        bloomsTaxCorrect = [Int]()
+        bloomsTaxIncorrect = [Int]()
         
         super.init()
         
@@ -112,7 +123,7 @@ class DataRepo: NSObject {
                 }
                 for i in 0...(moduleNames.count-1){
                     if questions[i].isEmpty{
-                        questions[i].append(Question(module: i+1, question: "What is the answer to this question?", answers: ["The Correct Answer", "An Incorrect Answer", "Another Incorrect Answer", "Yet Another Incorrect Answer"], correctIdx: 0))
+                        questions[i].append(Question(module: i+1, question: "What is the answer to this question?", answers: ["The Correct Answer", "An Incorrect Answer", "Another Incorrect Answer", "Yet Another Incorrect Answer"], correctIdx: 0, bloomValue: 1))
                     }
                 }
                 
@@ -123,5 +134,7 @@ class DataRepo: NSObject {
         } catch {
             print("Error getting file info")
         }
-    }
+    }//end loadQuestions()
+    
+
 }

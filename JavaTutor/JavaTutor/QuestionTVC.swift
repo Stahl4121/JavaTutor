@@ -16,6 +16,13 @@ class QuestionTVC: UITableViewController {
     var selectedQuestion: Int = 0
     var numCorrect: Int = 0
     var numIncorrect: Int = 0
+    var tempVal: Int = 0
+    
+    //Index 0 --> level 1
+    //Index 1 --> level 2
+    //Index 2 --> level 3
+    var bloomCorrectLevels : [Int] = [0, 0, 0]
+    var bloomIncorrectLevels : [Int] = [0, 0, 0]
         
     @IBOutlet weak var lblQuestionHeading: UILabel!
     @IBOutlet weak var lblQuestion: UILabel!
@@ -60,30 +67,61 @@ class QuestionTVC: UITableViewController {
         return true
     }
     
+    //Keep calling until the quiz is done, incrementing numCorrect if it matches the corresponding question in the repo
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if let child = segue.destination as? QuestionTVC {
             child.module = self.module
             child.selectedQuestion = self.selectedQuestion + 1
             
+            //increment correct/incorrect counter
             if repo.questions[module][selectedQuestion].correctIdx == row {
                 child.numCorrect = self.numCorrect + 1
                 child.numIncorrect = self.numIncorrect
+            
+                //if they answered it correctly, add the level of Bloom's Taxonomy associated with the question in question (heh)
+                
+                tempVal = repo.questions[module][selectedQuestion].bloomValue
+                child.bloomCorrectLevels[tempVal - 1] = self.bloomCorrectLevels[tempVal - 1] + 1
+                child.bloomIncorrectLevels[tempVal - 1] = self.bloomIncorrectLevels[tempVal - 1]
             }
             else{
                 child.numIncorrect = self.numIncorrect + 1
                 child.numCorrect = self.numCorrect
+                
+                //add a way to track bloomValueIncorrect
+                tempVal = repo.questions[module][selectedQuestion].bloomValue
+                child.bloomIncorrectLevels[tempVal - 1] = self.bloomIncorrectLevels[tempVal - 1] + 1
+                child.bloomCorrectLevels[tempVal - 1] = self.bloomCorrectLevels[tempVal - 1]
             }
         }
         
         if let child = segue.destination as? QuizResultsVC {
+            
+            child.moduleNum = self.module
+            
             if repo.questions[module][selectedQuestion].correctIdx == row {
                 child.numCorrect = self.numCorrect + 1
                 child.numIncorrect = self.numIncorrect
+                
+                
+                tempVal = repo.questions[module][selectedQuestion].bloomValue
+                child.bloomCorrectLevels[tempVal - 1] = self.bloomCorrectLevels[tempVal - 1] + 1
+                
+                child.bloomIncorrectLevels[tempVal - 1] = self.bloomIncorrectLevels[tempVal - 1]
+                
+                
             }
             else{
                 child.numIncorrect = self.numIncorrect + 1
                 child.numCorrect = self.numCorrect
+                
+                //add a way to track bloomValueIncorrect
+                tempVal = repo.questions[module][selectedQuestion].bloomValue
+                
+                child.bloomIncorrectLevels[tempVal - 1] = self.bloomIncorrectLevels[tempVal - 1] + 1
+                
+                child.bloomCorrectLevels[tempVal - 1] = self.bloomCorrectLevels[tempVal - 1]
             }
         }
         
