@@ -21,7 +21,8 @@ class QuestionTVC: UITableViewController {
     //Index 0 --> level 1
     //Index 1 --> level 2
     //Index 2 --> level 3
-    var bloomLevels : [Int] = [0, 0, 0]
+    var bloomCorrectLevels : [Int] = [0, 0, 0]
+    var bloomIncorrectLevels : [Int] = [0, 0, 0]
         
     @IBOutlet weak var lblQuestionHeading: UILabel!
     @IBOutlet weak var lblQuestion: UILabel!
@@ -81,13 +82,17 @@ class QuestionTVC: UITableViewController {
                 //if they answered it correctly, add the level of Bloom's Taxonomy associated with the question in question (heh)
                 
                 tempVal = repo.questions[module][selectedQuestion].bloomValue
-                child.bloomLevels[tempVal - 1] = self.bloomLevels[tempVal - 1] + 1
-                print("\nBloom! ", tempVal, "\n")
-                
+                child.bloomCorrectLevels[tempVal - 1] = self.bloomCorrectLevels[tempVal - 1] + 1
+                child.bloomIncorrectLevels[tempVal - 1] = self.bloomIncorrectLevels[tempVal - 1]
             }
             else{
                 child.numIncorrect = self.numIncorrect + 1
                 child.numCorrect = self.numCorrect
+                
+                //add a way to track bloomValueIncorrect
+                tempVal = repo.questions[module][selectedQuestion].bloomValue
+                child.bloomIncorrectLevels[tempVal - 1] = self.bloomIncorrectLevels[tempVal - 1] + 1
+                child.bloomCorrectLevels[tempVal - 1] = self.bloomCorrectLevels[tempVal - 1]
             }
         }
         
@@ -96,10 +101,25 @@ class QuestionTVC: UITableViewController {
             if repo.questions[module][selectedQuestion].correctIdx == row {
                 child.numCorrect = self.numCorrect + 1
                 child.numIncorrect = self.numIncorrect
+                
+                
+                tempVal = repo.questions[module][selectedQuestion].bloomValue
+                child.bloomCorrectLevels[tempVal - 1] = self.bloomCorrectLevels[tempVal - 1] + 1
+                
+                child.bloomIncorrectLevels[tempVal - 1] = self.bloomIncorrectLevels[tempVal - 1]
+                
+                
             }
             else{
                 child.numIncorrect = self.numIncorrect + 1
                 child.numCorrect = self.numCorrect
+                
+                //add a way to track bloomValueIncorrect
+                tempVal = repo.questions[module][selectedQuestion].bloomValue
+                
+                child.bloomIncorrectLevels[tempVal - 1] = self.bloomIncorrectLevels[tempVal - 1] + 1
+                
+                child.bloomCorrectLevels[tempVal - 1] = self.bloomCorrectLevels[tempVal - 1]
             }
         }
         

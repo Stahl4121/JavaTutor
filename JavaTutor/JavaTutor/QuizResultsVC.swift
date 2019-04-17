@@ -12,6 +12,8 @@ class QuizResultsVC: UIViewController {
     
     var numCorrect: Int = 0
     var numIncorrect: Int = 0
+    var bloomCorrectLevels: [Int] = [0, 0, 0]
+    var bloomIncorrectLevels: [Int] = [0, 0, 0]
     
     @IBOutlet weak var lblNumCorrect: UILabel!
     @IBOutlet weak var lblNumIncorrect: UILabel!
@@ -32,8 +34,12 @@ class QuizResultsVC: UIViewController {
         lblNumCorrect.text = String(numCorrect)
         lblNumIncorrect.text = String(numIncorrect)
         lblScore.text = "\(Int(((Double(numCorrect)/Double(numCorrect+numIncorrect))*100).rounded()))%"
+     
+        
+        
         
     }
+    
     
     
     /*
