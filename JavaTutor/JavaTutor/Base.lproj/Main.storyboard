@@ -352,7 +352,7 @@
         <scene sceneID="78D-DG-w53">
             <objects>
                 <viewController id="Utk-bX-lCY" userLabel="Statistics" customClass="StatisticsVC" customModule="JavaTutor" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="0VV-gD-i7g">
+                    <view key="view" contentMode="scaleToFill" id="0VV-gD-i7g" customClass="ViewController">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -360,7 +360,7 @@
                                 <rect key="frame" x="20" y="91" width="470" height="330"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{Image Title 1}" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tZQ-1t-W6e" userLabel="Lbl Recent Module">
-                                        <rect key="frame" x="15" y="15" width="214" height="44"/>
+                                        <rect key="frame" x="20" y="15" width="209" height="44"/>
                                         <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="32"/>
                                         <color key="textColor" red="0.28211217820000001" green="0.34888452079999999" blue="0.37370704119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -369,7 +369,8 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="tZQ-1t-W6e" firstAttribute="top" secondItem="TA6-Vc-hXG" secondAttribute="top" constant="15" id="1K2-li-plG"/>
-                                    <constraint firstItem="tZQ-1t-W6e" firstAttribute="leading" secondItem="TA6-Vc-hXG" secondAttribute="leading" constant="15" id="CPw-w6-ICG"/>
+                                    <constraint firstAttribute="trailing" secondItem="tZQ-1t-W6e" secondAttribute="trailing" constant="241" id="9MK-8y-e1h"/>
+                                    <constraint firstItem="tZQ-1t-W6e" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="TA6-Vc-hXG" secondAttribute="leading" symbolic="YES" id="CPw-w6-ICG"/>
                                     <constraint firstAttribute="width" constant="470" id="hF2-50-W0U"/>
                                     <constraint firstAttribute="height" constant="330" id="ngm-DE-D9Z"/>
                                 </constraints>
@@ -384,17 +385,27 @@
                                 <rect key="frame" x="534" y="91" width="470" height="330"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{Image Title 2}" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SHn-j5-gWH" userLabel="Lbl Recent Module">
-                                        <rect key="frame" x="15" y="15" width="214" height="44"/>
+                                        <rect key="frame" x="20" y="15" width="209" height="44"/>
                                         <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="32"/>
                                         <color key="textColor" red="0.28211217820000001" green="0.34888452079999999" blue="0.37370704119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xq6-DE-Whg">
+                                        <rect key="frame" x="212" y="150" width="46" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <segue destination="o1v-PV-lBT" kind="show" id="6e9-5r-i8M"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="xq6-DE-Whg" firstAttribute="centerY" secondItem="xXZ-aV-io7" secondAttribute="centerY" id="GaK-mO-RDL"/>
                                     <constraint firstItem="SHn-j5-gWH" firstAttribute="top" secondItem="xXZ-aV-io7" secondAttribute="top" constant="15" id="QRV-OF-xfd"/>
-                                    <constraint firstItem="SHn-j5-gWH" firstAttribute="leading" secondItem="xXZ-aV-io7" secondAttribute="leading" constant="15" id="Qux-yX-fES"/>
+                                    <constraint firstItem="SHn-j5-gWH" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="xXZ-aV-io7" secondAttribute="leading" symbolic="YES" id="Qux-yX-fES"/>
+                                    <constraint firstItem="xq6-DE-Whg" firstAttribute="centerX" secondItem="xXZ-aV-io7" secondAttribute="centerX" id="aCW-sn-dVW"/>
                                     <constraint firstAttribute="height" constant="330" id="eDx-KC-4Zm"/>
+                                    <constraint firstAttribute="trailing" secondItem="SHn-j5-gWH" secondAttribute="trailing" constant="241" id="ljQ-Ae-Afr"/>
                                     <constraint firstAttribute="width" constant="470" id="ygJ-92-VRS"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -408,17 +419,26 @@
                                 <rect key="frame" x="20" y="464" width="300" height="221"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{Image Title 3}" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CN4-Of-MLa" userLabel="Lbl Recent Module">
-                                        <rect key="frame" x="15" y="15" width="214" height="44"/>
+                                        <rect key="frame" x="20" y="15" width="209" height="44"/>
                                         <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="32"/>
                                         <color key="textColor" red="0.28211217820000001" green="0.34888452079999999" blue="0.37370704119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T6W-RP-aA8">
+                                        <rect key="frame" x="94" y="80" width="112" height="61"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="44"/>
+                                        <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="CN4-Of-MLa" secondAttribute="trailing" constant="71" id="HRk-Au-LFZ"/>
                                     <constraint firstItem="CN4-Of-MLa" firstAttribute="top" secondItem="v9D-Og-5mQ" secondAttribute="top" constant="15" id="I2h-D2-kG3"/>
+                                    <constraint firstItem="T6W-RP-aA8" firstAttribute="centerY" secondItem="v9D-Og-5mQ" secondAttribute="centerY" id="LKa-dC-kxB"/>
+                                    <constraint firstItem="T6W-RP-aA8" firstAttribute="centerX" secondItem="v9D-Og-5mQ" secondAttribute="centerX" id="dEC-tt-eme"/>
                                     <constraint firstAttribute="width" constant="300" id="h7u-hQ-wPy"/>
-                                    <constraint firstItem="CN4-Of-MLa" firstAttribute="leading" secondItem="v9D-Og-5mQ" secondAttribute="leading" constant="15" id="zpE-n5-39X"/>
+                                    <constraint firstItem="CN4-Of-MLa" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="v9D-Og-5mQ" secondAttribute="leading" symbolic="YES" id="zpE-n5-39X"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
@@ -431,7 +451,7 @@
                                 <rect key="frame" x="362" y="464" width="300" height="221"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{Image Title 4}" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qcW-zr-1QS" userLabel="Lbl Recent Module">
-                                        <rect key="frame" x="15" y="15" width="214" height="44"/>
+                                        <rect key="frame" x="20" y="15" width="209" height="44"/>
                                         <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="32"/>
                                         <color key="textColor" red="0.28211217820000001" green="0.34888452079999999" blue="0.37370704119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -440,7 +460,8 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="qcW-zr-1QS" firstAttribute="top" secondItem="OYr-JK-feu" secondAttribute="top" constant="15" id="Gon-9w-83F"/>
-                                    <constraint firstItem="qcW-zr-1QS" firstAttribute="leading" secondItem="OYr-JK-feu" secondAttribute="leading" constant="15" id="bm2-T3-jPS"/>
+                                    <constraint firstAttribute="trailing" secondItem="qcW-zr-1QS" secondAttribute="trailing" constant="71" id="OWY-mT-AI4"/>
+                                    <constraint firstItem="qcW-zr-1QS" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="OYr-JK-feu" secondAttribute="leading" symbolic="YES" id="bm2-T3-jPS"/>
                                     <constraint firstAttribute="width" constant="300" id="oRz-yu-V0H"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -454,7 +475,7 @@
                                 <rect key="frame" x="704" y="464" width="300" height="221"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{Image Title 5}" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FEd-ES-Lp6" userLabel="Lbl Recent Module">
-                                        <rect key="frame" x="15" y="15" width="214" height="44"/>
+                                        <rect key="frame" x="20" y="15" width="209" height="44"/>
                                         <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="32"/>
                                         <color key="textColor" red="0.28211217820000001" green="0.34888452079999999" blue="0.37370704119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -462,8 +483,9 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="FEd-ES-Lp6" firstAttribute="leading" secondItem="EJk-VC-tfa" secondAttribute="leading" constant="15" id="XiV-wl-5iO"/>
+                                    <constraint firstItem="FEd-ES-Lp6" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="EJk-VC-tfa" secondAttribute="leading" symbolic="YES" id="XiV-wl-5iO"/>
                                     <constraint firstAttribute="width" constant="300" id="n21-Mo-NSL"/>
+                                    <constraint firstAttribute="trailing" secondItem="FEd-ES-Lp6" secondAttribute="trailing" constant="71" id="sz7-7X-i4t"/>
                                     <constraint firstItem="FEd-ES-Lp6" firstAttribute="top" secondItem="EJk-VC-tfa" secondAttribute="top" constant="15" id="xjN-jX-Rmh"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -495,10 +517,32 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Statistics" image="profile.png" id="ZeR-eN-rPn"/>
                     <navigationItem key="navigationItem" title="Statistics" id="aY7-Er-4c9"/>
+                    <connections>
+                        <outlet property="BloomsTaxonomy" destination="FEd-ES-Lp6" id="MIa-mO-EuW"/>
+                        <outlet property="PercentRecentCompleted" destination="tZQ-1t-W6e" id="9ZJ-eF-uvV"/>
+                        <outlet property="PercentTotalCompleted" destination="SHn-j5-gWH" id="hrD-CX-DBw"/>
+                        <outlet property="QuizAverage" destination="T6W-RP-aA8" id="tiw-rW-DqE"/>
+                        <outlet property="QuizScores" destination="CN4-Of-MLa" id="i4v-PS-R8p"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JyC-kd-aA3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1529.8828125" y="-3.125"/>
+        </scene>
+        <!--Overall ProgressVC-->
+        <scene sceneID="gA4-Em-FDY">
+            <objects>
+                <viewController id="o1v-PV-lBT" customClass="OverallProgressVC" customModule="JavaTutor" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="75W-Wl-Vsm">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="W4c-Wg-boP"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RWu-TB-gAO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1529" y="722"/>
         </scene>
         <!--Base Tab Bar Controller-->
         <scene sceneID="rsB-Md-6t4">

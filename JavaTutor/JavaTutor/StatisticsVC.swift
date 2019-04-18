@@ -10,10 +10,48 @@ import UIKit
 
 class StatisticsVC: UIViewController {
 
+    let repo = DataRepo.instance
+    
+    //View 1: what percentage of most recently visited module has student completed?
+    @IBOutlet weak var PercentRecentCompleted: UILabel!
+    
+    //View 2: what percentage of the tutorial have they completed?
+    @IBOutlet weak var PercentTotalCompleted: UILabel!
+    
+    //View 3
+    @IBOutlet weak var QuizScores: UILabel!
+    
+    @IBOutlet weak var QuizAverage: UILabel!
+    //View 4: how long have they spent in a lesson? (line graph)
+    @IBOutlet weak var TimesInLesson: UILabel!
+    
+    //View 5: ring chart, how much of bloom's tax have they done?
+    //TODO: perhaps have this record that extra activities thing?
+    @IBOutlet weak var BloomsTaxonomy: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewLoadSetup()  //you may call it from view did load also
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewLoadSetup()
+        
+    }
+    
+    func viewLoadSetup() {
 
         // Do any additional setup after loading the view.
+        PercentRecentCompleted.text = "Progress through Module"
+        PercentTotalCompleted.text = "Progress through Tutorial"
+        QuizScores.text = "Quiz Stuff"
+        //TimesInLesson.text = "Time in Lesson"
+        BloomsTaxonomy.text = "Bloom's Taxonomy"
+        
+        setQuizScores()
+        
     }
     
 
@@ -27,4 +65,14 @@ class StatisticsVC: UIViewController {
     }
     */
 
+    
+    func setQuizScores(){
+    
+        QuizAverage.text = "\(Int(repo.quizAvg))%"
+        QuizAverage.textColor = UIColor.init(displayP3Red: 100/255, green: CGFloat((repo.quizAvg)/255), blue: 100/255, alpha: 1)
+        
+    }
+    
+    
+    
 }
