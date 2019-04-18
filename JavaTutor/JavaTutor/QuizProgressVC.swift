@@ -1,5 +1,5 @@
 //
-//  OverallProgressVC.swift
+//  QuizProgressVC.swift
 //  JavaTutor
 //
 //  Created by Emily Wasylenko on 4/18/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 /*
-@IBDesignable class OverallProgressVC: UIViewController {
+@IBDesignable class QuizProgressVC: UIViewController {
    
         //Values for each segment
         private var segmentValues : [Float]

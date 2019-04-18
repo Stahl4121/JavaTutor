@@ -14,7 +14,7 @@
     {
         "module":1,
         "question":"How can you store the value \"8.0\"?",
-        "answers":["double boi = 8.0;", "int boi = 8.0", "String boi = 8.0", "Map<Integer", "ArrayList<TriangularBois>> boi = 8.0"],
+        "answers":["double boi = 8.0;", "int boi = 8.0", "String boi = 8.0", "ArrayList<TriangularBois>> boi = 8.0"],
         "bloomValue":1
     },
     {

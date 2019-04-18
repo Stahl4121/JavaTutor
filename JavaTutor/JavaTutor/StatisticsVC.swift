@@ -69,7 +69,17 @@ class StatisticsVC: UIViewController {
     func setQuizScores(){
     
         QuizAverage.text = "\(Int(repo.quizAvg))%"
-        QuizAverage.textColor = UIColor.init(displayP3Red: 100/255, green: CGFloat((repo.quizAvg)/255), blue: 100/255, alpha: 1)
+        
+        if repo.quizAvg < 60 {
+            QuizAverage.textColor = UIColor.red
+        } else if repo.quizAvg < 70 {
+            QuizAverage.textColor = UIColor.orange
+        } else if repo.quizAvg < 90 {
+            QuizAverage.textColor = UIColor.yellow
+        } else if repo.quizAvg <= 100 {
+            QuizAverage.textColor = UIColor.green
+        }
+        
         
     }
     
