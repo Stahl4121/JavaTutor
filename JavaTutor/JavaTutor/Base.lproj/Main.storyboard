@@ -482,7 +482,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="FEd-ES-Lp6" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="EJk-VC-tfa" secondAttribute="leading" symbolic="YES" id="XiV-wl-5iO"/>
+                                    <constraint firstItem="FEd-ES-Lp6" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="EJk-VC-tfa" secondAttribute="leading" constant="20" symbolic="YES" id="XiV-wl-5iO"/>
                                     <constraint firstAttribute="width" constant="300" id="n21-Mo-NSL"/>
                                     <constraint firstAttribute="trailing" secondItem="FEd-ES-Lp6" secondAttribute="trailing" constant="71" id="sz7-7X-i4t"/>
                                     <constraint firstItem="FEd-ES-Lp6" firstAttribute="top" secondItem="EJk-VC-tfa" secondAttribute="top" constant="15" id="xjN-jX-Rmh"/>
