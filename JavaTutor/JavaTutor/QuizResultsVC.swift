@@ -53,12 +53,15 @@ class QuizResultsVC: UIViewController {
         repo.bloomsTaxCorrect = repo.bloomsTaxCorrect + self.bloomCorrectLevels
         repo.bloomsTaxIncorrect = repo.bloomsTaxIncorrect + self.bloomIncorrectLevels
         
-        //increments # of times student has taken this module's quiz.
+        //increments # of times student has taken a quiz
         repo.totalQuizzes = repo.totalQuizzes + 1
         
-        //adjusts quiz average: (All prev * (new_total - 1) + new_Score )/new_total
+        //adjusts OVERALL quiz average: (All prev * (new_total - 1) + new_Score )/new_total
         repo.quizAvg = ((repo.quizAvg * Double((repo.totalQuizzes - 1))) + ((Double(numCorrect)/Double(numCorrect+numIncorrect))*100))/(Double(repo.totalQuizzes))
         
+        //adjusts quiz average & attempt count for this module
+        repo.quizzesPerModule[moduleNum] = repo.quizzesPerModule[moduleNum] + 1
+        repo.quizAvgPerMod[moduleNum] = ((repo.quizAvgPerMod[moduleNum] * Double((repo.quizzesPerModule[moduleNum] - 1))) + ((Double(numCorrect)/Double(numCorrect+numIncorrect))*100))/(Double(repo.quizzesPerModule[moduleNum]))
         
     }
     
