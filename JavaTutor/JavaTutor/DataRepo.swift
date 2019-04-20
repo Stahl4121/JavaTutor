@@ -50,13 +50,13 @@ class DataRepo: NSObject {
         brushUpTopic = String()
         
         //unnecessary
-        correctQuestionsPerModule = [0,0,0,0,0]
-        incorrectQuestionsPerModule = [0,0,0,0,0]
+        correctQuestionsPerModule = [0,0,0,0,0,0,0,0,0,0]
+        incorrectQuestionsPerModule = [0,0,0,0,0,0,0,0,0,0]
         //instead, make
-        quizzesPerModule = [0,0,0,0,0]
+        quizzesPerModule = [0,0,0,0,0,0,0,0,0,0]
         totalQuizzes = 0
         quizAvg = 0.0
-        quizAvgPerMod = [0,0,0,0,0]
+        quizAvgPerMod = [0,0,0,0,0,0,0,0,0,0]
         
         bloomsTaxCorrect = [Int]()
         bloomsTaxIncorrect = [Int]()
