@@ -79,8 +79,6 @@ class QuizProgressVC: UIViewController {
         mod9score.text = "\(repo.quizAvgPerMod[8].rounded())"
         mod10score.text = "\(repo.quizAvgPerMod[9].rounded())"
         
-        //"\(Int(((Double(numCorrect)/Double(numCorrect+numIncorrect))*100).rounded()))%"
-        
     }
 
     

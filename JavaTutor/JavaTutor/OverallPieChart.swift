@@ -19,6 +19,8 @@ struct Segment {
 
 class OverallPieChart: UIView {
     
+    var radius : CGFloat = 0.0
+    
     /// An array of structs representing the segments of the pie chart
     var segments = [Segment]() {
         didSet {
@@ -35,16 +37,18 @@ class OverallPieChart: UIView {
         super.init(coder: aDecoder)
     }
     
+    
+    
     override func draw(_ rect: CGRect) {
         
         // get current context
         let ctx = UIGraphicsGetCurrentContext()
         
         // radius is the half the frame's width or height (whichever is smallest)
-        let radius = min(frame.size.width, frame.size.height) * 0.5
+        //let radius = min(frame.size.width, frame.size.height) * 0.5
         
         // center of the view
-        let viewCenter = CGPoint(x: bounds.size.width * 0.5, y: bounds.size.height * 0.5)
+        let viewCenter = CGPoint(x: 500, y: 200 )//CGPoint(x: bounds.size.width * 0.5, y: bounds.size.height * 0.5)
         
         // enumerate the total value of the segments by using reduce to sum them
         let valueCount = segments.reduce(0, {$0 + $1.value})
@@ -64,7 +68,7 @@ class OverallPieChart: UIView {
             ctx?.move(to: viewCenter)
             
             // add arc from the center for each segment (anticlockwise is specified for the arc, but as the view flips the context, it will produce a clockwise arc)
-            ctx?.addArc(center: viewCenter, radius: radius, startAngle: startAngle, endAngle: endAngle, clockwise: false)
+            ctx?.addArc(center: viewCenter, radius: self.radius, startAngle: startAngle, endAngle: endAngle, clockwise: false)
             
             // fill segment
             ctx?.fillPath()

@@ -11,6 +11,12 @@ import WebKit
 
 class LessonWeb: UIViewController, WKUIDelegate {
     
+    let repo = DataRepo.instance
+    
+    //TODO: Set a timer on this screen and when it hits 3 minutes, the user has finished the chapter
+    var counter = 0
+    var timer = Timer()
+    
     var lessonName: String = ""
     var modNum: Int = 0
     var lessonNum: Int = 0
@@ -28,7 +34,9 @@ class LessonWeb: UIViewController, WKUIDelegate {
             webV.loadFileURL(url, allowingReadAccessTo: url.deletingLastPathComponent())
         }
         
-        // Do any additional setup after loading the view.
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
+
+        
     }
     
 
@@ -40,5 +48,14 @@ class LessonWeb: UIViewController, WKUIDelegate {
         // Pass the selected object to the new view controller.
     }
  
+    
+    @objc func update() {
+        counter += 1
+        if counter == 10 {
+            repo.chaptersFinished[modNum-1] = repo.chaptersFinished[modNum-1] + 0.5
+        } else if counter == 180 {
+            repo.chaptersFinished[modNum-1] = repo.chaptersFinished[modNum-1] + 0.5
+        }
+    }
 
 }

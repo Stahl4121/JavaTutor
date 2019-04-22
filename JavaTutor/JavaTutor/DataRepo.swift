@@ -34,6 +34,7 @@ class DataRepo: NSObject {
     var quizAvg: Double
     var quizzesPerModule: [Int]
     var quizAvgPerMod: [Double]
+    var chaptersFinished: [Double]
     
     var bloomsTaxCorrect: [Int]
     var bloomsTaxIncorrect: [Int]
@@ -57,6 +58,7 @@ class DataRepo: NSObject {
         totalQuizzes = 0
         quizAvg = 0.0
         quizAvgPerMod = [0,0,0,0,0,0,0,0,0,0]
+        chaptersFinished = [0,0,0,0,0,0,0,0,0,0]
         
         bloomsTaxCorrect = [Int]()
         bloomsTaxIncorrect = [Int]()
