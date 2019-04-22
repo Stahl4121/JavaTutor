@@ -15,6 +15,9 @@ struct Segment {
     
     // the value of a given segment – will be used to automatically calculate a ratio
     var value: CGFloat
+    
+    
+    
 }
 
 class OverallPieChart: UIView {
@@ -72,6 +75,8 @@ class OverallPieChart: UIView {
             
             // fill segment
             ctx?.fillPath()
+            
+            //maybe do fillPath with pattern? idk
             
             // update starting angle of the next segment to the ending angle of this segment
             startAngle = endAngle
