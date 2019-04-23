@@ -819,8 +819,8 @@
                             <rect key="frame" x="0.0" y="0.0" width="1024" height="200"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lesson List" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Pm-cF-acG">
-                                    <rect key="frame" x="25" y="40" width="203" height="55"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{Module Name} Lesson List" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Pm-cF-acG">
+                                    <rect key="frame" x="25" y="40" width="503" height="55"/>
                                     <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="40"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
@@ -957,7 +957,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="6cE-Dt-Hah" kind="show" id="Iho-0n-Rbr"/>
+                                    <segue destination="vXO-XQ-nAL" kind="show" id="Xvr-Z0-lGb"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -967,15 +967,18 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Lesson List" id="ci9-eO-wwI"/>
+                    <connections>
+                        <outlet property="lblLessonListTitle" destination="1Pm-cF-acG" id="RM6-Yc-LSJ"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SjG-lJ-yGp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="257" y="720"/>
         </scene>
-        <!--Quiz-->
+        <!--Quiz Question-->
         <scene sceneID="3rX-s4-3xa">
             <objects>
-                <tableViewController id="6cE-Dt-Hah" customClass="QuestionTVC" customModule="JavaTutor" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="6cE-Dt-Hah" userLabel="Quiz Question" customClass="QuestionTVC" customModule="JavaTutor" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="105" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="GEq-nf-yGw">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1068,12 +1071,11 @@
                     <connections>
                         <outlet property="lblQuestion" destination="prf-kO-GuO" id="5P4-de-9KB"/>
                         <outlet property="lblQuestionHeading" destination="9oL-8z-Qcg" id="CdA-m8-DJJ"/>
-                        <segue destination="mb4-WI-RFk" kind="show" identifier="endQuizSegue" id="vdI-1A-LkK"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w3f-PL-DCX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-381" y="1468"/>
+            <point key="canvasLocation" x="-364" y="2210"/>
         </scene>
         <!--Lesson Web-->
         <scene sceneID="2s6-Fd-tDj">
@@ -1510,6 +1512,132 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f1Z-Hv-vDP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="144" y="-2338"/>
+        </scene>
+        <!--Quiz-->
+        <scene sceneID="icU-8W-bAK">
+            <objects>
+                <tableViewController id="vXO-XQ-nAL" customClass="QuizTVC" customModule="JavaTutor" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelectionDuringEditing="YES" allowsMultipleSelection="YES" allowsMultipleSelectionDuringEditing="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="GzY-AA-BBb">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="separatorColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="QnU-3n-hpo">
+                            <rect key="frame" x="0.0" y="0.0" width="1024" height="95"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{Quiz Topic} Quiz" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xuv-IG-qhp">
+                                    <rect key="frame" x="25" y="20" width="318" height="55"/>
+                                    <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="40"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="—————————————————" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ou-bb-EfJ">
+                                    <rect key="frame" x="25" y="65" width="340" height="28"/>
+                                    <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="0.3512374651637305" green="0.43690513959390864" blue="0.38426249979727267" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstItem="xuv-IG-qhp" firstAttribute="leading" secondItem="QnU-3n-hpo" secondAttribute="leading" constant="25" id="nRi-7h-Amv"/>
+                                <constraint firstItem="7ou-bb-EfJ" firstAttribute="leading" secondItem="xuv-IG-qhp" secondAttribute="leading" id="pwc-dZ-lus"/>
+                                <constraint firstItem="7ou-bb-EfJ" firstAttribute="top" secondItem="xuv-IG-qhp" secondAttribute="bottom" constant="-10" id="w3F-Wo-Xsd"/>
+                                <constraint firstItem="xuv-IG-qhp" firstAttribute="top" secondItem="QnU-3n-hpo" secondAttribute="top" constant="20" id="zDP-QN-rPh"/>
+                            </constraints>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="questionHeaderCell" rowHeight="120" id="wHN-M3-biO" customClass="QuestionHeaderCell" customModule="JavaTutor" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="123" width="1024" height="120"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wHN-M3-biO" id="aaZ-x6-FTR">
+                                    <rect key="frame" x="0.0" y="0.0" width="1024" height="119.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{Question Text}" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jty-9X-Rog" userLabel="Lbl Question">
+                                            <rect key="frame" x="20" y="40" width="940" height="60"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="940" id="1ns-PX-r2C"/>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="AbN-d2-doc"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Avenir-HeavyOblique" family="Avenir" pointSize="27"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jeb-cL-SCN">
+                                            <rect key="frame" x="0.0" y="0.0" width="1024" height="15"/>
+                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="15" id="UcO-cg-xGh"/>
+                                                <constraint firstAttribute="width" constant="1024" id="wNz-ad-bdh"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.49019607843137253" green="0.60784313725490191" blue="0.52941176470588236" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="jty-9X-Rog" secondAttribute="bottom" constant="9" id="M11-2m-ooO"/>
+                                        <constraint firstItem="jeb-cL-SCN" firstAttribute="top" secondItem="aaZ-x6-FTR" secondAttribute="top" id="kX2-6r-j3m"/>
+                                        <constraint firstItem="jeb-cL-SCN" firstAttribute="leading" secondItem="aaZ-x6-FTR" secondAttribute="leading" id="n1L-Sq-3UG"/>
+                                        <constraint firstAttribute="trailing" secondItem="jeb-cL-SCN" secondAttribute="trailing" id="qpD-TR-MDR"/>
+                                        <constraint firstItem="jty-9X-Rog" firstAttribute="top" secondItem="jeb-cL-SCN" secondAttribute="bottom" constant="25" id="wTl-0Q-Tzl"/>
+                                        <constraint firstItem="jty-9X-Rog" firstAttribute="leading" secondItem="aaZ-x6-FTR" secondAttribute="leadingMargin" id="x89-dx-rBw"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="lblQuestionTitle" destination="jty-9X-Rog" id="AZr-bV-Bfc"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="answerCell" rowHeight="85" id="KDU-pa-ccv" customClass="AnswerCell" customModule="JavaTutor" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="243" width="1024" height="85"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KDU-pa-ccv" id="2r0-96-tLN">
+                                    <rect key="frame" x="0.0" y="0.0" width="1024" height="84.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{Answer Text}" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lr1-3t-Y0i">
+                                            <rect key="frame" x="20" y="27.5" width="900" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="bl3-hn-Qhr"/>
+                                                <constraint firstAttribute="width" constant="900" id="fCU-08-91G"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="24"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.84313725490000002" green="0.96078431369999995" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Lr1-3t-Y0i" secondAttribute="bottom" constant="16.5" id="YuN-7w-w50"/>
+                                        <constraint firstItem="Lr1-3t-Y0i" firstAttribute="top" secondItem="2r0-96-tLN" secondAttribute="topMargin" constant="16.5" id="iSR-Ao-c6Y"/>
+                                        <constraint firstItem="Lr1-3t-Y0i" firstAttribute="leading" secondItem="2r0-96-tLN" secondAttribute="leadingMargin" id="urn-ug-cU9"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.84248512983322144" green="0.96167093515396118" blue="0.88095909357070923" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="lblAnswer" destination="Lr1-3t-Y0i" id="eRE-RF-89A"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="vXO-XQ-nAL" id="HqQ-bb-7d7"/>
+                            <outlet property="delegate" destination="vXO-XQ-nAL" id="37K-CV-aSP"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Quiz" id="M4S-8J-BHF">
+                        <barButtonItem key="rightBarButtonItem" title="Submit Answers" id="MKM-3e-Wff">
+                            <connections>
+                                <segue destination="mb4-WI-RFk" kind="show" id="0pW-cp-FK3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="lblQuizHeading" destination="xuv-IG-qhp" id="TKD-Zy-8xH"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="90G-Ph-uxI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-398" y="1468"/>
         </scene>
     </scenes>
     <resources>
