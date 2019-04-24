@@ -11,7 +11,7 @@ import UIKit
 class QuizTVC: UITableViewController {
     let repo = DataRepo.instance
     
-    
+    var isReviewMode: Bool = false
     var quizTopicName: String = ""
     var numQuestions: Int = 10
     var row: Int = 0
@@ -85,7 +85,7 @@ class QuizTVC: UITableViewController {
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String?, sender: Any?) -> Bool {
-        //End quiz at the last question, or after 10 questions
+        //Prevent ending the quiz if the user hasn't answered every question
         if let selectedIndexPaths = tableView.indexPathsForSelectedRows {
             if selectedIndexPaths.count != numQuestions {
                 
@@ -109,5 +109,13 @@ class QuizTVC: UITableViewController {
         return true
     }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let child = segue.destination as? QuizResultsVC {
+            child.moduleNum = self.module
+            
+            if let selectedIndexPaths = tableView.indexPathsForSelectedRows {
+                child.quizSubmittedIdxPaths = selectedIndexPaths
+            }
+        }
+    }
 }
