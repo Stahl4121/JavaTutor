@@ -44,14 +44,24 @@ class QuizResultsVC: UIViewController {
     
     
     func updateDataRepo(){
-        repo.correctQuestionsPerModule[moduleNum] = repo.correctQuestionsPerModule[moduleNum] + self.numCorrect
         
-        //repeat for all the other variables
+        //adjusts correct/incorrect questions (meaningless)
+        repo.correctQuestionsPerModule[moduleNum] = repo.correctQuestionsPerModule[moduleNum] + self.numCorrect
         repo.incorrectQuestionsPerModule[moduleNum] = repo.incorrectQuestionsPerModule[moduleNum] + self.numIncorrect
         
+        //adjusts correct/incorrect bloom levels (meaningful)
         repo.bloomsTaxCorrect = repo.bloomsTaxCorrect + self.bloomCorrectLevels
-        
         repo.bloomsTaxIncorrect = repo.bloomsTaxIncorrect + self.bloomIncorrectLevels
+        
+        //increments # of times student has taken a quiz
+        repo.totalQuizzes = repo.totalQuizzes + 1
+        
+        //adjusts OVERALL quiz average: (All prev * (new_total - 1) + new_Score )/new_total
+        repo.quizAvg = ((repo.quizAvg * Double((repo.totalQuizzes - 1))) + ((Double(numCorrect)/Double(numCorrect+numIncorrect))*100))/(Double(repo.totalQuizzes))
+        
+        //adjusts quiz average & attempt count for this module
+        repo.quizzesPerModule[moduleNum] = repo.quizzesPerModule[moduleNum] + 1
+        repo.quizAvgPerMod[moduleNum] = ((repo.quizAvgPerMod[moduleNum] * Double((repo.quizzesPerModule[moduleNum] - 1))) + ((Double(numCorrect)/Double(numCorrect+numIncorrect))*100))/(Double(repo.quizzesPerModule[moduleNum]))
         
     }
     

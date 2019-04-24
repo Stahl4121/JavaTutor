@@ -24,10 +24,18 @@ class DataRepo: NSObject {
     
     var fileUrl: URL?
     
-    //The index of each array represents the 
-    
+    //The index of each array represents the
+    //UNNECESSARY
     var correctQuestionsPerModule: [Int]
     var incorrectQuestionsPerModule: [Int]
+    
+    //INSTEAD, USE:
+    var totalQuizzes: Int
+    var quizAvg: Double
+    var quizzesPerModule: [Int]
+    var quizAvgPerMod: [Double]
+    var chaptersFinished: [Double]
+    
     var bloomsTaxCorrect: [Int]
     var bloomsTaxIncorrect: [Int]
     
@@ -41,8 +49,17 @@ class DataRepo: NSObject {
         continueTopic = "No topic has been started."
         improveTopic = String()
         brushUpTopic = String()
-        correctQuestionsPerModule = [0,0,0]
-        incorrectQuestionsPerModule = [0,0,0]
+        
+        //unnecessary
+        correctQuestionsPerModule = [0,0,0,0,0,0,0,0,0,0]
+        incorrectQuestionsPerModule = [0,0,0,0,0,0,0,0,0,0]
+        //instead, make
+        quizzesPerModule = [0,0,0,0,0,0,0,0,0,0]
+        totalQuizzes = 0
+        quizAvg = 0.0
+        quizAvgPerMod = [0,0,0,0,0,0,0,0,0,0]
+        chaptersFinished = [0,0,0,0,0,0,0,0,0,0]
+        
         bloomsTaxCorrect = [Int]()
         bloomsTaxIncorrect = [Int]()
         
