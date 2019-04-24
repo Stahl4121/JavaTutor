@@ -22,26 +22,29 @@ class QuizTVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Forces the view hierarchy to load
+        _ = self.view
 
-        self.tableView.allowsMultipleSelection = true
-        self.tableView.allowsMultipleSelectionDuringEditing = true
-        self.tableView.rowHeight = UITableView.automaticDimension
-        
-        lblQuizHeading.text = "\(repo.moduleNames[module]) Quiz"
-        
         if isReviewMode {
             lblQuizHeading.text = "\(repo.moduleNames[module]) Quiz Review"
             tableView.allowsSelection = false
         }
-        
-        //Shuffle the questions within the module
-        repo.questions[module].shuffle()
-        
-        //Shuffle the answers to every question
-        for i in 0...(repo.questions[module].count-1){
-            repo.questions[module][i].shuffleAnswers()
+        else{
+            self.tableView.allowsMultipleSelection = true
+            self.tableView.allowsMultipleSelectionDuringEditing = true
+            self.tableView.rowHeight = UITableView.automaticDimension
+            
+            lblQuizHeading.text = "\(repo.moduleNames[module]) Quiz"
+            
+            //Shuffle the questions within the module
+            repo.questions[module].shuffle()
+            
+            //Shuffle the answers to every question
+            for i in 0...(repo.questions[module].count-1){
+                repo.questions[module][i].shuffleAnswers()
+            }
         }
-        
         
     }
     
@@ -59,9 +62,9 @@ class QuizTVC: UITableViewController {
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
+        
         //If necessary, lowers the number of questions to the number of available questions
         numQuestions = (repo.questions[module].count < numQuestions) ? repo.questions[module].count : numQuestions
-        
         return numQuestions
         
         //If you wanted to display every question:
@@ -97,14 +100,16 @@ class QuizTVC: UITableViewController {
                 //Get the user's answer for the question
                 let userAnswer = reviewIdxPaths.filter({$0.section == indexPath.section}).first
                 
-                //If this cell was selected, then turn it red
-                if userAnswer?.row == indexPath.row {
-                    cell.contentView.backgroundColor = UIColor.red
+                cell.contentView.backgroundColor = #colorLiteral(red: 0.8431372549, green: 0.9607843137, blue: 0.8823529412, alpha: 1)
                 
-                    //If it was instead the correct answer, turn it green
-                    if userAnswer?.row == (currQuestion.correctIdx + 1) {
-                        cell.contentView.backgroundColor = UIColor.green
-                    }
+                //If this cell was selected, then turn it red
+                if indexPath.row == userAnswer?.row {
+                    cell.contentView.backgroundColor = UIColor.red
+                }
+                
+                //If it was instead the correct answer, turn it green
+                if indexPath.row - 1 == currQuestion.correctIdx {
+                    cell.contentView.backgroundColor = UIColor.green
                 }
             }
             
