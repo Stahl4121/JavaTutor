@@ -22,7 +22,8 @@ class OverallProgressVC: UIViewController {
         /*blue*/ CGPoint(x: 430, y: 500),
         /*indigo*/ CGPoint(x: 350, y: 440),
         /*purple*/ CGPoint(x: 325, y: 350),
-        /*pink*/ CGPoint(x: 350, y: 250)]
+        /*pink*/ CGPoint(x: 350, y: 250)
+    ]
     
     var slices : [OverallPieChart] = []
     
@@ -79,6 +80,7 @@ class OverallProgressVC: UIViewController {
             view.addSubview(slice)
         }
         
+        //add user's score numbers to view
         for (i, s) in scoreLabels.enumerated() {
             view.addSubview(s)
             view.bringSubviewToFront(s)

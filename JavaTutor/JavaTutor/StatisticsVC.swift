@@ -9,7 +9,8 @@
 import UIKit
 
 class StatisticsVC: UIViewController {
-
+    @IBOutlet weak var overallProgBtn: UIButton!
+    
     let repo = DataRepo.instance
     
     //View 1: what percentage of most recently visited module has student completed?
@@ -51,6 +52,19 @@ class StatisticsVC: UIViewController {
         BloomsTaxonomy.text = "Bloom's Taxonomy"
         
         setQuizScores()
+        
+        let previewChart = OverallPieChart()
+        previewChart.radius = min(view.frame.size.width, view.frame.size.height) * 0.25 * 0.50
+        previewChart.frame = CGRect(x: 270, y: 60, width: view.frame.size.width, height: 400)
+        
+        let initialHue = 0.05
+        for i in 0...9 {
+            previewChart.segments.append(Segment(color: .init(hue: CGFloat(initialHue + (Double(i)/10)), saturation: 0.3, brightness: 0.8, alpha: 1/2), value: 10))
+        }
+        
+        view.addSubview(previewChart)
+        view.addSubview(overallProgBtn)
+        view.bringSubviewToFront(overallProgBtn)
         
     }
     
