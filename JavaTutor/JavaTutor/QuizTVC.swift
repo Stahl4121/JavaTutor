@@ -61,7 +61,7 @@ class QuizTVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return repo.questions[module][section].answers.count
+        return repo.questions[module][section].answers.count+1
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -78,7 +78,7 @@ class QuizTVC: UITableViewController {
         else{
             let cell = tableView.dequeueReusableCell(withIdentifier: "answerCell", for: indexPath) as! AnswerCell
             
-            cell.lblAnswer.text = "\(currQuestion.answers[indexPath.row])"
+            cell.lblAnswer.text = "\(currQuestion.answers[indexPath.row-1])"
             
             return cell
         }
