@@ -56,7 +56,6 @@ class LessonListTVC: UITableViewController {
         
         if let child = segue.destination as? QuizTVC {
             child.module = self.module
-            child.quizTopicName = repo.moduleNames[module]
         }
         
         if let child = segue.destination as? LessonWeb {
