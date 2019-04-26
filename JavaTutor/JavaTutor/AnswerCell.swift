@@ -9,8 +9,6 @@
 import UIKit
 
 class AnswerCell: UITableViewCell {
-
-    var isCorrect: Bool?
     
     @IBOutlet weak var lblAnswer: UILabel!
     
@@ -21,8 +19,27 @@ class AnswerCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        
+        let coloredView = UIView()
+        
+        if selected {
+            coloredView.backgroundColor = UIColor.init(red: 0, green: 145, blue: 0, alpha: 1)
+            self.accessoryType = .checkmark
+        }
+        else{
+            coloredView.backgroundColor = UIColor.init(red: 215, green: 245, blue: 225, alpha: 1)
+            self.accessoryType = .none
+        }
+        self.selectedBackgroundView = coloredView
+    
     }
-
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        self.selectionStyle = .none
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
 }

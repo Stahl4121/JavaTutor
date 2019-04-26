@@ -14,8 +14,11 @@ class LessonListTVC: UITableViewController {
     var row: Int = 0
     var module: Int = 0
     
+    @IBOutlet weak var lblLessonListTitle: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        lblLessonListTitle.text = "\(repo.moduleNames[module]) Lesson List"
     }
     
     // MARK: - Table view data source
@@ -51,19 +54,17 @@ class LessonListTVC: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if let child = segue.destination as? QuestionTVC {
+        if let child = segue.destination as? QuizTVC {
             child.module = self.module
-            child.selectedQuestion = 0
         }
-        else{
+        
+        if let child = segue.destination as? LessonWeb {
             //Update recent activities list
             if let index = repo.recentActivities.firstIndex(of: repo.lessonNames[module][row]){
                 repo.recentActivities.remove(at: index)
             }
             repo.recentActivities.insert(repo.lessonNames[module][row], at: 0)
-        }
-        
-        if let child = segue.destination as? LessonWeb {
+            
             child.lessonName = repo.lessonNames[module][row]
             child.modNum = self.module + 1
             child.lessonNum = self.row + 1

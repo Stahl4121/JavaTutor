@@ -138,6 +138,8 @@ class DataRepo: NSObject {
                 for i in 1...(moduleNames.count){
                     questions.append(allQuestions.filter({$0.module == i}).shuffled())
                 }
+                
+                //Add Template Questions to quizzes that haven't been fully implemented in code
                 for i in 0...(moduleNames.count-1){
                     if questions[i].isEmpty{
                         questions[i].append(Question(module: i+1, question: "What is the answer to this question?", answers: ["The Correct Answer", "An Incorrect Answer", "Another Incorrect Answer", "Yet Another Incorrect Answer"], correctIdx: 0, bloomValue: 1))

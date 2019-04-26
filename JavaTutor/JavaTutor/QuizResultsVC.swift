@@ -12,6 +12,8 @@ class QuizResultsVC: UIViewController {
     
     let repo = DataRepo.instance
     var moduleNum: Int = 0
+    var quizSubmittedIdxPaths: [IndexPath] = [IndexPath]()
+    
     var numCorrect: Int = 0
     var numIncorrect: Int = 0
     var bloomCorrectLevels: [Int] = [0, 0, 0]
@@ -25,23 +27,36 @@ class QuizResultsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        //Remove questions from the nav controller, so user cannot re-enter quiz
+        //Remove quiz screen from the nav controller, so user cannot re-enter quiz
         var navigationArray = self.navigationController?.viewControllers //To get all UIViewController stack as Array
-        for _ in 1...(numCorrect+numIncorrect){
-            navigationArray!.remove(at: (navigationArray?.count)! - 2) // To remove previous UIViewController
-        }
+        navigationArray!.remove(at: (navigationArray?.count)! - 2) // To remove previous UIViewController
         self.navigationController?.viewControllers = navigationArray!
         
+        gradeQuiz()
         
         lblNumCorrect.text = String(numCorrect)
         lblNumIncorrect.text = String(numIncorrect)
         lblScore.text = "\(Int(((Double(numCorrect)/Double(numCorrect+numIncorrect))*100).rounded()))%"
      
         updateDataRepo()
-        
     }
     
+    func gradeQuiz(){
+        //Check every question's answer
+        for idxPath in quizSubmittedIdxPaths {
+            let bloomVal = repo.questions[moduleNum][idxPath.section].bloomValue
+
+                //Correct Question
+                if repo.questions[moduleNum][idxPath.section].correctIdx == (idxPath.row - 1) {
+                    numCorrect+=1
+                    bloomCorrectLevels[bloomVal - 1] += 1
+                }
+                else{ //Incorrect Question
+                    numIncorrect+=1
+                    bloomIncorrectLevels[bloomVal - 1] += 1
+                }
+        }
+    }
     
     func updateDataRepo(){
         
@@ -65,14 +80,12 @@ class QuizResultsVC: UIViewController {
         
     }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
+        if let child = segue.destination as? QuizTVC {
+            child.isReviewMode = true
+            child.reviewIdxPaths = quizSubmittedIdxPaths
+            child.module = moduleNum
+        }
      }
-     */
     
 }
