@@ -356,20 +356,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ox-kB-6cK" userLabel="toOverallProgress">
-                                <rect key="frame" x="277" y="219" width="470" height="330"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title=" "/>
-                                <connections>
-                                    <segue destination="tMf-dT-R4B" kind="show" id="Ncf-tT-Yjh"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TA6-Vc-hXG">
                                 <rect key="frame" x="20" y="91" width="470" height="330"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Module Progress" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tZQ-1t-W6e" userLabel="Lbl Recent Module">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RFB-bI-2lt" userLabel="toModuleProgress">
+                                        <rect key="frame" x="0.0" y="0.0" width="470" height="330"/>
+                                        <state key="normal" title=" "/>
+                                        <connections>
+                                            <segue destination="D2b-o8-pls" kind="show" id="0pv-wt-VoF"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Module Progress" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tZQ-1t-W6e" userLabel="Lbl Recent Module">
                                         <rect key="frame" x="108" y="8" width="254" height="63"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="63" id="55E-kg-AYx"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="32"/>
                                         <color key="textColor" red="0.28211217820000001" green="0.34888452079999999" blue="0.37370704119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -377,8 +378,14 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="tZQ-1t-W6e" firstAttribute="top" secondItem="TA6-Vc-hXG" secondAttribute="topMargin" id="7OR-mg-dox"/>
+                                    <constraint firstItem="RFB-bI-2lt" firstAttribute="leading" secondItem="TA6-Vc-hXG" secondAttribute="leading" id="M1J-37-vcY"/>
+                                    <constraint firstItem="RFB-bI-2lt" firstAttribute="centerX" secondItem="tZQ-1t-W6e" secondAttribute="centerX" id="MMD-1n-Edg"/>
+                                    <constraint firstItem="RFB-bI-2lt" firstAttribute="top" secondItem="TA6-Vc-hXG" secondAttribute="top" id="S7a-8F-Dh5"/>
                                     <constraint firstAttribute="width" constant="470" id="hF2-50-W0U"/>
+                                    <constraint firstAttribute="bottom" secondItem="RFB-bI-2lt" secondAttribute="bottom" id="neP-I7-o7R"/>
                                     <constraint firstAttribute="height" constant="330" id="ngm-DE-D9Z"/>
+                                    <constraint firstItem="tZQ-1t-W6e" firstAttribute="centerX" secondItem="TA6-Vc-hXG" secondAttribute="centerX" id="tHi-ZH-JDv"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
@@ -390,6 +397,13 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xXZ-aV-io7">
                                 <rect key="frame" x="534" y="91" width="470" height="330"/>
                                 <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ox-kB-6cK" userLabel="toOverallProgress">
+                                        <rect key="frame" x="0.0" y="0.0" width="470" height="330"/>
+                                        <state key="normal" title=" "/>
+                                        <connections>
+                                            <segue destination="tMf-dT-R4B" kind="show" id="Ncf-tT-Yjh"/>
+                                        </connections>
+                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Overall Progress" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SHn-j5-gWH" userLabel="Lbl Recent Module">
                                         <rect key="frame" x="33" y="15" width="404" height="49"/>
                                         <constraints>
@@ -402,10 +416,14 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="4ox-kB-6cK" firstAttribute="leading" secondItem="xXZ-aV-io7" secondAttribute="leading" id="0xZ-Kh-V5I"/>
                                     <constraint firstItem="SHn-j5-gWH" firstAttribute="centerX" secondItem="xXZ-aV-io7" secondAttribute="centerX" id="ATM-jS-XoJ"/>
                                     <constraint firstItem="SHn-j5-gWH" firstAttribute="top" secondItem="xXZ-aV-io7" secondAttribute="top" constant="15" id="Ffz-fj-rvX"/>
+                                    <constraint firstItem="4ox-kB-6cK" firstAttribute="top" secondItem="xXZ-aV-io7" secondAttribute="top" id="Kmo-ZU-chl"/>
+                                    <constraint firstItem="4ox-kB-6cK" firstAttribute="centerX" secondItem="SHn-j5-gWH" secondAttribute="centerX" id="bU7-lT-6di"/>
                                     <constraint firstAttribute="height" constant="330" id="eDx-KC-4Zm"/>
                                     <constraint firstItem="SHn-j5-gWH" firstAttribute="leading" secondItem="xXZ-aV-io7" secondAttribute="leading" constant="33" id="gfr-u8-1OG"/>
+                                    <constraint firstAttribute="bottom" secondItem="4ox-kB-6cK" secondAttribute="bottom" id="xG0-k1-dW4"/>
                                     <constraint firstAttribute="width" constant="470" id="ygJ-92-VRS"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -666,6 +684,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U2N-Qd-FHV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2213.671875" y="-3.125"/>
+        </scene>
+        <!--Module ProgressVC-->
+        <scene sceneID="bnL-E2-KCM">
+            <objects>
+                <viewController id="D2b-o8-pls" customClass="ModuleProgressVC" customModule="JavaTutor" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GDQ-qa-WQS">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="M66-6i-hpR"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9qs-sL-yEH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2214" y="722"/>
         </scene>
         <!--Quiz ProgressVC-->
         <scene sceneID="gA4-Em-FDY">
