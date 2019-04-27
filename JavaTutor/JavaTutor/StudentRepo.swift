@@ -19,14 +19,16 @@ class StudentRepo: NSObject {
     var brushUpTopic: String
     var fileUrl: URL?
     
-    var totalQuizzes: Int
-    var quizAvg: Double
-    var quizzesPerModule: [Int]
-    var quizAvgPerMod: [Double]
-    var chaptersFinished: [Double]
+    let fields = ["totalQuizzes", "quizAvg", "quizzesPerModule", "quizAvgPerMod", "chaptersFinished", "bloomsTaxCorrect", "bloomsTaxIncorrect", "recentActivities"]
     
-    var bloomsTaxCorrect: [Int]
-    var bloomsTaxIncorrect: [Int]
+    @objc var totalQuizzes: Int
+    @objc var quizAvg: Double
+    @objc var quizzesPerModule: [Int]
+    @objc var quizAvgPerMod: [Double]
+    @objc var chaptersFinished: [Double]
+    
+    @objc var bloomsTaxCorrect: [Int]
+    @objc var bloomsTaxIncorrect: [Int]
     
     static let instance = StudentRepo()
     
@@ -51,16 +53,6 @@ class StudentRepo: NSObject {
         super.init()
         
         addObserver(self, forKeyPath: "recentActivities", options: .new, context: nil)
-        
-        if isOnlineMode {
-            //Update Repo from Database
-        }
-        else{
-            //Update Repo from student.json
-            
-        }
-        
-        updateStudyScreenData()
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
@@ -71,11 +63,62 @@ class StudentRepo: NSObject {
         }
     }
     
+    func initAfterLogin(username: String){
+        self.username = username
+        
+        if isOnlineMode {
+            //Update Repo from Database
+        }
+        else{
+            //Update Repo from students.json
+            loadLocalStudent()
+        }
+        
+        updateStudyScreenData()
+    }
+    
     func updateStudyScreenData(){
         //TODO: NEED TO GET/CALCULATE THESE
-        username = "{Name}"
         improveTopic = "{Topic to be improved}"
         brushUpTopic = "(Topic to be brushed}"
+    }
+    
+    /**
+     * Populates the StudentRepo member variables from
+     * the students.json file.
+     */
+    func loadLocalStudent(){
+        let path = Bundle.main.path(forResource: "students", ofType: "json")
+        if let filePath = path {
+            fileUrl = URL(fileURLWithPath: filePath)
+        }
+        else {
+            fileUrl = nil
+        }
+        
+        do {
+            if let url = fileUrl {
+                // Grab JSON contents
+                let contents = try Data(contentsOf: url)
+                let students = try JSONSerialization.jsonObject(with: contents, options: .mutableContainers) as! [[String: Any]]
+                
+                for stud in students {
+                    //Find the current user in local data
+                    if stud["username"] as! String == self.username {
+                        for (key, value) in stud {
+                            if StudentRepo.instance.fields.contains(key) {
+                                StudentRepo.instance.setValue(value, forKey: key)
+                            }
+                        }
+                    }
+                }
+            }
+            else {
+                print("Bad file path to students.json")
+            }
+        } catch {
+            print("Error getting file info for students.json")
+        }
     }
     
 }
