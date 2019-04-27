@@ -1,3 +1,5 @@
+//TODO: Add a bloomValue storage variable of 2!!
+
 let module_2 = [
     {
         question: 'Which type is valid in the following code snippet?',
@@ -75,11 +77,12 @@ function processTemplate(template, onlyResult = true) {
     let ctx = template.ctx();
     let question = execReplace(template, ctx);
     let answers = [template.ans ? template.ans(ctx) : evalfy(question)];
+    let bloomValue = 2;
 
     if (onlyResult)
         return answers[0];
     else
-        return { question, answers };
+        return { question, answers, bloomValue };
 };
 
 function execReplace({ base, vars }, ctx) {
