@@ -68,7 +68,7 @@ class QuizTVC: UITableViewController {
         return numQuestions
         
         //If you wanted to display every question:
-        //return repo.questions[module].count
+        //return domainRepo.questions[module].count
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

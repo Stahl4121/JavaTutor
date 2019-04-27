@@ -9,14 +9,14 @@
 import UIKit
 
 class RecentActivityTVC: UITableViewController {
-    let repo = DomainRepo.instance
+    let studentRepo = StudentRepo.instance
     
     var row: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        repo.addObserver(self, forKeyPath: "recentActivities", options: .new, context: nil)
+        studentRepo.addObserver(self, forKeyPath: "recentActivities", options: .new, context: nil)
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
@@ -33,14 +33,14 @@ class RecentActivityTVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return repo.recentActivities.count
+        return studentRepo.recentActivities.count
     }
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "moduleCell", for: indexPath) as! ModuleCell
         
-        cell.lblModuleTitle?.text = "\(repo.recentActivities[indexPath.row])"
+        cell.lblModuleTitle?.text = "\(studentRepo.recentActivities[indexPath.row])"
         cell.lblPercComp?.text = "{#}%"
         
         return cell

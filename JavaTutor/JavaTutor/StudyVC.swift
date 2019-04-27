@@ -9,7 +9,7 @@
 import UIKit
 
 class StudyVC: UIViewController {
-    let repo = DomainRepo.instance
+    let studentRepo = StudentRepo.instance
     
     @IBOutlet weak var lblContinueTopic: UILabel!
     @IBOutlet weak var lblImproveTopic: UILabel!
@@ -20,27 +20,18 @@ class StudyVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        lblContinueTopic.text = repo.continueTopic
-        lblImproveTopic.text = repo.improveTopic
-        lblBrushTopic.text = repo.brushUpTopic
-        lblWelcomeBack.text = "Welcome back, \(repo.username)!"
+        lblContinueTopic.text = studentRepo.continueTopic
+        lblImproveTopic.text = studentRepo.improveTopic
+        lblBrushTopic.text = studentRepo.brushUpTopic
+        lblWelcomeBack.text = "Welcome back, \(studentRepo.username)!"
         
-        repo.addObserver(self, forKeyPath: "recentActivities", options: .new, context: nil)
+        studentRepo.addObserver(self, forKeyPath: "recentActivities", options: .new, context: nil)
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        if !repo.recentActivities.isEmpty {
-            lblContinueTopic.text = repo.recentActivities[0]
+        if !studentRepo.recentActivities.isEmpty {
+            lblContinueTopic.text = studentRepo.recentActivities[0]
         }
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

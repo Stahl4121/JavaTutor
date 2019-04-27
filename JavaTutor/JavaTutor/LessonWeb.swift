@@ -11,7 +11,7 @@ import WebKit
 
 class LessonWeb: UIViewController, WKUIDelegate {
     
-    let repo = DomainRepo.instance
+    let studentRepo = StudentRepo.instance
     
     //TODO: Set a timer on this screen and when it hits 3 minutes, the user has finished the chapter
     var counter = 0
@@ -52,9 +52,9 @@ class LessonWeb: UIViewController, WKUIDelegate {
     @objc func update() {
         counter += 1
         if counter == 10 {
-            repo.chaptersFinished[modNum-1] = repo.chaptersFinished[modNum-1] + 0.5
+            studentRepo.chaptersFinished[modNum-1] = studentRepo.chaptersFinished[modNum-1] + 0.5
         } else if counter == 180 {
-            repo.chaptersFinished[modNum-1] = repo.chaptersFinished[modNum-1] + 0.5
+            studentRepo.chaptersFinished[modNum-1] = studentRepo.chaptersFinished[modNum-1] + 0.5
         }
     }
 

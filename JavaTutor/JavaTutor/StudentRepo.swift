@@ -30,6 +30,7 @@ class StudentRepo: NSObject {
     
     private override init() {
         username = String()
+        recentActivities = [String]()
         continueTopic = "No topic has been started."
         improveTopic = String()
         brushUpTopic = String()
