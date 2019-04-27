@@ -10,7 +10,7 @@ import UIKit
 
 class OverallProgressVC: UIViewController {
    
-    let repo = DataRepo.instance
+    let repo = DomainRepo.instance
     
     let labelPoints : [CGPoint] = [
         /*red*/ CGPoint(x: 430, y: 195),

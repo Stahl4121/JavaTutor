@@ -11,7 +11,7 @@ import WebKit
 
 class LessonWeb: UIViewController, WKUIDelegate {
     
-    let repo = DataRepo.instance
+    let repo = DomainRepo.instance
     
     //TODO: Set a timer on this screen and when it hits 3 minutes, the user has finished the chapter
     var counter = 0

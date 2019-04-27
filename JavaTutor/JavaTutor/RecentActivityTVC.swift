@@ -9,7 +9,7 @@
 import UIKit
 
 class RecentActivityTVC: UITableViewController {
-    let repo = DataRepo.instance
+    let repo = DomainRepo.instance
     
     var row: Int = 0
     

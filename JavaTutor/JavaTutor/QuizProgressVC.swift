@@ -11,7 +11,7 @@ import UIKit
 class QuizProgressVC: UIViewController {
 
     
-    let repo = DataRepo.instance
+    let repo = DomainRepo.instance
     
     @IBOutlet weak var mod1attempts: UILabel!
     

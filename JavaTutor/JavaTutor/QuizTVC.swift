@@ -9,7 +9,7 @@
 import UIKit
 
 class QuizTVC: UITableViewController {
-    let repo = DataRepo.instance
+    let repo = DomainRepo.instance
     
     var isReviewMode: Bool = false
     var reviewIdxPaths: [IndexPath] = [IndexPath]()

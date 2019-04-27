@@ -10,7 +10,7 @@ import UIKit
 
 class QuizResultsVC: UIViewController {
     
-    let repo = DataRepo.instance
+    let repo = DomainRepo.instance
     var moduleNum: Int = 0
     var quizSubmittedIdxPaths: [IndexPath] = [IndexPath]()
     

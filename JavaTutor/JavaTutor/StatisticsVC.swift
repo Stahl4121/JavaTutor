@@ -11,7 +11,7 @@ import UIKit
 class StatisticsVC: UIViewController {
     @IBOutlet weak var overallProgBtn: UIButton!
     
-    let repo = DataRepo.instance
+    let repo = DomainRepo.instance
     
     //View 1: what percentage of most recently visited module has student completed?
     @IBOutlet weak var PercentRecentCompleted: UILabel!

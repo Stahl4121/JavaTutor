@@ -9,7 +9,7 @@
 import UIKit
 
 class StudyVC: UIViewController {
-    let repo = DataRepo.instance
+    let repo = DomainRepo.instance
     
     @IBOutlet weak var lblContinueTopic: UILabel!
     @IBOutlet weak var lblImproveTopic: UILabel!

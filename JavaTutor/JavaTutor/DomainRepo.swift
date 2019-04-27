@@ -1,5 +1,5 @@
 //
-//  DataRepo.swift
+//  DomainRepo.swift
 //  JavaTutor
 //
 //  Created by Logan Stahl on 3/18/19.
@@ -13,78 +13,18 @@ class DomainRepo: NSObject {
     let moduleNames = ["Introduction", "Code Basics", "Control", "Advanced Topics", "Methods and Subroutines"]
     var lessonNames: [[String]]
     var questions: [[Question]]
-    
-    @objc dynamic var recentActivities: [String]
-    
-    var username: String
-    
-    var continueTopic: String
-    var improveTopic: String
-    var brushUpTopic: String
-    
     var fileUrl: URL?
-    
-    //The index of each array represents the
-    //UNNECESSARY
-    var correctQuestionsPerModule: [Int]
-    var incorrectQuestionsPerModule: [Int]
-    
-    //INSTEAD, USE:
-    var totalQuizzes: Int
-    var quizAvg: Double
-    var quizzesPerModule: [Int]
-    var quizAvgPerMod: [Double]
-    var chaptersFinished: [Double]
-    
-    var bloomsTaxCorrect: [Int]
-    var bloomsTaxIncorrect: [Int]
     
     static let instance = DomainRepo()
 
     private override init() {
         questions = [[Question]]()
         lessonNames = [[String]]()
-        recentActivities = [String]()
-        username = String()
-        continueTopic = "No topic has been started."
-        improveTopic = String()
-        brushUpTopic = String()
-        
-        //unnecessary
-        correctQuestionsPerModule = [0,0,0,0,0,0,0,0,0,0]
-        incorrectQuestionsPerModule = [0,0,0,0,0,0,0,0,0,0]
-        //instead, make
-        quizzesPerModule = [0,0,0,0,0,0,0,0,0,0]
-        totalQuizzes = 0
-        quizAvg = 0.0
-        quizAvgPerMod = [0,0,0,0,0,0,0,0,0,0]
-        chaptersFinished = [0,0,0,0,0,0,0,0,0,0]
-        
-        bloomsTaxCorrect = [Int]()
-        bloomsTaxIncorrect = [Int]()
         
         super.init()
         
-        addObserver(self, forKeyPath: "recentActivities", options: .new, context: nil)
-        
-        updateStudyScreenData()
         loadQuestions()
         loadLessonNames()
-    }
-    
-     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        if keyPath == "recentActivities" {
-            if !recentActivities.isEmpty {
-                continueTopic = recentActivities[0]
-            }
-        }
-    }
-    
-    func updateStudyScreenData(){
-        //TODO: NEED TO GET/CALCULATE THESE
-        username = "{Name}"
-        improveTopic = "{Topic to be improved}"
-        brushUpTopic = "(Topic to be brushed}"
     }
     
     func loadLessonNames(){
@@ -93,6 +33,10 @@ class DomainRepo: NSObject {
         lessonNames.append(["What is a Block?", "If Statement", "While Loop", "Do...While Loop", "Break and Continue", "For Loop", "Nested For Loop", "Switch", "Exceptions", "Try...Catch!"])
         lessonNames.append(["What is an Array?", "Creating Arrays", "Arrays and For Loops", "Common Array Pitfalls", "2-Dimensional Arrays"])
         lessonNames.append(["Black Box", "Static Subroutines and Variables", "Subroutine Definitions", "Calling Subroutines", "Subroutines in Programs", "Member Variables", "Formal and Actual Parameters", "Overloading", "Array Parameters", "Command Line Arguments"])
+    }
+    
+    func loadNames(){
+        
     }
     
     func loadQuestions(){
