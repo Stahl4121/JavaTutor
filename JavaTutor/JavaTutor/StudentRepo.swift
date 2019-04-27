@@ -11,6 +11,8 @@ import Foundation
 class StudentRepo: NSObject {
     @objc dynamic var recentActivities: [String]
     
+    var isOnlineMode: Bool
+    
     var username: String
     var continueTopic: String
     var improveTopic: String
@@ -29,6 +31,8 @@ class StudentRepo: NSObject {
     static let instance = StudentRepo()
     
     private override init() {
+        isOnlineMode = false
+        
         username = String()
         recentActivities = [String]()
         continueTopic = "No topic has been started."
@@ -47,6 +51,14 @@ class StudentRepo: NSObject {
         super.init()
         
         addObserver(self, forKeyPath: "recentActivities", options: .new, context: nil)
+        
+        if isOnlineMode {
+            //Update Repo from Database
+        }
+        else{
+            //Update Repo from student.json
+            
+        }
         
         updateStudyScreenData()
     }
