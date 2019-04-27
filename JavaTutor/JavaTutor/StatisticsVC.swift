@@ -30,6 +30,7 @@ class StatisticsVC: UIViewController {
     //TODO: perhaps have this record that extra activities thing?
     @IBOutlet weak var BloomsTaxonomy: UILabel!
     
+    var percentLabel : UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +46,11 @@ class StatisticsVC: UIViewController {
     func viewLoadSetup() {
 
         // Do any additional setup after loading the view.
+        percentLabel = UILabel(frame: CGRect(origin: CGPoint(x: 735, y: 50), size: CGSize(width: 400, height: 400)))
+        percentLabel.text = "%"
+        percentLabel.font = UIFont.systemFont(ofSize: 90)
+        percentLabel.textColor = UIColor.white
+        
         PercentRecentCompleted.text = "Progress through Module"
         PercentTotalCompleted.text = "Progress through Tutorial"
         QuizScores.text = "Quiz Stuff"
@@ -53,6 +59,7 @@ class StatisticsVC: UIViewController {
         
         setQuizScores()
         
+        //set up preview of user's overall progress
         let previewChart = OverallPieChart()
         previewChart.radius = min(view.frame.size.width, view.frame.size.height) * 0.25 * 0.50
         previewChart.frame = CGRect(x: 270, y: 60, width: view.frame.size.width, height: 400)
@@ -62,9 +69,17 @@ class StatisticsVC: UIViewController {
             previewChart.segments.append(Segment(color: .init(hue: CGFloat(initialHue + (Double(i)/10)), saturation: 0.3, brightness: 0.8, alpha: 1/2), value: 10))
         }
         
+        //set up preview of user's progress through module
+        
+        //add subviews to main view
         view.addSubview(previewChart)
         view.addSubview(overallProgBtn)
         view.bringSubviewToFront(overallProgBtn)
+        
+        view.addSubview(percentLabel)
+        view.bringSubviewToFront(percentLabel)
+        
+        
         
     }
     
@@ -73,6 +88,9 @@ class StatisticsVC: UIViewController {
     func setQuizScores(){
     
         QuizAverage.text = "\(repo.quizAvg.rounded())%"
+        
+       // QuizAverage.textColor = UIColor.init(displayP3Red: CGFloat(1 - (repo.quizAvg/100)), green: CGFloat(repo.quizAvg/100), blue: 0, alpha: 1)
+        
         
         if repo.quizAvg < 60 {
             QuizAverage.textColor = UIColor.red
@@ -83,7 +101,6 @@ class StatisticsVC: UIViewController {
         } else if repo.quizAvg <= 100 {
             QuizAverage.textColor = UIColor.green
         }
-        
         
     }
     

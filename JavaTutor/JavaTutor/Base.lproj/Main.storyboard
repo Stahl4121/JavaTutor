@@ -367,8 +367,9 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TA6-Vc-hXG">
                                 <rect key="frame" x="20" y="91" width="470" height="330"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{Image Title 1}" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tZQ-1t-W6e" userLabel="Lbl Recent Module">
-                                        <rect key="frame" x="86" y="15" width="214" height="44"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Module Progress" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tZQ-1t-W6e" userLabel="Lbl Recent Module">
+                                        <rect key="frame" x="108" y="8" width="254" height="63"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="32"/>
                                         <color key="textColor" red="0.28211217820000001" green="0.34888452079999999" blue="0.37370704119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -376,9 +377,6 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="tZQ-1t-W6e" firstAttribute="top" secondItem="TA6-Vc-hXG" secondAttribute="top" constant="15" id="1K2-li-plG"/>
-                                    <constraint firstAttribute="trailing" secondItem="tZQ-1t-W6e" secondAttribute="trailing" constant="170" id="9MK-8y-e1h"/>
-                                    <constraint firstItem="tZQ-1t-W6e" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="TA6-Vc-hXG" secondAttribute="leading" constant="20" symbolic="YES" id="CPw-w6-ICG"/>
                                     <constraint firstAttribute="width" constant="470" id="hF2-50-W0U"/>
                                     <constraint firstAttribute="height" constant="330" id="ngm-DE-D9Z"/>
                                 </constraints>
