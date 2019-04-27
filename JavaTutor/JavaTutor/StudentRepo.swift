@@ -17,8 +17,8 @@ class StudentRepo: NSObject {
     var continueTopic: String
     var improveTopic: String
     var brushUpTopic: String
-    var fileUrl: URL?
-    
+   
+    let fileURL: URL
     let fields = ["totalQuizzes", "quizAvg", "quizzesPerModule", "quizAvgPerMod", "chaptersFinished", "bloomsTaxCorrect", "bloomsTaxIncorrect", "recentActivities"]
     
     @objc var totalQuizzes: Int
@@ -50,17 +50,27 @@ class StudentRepo: NSObject {
         bloomsTaxCorrect = [Int]()
         bloomsTaxIncorrect = [Int]()
         
+        let path = Bundle.main.path(forResource: "students", ofType: "json")
+        fileURL = URL(fileURLWithPath: path!)
+        
         super.init()
         
-        addObserver(self, forKeyPath: "recentActivities", options: .new, context: nil)
+        for key in fields{
+            addObserver(self, forKeyPath: key, options: .new, context: nil)
+        }
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        
+        //Update RecentActivities list
         if keyPath == "recentActivities" {
             if !recentActivities.isEmpty {
                 continueTopic = recentActivities[0]
             }
         }
+
+        //Write new changes to local file storage
+        writeLocalStudent()
     }
     
     func initAfterLogin(username: String){
@@ -88,37 +98,64 @@ class StudentRepo: NSObject {
      * the students.json file.
      */
     func loadLocalStudent(){
-        let path = Bundle.main.path(forResource: "students", ofType: "json")
-        if let filePath = path {
-            fileUrl = URL(fileURLWithPath: filePath)
-        }
-        else {
-            fileUrl = nil
-        }
-        
         do {
-            if let url = fileUrl {
                 // Grab JSON contents
-                let contents = try Data(contentsOf: url)
+                let contents = try Data(contentsOf: fileURL)
                 let students = try JSONSerialization.jsonObject(with: contents, options: .mutableContainers) as! [[String: Any]]
                 
                 for stud in students {
                     //Find the current user in local data
                     if stud["username"] as! String == self.username {
                         for (key, value) in stud {
-                            if StudentRepo.instance.fields.contains(key) {
+                            if fields.contains(key) {
                                 StudentRepo.instance.setValue(value, forKey: key)
                             }
                         }
                     }
-                }
-            }
-            else {
-                print("Bad file path to students.json")
             }
         } catch {
             print("Error getting file info for students.json")
         }
+    }
+    
+    func writeLocalStudent(){
+        // Grab current JSON contents
+        do {
+            let contents = try Data(contentsOf: fileURL)
+            var students = try JSONSerialization.jsonObject(with: contents, options: .mutableContainers) as! [[String: Any]]
+            
+            //Remove the current student's old data from the json
+            students.removeAll(where: {($0["username"] as! String) == self.username})
+            
+            let currentUserData: [String:Any] = [
+                "username":self.username,
+                "recentActivities":self.recentActivities,
+                "totalQuizzes":self.totalQuizzes,
+                "quizAvg":self.quizAvg,
+                "quizzesPerModule":self.quizzesPerModule,
+                "quizAvgPerMod":self.quizAvgPerMod,
+                "chaptersFinished":self.chaptersFinished,
+                "bloomsTaxCorrect":self.bloomsTaxCorrect,
+                "bloomsTaxIncorrect":self.bloomsTaxIncorrect
+            ]
+            
+            //Add the current student back into the json
+            students.append(currentUserData)
+            
+            let jsonData = try JSONSerialization.data(withJSONObject: students, options: .prettyPrinted)
+            try jsonData.write(to: fileURL)
+        } catch {
+            print("Failed to write")
+        }
+    }
+    
+    //Deinitialize the repo by writing the data to json, and removing all observers
+    deinit{
+        for key in fields {
+            self.removeObserver(self, forKeyPath: key)
+        }
+        
+        writeLocalStudent()
     }
     
 }
