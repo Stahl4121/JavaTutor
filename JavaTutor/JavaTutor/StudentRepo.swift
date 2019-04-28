@@ -50,8 +50,21 @@ class StudentRepo: NSObject {
         bloomsTaxCorrect = [Int]()
         bloomsTaxIncorrect = [Int]()
         
-        let path = Bundle.main.path(forResource: "students", ofType: "json")
-        fileURL = URL(fileURLWithPath: path!)
+        
+        let libraryPath = NSSearchPathForDirectoriesInDomains(.libraryDirectory, .userDomainMask, true)[0]
+        fileURL = URL(fileURLWithPath: libraryPath).appendingPathComponent("students.json")
+        
+        //Create the initial file from the bundle
+        if !FileManager.default.fileExists(atPath: fileURL.path){
+            do {
+                let path = Bundle.main.path(forResource: "students", ofType: "json")
+                let bundleFileURL = URL(fileURLWithPath: path!)
+                let contents = try Data(contentsOf: bundleFileURL)
+                try contents.write(to: fileURL)
+            } catch{
+                print("Error creating initial file students.json")
+            }
+        }
         
         super.init()
         
@@ -102,7 +115,9 @@ class StudentRepo: NSObject {
                 // Grab JSON contents
                 let contents = try Data(contentsOf: fileURL)
                 let students = try JSONSerialization.jsonObject(with: contents, options: .mutableContainers) as! [[String: Any]]
-                
+                print("STUDENTS LOADING\n")
+                print(students)
+            
                 for stud in students {
                     //Find the current user in local data
                     if stud["username"] as! String == self.username {
@@ -141,6 +156,9 @@ class StudentRepo: NSObject {
             
             //Add the current student back into the json
             students.append(currentUserData)
+            
+            print("STUDENTS WRITING\n")
+            print(students)
             
             let jsonData = try JSONSerialization.data(withJSONObject: students, options: .prettyPrinted)
             try jsonData.write(to: fileURL)
