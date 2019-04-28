@@ -54,7 +54,8 @@ class StudentRepo: NSObject {
         let libraryPath = NSSearchPathForDirectoriesInDomains(.libraryDirectory, .userDomainMask, true)[0]
         fileURL = URL(fileURLWithPath: libraryPath).appendingPathComponent("students.json")
         
-        //Create the initial file from the bundle
+        //Copy the initial file from the bundle if it
+        //does not yet exist in the library directory.
         if !FileManager.default.fileExists(atPath: fileURL.path){
             do {
                 let path = Bundle.main.path(forResource: "students", ofType: "json")
@@ -68,6 +69,7 @@ class StudentRepo: NSObject {
         
         super.init()
         
+        //Add an observer to every member variable, to keep local file storage updated
         for key in fields{
             addObserver(self, forKeyPath: key, options: .new, context: nil)
         }
@@ -133,6 +135,9 @@ class StudentRepo: NSObject {
         }
     }
     
+    /**
+     * Updates the local file with the newest student information
+    */
     func writeLocalStudent(){
         // Grab current JSON contents
         do {
