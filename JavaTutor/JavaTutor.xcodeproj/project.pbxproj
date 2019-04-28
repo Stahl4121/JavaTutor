@@ -45,6 +45,11 @@
 		84CB7037224851B800CEE082 /* questions.json in Resources */ = {isa = PBXBuildFile; fileRef = 84CB7035224846A300CEE082 /* questions.json */; };
 		84CB703B22487E5000CEE082 /* names.json in Resources */ = {isa = PBXBuildFile; fileRef = 84CB703A22487E5000CEE082 /* names.json */; };
 		8EC2541D225FD0980015CB37 /* JavaRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC2541C225FD0980015CB37 /* JavaRunner.swift */; };
+		8EC2541F2274FD1C0015CB37 /* ExerciseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC2541E2274FD1C0015CB37 /* ExerciseVC.swift */; };
+		8EC254232275EDAA0015CB37 /* editor.html in Resources */ = {isa = PBXBuildFile; fileRef = 8EC254222275EDAA0015CB37 /* editor.html */; };
+		8EC254272275EE850015CB37 /* codemirror.js in Resources */ = {isa = PBXBuildFile; fileRef = 8EC254252275EE840015CB37 /* codemirror.js */; };
+		8EC254282275EE850015CB37 /* codemirror.css in Resources */ = {isa = PBXBuildFile; fileRef = 8EC254262275EE850015CB37 /* codemirror.css */; };
+		8EC2542B227625170015CB37 /* clike.js in Resources */ = {isa = PBXBuildFile; fileRef = 8EC2542A227625170015CB37 /* clike.js */; };
 		8ED5F5352249762D002A01C1 /* index.js in Resources */ = {isa = PBXBuildFile; fileRef = 8ED5F5342249762C002A01C1 /* index.js */; };
 		8ED5F5372249763C002A01C1 /* QGen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED5F5362249763C002A01C1 /* QGen.swift */; };
 		9705A21531ABDBE279D27556 /* Pods_JavaTutor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6C7C90BF01055004AEF21BE /* Pods_JavaTutor.framework */; };
@@ -146,7 +151,12 @@
 		84CB7035224846A300CEE082 /* questions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = questions.json; sourceTree = "<group>"; };
 		84CB703A22487E5000CEE082 /* names.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = names.json; sourceTree = "<group>"; };
 		8ABCAF315590C89E756CDEC8 /* Pods_JavaTutorUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JavaTutorUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8EC2541C225FD0980015CB37 /* JavaRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JavaRunner.swift; sourceTree = "<group>"; };
+		8EC2541C225FD0980015CB37 /* JavaRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JavaRunner.swift; path = JavaTutor/JavaRunner.swift; sourceTree = SOURCE_ROOT; };
+		8EC2541E2274FD1C0015CB37 /* ExerciseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseVC.swift; sourceTree = "<group>"; };
+		8EC254222275EDAA0015CB37 /* editor.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = editor.html; path = JavaTutor/Editor/editor.html; sourceTree = SOURCE_ROOT; };
+		8EC254252275EE840015CB37 /* codemirror.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = codemirror.js; sourceTree = "<group>"; };
+		8EC254262275EE850015CB37 /* codemirror.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = codemirror.css; sourceTree = "<group>"; };
+		8EC2542A227625170015CB37 /* clike.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = clike.js; sourceTree = "<group>"; };
 		8ED5F5342249762C002A01C1 /* index.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = index.js; sourceTree = "<group>"; };
 		8ED5F5362249763C002A01C1 /* QGen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QGen.swift; sourceTree = "<group>"; };
 		950608B2E6DE8B93883519C4 /* Pods-JavaTutorUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JavaTutorUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JavaTutorUITests/Pods-JavaTutorUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -241,13 +251,15 @@
 		840B69BA222054EE0032B683 /* JavaTutor */ = {
 			isa = PBXGroup;
 			children = (
+				8EC254242275EE5C0015CB37 /* Editor */,
 				8EC2541C225FD0980015CB37 /* JavaRunner.swift */,
+				8EC2541E2274FD1C0015CB37 /* ExerciseVC.swift */,
+				840B69BF222054EE0032B683 /* Main.storyboard */,
 				840179DD224083390006EB11 /* StudyVC.swift */,
 				840D84EC22492C8400AE58E1 /* LoginScreenVC.swift */,
 				8408DDAB2237D05300C7DF57 /* SignUpVC.swift */,
 				843971A722237C5900A96195 /* RecentActivityTVC.swift */,
 				843971A822237C5900A96195 /* StatisticsVC.swift */,
-				840B69BF222054EE0032B683 /* Main.storyboard */,
 				8401945522470E56005B9EAE /* ModuleListTVC.swift */,
 				840179E1224096400006EB11 /* ModuleCell.swift */,
 				840DBD9D2241D281000145B6 /* LessonListTVC.swift */,
@@ -317,6 +329,18 @@
 			);
 			path = JavaTutorUITests;
 			sourceTree = "<group>";
+		};
+		8EC254242275EE5C0015CB37 /* Editor */ = {
+			isa = PBXGroup;
+			children = (
+				8EC254222275EDAA0015CB37 /* editor.html */,
+				8EC2542A227625170015CB37 /* clike.js */,
+				8EC254262275EE850015CB37 /* codemirror.css */,
+				8EC254252275EE840015CB37 /* codemirror.js */,
+			);
+			name = Editor;
+			path = JavaTutor/Editor;
+			sourceTree = SOURCE_ROOT;
 		};
 		E785DFA65FEF37C59572D4EA /* Frameworks */ = {
 			isa = PBXGroup;
@@ -401,6 +425,7 @@
 				TargetAttributes = {
 					840B69B7222054EE0032B683 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 					840B69CB222054F10032B683 = {
 						CreatedOnToolsVersion = 10.1;
@@ -438,12 +463,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				84CB7037224851B800CEE082 /* questions.json in Resources */,
+				8EC254232275EDAA0015CB37 /* editor.html in Resources */,
+				8EC2542B227625170015CB37 /* clike.js in Resources */,
 				B2441A0D224A61D4003B7E37 /* 2.14.html in Resources */,
 				B2441A1B224A61D4003B7E37 /* 2.7.html in Resources */,
 				B2441A1C224A61D4003B7E37 /* 2.8.html in Resources */,
 				B2441A11224A61D4003B7E37 /* 2.15.html in Resources */,
 				840B69C6222054F10032B683 /* LaunchScreen.storyboard in Resources */,
 				B2441A13224A61D4003B7E37 /* 2.13.html in Resources */,
+				8EC254272275EE850015CB37 /* codemirror.js in Resources */,
 				B2441A10224A61D4003B7E37 /* 1.1.html in Resources */,
 				1D16A5572221FF3900FC3248 /* GoogleService-Info.plist in Resources */,
 				B2441A16224A61D4003B7E37 /* 2.10.html in Resources */,
@@ -462,6 +490,7 @@
 				84C4085B224A6A770069A1E2 /* javanotes.css in Resources */,
 				B2441A1A224A61D4003B7E37 /* 2.12.html in Resources */,
 				B2441A12224A61D4003B7E37 /* 2.4.html in Resources */,
+				8EC254282275EE850015CB37 /* codemirror.css in Resources */,
 				B2441A18224A61D4003B7E37 /* 2.5.html in Resources */,
 				B2441A0C224A61D4003B7E37 /* 2.2.html in Resources */,
 				B2441A1D224A61D4003B7E37 /* 2.3.html in Resources */,
@@ -598,6 +627,7 @@
 				840DBDA02241D589000145B6 /* LessonListCell.swift in Sources */,
 				841BE5D0226E941100C4F680 /* QuestionHeaderCell.swift in Sources */,
 				8401945622470E56005B9EAE /* ModuleListTVC.swift in Sources */,
+				8EC2541F2274FD1C0015CB37 /* ExerciseVC.swift in Sources */,
 				4E3C29E6226AB73A00623DF3 /* OverallProgressVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -775,6 +805,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = JavaTutor/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -783,6 +814,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = GCC.JavaTutor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -794,6 +826,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = JavaTutor/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
