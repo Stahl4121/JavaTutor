@@ -9,7 +9,7 @@
 import UIKit
 
 class QuizTVC: UITableViewController {
-    let repo = DataRepo.instance
+    let repo = DomainRepo.instance
     
     var isReviewMode: Bool = false
     var reviewIdxPaths: [IndexPath] = [IndexPath]()
@@ -68,7 +68,7 @@ class QuizTVC: UITableViewController {
         return numQuestions
         
         //If you wanted to display every question:
-        //return repo.questions[module].count
+        //return domainRepo.questions[module].count
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -9,7 +9,7 @@
 import UIKit
 
 class QuestionTVC: UITableViewController {
-    let repo = DataRepo.instance
+    let repo = DomainRepo.instance
     
     var row: Int = 0
     var module: Int = 0
@@ -67,7 +67,7 @@ class QuestionTVC: UITableViewController {
         return true
     }
     
-    //Keep calling until the quiz is done, incrementing numCorrect if it matches the corresponding question in the repo
+    //Keep calling until the quiz is done, incrementing numCorrect if it matches the corresponding question in the domainRepo
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if let child = segue.destination as? QuestionTVC {

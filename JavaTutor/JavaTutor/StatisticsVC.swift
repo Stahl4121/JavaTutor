@@ -11,7 +11,7 @@ import UIKit
 class StatisticsVC: UIViewController {
     @IBOutlet weak var overallProgBtn: UIButton!
     
-    let repo = DataRepo.instance
+    let studentRepo = StudentRepo.instance
     
     //View 1: what percentage of most recently visited module has student completed?
     @IBOutlet weak var PercentRecentCompleted: UILabel!
@@ -72,15 +72,15 @@ class StatisticsVC: UIViewController {
     
     func setQuizScores(){
     
-        QuizAverage.text = "\(repo.quizAvg.rounded())%"
+        QuizAverage.text = "\(studentRepo.quizAvg.rounded())%"
         
-        if repo.quizAvg < 60 {
+        if studentRepo.quizAvg < 60 {
             QuizAverage.textColor = UIColor.red
-        } else if repo.quizAvg < 70 {
+        } else if studentRepo.quizAvg < 70 {
             QuizAverage.textColor = UIColor.orange
-        } else if repo.quizAvg < 90 {
+        } else if studentRepo.quizAvg < 90 {
             QuizAverage.textColor = UIColor.yellow
-        } else if repo.quizAvg <= 100 {
+        } else if studentRepo.quizAvg <= 100 {
             QuizAverage.textColor = UIColor.green
         }
         
