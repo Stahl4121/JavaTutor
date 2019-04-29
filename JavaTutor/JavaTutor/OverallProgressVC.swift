@@ -10,7 +10,7 @@ import UIKit
 
 class OverallProgressVC: UIViewController {
    
-    let repo = DataRepo.instance
+    let studentRepo = StudentRepo.instance
     
     let labelPoints : [CGPoint] = [
         /*red*/ CGPoint(x: 430, y: 195),
@@ -62,7 +62,7 @@ class OverallProgressVC: UIViewController {
         //set up 10 slices of user's progress so far
         for i in 0...9 {
             let newThing = OverallPieChart()
-            newThing.radius = CGFloat(min(view.frame.size.width, view.frame.size.height)) * CGFloat(0.25) * CGFloat(repo.quizAvgPerMod[i]/100)
+            newThing.radius = CGFloat(min(view.frame.size.width, view.frame.size.height)) * CGFloat(0.25) * CGFloat(studentRepo.quizAvgPerMod[i]/100)
             newThing.frame = CGRect(x: 0, y: 200, width: view.frame.size.width, height: 400)
             for j in 0...9 {
                 if j == ((i+9)%10){
@@ -84,7 +84,7 @@ class OverallProgressVC: UIViewController {
         for (i, s) in scoreLabels.enumerated() {
             view.addSubview(s)
             view.bringSubviewToFront(s)
-            s.text = "\(Double(repo.quizAvgPerMod[i]).rounded())"
+            s.text = "\(Double(studentRepo.quizAvgPerMod[i]).rounded())"
             s.font = UIFont.systemFont(ofSize: 22)
             s.textColor = UIColor.white
         }

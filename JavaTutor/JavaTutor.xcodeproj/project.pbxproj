@@ -17,7 +17,7 @@
 		4ED8719922741DC300CF403D /* ModuleProgressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED8719822741DC300CF403D /* ModuleProgressVC.swift */; };
 		840179DE224083390006EB11 /* StudyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840179DD224083390006EB11 /* StudyVC.swift */; };
 		840179E2224096400006EB11 /* ModuleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840179E1224096400006EB11 /* ModuleCell.swift */; };
-		840179E42240995A0006EB11 /* DataRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840179E32240995A0006EB11 /* DataRepo.swift */; };
+		840179E42240995A0006EB11 /* DomainRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840179E32240995A0006EB11 /* DomainRepo.swift */; };
 		8401944E2246F614005B9EAE /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8401944D2246F614005B9EAE /* Question.swift */; };
 		840194502246F90A005B9EAE /* QuestionTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8401944F2246F909005B9EAE /* QuestionTVC.swift */; };
 		840194522246F9AD005B9EAE /* AnswerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840194512246F9AD005B9EAE /* AnswerCell.swift */; };
@@ -45,6 +45,8 @@
 		84CB7036224846A300CEE082 /* questions.json in Sources */ = {isa = PBXBuildFile; fileRef = 84CB7035224846A300CEE082 /* questions.json */; };
 		84CB7037224851B800CEE082 /* questions.json in Resources */ = {isa = PBXBuildFile; fileRef = 84CB7035224846A300CEE082 /* questions.json */; };
 		84CB703B22487E5000CEE082 /* names.json in Resources */ = {isa = PBXBuildFile; fileRef = 84CB703A22487E5000CEE082 /* names.json */; };
+		84E42ECE2274C19C00E72FC4 /* StudentRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E42ECD2274C19C00E72FC4 /* StudentRepo.swift */; };
+		84E42ED02274D53400E72FC4 /* students.json in Resources */ = {isa = PBXBuildFile; fileRef = 84E42ECF2274D53400E72FC4 /* students.json */; };
 		8ED5F5352249762D002A01C1 /* index.js in Resources */ = {isa = PBXBuildFile; fileRef = 8ED5F5342249762C002A01C1 /* index.js */; };
 		8ED5F5372249763C002A01C1 /* QGen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED5F5362249763C002A01C1 /* QGen.swift */; };
 		9705A21531ABDBE279D27556 /* Pods_JavaTutor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6C7C90BF01055004AEF21BE /* Pods_JavaTutor.framework */; };
@@ -113,7 +115,7 @@
 		7D5F25F720D9643CB6D585E4 /* Pods_JavaTutorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JavaTutorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		840179DD224083390006EB11 /* StudyVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudyVC.swift; sourceTree = "<group>"; };
 		840179E1224096400006EB11 /* ModuleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleCell.swift; sourceTree = "<group>"; };
-		840179E32240995A0006EB11 /* DataRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRepo.swift; sourceTree = "<group>"; };
+		840179E32240995A0006EB11 /* DomainRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainRepo.swift; sourceTree = "<group>"; };
 		8401944D2246F614005B9EAE /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		8401944F2246F909005B9EAE /* QuestionTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTVC.swift; sourceTree = "<group>"; };
 		840194512246F9AD005B9EAE /* AnswerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerCell.swift; sourceTree = "<group>"; };
@@ -146,6 +148,8 @@
 		84C4085A224A6A760069A1E2 /* javanotes.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = javanotes.css; path = "TextbookHTML.xcassets/Sprint 1 HTML/sec1/javanotes.dataset/javanotes.css"; sourceTree = "<group>"; };
 		84CB7035224846A300CEE082 /* questions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = questions.json; sourceTree = "<group>"; };
 		84CB703A22487E5000CEE082 /* names.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = names.json; sourceTree = "<group>"; };
+		84E42ECD2274C19C00E72FC4 /* StudentRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentRepo.swift; sourceTree = "<group>"; };
+		84E42ECF2274D53400E72FC4 /* students.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = students.json; sourceTree = "<group>"; };
 		8ABCAF315590C89E756CDEC8 /* Pods_JavaTutorUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JavaTutorUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8ED5F5342249762C002A01C1 /* index.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = index.js; sourceTree = "<group>"; };
 		8ED5F5362249763C002A01C1 /* QGen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QGen.swift; sourceTree = "<group>"; };
@@ -263,8 +267,12 @@
 				8401944D2246F614005B9EAE /* Question.swift */,
 				4E3C29E5226AB73A00623DF3 /* OverallProgressVC.swift */,
 				4EB2C5EB226BDE1A004B921E /* OverallPieChart.swift */,
-				840179E32240995A0006EB11 /* DataRepo.swift */,
+				840179E32240995A0006EB11 /* DomainRepo.swift */,
+				84E42ECD2274C19C00E72FC4 /* StudentRepo.swift */,
 				840B69C2222054F10032B683 /* Assets.xcassets */,
+				84E42ECF2274D53400E72FC4 /* students.json */,
+				84CB7035224846A300CEE082 /* questions.json */,
+				84CB703A22487E5000CEE082 /* names.json */,
 				8489D0D72237FAC400435F34 /* study.png */,
 				8489D0D92237FAC500435F34 /* profile.png */,
 				8489D0D82237FAC400435F34 /* activity.png */,
@@ -273,8 +281,6 @@
 				840B69C4222054F10032B683 /* LaunchScreen.storyboard */,
 				840B69BB222054EE0032B683 /* AppDelegate.swift */,
 				8408DDAD2237D30000C7DF57 /* BaseTabBarController.swift */,
-				84CB7035224846A300CEE082 /* questions.json */,
-				84CB703A22487E5000CEE082 /* names.json */,
 				8ED5F5362249763C002A01C1 /* QGen.swift */,
 				8ED5F5342249762C002A01C1 /* index.js */,
 				84C4085A224A6A760069A1E2 /* javanotes.css */,
@@ -448,6 +454,7 @@
 				1D16A5572221FF3900FC3248 /* GoogleService-Info.plist in Resources */,
 				B2441A16224A61D4003B7E37 /* 2.10.html in Resources */,
 				B2441A0E224A61D4003B7E37 /* 1.2.html in Resources */,
+				84E42ED02274D53400E72FC4 /* students.json in Resources */,
 				B2441A19224A61D4003B7E37 /* 2.6.html in Resources */,
 				8489D0DA2237FAC500435F34 /* study.png in Resources */,
 				84CB703B22487E5000CEE082 /* names.json in Resources */,
@@ -587,11 +594,12 @@
 				4ED8719922741DC300CF403D /* ModuleProgressVC.swift in Sources */,
 				840B69BC222054EE0032B683 /* AppDelegate.swift in Sources */,
 				840179E2224096400006EB11 /* ModuleCell.swift in Sources */,
+				84E42ECE2274C19C00E72FC4 /* StudentRepo.swift in Sources */,
 				840D84ED22492C8400AE58E1 /* LoginScreenVC.swift in Sources */,
 				840DBD9E2241D281000145B6 /* LessonListTVC.swift in Sources */,
 				8408DDAC2237D05300C7DF57 /* SignUpVC.swift in Sources */,
 				4EB2C5EC226BDE1A004B921E /* OverallPieChart.swift in Sources */,
-				840179E42240995A0006EB11 /* DataRepo.swift in Sources */,
+				840179E42240995A0006EB11 /* DomainRepo.swift in Sources */,
 				B2E79CA5224830F10077EC9D /* LessonWeb.swift in Sources */,
 				8ED5F5372249763C002A01C1 /* QGen.swift in Sources */,
 				840179DE224083390006EB11 /* StudyVC.swift in Sources */,

@@ -9,8 +9,8 @@
 import UIKit
 
 class QuizResultsVC: UIViewController {
-    
-    let repo = DataRepo.instance
+    let domainRepo = DomainRepo.instance
+    let studentRepo = StudentRepo.instance
     var moduleNum: Int = 0
     var quizSubmittedIdxPaths: [IndexPath] = [IndexPath]()
     
@@ -44,10 +44,10 @@ class QuizResultsVC: UIViewController {
     func gradeQuiz(){
         //Check every question's answer
         for idxPath in quizSubmittedIdxPaths {
-            let bloomVal = repo.questions[moduleNum][idxPath.section].bloomValue
+            let bloomVal = domainRepo.questions[moduleNum][idxPath.section].bloomValue
 
                 //Correct Question
-                if repo.questions[moduleNum][idxPath.section].correctIdx == (idxPath.row - 1) {
+                if domainRepo.questions[moduleNum][idxPath.section].correctIdx == (idxPath.row - 1) {
                     numCorrect+=1
                     bloomCorrectLevels[bloomVal - 1] += 1
                 }
@@ -60,23 +60,19 @@ class QuizResultsVC: UIViewController {
     
     func updateDataRepo(){
         
-        //adjusts correct/incorrect questions (meaningless)
-        repo.correctQuestionsPerModule[moduleNum] = repo.correctQuestionsPerModule[moduleNum] + self.numCorrect
-        repo.incorrectQuestionsPerModule[moduleNum] = repo.incorrectQuestionsPerModule[moduleNum] + self.numIncorrect
-        
         //adjusts correct/incorrect bloom levels (meaningful)
-        repo.bloomsTaxCorrect = repo.bloomsTaxCorrect + self.bloomCorrectLevels
-        repo.bloomsTaxIncorrect = repo.bloomsTaxIncorrect + self.bloomIncorrectLevels
+        studentRepo.bloomsTaxCorrect = studentRepo.bloomsTaxCorrect + self.bloomCorrectLevels
+        studentRepo.bloomsTaxIncorrect = studentRepo.bloomsTaxIncorrect + self.bloomIncorrectLevels
         
         //increments # of times student has taken a quiz
-        repo.totalQuizzes = repo.totalQuizzes + 1
+        studentRepo.totalQuizzes = studentRepo.totalQuizzes + 1
         
         //adjusts OVERALL quiz average: (All prev * (new_total - 1) + new_Score )/new_total
-        repo.quizAvg = ((repo.quizAvg * Double((repo.totalQuizzes - 1))) + ((Double(numCorrect)/Double(numCorrect+numIncorrect))*100))/(Double(repo.totalQuizzes))
+        studentRepo.quizAvg = ((studentRepo.quizAvg * Double((studentRepo.totalQuizzes - 1))) + ((Double(numCorrect)/Double(numCorrect+numIncorrect))*100))/(Double(studentRepo.totalQuizzes))
         
         //adjusts quiz average & attempt count for this module
-        repo.quizzesPerModule[moduleNum] = repo.quizzesPerModule[moduleNum] + 1
-        repo.quizAvgPerMod[moduleNum] = ((repo.quizAvgPerMod[moduleNum] * Double((repo.quizzesPerModule[moduleNum] - 1))) + ((Double(numCorrect)/Double(numCorrect+numIncorrect))*100))/(Double(repo.quizzesPerModule[moduleNum]))
+        studentRepo.quizzesPerModule[moduleNum] = studentRepo.quizzesPerModule[moduleNum] + 1
+        studentRepo.quizAvgPerMod[moduleNum] = ((studentRepo.quizAvgPerMod[moduleNum] * Double((studentRepo.quizzesPerModule[moduleNum] - 1))) + ((Double(numCorrect)/Double(numCorrect+numIncorrect))*100))/(Double(studentRepo.quizzesPerModule[moduleNum]))
         
     }
     

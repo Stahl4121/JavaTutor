@@ -9,7 +9,8 @@
 import UIKit
 
 class ModuleListTVC: UITableViewController {
-    let repo = DataRepo.instance
+    let domainRepo = DomainRepo.instance
+    let studentRepo = StudentRepo.instance
     
     var row: Int = 0
     
@@ -29,14 +30,14 @@ class ModuleListTVC: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return repo.moduleNames.count
+        return domainRepo.moduleNames.count
     }
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "moduleCell", for: indexPath) as! ModuleCell
         
-        cell.lblModuleTitle?.text = "Module \(indexPath.row + 1): \(repo.moduleNames[indexPath.row])"
+        cell.lblModuleTitle?.text = "Module \(indexPath.row + 1): \(domainRepo.moduleNames[indexPath.row])"
         cell.lblPercComp?.text = "{#}%"
         
         return cell
@@ -48,10 +49,10 @@ class ModuleListTVC: UITableViewController {
             child.module = row
             
             //Update recent activities list
-            if let index = repo.recentActivities.firstIndex(of: repo.moduleNames[row]){
-                repo.recentActivities.remove(at: index)
+            if let index = studentRepo.recentActivities.firstIndex(of: domainRepo.moduleNames[row]){
+                studentRepo.recentActivities.remove(at: index)
             }
-            repo.recentActivities.insert(repo.moduleNames[row], at: 0)
+            studentRepo.recentActivities.insert(domainRepo.moduleNames[row], at: 0)
         }
     }
 

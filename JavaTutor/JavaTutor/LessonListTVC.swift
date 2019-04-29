@@ -9,7 +9,8 @@
 import UIKit
 
 class LessonListTVC: UITableViewController {
-    let repo = DataRepo.instance
+    let domainRepo = DomainRepo.instance
+    let studentRepo = StudentRepo.instance
     
     var row: Int = 0
     var module: Int = 0
@@ -18,7 +19,7 @@ class LessonListTVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        lblLessonListTitle.text = "\(repo.moduleNames[module]) Lesson List"
+        lblLessonListTitle.text = "\(domainRepo.moduleNames[module]) Lesson List"
     }
     
     // MARK: - Table view data source
@@ -33,18 +34,18 @@ class LessonListTVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return repo.lessonNames[module].count + 1
+        return domainRepo.lessonNames[module].count + 1
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if indexPath.row == repo.lessonNames[module].count{
+        if indexPath.row == domainRepo.lessonNames[module].count{
             
             return tableView.dequeueReusableCell(withIdentifier: "quizCell", for: indexPath)
         }
         else{
             let cell = tableView.dequeueReusableCell(withIdentifier: "lessonListCell", for: indexPath) as! LessonListCell
-            cell.lblLessonTitle?.text = "\(repo.lessonNames[module][indexPath.row])"
+            cell.lblLessonTitle?.text = "\(domainRepo.lessonNames[module][indexPath.row])"
             
             return cell
             //TODO
@@ -60,12 +61,12 @@ class LessonListTVC: UITableViewController {
         
         if let child = segue.destination as? LessonWeb {
             //Update recent activities list
-            if let index = repo.recentActivities.firstIndex(of: repo.lessonNames[module][row]){
-                repo.recentActivities.remove(at: index)
+            if let index = studentRepo.recentActivities.firstIndex(of: domainRepo.lessonNames[module][row]){
+                studentRepo.recentActivities.remove(at: index)
             }
-            repo.recentActivities.insert(repo.lessonNames[module][row], at: 0)
+            studentRepo.recentActivities.insert(domainRepo.lessonNames[module][row], at: 0)
             
-            child.lessonName = repo.lessonNames[module][row]
+            child.lessonName = domainRepo.lessonNames[module][row]
             child.modNum = self.module + 1
             child.lessonNum = self.row + 1
         }
