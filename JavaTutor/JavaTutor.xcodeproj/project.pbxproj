@@ -12,9 +12,9 @@
 		1D16A5592221FF3900FC3248 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D16A5562221FF3900FC3248 /* GoogleService-Info.plist */; };
 		203A6F2E093C231CBEF612E2 /* Pods_JavaTutorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D5F25F720D9643CB6D585E4 /* Pods_JavaTutorTests.framework */; };
 		4E3C29E6226AB73A00623DF3 /* OverallProgressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3C29E5226AB73A00623DF3 /* OverallProgressVC.swift */; };
+		4EAC6BE62277FC5D007FABB6 /* ModuleProgDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EAC6BE52277FC5D007FABB6 /* ModuleProgDetailsVC.swift */; };
 		4EAD10F1226955300026EB00 /* QuizProgressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EAD10F0226955300026EB00 /* QuizProgressVC.swift */; };
 		4EB2C5EC226BDE1A004B921E /* OverallPieChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB2C5EB226BDE1A004B921E /* OverallPieChart.swift */; };
-		4ED8719922741DC300CF403D /* ModuleProgressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED8719822741DC300CF403D /* ModuleProgressVC.swift */; };
 		840179DE224083390006EB11 /* StudyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840179DD224083390006EB11 /* StudyVC.swift */; };
 		840179E2224096400006EB11 /* ModuleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840179E1224096400006EB11 /* ModuleCell.swift */; };
 		840179E42240995A0006EB11 /* DomainRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840179E32240995A0006EB11 /* DomainRepo.swift */; };
@@ -106,9 +106,9 @@
 /* Begin PBXFileReference section */
 		1D16A5562221FF3900FC3248 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4E3C29E5226AB73A00623DF3 /* OverallProgressVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverallProgressVC.swift; sourceTree = "<group>"; };
+		4EAC6BE52277FC5D007FABB6 /* ModuleProgDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleProgDetailsVC.swift; sourceTree = "<group>"; };
 		4EAD10F0226955300026EB00 /* QuizProgressVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizProgressVC.swift; sourceTree = "<group>"; };
 		4EB2C5EB226BDE1A004B921E /* OverallPieChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverallPieChart.swift; sourceTree = "<group>"; };
-		4ED8719822741DC300CF403D /* ModuleProgressVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleProgressVC.swift; sourceTree = "<group>"; };
 		542301E042D50BB0C58A497A /* Pods-JavaTutorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JavaTutorTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JavaTutorTests/Pods-JavaTutorTests.release.xcconfig"; sourceTree = "<group>"; };
 		56C900E77F7C22DFE35A44C1 /* Pods-JavaTutor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JavaTutor.release.xcconfig"; path = "Pods/Target Support Files/Pods-JavaTutor/Pods-JavaTutor.release.xcconfig"; sourceTree = "<group>"; };
 		7A2DB7FF4DD5D457BCB9A8E4 /* Pods-JavaTutorUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JavaTutorUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JavaTutorUITests/Pods-JavaTutorUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -250,9 +250,9 @@
 				8408DDAB2237D05300C7DF57 /* SignUpVC.swift */,
 				843971A722237C5900A96195 /* RecentActivityTVC.swift */,
 				843971A822237C5900A96195 /* StatisticsVC.swift */,
-				4ED8719822741DC300CF403D /* ModuleProgressVC.swift */,
 				840B69BF222054EE0032B683 /* Main.storyboard */,
 				8401945522470E56005B9EAE /* ModuleListTVC.swift */,
+				4EAC6BE52277FC5D007FABB6 /* ModuleProgDetailsVC.swift */,
 				840179E1224096400006EB11 /* ModuleCell.swift */,
 				840DBD9D2241D281000145B6 /* LessonListTVC.swift */,
 				840DBD9F2241D589000145B6 /* LessonListCell.swift */,
@@ -591,7 +591,7 @@
 				84CB7036224846A300CEE082 /* questions.json in Sources */,
 				843971B022237C5900A96195 /* RecentActivityTVC.swift in Sources */,
 				8408DDAE2237D30000C7DF57 /* BaseTabBarController.swift in Sources */,
-				4ED8719922741DC300CF403D /* ModuleProgressVC.swift in Sources */,
+				4EAC6BE62277FC5D007FABB6 /* ModuleProgDetailsVC.swift in Sources */,
 				840B69BC222054EE0032B683 /* AppDelegate.swift in Sources */,
 				840179E2224096400006EB11 /* ModuleCell.swift in Sources */,
 				84E42ECE2274C19C00E72FC4 /* StudentRepo.swift in Sources */,
