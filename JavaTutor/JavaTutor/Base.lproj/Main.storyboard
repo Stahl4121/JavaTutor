@@ -397,13 +397,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xXZ-aV-io7">
                                 <rect key="frame" x="534" y="91" width="470" height="330"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ox-kB-6cK" userLabel="toOverallProgress">
-                                        <rect key="frame" x="0.0" y="0.0" width="470" height="330"/>
-                                        <state key="normal" title=" "/>
-                                        <connections>
-                                            <segue destination="tMf-dT-R4B" kind="show" id="Ncf-tT-Yjh"/>
-                                        </connections>
-                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Overall Progress" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SHn-j5-gWH" userLabel="Lbl Recent Module">
                                         <rect key="frame" x="33" y="15" width="404" height="49"/>
                                         <constraints>
@@ -415,15 +408,12 @@
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstItem="4ox-kB-6cK" firstAttribute="leading" secondItem="xXZ-aV-io7" secondAttribute="leading" id="0xZ-Kh-V5I"/>
                                     <constraint firstItem="SHn-j5-gWH" firstAttribute="centerX" secondItem="xXZ-aV-io7" secondAttribute="centerX" id="ATM-jS-XoJ"/>
                                     <constraint firstItem="SHn-j5-gWH" firstAttribute="top" secondItem="xXZ-aV-io7" secondAttribute="top" constant="15" id="Ffz-fj-rvX"/>
-                                    <constraint firstItem="4ox-kB-6cK" firstAttribute="top" secondItem="xXZ-aV-io7" secondAttribute="top" id="Kmo-ZU-chl"/>
-                                    <constraint firstItem="4ox-kB-6cK" firstAttribute="centerX" secondItem="SHn-j5-gWH" secondAttribute="centerX" id="bU7-lT-6di"/>
                                     <constraint firstAttribute="height" constant="330" id="eDx-KC-4Zm"/>
                                     <constraint firstItem="SHn-j5-gWH" firstAttribute="leading" secondItem="xXZ-aV-io7" secondAttribute="leading" constant="33" id="gfr-u8-1OG"/>
-                                    <constraint firstAttribute="bottom" secondItem="4ox-kB-6cK" secondAttribute="bottom" id="xG0-k1-dW4"/>
                                     <constraint firstAttribute="width" constant="470" id="ygJ-92-VRS"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -432,6 +422,9 @@
                                         <integer key="value" value="30"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Ysj-Of-WCS" appends="YES" id="90C-ez-J5l"/>
+                                </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v9D-Og-5mQ">
                                 <rect key="frame" x="20" y="464" width="300" height="221"/>
@@ -549,10 +542,14 @@
                         <outlet property="PercentTotalCompleted" destination="SHn-j5-gWH" id="hrD-CX-DBw"/>
                         <outlet property="QuizAverage" destination="T6W-RP-aA8" id="tiw-rW-DqE"/>
                         <outlet property="QuizScores" destination="CN4-Of-MLa" id="i4v-PS-R8p"/>
-                        <outlet property="overallProgBtn" destination="4ox-kB-6cK" id="DbV-d1-4qB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JyC-kd-aA3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Ysj-Of-WCS" userLabel="Tap Overall Progress Review">
+                    <connections>
+                        <segue destination="tMf-dT-R4B" kind="show" id="ps3-ld-Yth"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1529.8828125" y="-3.125"/>
         </scene>
@@ -2349,6 +2346,6 @@
         <image name="study.png" width="33" height="41"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="sTF-1J-hbQ"/>
+        <segue reference="8aR-rA-gmn"/>
     </inferredMetricsTieBreakers>
 </document>

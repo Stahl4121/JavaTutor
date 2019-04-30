@@ -9,7 +9,6 @@
 import UIKit
 
 class StatisticsVC: UIViewController {
-    @IBOutlet weak var overallProgBtn: UIButton!
     
     let studentRepo = StudentRepo.instance
     
@@ -70,12 +69,11 @@ class StatisticsVC: UIViewController {
         }
         
         //set up preview of user's progress through module
-        
+        previewChart.isUserInteractionEnabled=false
+        percentLabel.isUserInteractionEnabled=false
+
         //add subviews to main view
         view.addSubview(previewChart)
-        view.addSubview(overallProgBtn)
-        view.bringSubviewToFront(overallProgBtn)
-        
         view.addSubview(percentLabel)
         view.bringSubviewToFront(percentLabel)
         
