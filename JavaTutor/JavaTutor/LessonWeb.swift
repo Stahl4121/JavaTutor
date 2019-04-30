@@ -16,7 +16,7 @@ class LessonWeb: UIViewController, WKUIDelegate {
     //TODO: Set a timer on this screen and when it hits 3 minutes, the user has finished the chapter
     var counter = 0
     var timer = Timer()
-    
+    var hasReadChapterBefore = false
     var lessonName: String = ""
     var modNum: Int = 0
     var lessonNum: Int = 0
@@ -48,13 +48,19 @@ class LessonWeb: UIViewController, WKUIDelegate {
         // Pass the selected object to the new view controller.
     }
  
-    
+    //adjusts how many chapters student has read
     @objc func update() {
         counter += 1
-        if counter == 10 {
+        /*if counter == 120 {
             studentRepo.chaptersFinished[modNum-1] = studentRepo.chaptersFinished[modNum-1] + 0.5
         } else if counter == 180 {
             studentRepo.chaptersFinished[modNum-1] = studentRepo.chaptersFinished[modNum-1] + 0.5
+            hasReadChapterBefore = true
+         }*/
+        
+        //TEST!
+        if counter == 2 {
+            studentRepo.chaptersFinished[modNum-1] = studentRepo.chaptersFinished[modNum-1] + 1
         }
     }
 

@@ -12,6 +12,7 @@ class ModuleProgDetailsVC: UIViewController {
 
     
     let studentRepo = StudentRepo.instance
+    let domainRepo = DomainRepo.instance
     
     @IBOutlet weak var mod1prog: UILabel!
     @IBOutlet weak var mod2prog: UILabel!
@@ -24,16 +25,24 @@ class ModuleProgDetailsVC: UIViewController {
     @IBOutlet weak var mod9prog: UILabel!
     @IBOutlet weak var mod10prog: UILabel!
     
-    
+    var modProgressArray : [UILabel]!
     
     
     func viewLoadSetup() {
-        mod1prog.text = "\(studentRepo.chaptersFinished[0] + 8)"
+        
+        for i in 0...(domainRepo.lessonNames.count - 1) {
+           // modProgressArray[i].text = "\(domainRepo.lessonNames[i].count)"
+            modProgressArray[i].text = "\((studentRepo.chaptersFinished[i]/Double(domainRepo.lessonNames[i].count)).rounded())"
+         
+        }
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        modProgressArray = [mod1prog, mod2prog, mod3prog, mod4prog, mod5prog, mod6prog, mod7prog, mod8prog, mod9prog, mod10prog]
+        
         viewLoadSetup()
         // Do any additional setup after loading the view.
     }
