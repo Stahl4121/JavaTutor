@@ -1,28 +1,82 @@
 <html>
-    <head>
-        <script src="codemirror.js"></script>
-        <link rel="stylesheet" href="codemirror.css">
-        <script src="clike.js"></script>
-    </head>
-    <body>
 
-        <script>
-            var codeMirror = CodeMirror(document.body, {
-                value: "class Test {\n}",
-                mode:  "text/x-java"
-            });
+<head>
+  <script src="codemirror.js"></script>
+  <link rel="stylesheet" href="codemirror.css">
+  <script src="clike.js"></script>
+  <meta charset="utf-8"/>
+</head>
 
-            codeMirror.on("change", editorChanged);
+<body>
+  <div class="controls">
+    <span class="text-button" onclick="insert('{')">{</span>
+  </div>
+  <script>
+    // Create buttons
+    let controls = document.querySelector('.controls');
+    let labels = ['{', '}', '[', ']', '<', '>', '↵', '→'];
+    let overrides = {
+      '↵': "insert('\\n'); codeMirror.execCommand('indentAuto')",
+      '→': "codeMirror.execCommand('insertSoftTab')"
+    };
 
-            function editorChanged() {
-                try {
-                    webkit.messageHandlers.codeChanged.postMessage(
-                                                                      {
-                                                                       text: codeMirror.getValue()
-                                                                      });
-                } catch(err) {
-                }
-            }
-        </script>
-    </body>
+    let base = label => `insert('${label}')`;
+    let click = label => overrides[label] || base(label);
+    let template = label => `<span class="text-button" onclick="${click(label)}">${label}</span>`
+
+    let inner = '';
+
+    labels.forEach(label => inner += template(label));
+
+    controls.innerHTML = inner;
+
+    // Create CodeMirror
+    var codeMirror = CodeMirror(document.body, {
+      value: 'Code file loading...',
+      lineNumbers: true,
+      mode: "text/x-java"
+    });
+
+    codeMirror.on("change", editorChanged);
+
+    // Signal Code Ready
+    try {
+      webkit.messageHandlers.codeChanged.postMessage({
+        load: "loaded"
+      });
+      alert('hi')
+    } catch (err) {
+      setCode('class Main {\n  public static void main(String[] args) {\n    System.out.println(\"Hello World!\");\n  }\n}')
+    }
+
+    function editorChanged() {
+      let value = codeMirror.getValue();
+      let safe = value.replace(/\u201c|\u201d/g, '"');
+
+      if (value !== safe) {
+        let cursor = codeMirror.getCursor();
+        codeMirror.setValue(safe);
+        codeMirror.setCursor(cursor);
+      }
+
+      try {
+        webkit.messageHandlers.codeChanged.postMessage({
+          text: safe
+        });
+      } catch (err) {}
+    }
+
+    function insert(text) {
+      codeMirror.replaceRange(text, codeMirror.getCursor());
+      codeMirror.focus();
+    }
+
+    function setCode(code) {
+      codeMirror.setValue(code);
+    }
+
+    window.setCode = setCode;
+  </script>
+</body>
+
 </html>

@@ -20,7 +20,7 @@ public class JavaRunner {
             URLQueryItem(name: "api_key", value: "guest")
         ]
         
-        let url = URL(string: urlC.string!.replacingOccurrences(of: ";", with: "%3B"))
+        let url = URL(string: urlC.string!.replacingOccurrences(of: ";", with: "%3B").replacingOccurrences(of: "+", with: "%2B"))
         
         var request = URLRequest(url: url!)
         request.httpMethod = "POST"
