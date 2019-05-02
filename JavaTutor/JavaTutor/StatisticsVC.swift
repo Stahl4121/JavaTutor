@@ -19,11 +19,11 @@ class StatisticsVC: UIViewController {
     @IBOutlet weak var PercentTotalCompleted: UILabel!
     
     //View 3
-    @IBOutlet weak var QuizScores: UILabel!
+    //@IBOutlet weak var QuizScores: UILabel!
     
     @IBOutlet weak var QuizAverage: UILabel!
     //View 4: how long have they spent in a lesson? (line graph)
-    @IBOutlet weak var TimesInLesson: UILabel!
+  //  @IBOutlet weak var TimesInLesson: UILabel!
     
     //View 5: ring chart, how much of bloom's tax have they done?
     //TODO: perhaps have this record that extra activities thing?
@@ -52,7 +52,7 @@ class StatisticsVC: UIViewController {
         
         PercentRecentCompleted.text = "Progress through Module"
         PercentTotalCompleted.text = "Progress through Tutorial"
-        QuizScores.text = "Quiz Stuff"
+        //QuizScores.text = "Quiz Stuff"
         //TimesInLesson.text = "Time in Lesson"
         BloomsTaxonomy.text = "Bloom's Taxonomy"
         

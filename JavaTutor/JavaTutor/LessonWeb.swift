@@ -65,11 +65,11 @@ class LessonWeb: UIViewController, WKUIDelegate {
             finished = studentRepo.chaptersFinished[modNum-1]
             total = Double(domainRepo.lessonNames[modNum - 1].count)
             
-            print("finished: \(finished), total: \(total)")
             
-            if(finished < total){
-                print("finished: \(finished), total: \(total)")
+            if (finished < total) && (!hasReadChapterBefore) {
+                hasReadChapterBefore = true
                 studentRepo.chaptersFinished[modNum-1] = studentRepo.chaptersFinished[modNum-1] + 1
+                
             }
                 //follow incrementing procedure
                 //else, they've finished this chapter already, so do nothing
