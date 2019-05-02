@@ -356,7 +356,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TA6-Vc-hXG">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TA6-Vc-hXG" userLabel="LessonsReadView">
                                 <rect key="frame" x="20" y="91" width="470" height="330"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RFB-bI-2lt" userLabel="toModuleProgress">
@@ -366,8 +366,8 @@
                                             <segue destination="D2b-o8-pls" kind="show" id="0pv-wt-VoF"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Module Progress" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tZQ-1t-W6e" userLabel="Lbl Recent Module">
-                                        <rect key="frame" x="108" y="8" width="254" height="63"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lessons Read" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tZQ-1t-W6e" userLabel="Lbl Recent Module">
+                                        <rect key="frame" x="134.5" y="8" width="201" height="63"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="63" id="55E-kg-AYx"/>
                                         </constraints>
@@ -375,6 +375,15 @@
                                         <color key="textColor" red="0.28211217820000001" green="0.34888452079999999" blue="0.37370704119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yoQ-hx-Bm1">
+                                        <rect key="frame" x="134" y="79" width="203" height="196"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
+                                        </accessibility>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="203" id="gGc-rm-L3z"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -382,6 +391,9 @@
                                     <constraint firstItem="RFB-bI-2lt" firstAttribute="leading" secondItem="TA6-Vc-hXG" secondAttribute="leading" id="M1J-37-vcY"/>
                                     <constraint firstItem="RFB-bI-2lt" firstAttribute="centerX" secondItem="tZQ-1t-W6e" secondAttribute="centerX" id="MMD-1n-Edg"/>
                                     <constraint firstItem="RFB-bI-2lt" firstAttribute="top" secondItem="TA6-Vc-hXG" secondAttribute="top" id="S7a-8F-Dh5"/>
+                                    <constraint firstItem="yoQ-hx-Bm1" firstAttribute="top" secondItem="tZQ-1t-W6e" secondAttribute="bottom" constant="8" symbolic="YES" id="UVm-GK-mbU"/>
+                                    <constraint firstAttribute="bottom" secondItem="yoQ-hx-Bm1" secondAttribute="bottom" constant="55" id="avL-Zg-bJ9"/>
+                                    <constraint firstItem="yoQ-hx-Bm1" firstAttribute="centerX" secondItem="tZQ-1t-W6e" secondAttribute="centerX" id="ffa-Vq-WsU"/>
                                     <constraint firstAttribute="width" constant="470" id="hF2-50-W0U"/>
                                     <constraint firstAttribute="bottom" secondItem="RFB-bI-2lt" secondAttribute="bottom" id="neP-I7-o7R"/>
                                     <constraint firstAttribute="height" constant="330" id="ngm-DE-D9Z"/>
@@ -394,7 +406,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xXZ-aV-io7">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xXZ-aV-io7" userLabel="OverallProgressView">
                                 <rect key="frame" x="534" y="91" width="470" height="330"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Overall Progress" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SHn-j5-gWH" userLabel="Lbl Recent Module">
@@ -426,7 +438,7 @@
                                     <outletCollection property="gestureRecognizers" destination="Ysj-Of-WCS" appends="YES" id="90C-ez-J5l"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v9D-Og-5mQ">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v9D-Og-5mQ" userLabel="QuizProgressView">
                                 <rect key="frame" x="20" y="464" width="300" height="221"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T6W-RP-aA8">
@@ -537,6 +549,8 @@
                         <outlet property="PercentRecentCompleted" destination="tZQ-1t-W6e" id="9ZJ-eF-uvV"/>
                         <outlet property="PercentTotalCompleted" destination="SHn-j5-gWH" id="hrD-CX-DBw"/>
                         <outlet property="QuizAverage" destination="T6W-RP-aA8" id="tiw-rW-DqE"/>
+                        <outlet property="lessonsReadView" destination="RFB-bI-2lt" id="oi6-Wj-uzN"/>
+                        <outlet property="upArrowView" destination="yoQ-hx-Bm1" id="Wjq-r6-nlb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JyC-kd-aA3" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -13,8 +13,10 @@ class StatisticsVC: UIViewController {
     let studentRepo = StudentRepo.instance
     
     //View 1: what percentage of most recently visited module has student completed?
+    @IBOutlet weak var lessonsReadView: UIButton!
     @IBOutlet weak var PercentRecentCompleted: UILabel!
     
+    @IBOutlet weak var upArrowView: UIImageView!
     //View 2: what percentage of the tutorial have they completed?
     @IBOutlet weak var PercentTotalCompleted: UILabel!
     
@@ -34,6 +36,8 @@ class StatisticsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewLoadSetup()  //you may call it from view did load also
+        upArrowView.image = UIImage(named: "bookStack.jpg")
+        lessonsReadView.addSubview(upArrowView)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -50,7 +54,7 @@ class StatisticsVC: UIViewController {
         percentLabel.font = UIFont.systemFont(ofSize: 90)
         percentLabel.textColor = UIColor.white
         
-        PercentRecentCompleted.text = "Progress through Module"
+        //PercentRecentCompleted.text = "Progress through Module"
         PercentTotalCompleted.text = "Progress through Tutorial"
         //QuizScores.text = "Quiz Stuff"
         //TimesInLesson.text = "Time in Lesson"
@@ -65,7 +69,7 @@ class StatisticsVC: UIViewController {
         
         let initialHue = 0.05
         for i in 0...9 {
-            previewChart.segments.append(Segment(color: .init(hue: CGFloat(initialHue + (Double(i)/10)), saturation: 0.3, brightness: 0.8, alpha: 1/2), value: 10))
+            previewChart.segments.append(Segment(color: .init(hue: CGFloat(initialHue + (Double(i)/10)), saturation: 0.3, brightness: 0.8, alpha: 1), value: 10))
         }
         
         //set up preview of user's progress through module
@@ -80,8 +84,7 @@ class StatisticsVC: UIViewController {
         
         
     }
-    
-
+   
     
     func setQuizScores(){
     
