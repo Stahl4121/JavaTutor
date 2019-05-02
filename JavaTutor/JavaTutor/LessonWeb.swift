@@ -16,7 +16,6 @@ class LessonWeb: UIViewController, WKUIDelegate {
    
     var counter = 0
     var timer = Timer()
-    var hasReadChapterBefore = false
     var lessonName: String = ""
     var modNum: Int = 0
     var lessonNum: Int = 0
@@ -65,11 +64,11 @@ class LessonWeb: UIViewController, WKUIDelegate {
             finished = studentRepo.chaptersFinished[modNum-1]
             total = Double(domainRepo.lessonNames[modNum - 1].count)
             
+            //check if this chapter has been read before
+            //if so, update index of an array [[]] in studentRepo called chapters
             
-            if (finished < total) && (!hasReadChapterBefore) {
-                hasReadChapterBefore = true
+            if finished < total {
                 studentRepo.chaptersFinished[modNum-1] = studentRepo.chaptersFinished[modNum-1] + 1
-                
             }
                 //follow incrementing procedure
                 //else, they've finished this chapter already, so do nothing

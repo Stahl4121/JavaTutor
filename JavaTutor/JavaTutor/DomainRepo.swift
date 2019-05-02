@@ -12,6 +12,7 @@ class DomainRepo: NSObject {
     
     var moduleNames: [String]
     var lessonNames: [[String]]
+    //var finishedLessons: [[Int]]
     var questions: [[Question]]
     var fileUrl: URL?
     
@@ -21,6 +22,7 @@ class DomainRepo: NSObject {
         moduleNames = [String]()
         lessonNames = [[String]]()
         questions = [[Question]]()
+       // finishedLessons = [[Int]]()
 
         super.init()
         
@@ -51,14 +53,17 @@ class DomainRepo: NSObject {
                 for _ in 1...names.count {
                     moduleNames.append("")
                     lessonNames.append([""])
+        //            finishedLessons.append([0])
                 }
                 
                 for nameSet in names {
                     moduleNames.insert(nameSet["name"] as! String, at: ((nameSet["module"] as! Int) - 1))
                     lessonNames.insert(nameSet["lessonNames"] as! [String], at: ((nameSet["module"] as! Int) - 1))
+        //            finishedLessons.insert([0], at: ((nameSet["module"] as! Int) - 1))
                 }
                 moduleNames.removeAll(where: {$0==""})
                 lessonNames.removeAll(where: {$0==[""]})
+        //        finishedLessons.removeAll(where: {$0==[0]})
             }
             else {
                 print("Bad file path to names.json")
