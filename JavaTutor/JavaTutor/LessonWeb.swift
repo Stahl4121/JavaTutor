@@ -51,29 +51,18 @@ class LessonWeb: UIViewController, WKUIDelegate {
     //adjusts how many chapters student has read
     @objc func update() {
         counter += 1
-        /*if counter == 120 {
-            studentRepo.chaptersFinished[modNum-1] = studentRepo.chaptersFinished[modNum-1] + 0.5
-        } else if counter == 180 {
-            studentRepo.chaptersFinished[modNum-1] = studentRepo.chaptersFinished[modNum-1] + 0.5
-            hasReadChapterBefore = true
-         }*/
         
-        //TEST!
-        if counter == 2 {
+        
+        //Check if chapter has been read before
+        if counter == 30 && !domainRepo.finishedLessons.contains(lessonName){
             
             finished = studentRepo.chaptersFinished[modNum-1]
             total = Double(domainRepo.lessonNames[modNum - 1].count)
             
-            //check if this chapter has been read before
-            //if so, update index of an array [[]] in studentRepo called chapters
-            
             if finished < total {
                 studentRepo.chaptersFinished[modNum-1] = studentRepo.chaptersFinished[modNum-1] + 1
+                domainRepo.finishedLessons.append(lessonName)
             }
-                //follow incrementing procedure
-                //else, they've finished this chapter already, so do nothing
-            
-            //studentRepo.chaptersFinished[modNum-1] = studentRepo.chaptersFinished[modNum-1] + 1
         }
     }
 
