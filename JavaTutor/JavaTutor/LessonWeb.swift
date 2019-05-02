@@ -12,14 +12,15 @@ import WebKit
 class LessonWeb: UIViewController, WKUIDelegate {
     
     let studentRepo = StudentRepo.instance
-    
-    //TODO: Set a timer on this screen and when it hits 3 minutes, the user has finished the chapter
+    let domainRepo = DomainRepo.instance
+   
     var counter = 0
     var timer = Timer()
-    
     var lessonName: String = ""
     var modNum: Int = 0
     var lessonNum: Int = 0
+    var finished : Double = 0
+    var total : Double = 0
     
     @IBOutlet weak var webV: WKWebView!
     @IBOutlet weak var webTitle: UINavigationItem!
@@ -34,11 +35,10 @@ class LessonWeb: UIViewController, WKUIDelegate {
             webV.loadFileURL(url, allowingReadAccessTo: url.deletingLastPathComponent())
         }
         
+        //set up timer to measure how long user has spent on this webpage
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
-
         
     }
-    
 
     
     // MARK: - Navigation
@@ -48,13 +48,21 @@ class LessonWeb: UIViewController, WKUIDelegate {
         // Pass the selected object to the new view controller.
     }
  
-    
+    //adjusts how many chapters student has read
     @objc func update() {
         counter += 1
-        if counter == 10 {
-            studentRepo.chaptersFinished[modNum-1] = studentRepo.chaptersFinished[modNum-1] + 0.5
-        } else if counter == 180 {
-            studentRepo.chaptersFinished[modNum-1] = studentRepo.chaptersFinished[modNum-1] + 0.5
+        
+        
+        //Check if chapter has been read before
+        if counter == 30 && !domainRepo.finishedLessons.contains(lessonName){
+            
+            finished = studentRepo.chaptersFinished[modNum-1]
+            total = Double(domainRepo.lessonNames[modNum - 1].count)
+            
+            if finished < total {
+                studentRepo.chaptersFinished[modNum-1] = studentRepo.chaptersFinished[modNum-1] + 1
+                domainRepo.finishedLessons.append(lessonName)
+            }
         }
     }
 
