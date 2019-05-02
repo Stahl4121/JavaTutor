@@ -31,8 +31,8 @@ class ModuleProgDetailsVC: UIViewController {
     func viewLoadSetup() {
         
         for i in 0...(domainRepo.lessonNames.count - 1) {
-           // modProgressArray[i].text = "\(domainRepo.lessonNames[i].count)"
-            modProgressArray[i].text = "\((studentRepo.chaptersFinished[i]/Double(domainRepo.lessonNames[i].count)).rounded())"
+            print("AHHHHH \(i)")
+            modProgressArray[i].text = "\((100 * studentRepo.chaptersFinished[i]/Double(domainRepo.lessonNames[i].count)).rounded())"
          
         }
     }
@@ -45,6 +45,8 @@ class ModuleProgDetailsVC: UIViewController {
         
         viewLoadSetup()
         // Do any additional setup after loading the view.
+        
+        
     }
     
     

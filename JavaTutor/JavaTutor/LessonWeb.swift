@@ -12,14 +12,16 @@ import WebKit
 class LessonWeb: UIViewController, WKUIDelegate {
     
     let studentRepo = StudentRepo.instance
-    
-    //TODO: Set a timer on this screen and when it hits 3 minutes, the user has finished the chapter
+    let domainRepo = DomainRepo.instance
+   
     var counter = 0
     var timer = Timer()
     var hasReadChapterBefore = false
     var lessonName: String = ""
     var modNum: Int = 0
     var lessonNum: Int = 0
+    var finished : Double = 0
+    var total : Double = 0
     
     @IBOutlet weak var webV: WKWebView!
     @IBOutlet weak var webTitle: UINavigationItem!
@@ -34,11 +36,10 @@ class LessonWeb: UIViewController, WKUIDelegate {
             webV.loadFileURL(url, allowingReadAccessTo: url.deletingLastPathComponent())
         }
         
+        //set up timer to measure how long user has spent on this webpage
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
-
         
     }
-    
 
     
     // MARK: - Navigation
@@ -60,7 +61,20 @@ class LessonWeb: UIViewController, WKUIDelegate {
         
         //TEST!
         if counter == 2 {
-            studentRepo.chaptersFinished[modNum-1] = studentRepo.chaptersFinished[modNum-1] + 1
+            
+            finished = studentRepo.chaptersFinished[modNum-1]
+            total = Double(domainRepo.lessonNames[modNum - 1].count)
+            
+            print("finished: \(finished), total: \(total)")
+            
+            if(finished < total){
+                print("finished: \(finished), total: \(total)")
+                studentRepo.chaptersFinished[modNum-1] = studentRepo.chaptersFinished[modNum-1] + 1
+            }
+                //follow incrementing procedure
+                //else, they've finished this chapter already, so do nothing
+            
+            //studentRepo.chaptersFinished[modNum-1] = studentRepo.chaptersFinished[modNum-1] + 1
         }
     }
 
