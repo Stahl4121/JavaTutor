@@ -11,6 +11,7 @@
 		1D16A5582221FF3900FC3248 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D16A5562221FF3900FC3248 /* GoogleService-Info.plist */; };
 		1D16A5592221FF3900FC3248 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D16A5562221FF3900FC3248 /* GoogleService-Info.plist */; };
 		203A6F2E093C231CBEF612E2 /* Pods_JavaTutorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D5F25F720D9643CB6D585E4 /* Pods_JavaTutorTests.framework */; };
+		4E2182E8227B8E0B0019A432 /* bookStack.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4E2182E7227B8E0B0019A432 /* bookStack.jpg */; };
 		4E3C29E6226AB73A00623DF3 /* OverallProgressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3C29E5226AB73A00623DF3 /* OverallProgressVC.swift */; };
 		4EAC6BE62277FC5D007FABB6 /* ModuleProgDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EAC6BE52277FC5D007FABB6 /* ModuleProgDetailsVC.swift */; };
 		4EAD10F1226955300026EB00 /* QuizProgressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EAD10F0226955300026EB00 /* QuizProgressVC.swift */; };
@@ -105,6 +106,7 @@
 
 /* Begin PBXFileReference section */
 		1D16A5562221FF3900FC3248 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4E2182E7227B8E0B0019A432 /* bookStack.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bookStack.jpg; sourceTree = "<group>"; };
 		4E3C29E5226AB73A00623DF3 /* OverallProgressVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverallProgressVC.swift; sourceTree = "<group>"; };
 		4EAC6BE52277FC5D007FABB6 /* ModuleProgDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleProgDetailsVC.swift; sourceTree = "<group>"; };
 		4EAD10F0226955300026EB00 /* QuizProgressVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizProgressVC.swift; sourceTree = "<group>"; };
@@ -302,6 +304,7 @@
 				B24419FB224A61D0003B7E37 /* 2.14.html */,
 				B24419FF224A61D1003B7E37 /* 2.15.html */,
 				B2441A03224A61D2003B7E37 /* 2.16.html */,
+				4E2182E7227B8E0B0019A432 /* bookStack.jpg */,
 			);
 			path = JavaTutor;
 			sourceTree = "<group>";
@@ -462,6 +465,7 @@
 				B2441A0F224A61D4003B7E37 /* 2.11.html in Resources */,
 				840B69C3222054F10032B683 /* Assets.xcassets in Resources */,
 				B2441A17224A61D4003B7E37 /* 2.1.html in Resources */,
+				4E2182E8227B8E0B0019A432 /* bookStack.jpg in Resources */,
 				8489D0DB2237FAC500435F34 /* activity.png in Resources */,
 				B2441A14224A61D4003B7E37 /* 2.9.html in Resources */,
 				B2441A15224A61D4003B7E37 /* 2.16.html in Resources */,
