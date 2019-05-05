@@ -13,23 +13,16 @@ class StatisticsVC: UIViewController {
     let studentRepo = StudentRepo.instance
     
     //View 1: what percentage of most recently visited module has student completed?
-    @IBOutlet weak var lessonsReadView: UIButton!
+    //@IBOutlet weak var lessonsReadView: UIButton!
+    
+    @IBOutlet weak var lessonView: UIView!
     @IBOutlet weak var PercentRecentCompleted: UILabel!
-    
-    @IBOutlet weak var upArrowView: UIImageView!
-    //View 2: what percentage of the tutorial have they completed?
     @IBOutlet weak var PercentTotalCompleted: UILabel!
-    
-    //View 3
-    //@IBOutlet weak var QuizScores: UILabel!
-    
     @IBOutlet weak var QuizAverage: UILabel!
-    //View 4: how long have they spent in a lesson? (line graph)
-  //  @IBOutlet weak var TimesInLesson: UILabel!
-    
-    //View 5: ring chart, how much of bloom's tax have they done?
-    //TODO: perhaps have this record that extra activities thing?
     @IBOutlet weak var BloomsTaxonomy: UILabel!
+    @IBOutlet weak var bloomTaxPyramid: UIImageView!
+    @IBOutlet weak var upArrowView: UIImageView!
+    
     
     var percentLabel : UILabel!
     
@@ -37,7 +30,10 @@ class StatisticsVC: UIViewController {
         super.viewDidLoad()
         viewLoadSetup()  //you may call it from view did load also
         upArrowView.image = UIImage(named: "bookStack.jpg")
-        lessonsReadView.addSubview(upArrowView)
+        bloomTaxPyramid.image = UIImage(named: "pyramid.png")
+        
+        bloomTaxPyramid.alpha = 0.60
+        lessonView.addSubview(upArrowView)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -54,10 +50,7 @@ class StatisticsVC: UIViewController {
         percentLabel.font = UIFont.systemFont(ofSize: 90)
         percentLabel.textColor = UIColor.white
         
-        //PercentRecentCompleted.text = "Progress through Module"
         PercentTotalCompleted.text = "Progress through Tutorial"
-        //QuizScores.text = "Quiz Stuff"
-        //TimesInLesson.text = "Time in Lesson"
         BloomsTaxonomy.text = "Bloom's Taxonomy"
         
         setQuizScores()

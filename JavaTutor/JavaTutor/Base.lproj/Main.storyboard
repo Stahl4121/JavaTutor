@@ -357,15 +357,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TA6-Vc-hXG" userLabel="LessonsReadView">
-                                <rect key="frame" x="20" y="91" width="470" height="330"/>
+                                <rect key="frame" x="20" y="91" width="480" height="330"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RFB-bI-2lt" userLabel="toModuleProgress">
-                                        <rect key="frame" x="0.0" y="0.0" width="470" height="330"/>
-                                        <state key="normal" title=" "/>
-                                        <connections>
-                                            <segue destination="D2b-o8-pls" kind="show" id="0pv-wt-VoF"/>
-                                        </connections>
-                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lessons Read" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tZQ-1t-W6e" userLabel="Lbl Recent Module">
                                         <rect key="frame" x="134.5" y="8" width="201" height="63"/>
                                         <constraints>
@@ -384,15 +377,12 @@
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="tZQ-1t-W6e" firstAttribute="top" secondItem="TA6-Vc-hXG" secondAttribute="topMargin" id="7OR-mg-dox"/>
-                                    <constraint firstItem="RFB-bI-2lt" firstAttribute="leading" secondItem="TA6-Vc-hXG" secondAttribute="leading" id="M1J-37-vcY"/>
-                                    <constraint firstItem="RFB-bI-2lt" firstAttribute="centerX" secondItem="tZQ-1t-W6e" secondAttribute="centerX" id="MMD-1n-Edg"/>
-                                    <constraint firstItem="RFB-bI-2lt" firstAttribute="top" secondItem="TA6-Vc-hXG" secondAttribute="top" id="S7a-8F-Dh5"/>
-                                    <constraint firstAttribute="width" constant="470" id="hF2-50-W0U"/>
-                                    <constraint firstAttribute="bottom" secondItem="RFB-bI-2lt" secondAttribute="bottom" id="neP-I7-o7R"/>
+                                    <constraint firstAttribute="width" constant="480" id="hF2-50-W0U"/>
                                     <constraint firstAttribute="height" constant="330" id="ngm-DE-D9Z"/>
-                                    <constraint firstItem="tZQ-1t-W6e" firstAttribute="centerX" secondItem="TA6-Vc-hXG" secondAttribute="centerX" id="tHi-ZH-JDv"/>
+                                    <constraint firstItem="tZQ-1t-W6e" firstAttribute="centerX" secondItem="TA6-Vc-hXG" secondAttribute="centerX" constant="-5" id="tHi-ZH-JDv"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
@@ -400,9 +390,12 @@
                                         <integer key="value" value="30"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Wnd-ar-gAD" appends="YES" id="eKc-fP-i8h"/>
+                                </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xXZ-aV-io7" userLabel="OverallProgressView">
-                                <rect key="frame" x="534" y="91" width="470" height="330"/>
+                                <rect key="frame" x="524" y="91" width="480" height="330"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Overall Progress" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SHn-j5-gWH" userLabel="Lbl Recent Module">
                                         <rect key="frame" x="33" y="15" width="404" height="49"/>
@@ -417,11 +410,11 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstItem="SHn-j5-gWH" firstAttribute="centerX" secondItem="xXZ-aV-io7" secondAttribute="centerX" id="ATM-jS-XoJ"/>
+                                    <constraint firstItem="SHn-j5-gWH" firstAttribute="centerX" secondItem="xXZ-aV-io7" secondAttribute="centerX" constant="-5" id="ATM-jS-XoJ"/>
                                     <constraint firstItem="SHn-j5-gWH" firstAttribute="top" secondItem="xXZ-aV-io7" secondAttribute="top" constant="15" id="Ffz-fj-rvX"/>
                                     <constraint firstAttribute="height" constant="330" id="eDx-KC-4Zm"/>
                                     <constraint firstItem="SHn-j5-gWH" firstAttribute="leading" secondItem="xXZ-aV-io7" secondAttribute="leading" constant="33" id="gfr-u8-1OG"/>
-                                    <constraint firstAttribute="width" constant="470" id="ygJ-92-VRS"/>
+                                    <constraint firstAttribute="width" constant="480" id="ygJ-92-VRS"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
@@ -433,11 +426,57 @@
                                     <outletCollection property="gestureRecognizers" destination="Ysj-Of-WCS" appends="YES" id="90C-ez-J5l"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EJk-VC-tfa">
-                                <rect key="frame" x="534" y="464" width="470" height="221"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v9D-Og-5mQ" userLabel="QuizProgressView">
+                                <rect key="frame" x="20" y="441" width="480" height="254"/>
                                 <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T6W-RP-aA8">
+                                        <rect key="frame" x="156" y="70" width="169" height="115"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="169" id="5vq-TQ-SvG"/>
+                                            <constraint firstAttribute="height" constant="115" id="qPp-j2-8hH"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="65"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quiz Progress" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CN4-Of-MLa" userLabel="Lbl Recent Module">
+                                        <rect key="frame" x="136" y="18" width="209" height="44"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="32"/>
+                                        <color key="textColor" red="0.28211217820000001" green="0.34888452079999999" blue="0.37370704119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstItem="CN4-Of-MLa" firstAttribute="top" secondItem="v9D-Og-5mQ" secondAttribute="topMargin" constant="10" id="7jy-Tg-vxP"/>
+                                    <constraint firstItem="CN4-Of-MLa" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="v9D-Og-5mQ" secondAttribute="leading" constant="20" symbolic="YES" id="Gk2-ES-Use"/>
+                                    <constraint firstItem="T6W-RP-aA8" firstAttribute="top" secondItem="CN4-Of-MLa" secondAttribute="bottom" constant="8" id="KRh-v1-rDb"/>
+                                    <constraint firstAttribute="trailing" secondItem="CN4-Of-MLa" secondAttribute="trailing" constant="135" id="Pqg-Zi-rGJ"/>
+                                    <constraint firstItem="T6W-RP-aA8" firstAttribute="centerX" secondItem="v9D-Og-5mQ" secondAttribute="centerX" id="QjY-6x-Cu5"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="PhL-wp-zpp" appends="YES" id="AiC-Pf-xqh"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EJk-VC-tfa">
+                                <rect key="frame" x="524" y="441" width="480" height="254"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SY2-Nc-LsS">
+                                        <rect key="frame" x="139" y="59" width="203" height="160"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
+                                        </accessibility>
+                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bloom's Taxonomy" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FEd-ES-Lp6" userLabel="Lbl Recent Module">
-                                        <rect key="frame" x="89" y="8" width="292" height="52"/>
+                                        <rect key="frame" x="94" y="21" width="292" height="52"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="52" id="Iq8-hV-iS5"/>
                                         </constraints>
@@ -450,9 +489,9 @@
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="FEd-ES-Lp6" firstAttribute="centerX" secondItem="EJk-VC-tfa" secondAttribute="centerX" id="1hF-Eg-b3N"/>
-                                    <constraint firstItem="FEd-ES-Lp6" firstAttribute="leading" secondItem="EJk-VC-tfa" secondAttribute="leading" constant="89" id="9Fq-iT-ZkE"/>
-                                    <constraint firstItem="FEd-ES-Lp6" firstAttribute="top" secondItem="EJk-VC-tfa" secondAttribute="topMargin" id="CbL-cZ-lIJ"/>
-                                    <constraint firstAttribute="width" constant="470" id="n21-Mo-NSL"/>
+                                    <constraint firstItem="FEd-ES-Lp6" firstAttribute="leading" secondItem="EJk-VC-tfa" secondAttribute="leading" constant="94" id="9Fq-iT-ZkE"/>
+                                    <constraint firstItem="FEd-ES-Lp6" firstAttribute="top" secondItem="EJk-VC-tfa" secondAttribute="topMargin" constant="13" id="CbL-cZ-lIJ"/>
+                                    <constraint firstAttribute="width" constant="480" id="n21-Mo-NSL"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
@@ -464,55 +503,19 @@
                                     <outletCollection property="gestureRecognizers" destination="mGQ-hP-wq7" appends="YES" id="VVT-FO-1fO"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v9D-Og-5mQ" userLabel="QuizProgressView">
-                                <rect key="frame" x="20" y="464" width="470" height="221"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quiz Progress" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CN4-Of-MLa" userLabel="Lbl Recent Module">
-                                        <rect key="frame" x="130.5" y="8" width="209" height="53"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="32"/>
-                                        <color key="textColor" red="0.28211217820000001" green="0.34888452079999999" blue="0.37370704119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T6W-RP-aA8">
-                                        <rect key="frame" x="179" y="80" width="112" height="61"/>
-                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="44"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <gestureRecognizers/>
-                                <constraints>
-                                    <constraint firstItem="CN4-Of-MLa" firstAttribute="top" secondItem="v9D-Og-5mQ" secondAttribute="topMargin" id="6q2-DS-BRu"/>
-                                    <constraint firstItem="CN4-Of-MLa" firstAttribute="centerX" secondItem="T6W-RP-aA8" secondAttribute="centerX" id="Hqx-yS-uOl"/>
-                                    <constraint firstItem="T6W-RP-aA8" firstAttribute="centerY" secondItem="v9D-Og-5mQ" secondAttribute="centerY" id="LKa-dC-kxB"/>
-                                    <constraint firstItem="T6W-RP-aA8" firstAttribute="centerX" secondItem="v9D-Og-5mQ" secondAttribute="centerX" id="dEC-tt-eme"/>
-                                    <constraint firstAttribute="width" constant="470" id="h7u-hQ-wPy"/>
-                                    <constraint firstItem="T6W-RP-aA8" firstAttribute="top" secondItem="CN4-Of-MLa" secondAttribute="bottom" constant="19" id="uHt-sC-VKb"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="30"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="PhL-wp-zpp" appends="YES" id="AiC-Pf-xqh"/>
-                                </connections>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.74077600240707397" green="0.83153045177459717" blue="0.99245744943618774" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="uBL-V8-t2h" firstAttribute="bottom" secondItem="v9D-Og-5mQ" secondAttribute="bottom" constant="33" id="0U3-Pb-jy4"/>
+                            <constraint firstItem="v9D-Og-5mQ" firstAttribute="leading" secondItem="TA6-Vc-hXG" secondAttribute="leading" id="026-1K-L7u"/>
                             <constraint firstItem="xXZ-aV-io7" firstAttribute="trailing" secondItem="EJk-VC-tfa" secondAttribute="trailing" id="1m4-uK-Cax"/>
-                            <constraint firstItem="TA6-Vc-hXG" firstAttribute="leading" secondItem="v9D-Og-5mQ" secondAttribute="leading" id="9GI-ED-FZz"/>
-                            <constraint firstItem="EJk-VC-tfa" firstAttribute="top" secondItem="v9D-Og-5mQ" secondAttribute="top" id="9Lj-em-WaQ"/>
-                            <constraint firstItem="v9D-Og-5mQ" firstAttribute="top" secondItem="TA6-Vc-hXG" secondAttribute="bottom" constant="43" id="G2e-qj-obC"/>
+                            <constraint firstItem="v9D-Og-5mQ" firstAttribute="trailing" secondItem="TA6-Vc-hXG" secondAttribute="trailing" id="C9T-xr-h0e"/>
                             <constraint firstItem="TA6-Vc-hXG" firstAttribute="top" secondItem="uBL-V8-t2h" secondAttribute="top" constant="21" id="K1X-yn-jdg"/>
-                            <constraint firstItem="EJk-VC-tfa" firstAttribute="bottom" secondItem="v9D-Og-5mQ" secondAttribute="bottom" id="eaY-nR-7sE"/>
+                            <constraint firstItem="v9D-Og-5mQ" firstAttribute="bottom" secondItem="EJk-VC-tfa" secondAttribute="bottom" id="Lq4-pB-GZr"/>
+                            <constraint firstItem="v9D-Og-5mQ" firstAttribute="top" secondItem="TA6-Vc-hXG" secondAttribute="bottom" constant="20" id="PIt-Vv-6Uv"/>
+                            <constraint firstItem="v9D-Og-5mQ" firstAttribute="top" secondItem="EJk-VC-tfa" secondAttribute="top" id="RlB-l4-kzW"/>
                             <constraint firstItem="xXZ-aV-io7" firstAttribute="top" secondItem="TA6-Vc-hXG" secondAttribute="top" id="edZ-xJ-zjJ"/>
+                            <constraint firstItem="uBL-V8-t2h" firstAttribute="bottom" secondItem="v9D-Og-5mQ" secondAttribute="bottom" constant="23" id="q7U-ll-y5T"/>
                             <constraint firstItem="TA6-Vc-hXG" firstAttribute="leading" secondItem="0VV-gD-i7g" secondAttribute="leadingMargin" id="qUW-LF-7R1"/>
-                            <constraint firstItem="v9D-Og-5mQ" firstAttribute="top" secondItem="0VV-gD-i7g" secondAttribute="top" constant="464" id="rxc-Ze-zVW"/>
                             <constraint firstItem="xXZ-aV-io7" firstAttribute="trailing" secondItem="0VV-gD-i7g" secondAttribute="trailingMargin" id="udd-sx-3GD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="uBL-V8-t2h"/>
@@ -524,7 +527,8 @@
                         <outlet property="PercentRecentCompleted" destination="tZQ-1t-W6e" id="9ZJ-eF-uvV"/>
                         <outlet property="PercentTotalCompleted" destination="SHn-j5-gWH" id="hrD-CX-DBw"/>
                         <outlet property="QuizAverage" destination="T6W-RP-aA8" id="tiw-rW-DqE"/>
-                        <outlet property="lessonsReadView" destination="RFB-bI-2lt" id="oi6-Wj-uzN"/>
+                        <outlet property="bloomTaxPyramid" destination="SY2-Nc-LsS" id="RaM-jb-NAI"/>
+                        <outlet property="lessonView" destination="TA6-Vc-hXG" id="m7F-ja-AyV"/>
                         <outlet property="upArrowView" destination="yoQ-hx-Bm1" id="Wjq-r6-nlb"/>
                     </connections>
                 </viewController>
@@ -542,6 +546,11 @@
                 <tapGestureRecognizer id="mGQ-hP-wq7" userLabel="Tap Bloom's Taxonomy">
                     <connections>
                         <segue destination="cft-IG-NCa" kind="show" id="2rj-K3-OtB"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="Wnd-ar-gAD" userLabel="Tap Lesson Progress">
+                    <connections>
+                        <segue destination="D2b-o8-pls" kind="show" id="JwZ-4t-Ss1"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -660,6 +669,12 @@
                                     <constraint firstItem="QXf-lk-UdI" firstAttribute="top" secondItem="Wmg-PN-JfO" secondAttribute="top" constant="116" id="wC4-x1-F5h"/>
                                     <constraint firstAttribute="bottom" secondItem="Yh6-co-6hd" secondAttribute="bottom" id="z9u-5u-hyo"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1058,6 +1073,12 @@
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" notEnabled="YES"/>
                                 </accessibility>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sr3-UY-t7X">
                                 <rect key="frame" x="0.0" y="70" width="1024" height="135"/>
