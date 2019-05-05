@@ -433,17 +433,14 @@
                                     <outletCollection property="gestureRecognizers" destination="Ysj-Of-WCS" appends="YES" id="90C-ez-J5l"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v9D-Og-5mQ" userLabel="QuizProgressView">
-                                <rect key="frame" x="20" y="464" width="300" height="221"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EJk-VC-tfa">
+                                <rect key="frame" x="534" y="464" width="470" height="221"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T6W-RP-aA8">
-                                        <rect key="frame" x="94" y="80" width="112" height="61"/>
-                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="44"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quiz Progress" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CN4-Of-MLa" userLabel="Lbl Recent Module">
-                                        <rect key="frame" x="46" y="12" width="209" height="44"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bloom's Taxonomy" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FEd-ES-Lp6" userLabel="Lbl Recent Module">
+                                        <rect key="frame" x="89" y="8" width="292" height="52"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="52" id="Iq8-hV-iS5"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="32"/>
                                         <color key="textColor" red="0.28211217820000001" green="0.34888452079999999" blue="0.37370704119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -452,12 +449,46 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="CN4-Of-MLa" secondAttribute="trailing" constant="45" id="HRk-Au-LFZ"/>
-                                    <constraint firstItem="CN4-Of-MLa" firstAttribute="top" secondItem="v9D-Og-5mQ" secondAttribute="top" constant="12" id="I2h-D2-kG3"/>
+                                    <constraint firstItem="FEd-ES-Lp6" firstAttribute="centerX" secondItem="EJk-VC-tfa" secondAttribute="centerX" id="1hF-Eg-b3N"/>
+                                    <constraint firstItem="FEd-ES-Lp6" firstAttribute="leading" secondItem="EJk-VC-tfa" secondAttribute="leading" constant="89" id="9Fq-iT-ZkE"/>
+                                    <constraint firstItem="FEd-ES-Lp6" firstAttribute="top" secondItem="EJk-VC-tfa" secondAttribute="topMargin" id="CbL-cZ-lIJ"/>
+                                    <constraint firstAttribute="width" constant="470" id="n21-Mo-NSL"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="mGQ-hP-wq7" appends="YES" id="VVT-FO-1fO"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v9D-Og-5mQ" userLabel="QuizProgressView">
+                                <rect key="frame" x="20" y="464" width="470" height="221"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quiz Progress" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CN4-Of-MLa" userLabel="Lbl Recent Module">
+                                        <rect key="frame" x="130.5" y="8" width="209" height="53"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="32"/>
+                                        <color key="textColor" red="0.28211217820000001" green="0.34888452079999999" blue="0.37370704119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T6W-RP-aA8">
+                                        <rect key="frame" x="179" y="80" width="112" height="61"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="44"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstItem="CN4-Of-MLa" firstAttribute="top" secondItem="v9D-Og-5mQ" secondAttribute="topMargin" id="6q2-DS-BRu"/>
+                                    <constraint firstItem="CN4-Of-MLa" firstAttribute="centerX" secondItem="T6W-RP-aA8" secondAttribute="centerX" id="Hqx-yS-uOl"/>
                                     <constraint firstItem="T6W-RP-aA8" firstAttribute="centerY" secondItem="v9D-Og-5mQ" secondAttribute="centerY" id="LKa-dC-kxB"/>
                                     <constraint firstItem="T6W-RP-aA8" firstAttribute="centerX" secondItem="v9D-Og-5mQ" secondAttribute="centerX" id="dEC-tt-eme"/>
-                                    <constraint firstAttribute="width" constant="300" id="h7u-hQ-wPy"/>
-                                    <constraint firstItem="CN4-Of-MLa" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="v9D-Og-5mQ" secondAttribute="leading" constant="20" symbolic="YES" id="zpE-n5-39X"/>
+                                    <constraint firstAttribute="width" constant="470" id="h7u-hQ-wPy"/>
+                                    <constraint firstItem="T6W-RP-aA8" firstAttribute="top" secondItem="CN4-Of-MLa" secondAttribute="bottom" constant="19" id="uHt-sC-VKb"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
@@ -469,71 +500,20 @@
                                     <outletCollection property="gestureRecognizers" destination="PhL-wp-zpp" appends="YES" id="AiC-Pf-xqh"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OYr-JK-feu">
-                                <rect key="frame" x="362" y="464" width="300" height="221"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{Image Title 4}" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qcW-zr-1QS" userLabel="Lbl Recent Module">
-                                        <rect key="frame" x="20" y="15" width="209" height="44"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="32"/>
-                                        <color key="textColor" red="0.28211217820000001" green="0.34888452079999999" blue="0.37370704119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="qcW-zr-1QS" firstAttribute="top" secondItem="OYr-JK-feu" secondAttribute="top" constant="15" id="Gon-9w-83F"/>
-                                    <constraint firstAttribute="trailing" secondItem="qcW-zr-1QS" secondAttribute="trailing" constant="71" id="OWY-mT-AI4"/>
-                                    <constraint firstItem="qcW-zr-1QS" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="OYr-JK-feu" secondAttribute="leading" constant="20" symbolic="YES" id="bm2-T3-jPS"/>
-                                    <constraint firstAttribute="width" constant="300" id="oRz-yu-V0H"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="30"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EJk-VC-tfa">
-                                <rect key="frame" x="704" y="464" width="300" height="221"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{Image Title 5}" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FEd-ES-Lp6" userLabel="Lbl Recent Module">
-                                        <rect key="frame" x="20" y="15" width="209" height="44"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="32"/>
-                                        <color key="textColor" red="0.28211217820000001" green="0.34888452079999999" blue="0.37370704119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="FEd-ES-Lp6" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="EJk-VC-tfa" secondAttribute="leading" constant="20" symbolic="YES" id="XiV-wl-5iO"/>
-                                    <constraint firstAttribute="width" constant="300" id="n21-Mo-NSL"/>
-                                    <constraint firstAttribute="trailing" secondItem="FEd-ES-Lp6" secondAttribute="trailing" constant="71" id="sz7-7X-i4t"/>
-                                    <constraint firstItem="FEd-ES-Lp6" firstAttribute="top" secondItem="EJk-VC-tfa" secondAttribute="top" constant="15" id="xjN-jX-Rmh"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="30"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.74077600240707397" green="0.83153045177459717" blue="0.99245744943618774" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="uBL-V8-t2h" firstAttribute="bottom" secondItem="v9D-Og-5mQ" secondAttribute="bottom" constant="33" id="0U3-Pb-jy4"/>
                             <constraint firstItem="xXZ-aV-io7" firstAttribute="trailing" secondItem="EJk-VC-tfa" secondAttribute="trailing" id="1m4-uK-Cax"/>
-                            <constraint firstItem="OYr-JK-feu" firstAttribute="bottom" secondItem="EJk-VC-tfa" secondAttribute="bottom" id="4lJ-Lc-dnV"/>
                             <constraint firstItem="TA6-Vc-hXG" firstAttribute="leading" secondItem="v9D-Og-5mQ" secondAttribute="leading" id="9GI-ED-FZz"/>
+                            <constraint firstItem="EJk-VC-tfa" firstAttribute="top" secondItem="v9D-Og-5mQ" secondAttribute="top" id="9Lj-em-WaQ"/>
                             <constraint firstItem="v9D-Og-5mQ" firstAttribute="top" secondItem="TA6-Vc-hXG" secondAttribute="bottom" constant="43" id="G2e-qj-obC"/>
-                            <constraint firstItem="OYr-JK-feu" firstAttribute="leading" secondItem="v9D-Og-5mQ" secondAttribute="trailing" constant="42" id="Hgq-NK-1v3"/>
                             <constraint firstItem="TA6-Vc-hXG" firstAttribute="top" secondItem="uBL-V8-t2h" secondAttribute="top" constant="21" id="K1X-yn-jdg"/>
-                            <constraint firstItem="v9D-Og-5mQ" firstAttribute="top" secondItem="OYr-JK-feu" secondAttribute="top" id="Omj-XN-6uA"/>
+                            <constraint firstItem="EJk-VC-tfa" firstAttribute="bottom" secondItem="v9D-Og-5mQ" secondAttribute="bottom" id="eaY-nR-7sE"/>
                             <constraint firstItem="xXZ-aV-io7" firstAttribute="top" secondItem="TA6-Vc-hXG" secondAttribute="top" id="edZ-xJ-zjJ"/>
-                            <constraint firstItem="v9D-Og-5mQ" firstAttribute="bottom" secondItem="OYr-JK-feu" secondAttribute="bottom" id="hRZ-LV-rjR"/>
                             <constraint firstItem="TA6-Vc-hXG" firstAttribute="leading" secondItem="0VV-gD-i7g" secondAttribute="leadingMargin" id="qUW-LF-7R1"/>
                             <constraint firstItem="v9D-Og-5mQ" firstAttribute="top" secondItem="0VV-gD-i7g" secondAttribute="top" constant="464" id="rxc-Ze-zVW"/>
                             <constraint firstItem="xXZ-aV-io7" firstAttribute="trailing" secondItem="0VV-gD-i7g" secondAttribute="trailingMargin" id="udd-sx-3GD"/>
-                            <constraint firstItem="OYr-JK-feu" firstAttribute="top" secondItem="EJk-VC-tfa" secondAttribute="top" id="wg8-Bw-sYE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="uBL-V8-t2h"/>
                     </view>
@@ -557,6 +537,11 @@
                 <tapGestureRecognizer id="PhL-wp-zpp" userLabel="Tap Quiz Progress VC">
                     <connections>
                         <segue destination="o1v-PV-lBT" kind="show" id="utk-ud-00A"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="mGQ-hP-wq7" userLabel="Tap Bloom's Taxonomy">
+                    <connections>
+                        <segue destination="cft-IG-NCa" kind="show" id="2rj-K3-OtB"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -977,6 +962,150 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9qs-sL-yEH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2213.671875" y="721.875"/>
+        </scene>
+        <!--Blooms TaxonomyVC-->
+        <scene sceneID="FlO-vE-Ss5">
+            <objects>
+                <viewController id="cft-IG-NCa" customClass="BloomsTaxonomyVC" customModule="JavaTutor" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bkN-rX-atJ">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aXi-Do-n1H" userLabel="View2">
+                                <rect key="frame" x="46" y="250" width="932" height="406"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eqE-2s-o13">
+                                        <rect key="frame" x="74" y="51" width="143" height="110"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="80"/>
+                                        <color key="textColor" red="0.56081456220000003" green="0.1728195344" blue="0.17739322120000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UKb-ax-JUR">
+                                        <rect key="frame" x="395" y="51" width="143" height="110"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="80"/>
+                                        <color key="textColor" red="0.56081456220000003" green="0.1728195344" blue="0.17739322120000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HUe-0i-Qjj">
+                                        <rect key="frame" x="706" y="51" width="143" height="110"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="80"/>
+                                        <color key="textColor" red="0.56081456220000003" green="0.1728195344" blue="0.17739322120000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Level 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9A7-7b-Nf1">
+                                        <rect key="frame" x="74" y="187" width="117" height="48"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="35"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Remember and Understand" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uso-bb-4Yu">
+                                        <rect key="frame" x="74" y="243" width="268" height="73"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="25"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Level 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b9i-fX-gh3">
+                                        <rect key="frame" x="395" y="187" width="117" height="48"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="35"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Analyze and Apply" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GQt-Xw-unj">
+                                        <rect key="frame" x="395" y="243" width="205" height="73"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="25"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Level 3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n5G-zE-Hwo">
+                                        <rect key="frame" x="706" y="187" width="117" height="48"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="35"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Create and Evaluate" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xDU-7O-NyX">
+                                        <rect key="frame" x="706" y="243" width="196" height="73"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="25"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="—————" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fU2-wz-eT4">
+                                        <rect key="frame" x="74" y="148" width="219" height="41"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="30"/>
+                                        <color key="textColor" red="0.56081456220000003" green="0.1728195344" blue="0.17739322120000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="—————" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KOP-km-g7N">
+                                        <rect key="frame" x="395" y="148" width="219" height="41"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="30"/>
+                                        <color key="textColor" red="0.56081456220000003" green="0.1728195344" blue="0.17739322120000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="—————" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b5K-ws-fdV">
+                                        <rect key="frame" x="705" y="148" width="219" height="41"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="30"/>
+                                        <color key="textColor" red="0.56081456220000003" green="0.1728195344" blue="0.17739322120000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                </accessibility>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sr3-UY-t7X">
+                                <rect key="frame" x="0.0" y="70" width="1024" height="135"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="—————————" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Bf-Z3-H0o">
+                                        <rect key="frame" x="27" y="51" width="198" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="22"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Number of problems you've completed per level:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FTH-xM-zKT">
+                                        <rect key="frame" x="27" y="74" width="672" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="29"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bloom's Taxonomy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3wM-PN-xeY">
+                                        <rect key="frame" x="27" y="18" width="307" height="48"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="35"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.56081456220000003" green="0.17281953443829287" blue="0.17739322122377851" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4xU-Na-aEl">
+                                <rect key="frame" x="110" y="230" width="0.0" height="0.0"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="35"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.94884200507614214" green="0.73762636155202921" blue="0.73193490208926348" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="hBt-B7-ESf"/>
+                    </view>
+                    <connections>
+                        <outlet property="level1lbl" destination="eqE-2s-o13" id="gFc-3G-Wly"/>
+                        <outlet property="level2lbl" destination="UKb-ax-JUR" id="Zr9-cX-4Qv"/>
+                        <outlet property="level3lbl" destination="HUe-0i-Qjj" id="NJB-d6-AAr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bpI-gs-kvY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2843.5546875" y="721.875"/>
         </scene>
         <!--Quiz ProgressVC-->
         <scene sceneID="gA4-Em-FDY">
