@@ -49,10 +49,10 @@ class QuizResultsVC: UIViewController {
             //Correct Question
             if domainRepo.questions[moduleNum][idxPath.section].correctIdx == (idxPath.row - 1) {
                 numCorrect+=1
-                bloomCorrectLevels[bloomVal - 1] = bloomCorrectLevels[bloomVal - 1] + 1
+                studentRepo.bloomsTaxCorrect[bloomVal - 1] = studentRepo.bloomsTaxCorrect[bloomVal - 1] + 1
             } else { //Incorrect Question
                 numIncorrect+=1
-                bloomIncorrectLevels[bloomVal - 1] = bloomIncorrectLevels[bloomVal - 1] + 1
+                studentRepo.bloomsTaxIncorrect[bloomVal - 1] = studentRepo.bloomsTaxIncorrect[bloomVal - 1] + 1
             }
         }
     }
@@ -60,8 +60,8 @@ class QuizResultsVC: UIViewController {
     func updateDataRepo(){
         
         //adjusts correct/incorrect bloom levels
-        studentRepo.bloomsTaxCorrect = self.bloomCorrectLevels
-        studentRepo.bloomsTaxIncorrect = self.bloomIncorrectLevels
+       // studentRepo.bloomsTaxCorrect = self.bloomCorrectLevels
+       // studentRepo.bloomsTaxIncorrect = self.bloomIncorrectLevels
         
         //increments # of times student has taken a quiz
         studentRepo.totalQuizzes = studentRepo.totalQuizzes + 1
