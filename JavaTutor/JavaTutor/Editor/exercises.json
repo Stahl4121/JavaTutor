@@ -1,6 +1,31 @@
 [
   {
-    "initial": "class Main {\n  public static void main(String[] args) {\n    /* xD :P (:\n    System.out.println(\">:D\");\n  }\n}",
+    "initial": "class Main {\n  public static void main(String[] args) {\n    /* xD 0 :P (:\n    System.out.println(\">:D\");\n  }\n}",
+    "description": "Oh no, a smiley has escaped its comment cage!\nPut it back, and fix the output.",
+    "output": "Phew, what a relief"
+  },
+  {
+    "initial": "class Main {\n  public static void main(String[] args) {\n    /* xD 1 :P (:\n    System.out.println(\">:D\");\n  }\n}",
+    "description": "Oh no, a smiley has escaped its comment cage!\nPut it back, and fix the output.",
+    "output": "Phew, what a relief"
+  },
+  {
+    "initial": "class Main {\n  public static void main(String[] args) {\n    /* xD 2 :P (:\n    System.out.println(\">:D\");\n  }\n}",
+    "description": "Oh no, a smiley has escaped its comment cage!\nPut it back, and fix the output.",
+    "output": "Phew, what a relief"
+  },
+  {
+    "initial": "class Main {\n  public static void main(String[] args) {\n    /* xD 3 :P (:\n    System.out.println(\">:D\");\n  }\n}",
+    "description": "Oh no, a smiley has escaped its comment cage!\nPut it back, and fix the output.",
+    "output": "Phew, what a relief"
+  },
+  {
+    "initial": "class Main {\n  public static void main(String[] args) {\n    /* xD 4 :P (:\n    System.out.println(\">:D\");\n  }\n}",
+    "description": "Oh no, a smiley has escaped its comment cage!\nPut it back, and fix the output.",
+    "output": "Phew, what a relief"
+  },
+  {
+    "initial": "class Main {\n  public static void main(String[] args) {\n    /* xD 5 :P (:\n    System.out.println(\">:D\");\n  }\n}",
     "description": "Oh no, a smiley has escaped its comment cage!\nPut it back, and fix the output.",
     "output": "Phew, what a relief"
   }

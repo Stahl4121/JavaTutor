@@ -67,6 +67,7 @@ class ExerciseVC: UIViewController, WKScriptMessageHandler {
                 let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
             
                 let exercises = (jsonResult as! [[String: Any]]).map({ item in Exercise(item) })
+                
                 return exercises[module]
             } catch {
                 print("Invalid JSON in exercises file!")
