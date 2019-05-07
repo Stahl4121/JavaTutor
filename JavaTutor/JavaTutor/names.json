@@ -1,14 +1,27 @@
-//This is the structure of the module and lesson names JSON, but it is not currently being read from in the project. The values are currently hardcoded into DataRepo.swift
-{
-    "moduleNames":["Mod1Name","Mod2Name"],
-    "lessonNames":[
+[
         {
             "module":1,
-            "names":["Mod1Lesson1Name","Mod1Lesson2Name"]
+            "name":"Introduction",
+            "lessonNames":["What Makes a Good Program?", "Java Programming Environment"]
         },
         {
             "module":2,
-            "names":["Mod2Lesson1Name","Mod2Lesson2Name"]
+            "name":"Code Basics",
+            "lessonNames":["Primitive Data Types", "Char Literals", "String Literals", "Variables", "Operations on a String", "Built in Functions", "Classes and Objects in Java", "I/O", "Basic Output", "Basic Input", "What is an Expression?", "Increment/Decrement", "Relational Operators", "Boolean Operators", "Assignment Operators", "Precedence Rules"]
+        },
+        {
+            "module":3,
+            "name":"Control",
+            "lessonNames":["What is a Block?", "If Statement", "While Loop", "Do...While Loop", "Break and Continue", "For Loop", "Nested For Loop", "Switch", "Exceptions", "Try...Catch!"]
+        },
+        {
+            "module":4,
+            "name":"Advanced Topics",
+            "lessonNames":["What is an Array?", "Creating Arrays", "Arrays and For Loops", "Common Array Pitfalls", "2-Dimensional Arrays"]
+        },
+        {
+            "module":5,
+            "name":"Methods and Subroutines",
+            "lessonNames":["Black Box", "Static Subroutines and Variables", "Subroutine Definitions", "Calling Subroutines", "Subroutines in Programs", "Member Variables", "Formal and Actual Parameters", "Overloading", "Array Parameters", "Command Line Arguments"]
         }
-    ]
-}
+]

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class DataRepo: NSObject {
+class DomainRepo: NSObject {
     
     let moduleNames = ["Introduction", "Code Basics", "Control", "Advanced Topics", "Methods and Subroutines"]
     var lessonNames: [[String]]
@@ -39,7 +39,7 @@ class DataRepo: NSObject {
     var bloomsTaxCorrect: [Int]
     var bloomsTaxIncorrect: [Int]
     
-    static let instance = DataRepo()
+    static let instance = DomainRepo()
 
     private override init() {
         questions = [[Question]]()

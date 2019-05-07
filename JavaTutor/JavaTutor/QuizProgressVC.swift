@@ -11,81 +11,54 @@ import UIKit
 class QuizProgressVC: UIViewController {
 
     
-    let repo = DataRepo.instance
+    let studentRepo = StudentRepo.instance
     
     @IBOutlet weak var mod1attempts: UILabel!
-    
     @IBOutlet weak var mod2attempts: UILabel!
-    
     @IBOutlet weak var mod3attempts: UILabel!
-    
     @IBOutlet weak var mod4attempts: UILabel!
-    
     @IBOutlet weak var mod5attempts: UILabel!
-    
     @IBOutlet weak var mod6attempts: UILabel!
-    
     @IBOutlet weak var mod7attempts: UILabel!
-    
     @IBOutlet weak var mod8attempts: UILabel!
-    
     @IBOutlet weak var mod9attempts: UILabel!
-    
     @IBOutlet weak var mod10attempts: UILabel!
     
+    var modAttemptsArray : [UILabel]!
     
     @IBOutlet weak var mod1score: UILabel!
-    
     @IBOutlet weak var mod2score: UILabel!
-    
     @IBOutlet weak var mod3score: UILabel!
-    
     @IBOutlet weak var mod4score: UILabel!
-    
     @IBOutlet weak var mod5score: UILabel!
-    
     @IBOutlet weak var mod6score: UILabel!
-    
     @IBOutlet weak var mod7score: UILabel!
-    
     @IBOutlet weak var mod8score: UILabel!
-    
     @IBOutlet weak var mod9score: UILabel!
-    
     @IBOutlet weak var mod10score: UILabel!
     
+    var modScoresArray : [UILabel]!
     
     func viewLoadSetup() {
-        
-        mod1attempts.text = "\(repo.quizzesPerModule[0])"
-        mod2attempts.text = "\(repo.quizzesPerModule[1])"
-        mod3attempts.text = "\(repo.quizzesPerModule[2])"
-        mod4attempts.text = "\(repo.quizzesPerModule[3])"
-        mod5attempts.text = "\(repo.quizzesPerModule[4])"
-        mod6attempts.text = "\(repo.quizzesPerModule[5])"
-        mod7attempts.text = "\(repo.quizzesPerModule[6])"
-        mod8attempts.text = "\(repo.quizzesPerModule[7])"
-        mod9attempts.text = "\(repo.quizzesPerModule[8])"
-        mod10attempts.text = "\(repo.quizzesPerModule[9])"
-        
-        mod1score.text = "\(repo.quizAvgPerMod[0].rounded())"
-        mod2score.text = "\(repo.quizAvgPerMod[1].rounded())"
-        mod3score.text = "\(repo.quizAvgPerMod[2].rounded())"
-        mod4score.text = "\(repo.quizAvgPerMod[3].rounded())"
-        mod5score.text = "\(repo.quizAvgPerMod[4].rounded())"
-        mod6score.text = "\(repo.quizAvgPerMod[5].rounded())"
-        mod7score.text = "\(repo.quizAvgPerMod[6].rounded())"
-        mod8score.text = "\(repo.quizAvgPerMod[7].rounded())"
-        mod9score.text = "\(repo.quizAvgPerMod[8].rounded())"
-        mod10score.text = "\(repo.quizAvgPerMod[9].rounded())"
-        
+      
+        for i in 0...9 {
+            modAttemptsArray[i].text = "\(studentRepo.quizzesPerModule[i])"
+        }
+    
+        for i in 0...9 {
+            modScoresArray[i].text = "\(studentRepo.quizAvgPerMod[i].rounded())"
+        }
     }
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        modAttemptsArray = [mod1attempts, mod2attempts, mod3attempts, mod4attempts, mod5attempts, mod6attempts, mod7attempts, mod8attempts, mod9attempts, mod10attempts]
+        modScoresArray = [mod1score, mod2score, mod3score, mod4score, mod5score, mod6score, mod7score, mod8score, mod9score, mod10score]
+        
         viewLoadSetup()
-        // Do any additional setup after loading the view.
+        
     }
     
     
