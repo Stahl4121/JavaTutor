@@ -1683,12 +1683,73 @@
             </objects>
             <point key="canvasLocation" x="881" y="1468"/>
         </scene>
+        <!--Exercise DescriptionVC-->
+        <scene sceneID="N8L-r3-fcy">
+            <objects>
+                <viewController id="1Yy-ob-LyM" customClass="ExerciseDescriptionVC" customModule="JavaTutor" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XIe-1F-GJA">
+                        <rect key="frame" x="0.0" y="0.0" width="700" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Task is loading ..." textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xsA-Gq-Oae" userLabel="Description">
+                                <rect key="frame" x="20" y="64" width="660" height="361"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="FiraMono-Regular" family="Fira Mono" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Expected output loading ..." textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ngq-LQ-bPG" userLabel="ExpectedOutput">
+                                <rect key="frame" x="20" y="477" width="660" height="170"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="FiraMono-Regular" family="Fira Mono" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Task Description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hkI-06-jK0">
+                                <rect key="frame" x="20" y="20" width="250" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="06L-S9-TeB">
+                                <rect key="frame" x="517" y="20" width="163" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Reload Starter Code">
+                                    <color key="titleColor" red="1" green="0.16055464636606787" blue="0.11125151771140507" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="reloadCodeClicked:" destination="1Yy-ob-LyM" eventType="touchUpInside" id="2Dz-aM-UdA"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Expected Output:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iLx-43-g7Z">
+                                <rect key="frame" x="20" y="433" width="279" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="yne-7l-ld8"/>
+                    </view>
+                    <value key="contentSizeForViewInPopover" type="size" width="700" height="667"/>
+                    <connections>
+                        <outlet property="descriptionText" destination="xsA-Gq-Oae" id="GxM-03-8D7"/>
+                        <outlet property="expectedOutputText" destination="ngq-LQ-bPG" id="b5l-mt-128"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4a8-9L-tx4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1065.234375" y="2204.6875"/>
+        </scene>
         <!--Exercise RunnerVC-->
         <scene sceneID="HpD-Qn-NfA">
             <objects>
                 <viewController id="PvK-Bi-M2k" customClass="ExerciseRunnerVC" customModule="JavaTutor" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4pF-XI-MNT">
-                        <rect key="frame" x="0.0" y="0.0" width="900" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="800" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Executing Code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J3D-t3-NpX">
@@ -1698,9 +1759,23 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gjQ-UD-MuE" userLabel="Results">
+                                <rect key="frame" x="20" y="566" width="760" height="81"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Waiting for response ..." textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ldx-nZ-wba">
-                                <rect key="frame" x="20" y="91" width="860" height="556"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="frame" x="20" y="91" width="374" height="467"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="FiraMono-Regular" family="Fira Mono" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Expected Output" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L93-za-gWe" userLabel="Desired Output Text">
+                                <rect key="frame" x="399" y="91" width="381" height="467"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="FiraMono-Regular" family="Fira Mono" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -1709,13 +1784,22 @@
                                 <rect key="frame" x="259" y="41" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Expected Output" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G9N-q7-5Hz">
+                                <rect key="frame" x="399" y="20" width="219" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="FCC-WB-3rb"/>
                     </view>
-                    <value key="contentSizeForViewInPopover" type="size" width="900" height="667"/>
+                    <value key="contentSizeForViewInPopover" type="size" width="800" height="667"/>
                     <connections>
+                        <outlet property="expectedOutputText" destination="L93-za-gWe" id="yOT-66-kc7"/>
                         <outlet property="outputText" destination="ldx-nZ-wba" id="rHh-Vp-vtb"/>
+                        <outlet property="resultText" destination="gjQ-UD-MuE" id="mGd-vk-f3c"/>
                         <outlet property="spinner" destination="3yg-OW-VW3" id="9LQ-9u-gDm"/>
                     </connections>
                 </viewController>
@@ -2434,16 +2518,26 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Exercise" id="kSd-4c-hJ0">
-                        <barButtonItem key="rightBarButtonItem" title="Run" id="8k4-gZ-eQ2">
-                            <connections>
-                                <segue destination="PvK-Bi-M2k" kind="popoverPresentation" popoverAnchorBarButtonItem="8k4-gZ-eQ2" id="Tje-ca-ZTW">
-                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                </segue>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Run" id="8k4-gZ-eQ2">
+                                <connections>
+                                    <segue destination="PvK-Bi-M2k" kind="popoverPresentation" popoverAnchorBarButtonItem="8k4-gZ-eQ2" id="Tje-ca-ZTW">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Description" id="l1Y-b3-xeK">
+                                <connections>
+                                    <segue destination="1Yy-ob-LyM" kind="popoverPresentation" popoverAnchorBarButtonItem="l1Y-b3-xeK" id="T7j-Cy-Qfq">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="descriptionButton" destination="l1Y-b3-xeK" id="ElL-tY-DOj"/>
                         <outlet property="webview" destination="yCQ-Np-VRB" id="gh4-tY-ibV"/>
                     </connections>
                 </viewController>

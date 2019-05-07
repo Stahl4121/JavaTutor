@@ -14,6 +14,7 @@ class ExerciseVC: UIViewController, WKScriptMessageHandler {
     public var module : Int = 0
 
     @IBOutlet weak var webview: WKWebView!
+    @IBOutlet weak var descriptionButton: UIBarButtonItem!
     
     private var sourceCode : String = ""
     
@@ -27,6 +28,8 @@ class ExerciseVC: UIViewController, WKScriptMessageHandler {
         webview.load(request)
         
         webview.configuration.userContentController.add(self, name: "codeChanged")
+        
+        UIApplication.shared.sendAction(descriptionButton.action!, to: descriptionButton.target, from: self, for: nil)
     }
     
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
@@ -35,16 +38,26 @@ class ExerciseVC: UIViewController, WKScriptMessageHandler {
             if let code = (message.body as AnyObject)["text"]! as? String {
                 self.sourceCode = code
             } else {
-                let code = "window.setCode(`\(loadExercise(module: module)!.initial)`)"
-                webview.evaluateJavaScript(code, completionHandler: nil)
+                loadCode()
             }
         }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destinationVC = segue.destination as? ExerciseRunnerVC {
-            destinationVC.sourceCode = sourceCode
+        if let destVC = segue.destination as? ExerciseRunnerVC {
+            destVC.sourceCode = sourceCode
+            destVC.exercise = loadExercise(module: module)
         }
+        
+        if let destVC = segue.destination as? ExerciseDescriptionVC {
+            destVC.exerciseVC = self
+            destVC.exercise = loadExercise(module: module)
+        }
+    }
+    
+    public func loadCode() {
+        let code = "window.setCode(`\(loadExercise(module: module)!.initial)`)"
+        webview.evaluateJavaScript(code, completionHandler: nil)
     }
     
     func loadExercise(module: Int) -> Exercise? {

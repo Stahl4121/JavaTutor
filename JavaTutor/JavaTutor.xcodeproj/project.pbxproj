@@ -54,6 +54,7 @@
 		8EC2542F22774CA80015CB37 /* FiraMono-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8EC2542E22774CA80015CB37 /* FiraMono-Regular.ttf */; };
 		8EC254312277AB140015CB37 /* exercises.json in Resources */ = {isa = PBXBuildFile; fileRef = 8EC254302277AB130015CB37 /* exercises.json */; };
 		8EC254332277AC5B0015CB37 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC254322277AC5B0015CB37 /* Exercise.swift */; };
+		8ECE4ABA22820F230093B8BE /* ExerciseDescriptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECE4AB922820F230093B8BE /* ExerciseDescriptionVC.swift */; };
 		8ED5F5352249762D002A01C1 /* index.js in Resources */ = {isa = PBXBuildFile; fileRef = 8ED5F5342249762C002A01C1 /* index.js */; };
 		8ED5F5372249763C002A01C1 /* QGen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED5F5362249763C002A01C1 /* QGen.swift */; };
 		9705A21531ABDBE279D27556 /* Pods_JavaTutor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6C7C90BF01055004AEF21BE /* Pods_JavaTutor.framework */; };
@@ -165,6 +166,7 @@
 		8EC2542E22774CA80015CB37 /* FiraMono-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraMono-Regular.ttf"; sourceTree = "<group>"; };
 		8EC254302277AB130015CB37 /* exercises.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = exercises.json; sourceTree = "<group>"; };
 		8EC254322277AC5B0015CB37 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
+		8ECE4AB922820F230093B8BE /* ExerciseDescriptionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDescriptionVC.swift; sourceTree = "<group>"; };
 		8ED5F5342249762C002A01C1 /* index.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = index.js; sourceTree = "<group>"; };
 		8ED5F5362249763C002A01C1 /* QGen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QGen.swift; sourceTree = "<group>"; };
 		950608B2E6DE8B93883519C4 /* Pods-JavaTutorUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JavaTutorUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JavaTutorUITests/Pods-JavaTutorUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 				8EC2541C225FD0980015CB37 /* JavaRunner.swift */,
 				8EC2541E2274FD1C0015CB37 /* ExerciseVC.swift */,
 				8EC2542C227747C80015CB37 /* ExerciseRunnerVC.swift */,
+				8ECE4AB922820F230093B8BE /* ExerciseDescriptionVC.swift */,
 				840B69BF222054EE0032B683 /* Main.storyboard */,
 				840179DD224083390006EB11 /* StudyVC.swift */,
 				840D84EC22492C8400AE58E1 /* LoginScreenVC.swift */,
@@ -625,6 +628,7 @@
 				840194502246F90A005B9EAE /* QuestionTVC.swift in Sources */,
 				843971B122237C5900A96195 /* StatisticsVC.swift in Sources */,
 				84CB7036224846A300CEE082 /* questions.json in Sources */,
+				8ECE4ABA22820F230093B8BE /* ExerciseDescriptionVC.swift in Sources */,
 				843971B022237C5900A96195 /* RecentActivityTVC.swift in Sources */,
 				8408DDAE2237D30000C7DF57 /* BaseTabBarController.swift in Sources */,
 				840B69BC222054EE0032B683 /* AppDelegate.swift in Sources */,

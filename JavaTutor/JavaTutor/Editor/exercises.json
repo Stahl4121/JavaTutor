@@ -1,6 +1,7 @@
 [
   {
-    "initial": "class Main {\n  public static void main(String[] args) {\n    System.out.println(\"Hello World!\");\n  }\n}",
-    "output": "What a wonderful world!"
+    "initial": "class Main {\n  public static void main(String[] args) {\n    /* xD :P (:\n    System.out.println(\">:D\");\n  }\n}",
+    "description": "Oh no, a smiley has escaped its comment cage!\nPut it back, and fix the output.",
+    "output": "Phew, what a relief"
   }
 ]
