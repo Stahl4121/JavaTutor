@@ -34,23 +34,24 @@ class LessonListTVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return domainRepo.lessonNames[module].count + 1
+        return domainRepo.lessonNames[module].count + 2
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        if indexPath.row == domainRepo.lessonNames[module].count{
-            
+        if indexPath.row == domainRepo.lessonNames[module].count + 1 {
             return tableView.dequeueReusableCell(withIdentifier: "quizCell", for: indexPath)
         }
-        else{
-            let cell = tableView.dequeueReusableCell(withIdentifier: "lessonListCell", for: indexPath) as! LessonListCell
-            cell.lblLessonTitle?.text = "\(domainRepo.lessonNames[module][indexPath.row])"
             
-            return cell
-            //TODO
-            //cell.isCompleted = false
+        if indexPath.row == domainRepo.lessonNames[module].count {
+            return tableView.dequeueReusableCell(withIdentifier: "exerciseCell", for: indexPath)
         }
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "lessonListCell", for: indexPath) as! LessonListCell
+        cell.lblLessonTitle?.text = "\(domainRepo.lessonNames[module][indexPath.row])"
+        
+        return cell
+        //TODO
+        //cell.isCompleted = false
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -71,5 +72,8 @@ class LessonListTVC: UITableViewController {
             child.lessonNum = self.row + 1
         }
         
+        if let child = segue.destination as? ExerciseVC {
+            child.module = self.module
+        }
     }
 }

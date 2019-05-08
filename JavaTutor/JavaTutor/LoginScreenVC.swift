@@ -33,9 +33,6 @@ class LoginScreenVC: UIViewController, UITextFieldDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        let gen = QGen()
-        print(gen.getQuestion(module: 2))
-        
         emailField.attributedPlaceholder = NSAttributedString(string: "Username",
                                                               attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
         passwordField.attributedPlaceholder = NSAttributedString(string: "Password",
