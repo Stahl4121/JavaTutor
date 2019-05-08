@@ -47,8 +47,8 @@ class StudentRepo: NSObject {
         quizAvgPerMod = [0,0,0,0,0,0,0,0,0,0]
         chaptersFinished = [0,0,0,0,0,0,0,0,0,0]
         
-        bloomsTaxCorrect = [Int]()
-        bloomsTaxIncorrect = [Int]()
+        bloomsTaxCorrect = [0,0,0]
+        bloomsTaxIncorrect = [0,0,0]
         
         
         let libraryPath = NSSearchPathForDirectoriesInDomains(.libraryDirectory, .userDomainMask, true)[0]
