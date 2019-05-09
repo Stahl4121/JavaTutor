@@ -22,19 +22,9 @@ class StudyVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //lowScoreIndex = findLowestScore()
-        
-        studentRepo.improveTopic = domainRepo.moduleNames[lowScoreIndex]
-        lblContinueTopic.text = studentRepo.continueTopic
-        lblImproveTopic.text = studentRepo.improveTopic
-        lblBrushTopic.text = studentRepo.brushUpTopic
-        lblWelcomeBack.text = "Welcome back, \(studentRepo.username)!"
-        
         studentRepo.addObserver(self, forKeyPath: "recentActivities", options: .new, context: nil)
         
-        
         viewLoadSetup()
-        
     }
     
     func viewLoadSetup() {
