@@ -17,6 +17,7 @@ class ExerciseRunnerVC: UIViewController {
     @IBOutlet weak var outputText: UITextView!
     @IBOutlet weak var expectedOutputText: UITextView!
     @IBOutlet weak var resultText: UILabel!
+    let studentRepo = StudentRepo.instance
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +29,9 @@ class ExerciseRunnerVC: UIViewController {
                 self.outputText.text = result
                 self.spinner.isHidden = true
                 self.resultText.text = result.contains(self.exercise!.output) ? "Nicely done." : "Hmm, not quite ..."
+                if self.resultText.text == "Nicely done." {
+                    self.studentRepo.bloomsTaxCorrect[1] = self.studentRepo.bloomsTaxCorrect[1] + 1
+                }
             }
         }
     }
