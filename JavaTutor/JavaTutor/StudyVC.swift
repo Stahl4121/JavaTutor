@@ -30,11 +30,14 @@ class StudyVC: UIViewController {
     func viewLoadSetup() {
         
         lowScoreIndex = findLowestScore()
-        
         lblContinueTopic.text = studentRepo.continueTopic
         lblImproveTopic.text = domainRepo.moduleNames[lowScoreIndex]
-        lblBrushTopic.text = studentRepo.brushUpTopic
         lblWelcomeBack.text = "Welcome back, \(studentRepo.username)!"
+        if studentRepo.recentActivities.count > 0 {
+            lblBrushTopic.text = studentRepo.recentActivities[studentRepo.recentActivities.count - 1]
+        } else {
+            lblBrushTopic.text = "No topic has been started."
+        }
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
