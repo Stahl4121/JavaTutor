@@ -1717,6 +1717,7 @@
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="ZbO-jH-GRW" firstAttribute="top" secondItem="dsm-cL-8Z8" secondAttribute="bottom" constant="5" id="0yH-JH-27D"/>
                                     <constraint firstItem="dsm-cL-8Z8" firstAttribute="leading" secondItem="Vy7-Kj-Fpj" secondAttribute="leading" constant="15" id="Dp4-22-Hnm"/>
@@ -1733,12 +1734,15 @@
                                         <integer key="value" value="20"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="HrA-5t-rdI" appends="YES" id="ELl-f6-kg8"/>
+                                </connections>
                             </view>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ixh-BB-ABE">
                                 <rect key="frame" x="162" y="233" width="700" height="110"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Topic Needs Improvement" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qt8-f9-olQ">
-                                        <rect key="frame" x="15" y="15" width="358" height="40"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Module Needs Improvement" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qt8-f9-olQ">
+                                        <rect key="frame" x="15" y="15" width="390" height="40"/>
                                         <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="29"/>
                                         <color key="textColor" red="0.17349928619999999" green="0.25796893240000002" blue="0.31008335949999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1801,6 +1805,7 @@
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.17349928619999999" green="0.25796893240000002" blue="0.31008335949999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="y5Q-45-Q7p" firstAttribute="top" secondItem="f4D-Op-b8F" secondAttribute="bottom" constant="5" id="1ba-O0-Kck"/>
                                     <constraint firstAttribute="width" constant="700" id="65P-3g-WTZ"/>
@@ -1817,6 +1822,9 @@
                                         <integer key="value" value="20"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="6lw-bl-Lbr" appends="YES" id="eeT-Ie-Cvf"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.74117647058823533" green="0.83137254901960778" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1845,14 +1853,24 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NTm-el-rSh" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="vlS-FF-QPK" userLabel="Tap Module Catalog">
+                <tapGestureRecognizer id="vlS-FF-QPK" userLabel="TapModuleCatalog">
                     <connections>
                         <segue destination="scM-DZ-6qY" kind="show" id="L5Y-1Y-O54"/>
                     </connections>
                 </tapGestureRecognizer>
-                <tapGestureRecognizer id="CCi-BP-Cug" userLabel="Tap LessonList Improvement">
+                <tapGestureRecognizer id="CCi-BP-Cug" userLabel="TapLessonListImprovement">
                     <connections>
-                        <segue destination="3g1-11-P7x" kind="show" id="gc0-ro-Dmx"/>
+                        <segue destination="3g1-11-P7x" kind="show" identifier="improvement" id="gc0-ro-Dmx"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="HrA-5t-rdI" userLabel="TapLessonListBrush">
+                    <connections>
+                        <segue destination="3g1-11-P7x" kind="show" identifier="brush" id="UEv-U8-bBe"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="6lw-bl-Lbr" userLabel="TapLessonListContinue">
+                    <connections>
+                        <segue destination="3g1-11-P7x" kind="show" identifier="continue" id="bDA-gX-cgU"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -3020,7 +3038,7 @@
         <image name="study.png" width="33" height="41"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="gc0-ro-Dmx"/>
+        <segue reference="bDA-gX-cgU"/>
         <segue reference="8aR-rA-gmn"/>
     </inferredMetricsTieBreakers>
 </document>
