@@ -32,6 +32,10 @@ class StudyVC: UIViewController {
     
     func viewLoadSetup() {
         
+        for i in studentRepo.recentActivities {
+            print("CONTENTS OF RECENT ACTIVS \(i)")
+        }
+        
         lowScoreIndex = findLowestScoreIndex()
         lblContinueTopic.text = studentRepo.continueTopic
         lblImproveTopic.text = domainRepo.moduleNames[lowScoreIndex]
@@ -50,9 +54,9 @@ class StudyVC: UIViewController {
     }
     
     
-    func findContinueIndex() -> Int {
+    func findGenericIndex(str: String) -> Int {
         if studentRepo.recentActivities.count > 0 {
-            let stringToMatch = studentRepo.recentActivities[0]
+            let stringToMatch = str //studentRepo.recentActivities[0]
             for (i, s) in domainRepo.moduleNames.enumerated() {
                 if s == stringToMatch {
                     return i
@@ -61,22 +65,7 @@ class StudyVC: UIViewController {
         }
         return 0
     }
-    
-    
-    func findBrushUpIndex() -> Int {
-        if studentRepo.recentActivities.count > 0 {
-            
-            let stringToMatch = studentRepo.recentActivities[studentRepo.recentActivities.count - 1]
-            
-            for (i, m) in domainRepo.moduleNames.enumerated() {
-                if m == stringToMatch {
-                    return i
-                }
-            }
-        }
-        return 0
-    }
-    
+
     
     func findLowestScoreIndex() -> Int {
         var minScore = 100.0
@@ -92,11 +81,20 @@ class StudyVC: UIViewController {
     }
     
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        continueIndex = findContinueIndex()
-        brushUpIndex = findBrushUpIndex()
+    func setVariables(){
+        if studentRepo.recentActivities.count > 0 {
+            continueIndex = findGenericIndex(str: studentRepo.recentActivities[0])
+            brushUpIndex = findGenericIndex(str: studentRepo.recentActivities[studentRepo.recentActivities.count - 1])
+        } else {
+            continueIndex = 0
+            brushUpIndex = 0
+        }
         lowScoreIndex = findLowestScoreIndex()
-     
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         if segue.identifier == "continue" {
             if let child = segue.destination as? LessonListTVC {
                 if studentRepo.recentActivities.count > 0 {
@@ -125,15 +123,15 @@ class StudyVC: UIViewController {
         }
     }
 
-    /*
-     * Update recent activities list
-     */
+    
+    // Update recent activities list
     func updateRecentActivities(sentIndex: Int){
         if let index = studentRepo.recentActivities.firstIndex(of: domainRepo.moduleNames[sentIndex]){
             studentRepo.recentActivities.remove(at: index)
         }
         studentRepo.recentActivities.insert(domainRepo.moduleNames[sentIndex], at: 0)
     }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
