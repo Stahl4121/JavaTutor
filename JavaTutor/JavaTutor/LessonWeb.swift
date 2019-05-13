@@ -31,9 +31,15 @@ class LessonWeb: UIViewController, WKUIDelegate {
         webTitle.title = lessonName
         
         //HTML Loading
+        if let url = Bundle.main.url(forResource: "\(modNum).\(lessonNum)", withExtension: ".html", subdirectory: "FinalHTML") {
+            webV.loadFileURL(url, allowingReadAccessTo: url.deletingLastPathComponent())
+        }
+        
+        /*
         if let url = Bundle.main.url(forResource: "\(modNum).\(lessonNum)", withExtension: ".html") {
             webV.loadFileURL(url, allowingReadAccessTo: url.deletingLastPathComponent())
         }
+        */
         
         //set up timer to measure how long user has spent on this webpage
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
