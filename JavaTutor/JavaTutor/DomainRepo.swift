@@ -99,8 +99,13 @@ class DomainRepo: NSObject {
                 // Add in generated questions
                 let qGen = QGen()
                 
-                for _ in 1...10 {
+                for _ in 1 ... 5 {
                     let data = qGen.getQuestion(module: 2).data(using: .utf8)!
+                    questionArray.append(try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as! [String: Any])
+                }
+                
+                for _ in 1 ... 10 {
+                    let data = qGen.getQuestion(module: 3).data(using: .utf8)!
                     questionArray.append(try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as! [String: Any])
                 }
 
