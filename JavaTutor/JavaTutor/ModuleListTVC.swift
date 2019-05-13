@@ -49,10 +49,7 @@ class ModuleListTVC: UITableViewController {
             child.module = row
             
             //Update recent activities list
-            if let index = studentRepo.recentActivities.firstIndex(of: domainRepo.moduleNames[row]){
-                studentRepo.recentActivities.remove(at: index)
-            }
-            studentRepo.recentActivities.insert(domainRepo.moduleNames[row], at: 0)
+            studentRepo.updateRecentActivities(modIdx: row, lesIdx: -1)
         }
     }
 

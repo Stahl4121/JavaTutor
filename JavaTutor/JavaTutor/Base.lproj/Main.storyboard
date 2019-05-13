@@ -1850,12 +1850,14 @@
                         <outlet property="lblContinueTopic" destination="y5Q-45-Q7p" id="033-OS-6yI"/>
                         <outlet property="lblImproveTopic" destination="ihV-XA-D0q" id="9lc-VM-agP"/>
                         <outlet property="lblWelcomeBack" destination="Lcq-J0-0jR" id="ZvQ-dB-Rix"/>
+                        <segue destination="3eJ-my-PxL" kind="show" identifier="toLessonSegue" id="yhZ-Ad-Rtq"/>
+                        <segue destination="3g1-11-P7x" kind="show" identifier="toModuleSegue" id="5WV-sZ-08O"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NTm-el-rSh" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="vlS-FF-QPK" userLabel="TapModuleCatalog">
                     <connections>
-                        <segue destination="scM-DZ-6qY" kind="show" id="L5Y-1Y-O54"/>
+                        <segue destination="scM-DZ-6qY" kind="show" identifier="toModuleCatalogSegue" id="L5Y-1Y-O54"/>
                     </connections>
                 </tapGestureRecognizer>
                 <tapGestureRecognizer id="CCi-BP-Cug" userLabel="TapLessonListImprovement">
@@ -1874,7 +1876,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="256.640625" y="-3.125"/>
+            <point key="canvasLocation" x="246" y="-3"/>
         </scene>
         <!--Item-->
         <scene sceneID="Qat-lP-G2C">
@@ -3038,7 +3040,8 @@
         <image name="study.png" width="33" height="41"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="bDA-gX-cgU"/>
+        <segue reference="yhZ-Ad-Rtq"/>
+        <segue reference="5WV-sZ-08O"/>
         <segue reference="8aR-rA-gmn"/>
     </inferredMetricsTieBreakers>
 </document>
