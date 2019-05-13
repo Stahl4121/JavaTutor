@@ -62,10 +62,7 @@ class LessonListTVC: UITableViewController {
         
         if let child = segue.destination as? LessonWeb {
             //Update recent activities list
-            if let index = studentRepo.recentActivities.firstIndex(of: domainRepo.lessonNames[module][row]){
-                studentRepo.recentActivities.remove(at: index)
-            }
-            studentRepo.recentActivities.insert(domainRepo.lessonNames[module][row], at: 0)
+            studentRepo.updateRecentActivities(modIdx: module, lesIdx: row)
             
             child.lessonName = domainRepo.lessonNames[module][row]
             child.modNum = self.module + 1
