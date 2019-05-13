@@ -9,6 +9,8 @@
 import Foundation
 
 class StudentRepo: NSObject {
+    let domainRepo = DomainRepo.instance
+    
     @objc dynamic var recentActivities: [String]
     
     var isOnlineMode: Bool
@@ -86,6 +88,24 @@ class StudentRepo: NSObject {
 
         //Write new changes to local file storage
         writeLocalStudent()
+    }
+    
+    // Update recent activities list
+    // lesIdx = -1 if the recent activity refers to a module rather than a lesson
+    func updateRecentActivities(modIdx: Int, lesIdx: Int){
+        //If we are updating a module, not a lesson
+        if lesIdx == -1 {
+            if let index = recentActivities.firstIndex(of: domainRepo.moduleNames[modIdx]){
+                recentActivities.remove(at: index)
+            }
+            recentActivities.insert(domainRepo.moduleNames[modIdx], at: 0)
+        }
+        else{ //We are dealing with a lesson
+            if let index = recentActivities.firstIndex(of: domainRepo.lessonNames[modIdx][lesIdx]){
+                recentActivities.remove(at: index)
+            }
+            recentActivities.insert(domainRepo.lessonNames[modIdx][lesIdx], at: 0)
+        }
     }
     
     func initAfterLogin(username: String){

@@ -54,7 +54,8 @@ class LessonWeb: UIViewController, WKUIDelegate {
         
         
         //Check if chapter has been read before
-        if counter == 30 && !domainRepo.finishedLessons.contains(lessonName){
+        if counter > 30 && !domainRepo.finishedLessons.contains(lessonName){
+            timer.invalidate()
             
             finished = studentRepo.chaptersFinished[modNum-1]
             total = Double(domainRepo.lessonNames[modNum - 1].count)
