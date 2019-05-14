@@ -282,7 +282,7 @@
                                             <rect key="frame" x="47" y="21" width="930" height="120"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Module {#}: {Module Name}" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Xh-6z-dNy">
-                                                    <rect key="frame" x="20" y="35" width="721" height="50"/>
+                                                    <rect key="frame" x="20" y="35" width="694" height="50"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="50" id="I6C-7k-AOF"/>
                                                     </constraints>
@@ -290,10 +290,10 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{#}%" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BQM-d2-7Sk">
-                                                    <rect key="frame" x="794" y="35" width="83" height="50"/>
+                                                    <rect key="frame" x="767" y="35" width="120" height="50"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="50" id="hT7-Ot-qit"/>
-                                                        <constraint firstAttribute="width" constant="83" id="oNi-pn-7Vp"/>
+                                                        <constraint firstAttribute="width" constant="120" id="oNi-pn-7Vp"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="34"/>
                                                     <nil key="highlightedColor"/>
@@ -314,7 +314,7 @@
                                                 <constraint firstItem="2Xh-6z-dNy" firstAttribute="centerY" secondItem="QlW-b2-q8C" secondAttribute="centerY" id="7bZ-yF-ld7"/>
                                                 <constraint firstAttribute="trailing" secondItem="3Hb-8q-wbd" secondAttribute="trailing" constant="15" id="E5r-8t-M5w"/>
                                                 <constraint firstItem="BQM-d2-7Sk" firstAttribute="centerY" secondItem="3Hb-8q-wbd" secondAttribute="centerY" id="FvS-ku-604"/>
-                                                <constraint firstItem="3Hb-8q-wbd" firstAttribute="leading" secondItem="BQM-d2-7Sk" secondAttribute="trailing" constant="20" id="W8B-UZ-wbZ"/>
+                                                <constraint firstItem="3Hb-8q-wbd" firstAttribute="leading" secondItem="BQM-d2-7Sk" secondAttribute="trailing" constant="10" id="W8B-UZ-wbZ"/>
                                                 <constraint firstItem="2Xh-6z-dNy" firstAttribute="leading" secondItem="QlW-b2-q8C" secondAttribute="leading" constant="20" id="ZWo-jV-3o3"/>
                                                 <constraint firstAttribute="width" constant="930" id="d2N-a2-zjA"/>
                                                 <constraint firstAttribute="height" constant="120" id="iF0-LU-WON"/>
