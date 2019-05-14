@@ -1,0 +1,81 @@
+
+<!-- saved from url=(0041)http://math.hws.edu/javanotes8/c4/s2.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Javanotes 8.0, Section 4.2 -- Static Subroutines and Static Variables</title>
+<link type="text/css" rel="stylesheet" href="javanotes.css">
+</head>
+<body>
+<div class="page">
+<div class="content">
+<h3 class="section_title">Section 4.2</h3>
+<h2 class="section_title">Static Subroutines and Static Variables</h2>
+<hr class="break">
+
+<h3 class="subsection_title">
+<a name="subroutines.2.2">4.2.2&nbsp;&nbsp;Calling Subroutines</a>
+</h3>
+
+
+<p>When you define a subroutine, all you are doing is telling the computer that
+the subroutine exists and what it does. The subroutine doesn't actually get
+executed until it is called. (This is true even for the <span class="code">main()</span> routine
+in a class—even though <b>you</b> don't call it, it is called by
+the system when the system runs your program.) For example, the
+<span class="code">playGame()</span> method given as an example above could be called using the following
+subroutine call statement:</p>
+
+
+<pre>playGame();</pre>
+
+
+<p>This statement could occur anywhere in the same class that includes the
+definition of <span class="code">playGame()</span>, whether in a <span class="code">main()</span> method or in
+some other subroutine. Since <span class="code">playGame()</span> is a <span class="code">public</span> method,
+it can also be called from other classes, but in that case, you have to tell
+the computer which class it comes from.  Since <span class="code">playGame()</span> is a <span class="code">static</span> method,
+its full name includes the name of the class in which it is defined.  Let's say, for example, that
+<span class="code">playGame()</span> is defined in a class named <span class="code">Poker</span>. Then to call
+<span class="code">playGame()</span> from <b>outside</b> the <span class="code">Poker</span> class, you would
+have to say</p>
+
+
+<pre>Poker.playGame();</pre>
+
+
+<p>The use of the class name here tells the computer which class to look in to
+find the method.  It also lets you distinguish between <span class="code">Poker.playGame()</span>
+and other potential <span class="code">playGame()</span> methods defined in other classes, such
+as <span class="code">Roulette.playGame()</span> or <span class="code">Blackjack.playGame()</span>.</p>
+
+
+<p>More generally, a <span class="newword">subroutine call statement</span> for a <span class="code">static</span>
+subroutine takes the form</p>
+
+
+<pre><span class="bnf">subroutine-name</span>(<span class="bnf">parameters</span>);</pre>
+
+
+<p>if the subroutine that is being called is in the same class, or</p>
+
+
+<pre><span class="bnf">class-name</span>.<span class="bnf">subroutine-name</span>(<span class="bnf">parameters</span>);</pre>
+
+
+<p>if the subroutine is defined elsewhere, in a different
+class. (Non-static methods belong to objects rather than classes, and they are
+called using objects instead of class names. More on that later.) Note
+that the parameter list can be empty, as in the <span class="code">playGame()</span> example,
+but the parentheses must be there even if there is nothing between them.
+The number of parameters that you provide when you call a subroutine must
+match the number specified in the parameter list in the subroutine definition,
+and the types of the parameters in the call statement must match the types
+in the subroutine definition.</p>
+
+
+</div>
+<hr>
+</div>
+
+
+<div id="UMS_TOOLTIP" style="position: absolute; cursor: pointer; z-index: 2147483647; background: transparent; top: -100000px; left: -100000px;"></div></body><umsdataelement id="UMSSendDataEventElement"></umsdataelement><div id="TAG_ID4TOOLBAR_UMS_GUID" style="display: none;">56DBBB80-0EAA-30AE-E3CC-D14D11635E35</div><div id="tmtoolbar_ums_injected" style="display: none;">init_ums</div></html>

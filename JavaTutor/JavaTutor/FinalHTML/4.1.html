@@ -1,0 +1,161 @@
+
+<!-- saved from url=(0041)http://math.hws.edu/javanotes8/c3/s8.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Javanotes 8.0, Section 3.8 -- Introduction to Arrays</title>
+<link type="text/css" rel="stylesheet" href="javanotes.css">
+</head>
+<body>
+<div class="page">
+<div class="content">
+<h3 class="section_title">Section 3.8</h3>
+<h2 class="section_title">Introduction to Arrays</h2>
+<hr class="break">
+
+
+<p>
+<span class="start"><big>I</big>n previous sections of this chapter,</span> we have 
+already covered all of Java's control structures.  But before moving on to the next chapter, we will
+take preliminary looks at two additional topics that are at least somewhat related to control structures.</p>
+
+<p>This section
+is an introduction to arrays.  Arrays are a basic and very commonly used
+data structure, and array processing is often an exercise in using control
+structures.
+</p>
+
+
+<hr class="break">
+<h3 class="subsection_title">
+<a name="control.7a.1">3.8.1&nbsp;&nbsp;Creating and Using Arrays</a>
+</h3>
+
+
+<p>A <span class="newword">data structure</span> consists of a number of data items
+chunked together so that they can be treated as a unit.  An <span class="newword">array</span> is
+a data structure in which the items are arranged as a numbered sequence,
+so that each individual item can be referred to by its position number.
+In Java—but not in some other programming languages—all the items must 
+be of the same type, and the numbering always starts at zero.
+You will need to learn several new terms to talk about arrays:
+The number of items in an array is called the
+<span class="newword">length</span> of the array. 
+The type of the individual items in an array is called the 
+<span class="newword">base type</span> of the array. And the position number of an
+item in an array is called the <span class="newword">index</span> of that item.</p>
+
+
+<p>Suppose that you want to write a program that will process the names of, say, one thousand people.
+You will need a way to deal with all that data.  Before you knew about arrays,
+you might have thought that the program would need a thousand variables to hold
+the thousand names, and if you wanted to print out all the names, you would need
+a thousand print statements.  Clearly, that would be ridiculous!  In reality,
+you can put all the names into an array.  The array is represented by a single
+variable, but it holds the entire list of names.  The length of the array would
+be 1000, since there are 1000 individual names.  The base type of the array
+would be <span class="classname">String</span> since the items in the array are
+strings.  The first name would be at index 0 in the array, the second name
+at index 1, and so on, up to the thousandth name at index 999.</p>
+
+
+<p>The base type of an array can be any Java type, but for now, we will stick to
+arrays whose base type is <span class="classname">String</span> or one of the eight primitive
+types.   If the base type of an
+array is <span class="ptype">int</span>, it is referred to as an "array of <span class="ptype">ints</span>." An
+array with base type <span class="classname">String</span> is referred to as an "array of
+<span class="classname">Strings</span>." However, an array is not, properly speaking, a list of
+integers or strings or other <b>values</b>. It is better thought of
+as a list of <b>variables</b> of type <span class="ptype">int</span>, or a list of variables of type
+<span class="classname">String</span>, or of some other type. As always, there is some potential for
+confusion between the two uses of a variable: as a name for a memory location
+and as a name for the value stored in that memory location. Each position in an
+array acts as a variable. Each position can hold a value of a specified type
+(the base type of the array), just as a variable can hold a value.
+The value can be changed at any time, just as the value of a variable can be
+changed.  The items in an array—really, the individual variables that make up the
+array—are more often referred to as the <span class="newword">elements</span> 
+of the array.</p>
+
+
+<p>As I mentioned above, when you use an array in a program, you can use a variable
+to refer to the array as a whole.  But you often need to refer to the individual elements
+of the array.  The name for an element of an array is based on the name for the array
+and the index number of the element.  The syntax for referring to an element
+looks, for example, like this:  <span class="code">namelist[7]</span>.  Here, <span class="code">namelist</span>
+is the variable that names the array as a whole, and <span class="code">namelist[7]</span> refers to the
+element at index 7 in that array.   That is, to refer to an element of an array,
+you use the array name, followed by element index enclosed in square brackets.
+An element name of this form can be used like any other variable: You can assign
+a value to it, print it out, use it in an expression, and so on.</p>
+
+
+<p>An array also contains a kind of variable representing its length.  For example,
+you can refer to the length of the array <span class="code">namelist</span> as <span class="code">namelist.length</span>.
+However, you cannot assign a value to <span class="code">namelist.length</span>, since the length of an
+array cannot be changed.
+</p>
+
+
+<p>Before you can use a variable to refer to an array, that
+variable must be declared, and it must
+have a type.  For an array of <span class="classname">Strings</span>, for example,
+the type for the array variable would be <span class="atype">String[]</span>, and
+for an array of <span class="ptype">ints</span>, it would be <span class="atype">int[]</span>.
+In general, an array type consists of the base type of the array followed
+by a pair of empty square brackets.  Array types can be used to declare
+variables; for example,</p>
+
+
+<pre>String[] namelist;
+int[] A;
+double[] prices;
+</pre>
+
+
+<p>and variables declared in this way can refer to arrays.  However, declaring
+a variable does not make the actual array.  Like all variables, an array variable has
+to be assigned a value before it can be used.  In this case, the value is
+an array.  Arrays have to be created using a special syntax.  (The syntax
+is related to the fact that arrays in Java are actually objects, but that doesn't
+need to concern us here.)  Arrays are created with an operator named <span class="newword">new</span>.
+Here are some examples:</p>
+
+
+<pre>namelist = new String[1000];
+A = new int[5];
+prices = new double[100];</pre>
+
+
+<p>The general syntax is</p>
+
+
+<pre><span class="bnf">array-variable</span> = new <span class="bnf">base-type</span>[<span class="bnf">array-length</span>];</pre>
+
+
+<p>The length of the array can be given as either an integer or an integer-valued
+expression.  For example, after the assignment statement
+"<span class="code">A&nbsp;=&nbsp;new&nbsp;int[5];</span>", <span class="code">A</span> is an array
+containing the five integer elements <span class="code">A[0]</span>, <span class="code">A[1]</span>, <span class="code">A[2]</span>, 
+<span class="code">A[3]</span>, and <span class="code">A[4]</span>.  Also, <span class="code">A.length</span> would have
+the value&nbsp;5.  It's useful to have a picture in mind:</p>
+
+
+<p align="center">
+<img src="./sec3.8.1_files/array-of-ints.png" width="573" height="149" alt="illustration of an array of 5 ints" class="bordered"></p>
+   
+
+<p>When you create an array of <span class="ptype">int</span>, each element of the array is
+automatically initialized to zero.  Any array of numbers is filled with zeros
+when it is created.  An array of <span class="ptype">boolean</span> is filled with the
+value <span class="code">false</span>.  And an array of <span class="ptype">char</span> is filled
+with the character that has Unicode code number zero.  (For an array of
+<span class="classname">String</span>, the initial value is <span class="code">null</span>,
+a special value used for objects that we won't encounter officially until
+<a href="http://math.hws.edu/javanotes8/c5/s1.html">Section&nbsp;5.1</a>.)</p>
+
+</div>
+<hr>
+</div>
+
+
+<div id="UMS_TOOLTIP" style="position: absolute; cursor: pointer; z-index: 2147483647; background: transparent; top: -100000px; left: -100000px;"></div></body><umsdataelement id="UMSSendDataEventElement"></umsdataelement><div id="TAG_ID4TOOLBAR_UMS_GUID" style="display: none;">8D5CDFEF-E321-A3CA-91A7-1C5033B866C6</div><div id="tmtoolbar_ums_injected" style="display: none;">init_ums</div></html>

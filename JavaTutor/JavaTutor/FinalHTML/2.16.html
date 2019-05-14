@@ -1,0 +1,51 @@
+
+<!-- saved from url=(0041)http://math.hws.edu/javanotes8/c2/s5.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Javanotes 8.0, Section 2.5 -- Details of Expressions</title>
+<link type="text/css" rel="stylesheet" href="./sec2.5.7_files/javanotes.css">
+</head>
+<body>
+<div class="page">
+
+<hr class="break">
+<h3 class="subsection_title">
+<a name="basics.5.7">2.5.7&nbsp;&nbsp;Precedence Rules</a>
+</h3>
+
+
+<p>If you use several operators in one expression, and if you don't use
+parentheses to explicitly indicate the order of evaluation, then you have to
+worry about the precedence rules that determine the order of evaluation.
+(Advice: don't confuse yourself or the reader of your program; use parentheses
+liberally.)</p>
+
+
+<p>Here is a listing of the operators discussed in this section, listed in
+order from highest precedence (evaluated first) to lowest precedence (evaluated
+last):</p>
+
+
+<pre>Unary operators:              ++, --, !, unary -, unary +, type-cast
+Multiplication and division:  *,  /,  %
+Addition and subtraction:     +,  -
+Relational operators:         &lt;,  &gt;,  &lt;=,  &gt;=
+Equality and inequality:      ==,  !=
+Boolean and:                  &amp;&amp;
+Boolean or:                   ||
+Conditional operator:         ?:
+Assignment operators:         =,  +=,  -=,  *=,  /=,  %=</pre>
+
+
+<p>Operators on the same line have the same precedence. When operators of the same precedence are strung
+together in the absence of parentheses, unary operators and assignment operators are evaluated right-to-left,
+while the remaining operators are evaluated left-to-right. For example,
+<span class="code">A*B/C</span> means <span class="code">(A*B)/C</span>, while <span class="code">A=B=C</span> means
+<span class="code">A=(B=C)</span>. (Can you see how the expression <span class="code">A=B=C</span> might be
+useful, given that the value of <span class="code">B=C</span> as an expression is the same as
+the value that is assigned to <span class="code">B</span>?)</p>
+   
+</div>
+
+
+<div id="UMS_TOOLTIP" style="position: absolute; cursor: pointer; z-index: 2147483647; background: transparent; top: -100000px; left: -100000px;"></div></body><umsdataelement id="UMSSendDataEventElement"></umsdataelement><div id="TAG_ID4TOOLBAR_UMS_GUID" style="display: none;">F9FF9282-533A-5A64-9276-66EC81B15D07</div><div id="tmtoolbar_ums_injected" style="display: none;">init_ums</div></html>

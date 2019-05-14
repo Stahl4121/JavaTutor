@@ -1,0 +1,127 @@
+
+<!-- saved from url=(0041)http://math.hws.edu/javanotes8/c2/s2.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Javanotes 8.0, Section 2.2 -- Variables and the Primitive Types</title>
+<link type="text/css" rel="stylesheet" href="./sec2.2.3_files/javanotes.css">
+</head>
+<body>
+<div class="page">
+<hr class="break">
+<h3 class="subsection_title">
+<a name="basics.2.3">2.2.3&nbsp;&nbsp;Literals</a>
+</h3>
+
+
+<p>A data value is stored in the computer as a sequence of bits.  In the computer's
+memory, it doesn't look anything like a value written on this page.  You need a
+way to include constant values in the programs that you write.  In a program, you represent constant values
+as <span class="newword">literals</span>.  A literal is something that you can type in a program to
+represent a value.  It is a kind of name for a constant value.</p>
+
+
+<p>For example, to type a value of type <span class="ptype">char</span> in a program, you must surround it with
+a pair of single quote marks, such as <span class="code">'A'</span>, <span class="code">'*'</span>, or <span class="code">'x'</span>.
+The character and the quote marks make up a literal of type <span class="ptype">char</span>.
+Without the quotes, <span class="code">A</span> would be an
+identifier and <span class="code">*</span> would be a multiplication operator. The quotes are <b>not</b> part of
+the value and are not stored in the variable; they are just a convention for
+naming a particular character constant in a program.  If you want to store the character A in
+a variable <span class="code">ch</span> of type <span class="ptype">char</span>, you could do so with the assignment
+statement</p>
+
+
+<pre>ch = 'A';</pre>
+
+
+<p>Certain special characters have special literals
+that use a backslash, <span class="code">\</span>, as an "escape character." In particular, a tab is
+represented as <span class="code">'\t'</span>, a carriage return as <span class="code">'\r'</span>, a linefeed as
+<span class="code">'\n'</span>, the single quote character as <span class="code">'\''</span>, and the backslash
+itself as <span class="code">'\\'</span>. Note that even though you type two characters between
+the quotes in <span class="code">'\t'</span>, the value represented by this literal is a single
+tab character.</p>
+
+
+<p>Numeric literals are a little more complicated than you might expect. Of
+course, there are the obvious literals such as 317 and 17.42. But there are
+other possibilities for expressing numbers in a Java program. First of all,
+real numbers can be represented in an exponential form such as 1.3e12 or
+12.3737e-108. The "e12" and "e-108" represent powers of 10, so that 1.3e12
+means 1.3 times 10<sup>12</sup> and 12.3737e-108 means 12.3737 times
+10<sup>-108</sup>. This format can be used to express very large and very small numbers.
+Any numeric literal that contains a decimal point or exponential is a literal
+of type <span class="ptype">double</span>. To make a literal of type <span class="ptype">float</span>, you have to
+append an "F" or "f" to the end of the number. For example, "1.2F" stands for
+1.2 considered as a value of type <span class="ptype">float</span>. (Occasionally, you need to
+know this because the rules of Java say that you can't assign a value of type
+<span class="ptype">double</span> to a variable of type <span class="ptype">float</span>, so you might be
+confronted with a ridiculous-seeming error message if you try to do something
+like "<span class="code">x&nbsp;=&nbsp;1.2;</span>" if <span class="code">x</span> is a variable of type
+<span class="ptype">float</span>. You have to say "<span class="code">x&nbsp;=&nbsp;1.2F;"</span>.
+This is one reason why I advise sticking to type <span class="ptype">double</span> for real
+numbers.)</p>
+
+
+<p>Even for integer literals, there are some complications. Ordinary integers
+such as 177777 and -32 are literals of type <span class="ptype">byte</span>, <span class="ptype">short</span>, or
+<span class="ptype">int</span>, depending on their size. You can make a literal of type
+<span class="ptype">long</span> by adding "L" as a suffix. For example: 17L or 728476874368L. As
+another complication, Java allows binary, octal (base-8), and hexadecimal (base-16)
+literals. I don't want to cover number bases in detail, but in case
+you run into them in other people's programs, it's worth knowing a few things:
+Octal numbers use only the digits 0 through 7.  In Java, a numeric literal
+that begins with a 0 is interpreted as an octal number; for example, the octal
+literal 045 represents the number 37, not the number 45.  Octal numbers are rarely
+used, but you need to be aware of what happens when you start a number with a zero.
+Hexadecimal numbers use 16 digits, the usual digits 0 through 9 and the letters
+A, B, C, D, E, and F.  Upper case and lower case letters can be used
+interchangeably in this context.  The letters represent the numbers 10 through 15.
+In Java, a hexadecimal literal begins with <span class="code">0x</span> or <span class="code">0X</span>,
+as in <span class="code">0x45</span> or <span class="code">0xFF7A</span>.  Finally, binary literals
+start with <span class="code">0b</span> or <span class="code">0B</span> and contain only the digits
+0 and&nbsp;1; for example: 0b10110.</p>
+
+
+<p>As a final complication, numeric
+literals can include the underscore character&nbsp;("<span class="code">_</span>"), which
+can be used to separate groups of digits.  For example, the integer constant
+for two billion could be written 2_000_000_000, which is a good deal easier to decipher
+than 2000000000.  There is no rule about how many digits have to be in each group.
+Underscores can be especially useful in long binary numbers; for example,
+<span class="code">0b1010_1100_1011</span>.</p>
+
+
+<p>I will note that hexadecimal numbers can also be used in character literals to represent
+arbitrary Unicode characters.  A Unicode literal consists of <span class="code">\u</span> followed
+by four hexadecimal digits.  For example, the character literal <span class="code">'\u00E9'</span>
+represents the Unicode character that is an "e" with an acute accent.
+</p>
+
+
+<p>For the type <span class="ptype">boolean</span>, there are precisely two literals:
+<span class="code">true</span> and <span class="code">false</span>. These literals are typed just as I've written
+them here, without quotes, but they represent values, not variables. Boolean
+values occur most often as the values of conditional expressions. For
+example,</p>
+
+
+<pre>rate &gt; 0.05</pre>
+   
+
+<p>is a boolean-valued expression that evaluates to <span class="code">true</span> if the value
+of the variable <span class="code">rate</span> is greater than 0.05, and to <span class="code">false</span> if
+the value of <span class="code">rate</span> is less than or equal to 0.05. As you'll see in <a href="http://math.hws.edu/javanotes8/c3/index.html">Chapter&nbsp;3</a>, 
+boolean-valued expressions are used
+extensively in control structures. Of course, boolean values can also be
+assigned to variables of type <span class="ptype">boolean</span>.  For example, if <span class="code">test</span> is 
+a variable of type <span class="ptype">boolean</span>, then both of the following assignment statements
+are legal:</p>
+
+
+<pre>test = true;
+test = rate &gt; 0.05;</pre>
+</div>
+
+
+<div id="UMS_TOOLTIP" style="position: absolute; cursor: pointer; z-index: 2147483647; background: transparent; top: -100000px; left: -100000px;"></div></body><umsdataelement id="UMSSendDataEventElement"></umsdataelement><div id="TAG_ID4TOOLBAR_UMS_GUID" style="display: none;">6C732B44-F621-65E0-9220-FE6860E11B05</div><div id="tmtoolbar_ums_injected" style="display: none;">init_ums</div></html>

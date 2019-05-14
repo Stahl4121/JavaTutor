@@ -1,0 +1,262 @@
+
+<!-- saved from url=(0041)http://math.hws.edu/javanotes8/c3/s4.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Javanotes 8.0, Section 3.4 -- The for Statement</title>
+<link type="text/css" rel="stylesheet" href="javanotes.css">
+</head>
+<body>
+<div class="page">
+<div class="content">
+<h3 class="section_title">Section 3.4</h3>
+<h2 class="section_title">The for Statement</h2>
+<hr class="break">
+   
+
+<p>
+<span class="start"><big>W</big>e turn in this section</span> to another type of loop,
+the <span class="code">for</span> statement. Any <span class="code">for</span> loop is equivalent to some
+<span class="code">while</span> loop, so the language doesn't get any additional power by having
+<span class="code">for</span> statements. But for a certain type of problem, a <span class="code">for</span> loop
+can be easier to construct and easier to read than the corresponding
+<span class="code">while</span> loop. It's quite possible that in real programs, <span class="code">for</span>
+loops actually outnumber <span class="code">while</span> loops (and I know of at least one person
+who <b>only</b> uses <span class="code">for</span> loops).</p>
+
+
+<hr class="break">
+<h3 class="subsection_title">
+<a name="control.4.1">3.4.1&nbsp;&nbsp;For Loops</a>
+</h3>
+
+
+<p>The <span class="code">for</span> statement makes a common type of while loop easier to
+write. Many while loops have the general form:</p>
+
+
+<pre><span class="bnf">initialization</span>
+while ( <span class="bnf">continuation-condition</span> ) {
+    <span class="bnf">statements</span>
+    <span class="bnf">update</span>
+}</pre>
+
+
+<p>For example, consider this example, copied from an example in <a href="http://math.hws.edu/javanotes8/c3/s2.html">Section&nbsp;3.2</a>:</p>
+
+
+<pre>years = 0;  // <b>initialize</b> the variable years
+while ( years &lt; 5 ) {   // <b>condition</b> for continuing loop
+
+    interest = principal * rate;    //
+    principal += interest;          // do three <b>statements</b>
+    System.out.println(principal);  //
+    
+    years++;   // <b>update</b> the value of the variable, years
+}</pre>
+
+
+<p>This loop can be written as the following equivalent <span class="code">for</span>
+statement:</p>
+
+
+<pre>for ( years = 0;  years &lt; 5;  years++ ) {
+   interest = principal * rate;
+   principal += interest;
+   System.out.println(principal);
+}</pre>
+
+
+<p>The initialization, continuation condition, and updating have all been
+combined in the first line of the <span class="code">for</span> loop. This keeps everything
+involved in the "control" of the loop in one place, which helps make the loop
+easier to read and understand. The <span class="code">for</span> loop is executed in exactly the
+same way as the original code: The initialization part is executed once, before
+the loop begins. The continuation condition is executed before each execution
+of the loop (including the first execution), and the loop ends when this condition is <span class="code">false</span>. The
+update part is executed at the end of each execution of the loop, just before
+jumping back to check the condition.</p>
+
+
+<p>The formal syntax of the <span class="code">for</span> statement is as follows:</p>
+
+
+<pre>for ( <span class="bnf">initialization</span>; <span class="bnf">continuation-condition</span>; <span class="bnf">update</span> )
+     <span class="bnf">statement</span>
+</pre>
+
+
+<p>or, using a block statement:</p>
+
+
+<pre>for ( <span class="bnf">initialization</span>; <span class="bnf">continuation-condition</span>; <span class="bnf">update</span> ) {
+     <span class="bnf">statements</span>
+}</pre>
+
+
+<p>The <span class="bnf">continuation-condition</span> must be a
+boolean-valued expression. The <span class="bnf">initialization</span>
+is usually a declaration or an assignment statement, but it
+can be any expression that would be allowed as a statement in a program.
+The <span class="bnf">update</span> can be any simple statement, but is usually
+an increment, a decrement, or an assignment statement. Any
+of the three parts can be empty. If the continuation condition is empty, it is
+treated as if it were "<span class="code">true</span>," so the loop will be repeated forever or
+until it ends for some other reason, such as a <span class="code">break</span> statement. (Some
+people like to begin an infinite loop with "<span class="code">for&nbsp;(;;)</span>" instead of
+"<span class="code">while&nbsp;(true)</span>".)  Here's a flow control diagram for a <span class="code">for</span>
+statement:</p>
+
+
+<p align="center">
+<img src="./sec3.4.1_files/for-loop-flow-control.png" width="186" height="401" alt="control diagram for a for loop" class="bordered"></p>
+
+
+<p>Usually, the initialization part of a <span class="code">for</span> statement assigns a value
+to some variable, and the update changes the value of that variable with an
+assignment statement or with an increment or decrement operation. The value of
+the variable is tested in the continuation condition, and the loop ends when
+this condition evaluates to <span class="code">false</span>. A variable used in this way is
+called a <span class="newword">loop control variable</span>. In the
+example given above, the loop control variable was <span class="code">years</span>.</p>
+
+
+<p>Certainly, the most common type of <span class="code">for</span> loop is the <span class="newword">counting loop</span>, 
+where a loop control variable takes on all
+integer values between some minimum and some maximum value. A counting loop has
+the form</p>
+
+
+<pre>for ( <span class="bnf">variable</span> = <span class="bnf">min</span>;  <span class="bnf">variable</span> &lt;= <span class="bnf">max</span>; <span class="bnf">variable</span>++ ) {
+     <span class="bnf">statements</span>
+}</pre>
+
+
+<p>where <span class="bnf">min</span> and <span class="bnf">max</span> are integer-valued expressions (usually constants). The
+<span class="bnf">variable</span> takes on the values <span class="bnf">min</span>, <span class="bnf">min</span>+1, 
+<span class="bnf">min</span>+2,&nbsp;..., <span class="bnf">max</span>. The value
+of the loop control variable is often used in the body of the loop. The
+<span class="code">for</span> loop at the beginning of this section is a counting loop in which
+the loop control variable, <span class="code">years</span>, takes on the values 1, 2, 3, 4, 5.
+Here is an even simpler example, in which the numbers 1, 2,&nbsp;..., 10 are
+displayed on standard output:</p>
+
+
+<pre>for ( N = 1 ;  N &lt;= 10 ;  N++ )
+   System.out.println( N );</pre>
+
+
+<p>For various reasons, Java programmers like to start counting at 0 instead of
+1, and they tend to use a "<span class="code">&lt;</span>" in the condition, rather than a
+"<span class="code">&lt;=</span>". The following variation of the above loop prints out the ten
+numbers 0, 1, 2,&nbsp;..., 9:</p>
+
+
+<pre>for ( N = 0 ;  N &lt; 10 ;  N++ )
+   System.out.println( N );</pre>
+
+
+<p>Using <span class="code">&lt;</span> instead of <span class="code">&lt;=</span> in the test, or vice versa, is
+a common source of off-by-one errors in programs. You should always stop and
+think, Do I want the final value to be processed or not?</p>
+
+
+<p>It's easy to count down from 10 to 1 instead of counting up. Just start with
+10, decrement the loop control variable instead of incrementing it, and
+continue as long as the variable is greater than or equal to one.</p>
+
+
+<pre>for ( N = 10 ;  N &gt;= 1 ;  N-- )
+   System.out.println( N );</pre>
+
+
+<p>Now, in fact, the official syntax of a <span class="code">for</span> statement actually
+allows both the initialization part and the update part to consist of several
+expressions, separated by commas. So we can even count up from 1 to 10 and
+count down from 10 to 1 at the same time!</p>
+
+
+<pre>for ( i=1, j=10;  i &lt;= 10;  i++, j-- ) {
+   System.out.printf("%5d", i); // Output i in a 5-character wide column.
+   System.out.printf("%5d", j); // Output j in a 5-character column.
+   System.out.println();       //     and end the line.
+}</pre>
+
+
+<p>As a final introductory example, let's say that we want to use a <span class="code">for</span> loop that
+prints out just the even numbers between 2 and 20, that is: 2, 4, 6, 8, 10, 12,
+14, 16, 18, 20. There are several ways to do this. Just to show how even a very
+simple problem can be solved in many ways, here are four different solutions
+(three of which would get full credit):</p>
+
+
+<pre> (1)   // There are 10 numbers to print.           
+       // Use a for loop to count 1, 2,            
+       // ..., 10.  The numbers we want            
+       // to print are 2*1, 2*2, ... 2*10.         
+   
+       for (N = 1; N &lt;= 10; N++) {              
+          System.out.println( 2*N );                
+       }
+       
+       
+ (2)   // Use a for loop that counts
+       // 2, 4, ..., 20 directly by
+       // adding 2 to N each time through
+       // the loop.
+       
+       for (N = 2; N &lt;= 20; N = N + 2) {
+          System.out.println( N );
+       }
+       
+       
+ (3)   // Count off all the numbers    
+       // 2, 3, 4, ..., 19, 20, but                
+       // only print out the numbers               
+       // that are even.                           
+    
+       for (N = 2; N &lt;= 20; N++) {               
+          if ( N % 2 == 0 ) // is N even?           
+             System.out.println( N );               
+       } 
+   
+   
+ (4)   // Irritate the professor with
+       // a solution that follows the
+       // letter of this silly assignment
+       // while making fun of it.
+       
+       for (N = 1; N &lt;= 1; N++) {
+          System.out.println("2 4 6 8 10 12 14 16 18 20");
+       }
+</pre>
+
+   
+
+<p>Perhaps it is worth stressing one more time that a <span class="code">for</span> statement,
+like any statement except for a variable declaration, never occurs on its own in a real program. A statement must
+be inside the <span class="code">main</span> routine of a program or inside some other
+subroutine. And that subroutine must be defined inside a class. I should also
+remind you that every variable must be declared before it can be used, and that
+includes the loop control variable in a <span class="code">for</span> statement. In all the
+examples that you have seen so far in this section, the loop control variables
+should be declared to be of type <span class="ptype">int</span>. It is not required that a loop
+control variable be an integer. Here, for example, is a <span class="code">for</span> loop in
+which the variable, <span class="code">ch</span>, is of type <span class="ptype">char</span>, using
+the fact that the <span class="code">++</span> operator can be applied to characters as
+well as to numbers:</p>
+
+
+<pre>// Print out the alphabet on one line of output.
+char ch;  // The loop control variable; 
+          //       one of the letters to be printed.
+for ( ch = 'A';  ch &lt;= 'Z';  ch++ )
+    System.out.print(ch);
+System.out.println();</pre>
+
+
+</div>
+<hr>
+</div>
+
+
+<div id="UMS_TOOLTIP" style="position: absolute; cursor: pointer; z-index: 2147483647; background: transparent; top: -100000px; left: -100000px;"></div></body><umsdataelement id="UMSSendDataEventElement"></umsdataelement><div id="TAG_ID4TOOLBAR_UMS_GUID" style="display: none;">A43BE4F2-3C81-906D-5D45-FD18493E82DB</div><div id="tmtoolbar_ums_injected" style="display: none;">init_ums</div></html>

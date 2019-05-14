@@ -1,0 +1,82 @@
+
+<!-- saved from url=(0041)http://math.hws.edu/javanotes8/c3/s7.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Javanotes 8.0, Section 3.7 -- Introduction to Exceptions and try..catch</title>
+<link type="text/css" rel="stylesheet" href="javanotes.css">
+</head>
+<body>
+<div class="page">
+<div class="content">
+<h3 class="section_title">Section 3.7</h3>
+<h2 class="section_title">Introduction to Exceptions and try..catch</h2>
+<hr class="break">
+
+
+<p>
+<span class="start"><big>I</big>n addition to the control</span> structures that
+determine the normal flow of control in a program, Java has a way to deal
+with "exceptional" cases that throw the flow of control off its normal
+track.  When an error occurs during the execution of a program, the default
+behavior is to terminate the program and to print an error message.  However,
+Java makes it possible to "catch" such errors and program a response different
+from simply letting the program crash.  This is done with the
+<span class="newword">try..catch</span> statement.  In this section, we will
+take a preliminary and incomplete look the <span class="code">try..catch</span> statement,
+leaving out a lot of the rather complex syntax of this statement.
+Error handling is a complex topic, which we will return to in
+<a href="http://math.hws.edu/javanotes8/c8/s3.html">Section&nbsp;8.3</a>, and we will cover the full syntax
+of <span class="code">try..catch</span> at that time.</p>
+   
+
+<hr class="break">
+<h3 class="subsection_title">
+<a name="control.7.1">3.7.1&nbsp;&nbsp;Exceptions</a>
+</h3>
+
+
+<p>The term <span class="newword">exception</span> is used to refer to the type of
+event that one might want to handle with a <span class="code">try..catch</span>.  An
+exception is an exception to the normal flow of control in the program.
+The term is used in preference to "error" because in some cases,
+an exception might not be considered to be an error at all.  You can
+sometimes think of an exception as just another way to organize
+a program.</p>
+   
+
+<p>Exceptions in Java are represented as objects of type <span class="classname">Exception</span>.
+Actual exceptions are usually defined by subclasses of <span class="classname">Exception</span>.
+Different subclasses represent different types of exceptions.  We will look at only
+two types of exception in this section:  <span class="classname">NumberFormatException</span>
+and <span class="classname">IllegalArgumentException</span>.</p>
+   
+
+<p>A <span class="classname">NumberFormatException</span> can occur when an attempt
+is made to convert a string into a number.  Such conversions are done by
+the functions <span class="code">Integer.parseInt</span> and <span class="code">Double.parseDouble</span>.
+(See <a href="http://math.hws.edu/javanotes8/c2/s5.html#basics.5.7">Subsection&nbsp;2.5.7</a>.)  Consider the function call <span class="code">Integer.parseInt(str)</span>
+where <span class="code">str</span> is a variable of type <span class="classname">String</span>.
+If the value of <span class="code">str</span> is the string <span class="code">"42"</span>, then the
+function call will correctly convert the string into the <span class="ptype">int</span>&nbsp;42.
+However, if the value of <span class="code">str</span> is, say, <span class="code">"fred"</span>, the function call 
+will fail because <span class="code">"fred"</span> is not a legal string representation of
+an <span class="ptype">int</span> value.  In this case, an exception of type
+<span class="classname">NumberFormatException</span> occurs.  If nothing is done
+to handle the exception, the program will crash.</p>
+
+
+<p>An <span class="classname">IllegalArgumentException</span> can occur when an illegal
+value is passed as a parameter to a subroutine.  For example, if a subroutine
+requires that a parameter be greater than or equal to zero, an <span class="classname">IllegalArgumentException</span>
+might occur when a negative value is passed to the subroutine.
+How to respond to the illegal value is up to the person who wrote the subroutine, 
+so we can't simply say that every illegal parameter value will result in an
+<span class="classname">IllegalArgumentException</span>.  However, it is a common response.</p>
+
+
+</div>
+<hr>
+</div>
+
+
+<div id="UMS_TOOLTIP" style="position: absolute; cursor: pointer; z-index: 2147483647; background: transparent; top: -100000px; left: -100000px;"></div></body><umsdataelement id="UMSSendDataEventElement"></umsdataelement><div id="TAG_ID4TOOLBAR_UMS_GUID" style="display: none;">06A13793-E62C-5E65-1D8D-62085C592BB8</div><div id="tmtoolbar_ums_injected" style="display: none;">init_ums</div></html>
