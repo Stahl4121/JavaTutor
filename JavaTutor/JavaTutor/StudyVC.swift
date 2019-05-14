@@ -12,10 +12,59 @@ class StudyVC: UIViewController {
     let studentRepo = StudentRepo.instance
     let domainRepo = DomainRepo.instance
     
+    var feedback = ""
+    
     @IBOutlet weak var lblContinueTopic: UILabel!
     @IBOutlet weak var lblImproveTopic: UILabel!
     @IBOutlet weak var lblBrushTopic: UILabel!
     @IBOutlet weak var lblWelcomeBack: UILabel!
+    
+    @IBOutlet weak var lblFeedPop: UILabel!
+    @IBOutlet weak var feedButton: UIBarButtonItem!
+    @IBAction func clickFeedback(_ sender: Any) {
+        showFeedback()
+    }
+    
+    func showFeedback() {
+        // Create alert controller
+        let alertController = UIAlertController(title: "Help Us Improve", message: "Give us your feedback or report a bug", preferredStyle: .alert)
+        // Create 'Enter' action
+        let actionConfirm = UIAlertAction(title: "Enter", style: .default) { (_) in
+            // Create text fields for alerts
+            let name = alertController.textFields?[0].text
+            let feed = alertController.textFields?[1].text
+            // Grab data from user input, saved to feedback for storage
+            self.feedback = "Name: " + name! + "Feedback: " + feed!
+            // Write 'feedback' to Feedback.rtf and save it locally
+            do {
+                let destPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+                let destURL = URL(fileURLWithPath: destPath)
+                let finalDestURL = destURL.appendingPathComponent("Feedback.rtf")
+                try self.feedback.write(to: finalDestURL, atomically: true, encoding: .utf8)
+                //Print Doc Directory
+                //print("Doc Directory: \(finalDestURL)")
+            }
+            // Catch if something in feedback breaks
+            catch {
+                print("Error")
+            }
+        }
+        // Create 'Cancel' action
+        let actionCancel = UIAlertAction(title: "Cancel", style: .cancel) { (_) in }
+        // Add Name text field
+        alertController.addTextField { (textField) in
+            textField.placeholder = "Enter Name"
+        }
+        // Add Feedback text field
+        alertController.addTextField { (textField) in
+            textField.placeholder = "Enter Feedback"
+        }
+        // Add actions to alert controller
+        alertController.addAction(actionConfirm)
+        alertController.addAction(actionCancel)
+        // Show alert on call
+        self.present(alertController, animated: true, completion: nil)
+    }
     
     var segueIdxModule : Int = 0
     var segueIdxLesson : Int = -1

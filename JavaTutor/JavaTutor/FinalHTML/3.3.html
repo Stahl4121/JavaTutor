@@ -1,0 +1,351 @@
+
+<!-- saved from url=(0041)http://math.hws.edu/javanotes8/c3/s1.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Javanotes 8.0, Section 3.1 -- Blocks, Loops, and Branches</title>
+<link type="text/css" rel="stylesheet" href="javanotes.css">
+</head>
+<body>
+<div class="page">
+
+<div class="content">
+<h3 class="section_title">Section 3.1</h3>
+<h2 class="section_title">Blocks, Loops, and Branches</h2>
+<hr class="break">
+
+<h3 class="subsection_title">
+<a name="control.1.2">3.1.2&nbsp;&nbsp;The Basic While Loop</a>
+</h3>
+
+
+<p>The block statement by itself really doesn't affect the flow of control in a
+program. The five remaining control structures do. They can be divided into two
+classes: loop statements and branching statements. You really just need one
+control structure from each category in order to have a completely
+general-purpose programming language. More than that is just convenience. In
+this section, I'll introduce the <span class="code">while</span> loop and the <span class="code">if</span>
+statement. I'll give the full details of these statements and of the other
+three control structures in later sections.</p>
+
+
+<p>A <span class="newword">while loop</span> is used to repeat a given
+statement over and over. Of course, it's not likely that you would want to keep
+repeating it forever. That would be an <span class="newword">infinite loop</span>, which is 
+generally a bad thing. (There is an old story about
+computer pioneer Grace Murray Hopper, who read instructions on a bottle of
+shampoo telling her to "lather, rinse, repeat." As the story goes, she claims
+that she tried to follow the directions, but she ran out of shampoo. (In case
+you don't get it, she was making a joke about the way that computers mindlessly follow
+instructions.))</p>
+
+
+<p>To be more specific, a <span class="code">while</span> loop will repeat a statement over and
+over, but only so long as a specified condition remains true. A <span class="code">while</span>
+loop has the form:</p>
+
+
+<pre>while (<span class="bnf">boolean-expression</span>)
+     <span class="bnf">statement</span>
+</pre>
+
+
+<p>Since the statement can be, and usually is, a block, most <span class="code">while</span>
+loops have the form:</p>
+
+
+<pre>while (<span class="bnf">boolean-expression</span>) {
+    <span class="bnf">statements</span>
+}</pre>
+
+
+<p>Some programmers think that the braces should always be included as a matter
+of style, even when there is only one statement between them, but I don't always
+follow that advice myself.</p>
+
+
+<p>The semantics of the <span class="code">while</span> statement go like this: When the computer comes to a
+<span class="code">while</span> statement, it evaluates the <span class="bnf">boolean-expression</span>, 
+which yields either <span class="code">true</span> or
+<span class="code">false</span> as its value. If the value is <span class="code">false</span>, the computer skips
+over the rest of the <span class="code">while</span> loop and proceeds to the next command in
+the program. If the value of the expression is <span class="code">true</span>, the computer
+executes the <span class="bnf">statement</span> or block of <span class="bnf">statements</span> inside the loop. Then it returns to the
+beginning of the <span class="code">while</span> loop and repeats the process. That is, it
+re-evaluates the <span class="bnf">boolean-expression</span>, ends the
+loop if the value is <span class="code">false</span>, and continues it if the value is
+<span class="code">true</span>. This will continue over and over until the value of the
+expression is <span class="code">false</span> when the computer evaluates it; if that never happens, then there will be an
+infinite loop.</p>
+
+
+<p>Here is an example of a <span class="code">while</span> loop that simply prints out the
+numbers 1, 2, 3, 4, 5:</p>
+
+
+<pre>int number;   // The number to be printed.
+number = 1;   // Start with 1.
+while ( number &lt; 6 ) {  // Keep going as long as number is &lt; 6.
+    System.out.println(number);
+    number = number + 1;  // Go on to the next number.
+}
+System.out.println("Done!");</pre>
+
+
+<p>The variable <span class="code">number</span> is initialized with the value&nbsp;1. So 
+when the computer evaluates the
+expression "<span class="code">number&nbsp;&lt;&nbsp;6</span>" for the first time, 
+it is asking whether 1 is less than 6, which is
+<span class="code">true</span>. The computer therefore proceeds to execute the two statements
+inside the loop. The first statement prints out "1". The second statement adds
+1 to <span class="code">number</span> and stores the result back into the variable
+<span class="code">number</span>; the value of <span class="code">number</span> has been changed to 2. The
+computer has reached the end of the loop, so it returns to the beginning and
+asks again whether <span class="code">number</span> is less than 6. Once again this is true, so
+the computer executes the loop again, this time printing out 2 as the value of
+<span class="code">number</span> and then changing the value of <span class="code">number</span> to 3. It
+continues in this way until eventually <span class="code">number</span> becomes equal to 6. At
+that point, the expression "<span class="code">number&nbsp;&lt;&nbsp;6</span>" evaluates to <span class="code">false</span>. So, the
+computer jumps past the end of the loop to the next statement and prints out
+the message "Done!". Note that when the loop ends, the value of <span class="code">number</span>
+is 6, but the last value that was printed was 5.</p>
+
+
+<p>By the way, you should remember that you'll never see a <span class="code">while</span> loop
+standing by itself in a real program. It will always be inside a subroutine
+which is itself defined inside some class. As an example of a <span class="code">while</span>
+loop used inside a complete program, here is a little program that computes the
+interest on an investment over several years. This is an improvement over
+examples from the previous chapter that just reported the results for one
+year:</p>
+
+
+<pre>import textio.TextIO;
+
+/**
+ *  This class implements a simple program that will compute the amount of 
+ *  interest that is earned on an investment over a period of 5 years.  The 
+ *  initial amount of the investment and the interest rate are input by the 
+ *  user.  The value of the investment at the end of each year is output.
+ */ 
+public class Interest3 {
+     
+ 
+   public static void main(String[] args) {
+  
+      double principal;  // The value of the investment.
+      double rate;       // The annual interest rate.
+      
+      /* Get the initial investment and interest rate from the user. */
+      
+      System.out.print("Enter the initial investment: ");
+      principal = TextIO.getlnDouble();
+      
+      System.out.println();
+      System.out.println("Enter the annual interest rate.");
+      System.out.print("Enter a decimal, not a percentage: ");
+      rate = TextIO.getlnDouble();
+      System.out.println();
+      
+      /* Simulate the investment for 5 years. */
+      
+      int years;  // Counts the number of years that have passed.
+      
+      years = 0;
+      while (years &lt; 5) {
+         double interest;  // Interest for this year.
+         interest = principal * rate;
+         principal = principal + interest;     // Add it to principal.
+         years = years + 1;    // Count the current year.
+         System.out.print("The value of the investment after ");
+         System.out.print(years);
+         System.out.print(" years is $");
+         System.out.printf("%1.2f", principal);
+         System.out.println();
+      } // end of while loop
+                       
+   } // end of main()
+        
+} // end of class Interest3
+</pre>
+ 
+ 
+<hr>  
+<h3 class="subsection_title">
+<a name="control.3.1">3.3.1&nbsp;&nbsp;The while Statement</a>
+</h3>
+
+
+<p>The <span class="code">while</span> statement was already introduced in <a href="http://math.hws.edu/javanotes8/c3/s1.html">Section&nbsp;3.1</a>. 
+A <span class="code">while</span> loop has the form</p>
+
+
+<pre>while ( <span class="bnf">boolean-expression</span> )
+   <span class="bnf">statement</span>
+</pre>
+
+
+<p>The <span class="bnf">statement</span> can, of course, be a block
+statement consisting of several statements grouped together between a pair of
+braces. This statement is called the <span class="newword">body of the loop</span>. 
+The body of the loop is repeated as long as the <span class="bnf">boolean-expression</span> is true. This boolean expression is
+called the <span class="newword">continuation condition</span>, or more simply
+the <span class="newword">test</span>, of the loop. There are a few points that
+might need some clarification. What happens if the condition is false in the
+first place, before the body of the loop is executed even once? In that case,
+the body of the loop is never executed at all. The body of a while loop can be
+executed any number of times, including zero. What happens if the condition is
+true, but it becomes false somewhere in the <b>middle</b> of the loop
+body? Does the loop end as soon as this happens? It doesn't, because the
+computer continues executing the body of the loop until it gets to the end.
+Only then does it jump back to the beginning of the loop and test the
+condition, and only then can the loop end.</p>
+
+
+<p>Let's look at a typical problem that can be solved using a <span class="code">while</span>
+loop: finding the average of a set of positive integers entered by the user.
+The average is the sum of the integers, divided by the number of integers. The
+program will ask the user to enter one integer at a time. It will keep count of
+the number of integers entered, and it will keep a running total of all the
+numbers it has read so far. Here is a pseudocode algorithm for the program:</p>
+
+
+<pre>Let sum = 0     // The sum of the integers entered by the user.
+Let count = 0   // The number of integers entered by the user.
+while there are more integers to process:
+    Read an integer
+    Add it to the sum
+    Count it
+Divide sum by count to get the average
+Print out the average</pre>
+
+
+<p>But how can we test whether there are more integers to process? A typical
+solution is to tell the user to type in zero after all the data have been
+entered. This will work because we are assuming that all the data are positive
+numbers, so zero is not a legal data value. The zero is not itself part of the
+data to be averaged. It's just there to mark the end of the real data. A data
+value used in this way is sometimes called a <span class="newword">sentinel value</span>. 
+So now the test in the while loop becomes "while the input
+integer is not zero". But there is another problem! The first time the test is
+evaluated, before the body of the loop has ever been executed, no integer has
+yet been read. There is no "input integer" yet, so testing whether the input
+integer is zero doesn't make sense. So, we have to do something
+<b>before</b> the while loop to make sure that the test makes sense.
+Setting things up so that the test in a <span class="code">while</span> loop makes sense the
+first time it is executed is called <span class="newword">priming the loop</span>. 
+In this case, we can simply read the first integer before the
+beginning of the loop. Here is a revised algorithm:</p>
+
+
+<pre>Let sum = 0
+Let count = 0
+Read an integer
+while the integer is not zero:
+    Add the integer to the sum
+    Count it
+    Read an integer
+Divide sum by count to get the average
+Print out the average</pre>
+
+
+<p>Notice that I've rearranged the body of the loop. Since an integer is read
+before the loop, the loop has to begin by processing that integer. At the end
+of the loop, the computer reads a new integer. The computer then jumps back to
+the beginning of the loop and tests the integer that it has just read. Note
+that when the computer finally reads the sentinel value, the loop ends before
+the sentinel value is processed. It is not added to the sum, and it is not
+counted. This is the way it's supposed to work. The sentinel is not part of the
+data. The original algorithm, even if it could have been made to work without
+priming, was incorrect since it would have summed and counted all the integers,
+including the sentinel. (Since the sentinel is zero, the sum would still be
+correct, but the count would be off by one. Such so-called <span class="newword">off-by-one errors</span> 
+are very common. Counting turns out to be
+harder than it looks!)</p>
+
+
+<p>We can easily turn the algorithm into a complete program. Note that the
+program cannot use the statement "<span class="code">average&nbsp;=&nbsp;sum/count</span>;" to compute the
+average. Since <span class="code">sum</span> and <span class="code">count</span> are both variables of type
+<span class="ptype">int</span>, the value of <span class="code">sum/count</span> is an integer. The average should
+be a real number. We've seen this problem before: we have to convert one of the
+<span class="ptype">int</span> values to a <span class="ptype">double</span> to force the computer to compute the
+quotient as a real number. This can be done by type-casting one of the
+variables to type <span class="ptype">double</span>. The type cast "(double)sum" converts the
+value of <span class="code">sum</span> to a real number, so in the program the average is
+computed as "<span class="code">average&nbsp;= ((double)sum)&nbsp;/&nbsp;count</span>;". Another solution in
+this case would have been to declare <span class="code">sum</span> to be a variable of type
+<span class="ptype">double</span> in the first place.</p>
+
+
+<p>One other issue is addressed by the program: If the user enters zero as the
+first input value, there are no data to process. We can test for this case by
+checking whether <span class="code">count</span> is still equal to zero after the <span class="code">while</span>
+loop. This might seem like a minor point, but a careful programmer should cover
+all the bases.</p>
+
+
+
+<p>Here is the full source code for the program (with comments added, of course!):</p>
+
+
+<pre>import textio.TextIO;
+
+/**
+ * This program reads a sequence of positive integers input
+ * by the user, and it will print out the average of those
+ * integers.  The user is prompted to enter one integer at a
+ * time.  The user must enter a 0 to mark the end of the
+ * data.  (The zero is not counted as part of the data to
+ * be averaged.)  The program does not check whether the
+ * user's input is positive, so it will actually add up
+ * both positive and negative input values.
+ */
+public class ComputeAverage {
+        
+   public static void main(String[] args) {
+      
+      int inputNumber;   // One of the integers input by the user.
+      int sum;           // The sum of the positive integers.
+      int count;         // The number of positive integers.
+      double average;    // The average of the positive integers.
+      
+      /* Initialize the summation and counting variables. */
+      
+      sum = 0;
+      count = 0;
+      
+      /* Read and process the user's input. */
+      
+      System.out.print("Enter your first positive integer: ");
+      inputNumber = TextIO.getlnInt();
+      
+      while (inputNumber != 0) {
+         sum += inputNumber;   // Add inputNumber to running sum.
+         count++;              // Count the input by adding 1 to count.
+         System.out.print("Enter your next positive integer, or 0 to end: ");
+         inputNumber = TextIO.getlnInt();
+      }
+      
+      /* Display the result. */
+      
+      if (count == 0) {
+         System.out.println("You didn't enter any data!");
+      }
+      else {
+         average = ((double)sum) / count;
+         System.out.println();
+         System.out.println("You entered " + count + " positive integers.");
+         System.out.printf("Their average is %1.3f.\n", average);
+      }
+ 
+   } // end main()
+   
+} // end class ComputeAverage</pre>
+ 
+
+<p>You should study this program, and make sure that you understand what the
+computer does step-by-step as it executes the <span class="code">while</span> loop.</p>
+<hr class="break">
+
+
+<div id="UMS_TOOLTIP" style="position: absolute; cursor: pointer; z-index: 2147483647; background: transparent; top: -100000px; left: -100000px;"></div></body><umsdataelement id="UMSSendDataEventElement"></umsdataelement><div id="TAG_ID4TOOLBAR_UMS_GUID" style="display: none;">2EFA1500-0965-CCF6-746C-34750E1F9CC9</div><div id="tmtoolbar_ums_injected" style="display: none;">init_ums</div></html>

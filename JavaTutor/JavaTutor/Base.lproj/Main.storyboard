@@ -1844,8 +1844,15 @@
                         <viewLayoutGuide key="safeArea" id="Ed4-26-O9b"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Study" image="study.png" id="uLc-Qd-OXy"/>
-                    <navigationItem key="navigationItem" title="AP Study" id="gXv-fr-5U9"/>
+                    <navigationItem key="navigationItem" title="AP Study" id="gXv-fr-5U9">
+                        <barButtonItem key="rightBarButtonItem" title="Feedback" id="ZPv-qV-bXR">
+                            <connections>
+                                <action selector="clickFeedback:" destination="Vo3-nK-HeL" id="X1i-fs-3ll"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="feedButton" destination="ZPv-qV-bXR" id="ajI-mu-s7s"/>
                         <outlet property="lblBrushTopic" destination="ZbO-jH-GRW" id="Q1K-DH-0mL"/>
                         <outlet property="lblContinueTopic" destination="y5Q-45-Q7p" id="033-OS-6yI"/>
                         <outlet property="lblImproveTopic" destination="ihV-XA-D0q" id="9lc-VM-agP"/>

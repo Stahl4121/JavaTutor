@@ -1,0 +1,122 @@
+
+<!-- saved from url=(0041)http://math.hws.edu/javanotes8/c3/s8.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Javanotes 8.0, Section 3.8 -- Introduction to Arrays</title>
+<link type="text/css" rel="stylesheet" href="javanotes.css">
+</head>
+<body>
+<div class="page">
+<div class="content">
+<h3 class="section_title">Section 3.8</h3>
+<h2 class="section_title">Introduction to Arrays</h2>
+
+<hr class="break">
+<h3 class="subsection_title">
+<a name="control.7a.2">3.8.2&nbsp;&nbsp;Arrays and For Loops</a>
+</h3>
+
+
+<p>A lot of the real power of arrays comes from the fact that
+the index of an element can be given by an integer variable or
+even an integer-valued expression.  For example, if <span class="code">list</span>
+is an array and <span class="code">i</span> is a variable of type <span class="ptype">int</span>,
+then you can use <span class="code">list[i]</span> and even <span class="code">list[2*i+1]</span>
+as variable names.  The meaning of <span class="code">list[i]</span> depends on
+the value of <span class="code">i</span>.  This becomes especially useful when we want to
+process all the elements of an array, since that can be
+done with a <span class="code">for</span> loop.  For example, to print out
+all the items in an array, <span class="code">list</span>, we can just
+write</p>
+
+
+<pre>int i;  // the array index
+for (i = 0; i &lt; list.length; i++) {
+    System.out.println( list[i] );
+}</pre>
+
+
+<p>The first time through the loop, <span class="code">i</span> is 0, and <span class="code">list[i]</span>
+refers to <span class="code">list[0]</span>. So, it is the value stored in the variable
+<span class="code">list[0]</span> that is printed. The second time through the loop, <span class="code">i</span>
+is 1, and the value stored in <span class="code">list[1]</span> is printed. If the length of the list is 5, then the loop ends after
+printing the value of <span class="code">list[4]</span>, when <span class="code">i</span> becomes equal to 5 and
+the continuation condition "<span class="code">i&nbsp;&lt;&nbsp;list.length</span>" is no longer true. This
+is a typical example of using a loop to process an array.</p>
+
+
+<p>Let's look at a few more examples.  Suppose that <span class="code">A</span> is an array
+of <span class="ptype">double</span>, and we want to find the average of all the elements of
+the array.  We can use a <span class="code">for</span> loop to add up the numbers, and then
+divide by the length of the array to get the average:</p>
+
+
+<pre>double total;    // The sum of the numbers in the array.
+double average;  // The average of the numbers.
+int i;  // The array index.
+total = 0;
+for ( i = 0; i &lt; A.length; i++ ) {
+    total = total + A[i];  // Add element number i to the total.
+}
+average = total / A.length;  // A.length is the number of items</pre>
+
+
+<p>Another typical problem is to find the largest number in the array <span class="code">A</span>. The
+strategy is to go through the array, keeping track of the largest number found
+so far. We'll store the largest number found so far in a variable called
+<span class="code">max</span>. As we look through the array, whenever we find a number larger
+than the current value of <span class="code">max</span>, we change the value of <span class="code">max</span> to
+that larger value. After the whole array has been processed, <span class="code">max</span> is
+the largest item in the array overall. The only question is, what should the
+original value of <span class="code">max</span> be? One possibility is to start with
+<span class="code">max</span> equal to <span class="code">A[0]</span>, and then to look through the rest of the
+array, starting from <span class="code">A[1]</span>, for larger items:</p>
+
+
+<pre>double max;  // The largest number seen so far.
+max = A[0];   // At first, the largest number seen is A[0].
+int i;
+for ( i = 1; i &lt; A.length; i++ ) {
+    if (A[i] &gt; max) {
+       max = A[i];
+    }
+}
+// at this point, max is the largest item in A</pre>
+
+
+<p>Sometimes, you only want to process some elements of the array.  In that
+case, you can use an <span class="code">if</span> statement inside the <span class="code">for</span>
+loop to decide whether or not to process a given element.  Let's look
+at the problem of averaging the elements of an array, but this time,
+suppose that we only want to average the non-zero elements.  In this case,
+the number of items that we add up can be less than the length of the array,
+so we will need to keep a count of the number of items added to the sum:</p>
+
+
+<pre>double total;    // The sum of the non-zero numbers in the array.
+int count;       // The number of non-zero numbers.
+double average;  // The average of the non-zero numbers.
+int i;
+total = 0;
+count = 0;
+for ( i = 0; i &lt; A.length; i++ ) {
+    if ( A[i] != 0 ) {
+        total = total + A[i];  // Add element to the total
+        count = count + 1;     //      and count it.
+    }
+}
+if (count == 0) {
+    System.out.println("There were no non-zero elements.");
+}
+else {
+    average = total / count;  // Divide by number of items
+    System.out.printf("Average of %d elements is %1.5g%n",
+                            count, average);
+}</pre>
+
+</div>
+<hr>
+</div>
+
+
+<div id="UMS_TOOLTIP" style="position: absolute; cursor: pointer; z-index: 2147483647; background: transparent; top: -100000px; left: -100000px;"></div></body><umsdataelement id="UMSSendDataEventElement"></umsdataelement><div id="TAG_ID4TOOLBAR_UMS_GUID" style="display: none;">8D5CDFEF-E321-A3CA-91A7-1C5033B866C6</div><div id="tmtoolbar_ums_injected" style="display: none;">init_ums</div></html>

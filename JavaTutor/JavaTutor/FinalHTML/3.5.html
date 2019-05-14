@@ -1,0 +1,103 @@
+
+<!-- saved from url=(0041)http://math.hws.edu/javanotes8/c3/s3.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Javanotes 8.0, Section 3.3 -- The while and do..while Statements</title>
+<link type="text/css" rel="stylesheet" href="javanotes.css">
+</head>
+<body>
+<div class="page">
+<div class="content">
+<h3 class="section_title">Section 3.3</h3>
+<h2 class="section_title">The while and do..while Statements</h2>
+<hr class="break">
+
+<h3 class="subsection_title">
+<a name="control.3.3">3.3.3&nbsp;&nbsp;break and continue</a>
+</h3>
+
+
+<p>The syntax of the <span class="code">while</span> and <span class="code">do..while</span> loops allows you to
+test the continuation condition at either the beginning of a loop or at the
+end. Sometimes, it is more natural to have the test in the middle of the loop,
+or to have several tests at different places in the same loop. Java provides a
+general method for breaking out of the middle of any loop. It's called the
+<span class="code">break</span> statement, which takes the form</p>
+
+
+<pre>break;</pre>
+
+
+<p>When the computer executes a <span class="code">break</span> statement in a loop, it will
+immediately jump out of the loop. It then continues on to whatever follows the
+loop in the program. Consider for example:</p>
+
+
+<pre>while (true) {  // looks like it will run forever!
+   System.out.print("Enter a positive number: ");
+   N = TextIO.getlnInt();
+   if (N &gt; 0)   // the input value is OK, so jump out of loop
+      break;
+   System.out.println("Your answer must be &gt; 0.");
+}
+// continue here after break</pre>
+
+
+<p>If the number entered by the user is greater than zero, the <span class="code">break</span>
+statement will be executed and the computer will jump out of the loop.
+Otherwise, the computer will print out "Your answer must be &gt; 0." and will
+jump back to the start of the loop to read another input value.</p>
+
+
+<p>The first line of this loop, "<span class="code">while&nbsp;(true)</span>" might look a bit
+strange, but it's perfectly legitimate. The condition in a <span class="code">while</span> loop
+can be any boolean-valued expression. The computer evaluates this expression
+and checks whether the value is <span class="code">true</span> or <span class="code">false</span>. The boolean
+literal "<span class="code">true</span>" is just a boolean expression that always evaluates to
+true. So "<span class="code">while&nbsp;(true)</span>" can be used to write an infinite loop, or one
+that will be terminated by a <span class="code">break</span> statement.</p>
+
+
+<p>A <span class="code">break</span> statement terminates the loop that immediately encloses the
+<span class="code">break</span> statement. It is possible to have <span class="newword">nested</span> loops, 
+where one loop statement is contained inside
+another. If you use a <span class="code">break</span> statement inside a nested loop, it will
+only break out of that loop, not out of the loop that contains the nested loop. 
+There is something called a <span class="newword">labeled break</span> statement that allows you to
+specify which loop you want to break. This is not very common, so I will go over it quickly.
+Labels work like this:  You can put a <span class="newword">label</span> in
+front of any loop.  A label consists of a simple identifier followed
+by a colon.  For example, a <span class="code">while</span> with a label might
+look like "<span class="code">mainloop:&nbsp;while...</span>".  Inside
+this loop you can use the labeled break statement "<span class="code">break&nbsp;mainloop;</span>"
+to break out of the labeled loop.  For example, here is a code segment that checks
+whether two strings, <span class="code">s1</span> and <span class="code">s2</span>, have a character in common.
+If a common character is found, the value of the flag variable <span class="code">nothingInCommon</span>
+is set to <span class="code">false</span>, and a labeled break is used to end the processing
+at that point:</p>
+
+
+<pre>boolean nothingInCommon;
+nothingInCommon = true;  // Assume s1 and s2 have no chars in common.
+int i,j;  // Variables for iterating through the chars in s1 and s2.
+
+i = 0;
+bigloop: while (i &lt; s1.length()) {
+   j = 0;
+   while (j &lt; s2.length()) {
+      if (s1.charAt(i) == s2.charAt(j)) { // s1 and s2 have a common char...
+          nothingInCommon = false;  // so nothingInCommon is actually false.
+          break bigloop;  // break out of BOTH loops
+      }
+      j++;  // Go on to the next char in s2.
+   }
+   i++;  //Go on to the next char in s1.
+}</pre>
+   
+
+</div>
+<hr>
+</div>
+
+
+<div id="UMS_TOOLTIP" style="position: absolute; cursor: pointer; z-index: 2147483647; background: transparent; top: -100000px; left: -100000px;"></div></body><umsdataelement id="UMSSendDataEventElement"></umsdataelement><div id="TAG_ID4TOOLBAR_UMS_GUID" style="display: none;">0FFDDE4F-F252-1AD3-D8FF-B0584287C22A</div><div id="tmtoolbar_ums_injected" style="display: none;">init_ums</div></html>

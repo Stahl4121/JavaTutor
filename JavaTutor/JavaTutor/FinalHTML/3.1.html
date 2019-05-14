@@ -1,0 +1,93 @@
+
+<!-- saved from url=(0041)http://math.hws.edu/javanotes8/c3/s1.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Javanotes 8.0, Section 3.1 -- Blocks, Loops, and Branches</title>
+<link type="text/css" rel="stylesheet" href="javanotes.css">
+</head>
+<body>
+<div class="page">
+<div class="content">
+<h3 class="section_title">Section 3.1</h3>
+<h2 class="section_title">Blocks, Loops, and Branches</h2>
+<hr class="break">
+
+
+<h3 class="subsection_title">
+<a name="control.1.1">3.1.1&nbsp;&nbsp;Blocks</a>
+</h3>
+
+
+<p>The <span class="newword">block</span> is the simplest type of structured
+statement. Its purpose is simply to group a sequence of statements into a
+single statement. The format of a block is:</p>
+
+
+<pre>{
+     <span class="bnf">statements</span>
+}</pre>
+
+
+<p>That is, it consists of a sequence of statements enclosed between a pair of
+braces, "{" and "}". In fact, it is possible for a block to contain no
+statements at all; such a block is called an <span class="newword">empty block</span>, 
+and can actually be useful at times. An empty block consists of
+nothing but an empty pair of braces. Block statements usually occur inside
+other statements, where their purpose is to group together several statements
+into a unit. However, a block can be legally used wherever a statement can
+occur. There is one place where a block is required: As you might have already
+noticed in the case of the <span class="code">main</span> subroutine of a program, the
+definition of a subroutine is a block, since it is a sequence of statements
+enclosed inside a pair of braces.</p>
+
+
+<p>I should probably note again at this point that Java is what is called a
+free-format language. There are no syntax rules about how the language has to
+be arranged on a page. So, for example, you could write an entire block on one
+line if you want. But as a matter of good programming style, you should lay out
+your program on the page in a way that will make its structure as clear as
+possible. In general, this means putting one statement per line and using
+indentation to indicate statements that are contained inside control
+structures. This is the format that I will use in my examples.</p>
+
+
+<p>Here are two examples of blocks:</p>
+
+
+<pre>{
+   System.out.print("The answer is ");
+   System.out.println(ans);
+}
+  
+ 
+{  // This block exchanges the values of x and y
+   int temp;      // A temporary variable for use in this block.
+   temp = x;      // Save a copy of the value of x in temp.
+   x = y;         // Copy the value of y into x.
+   y = temp;      // Copy the value of temp into y.
+}</pre>
+
+
+<p>In the second example, a variable, <span class="code">temp</span>, is declared inside the
+block. This is perfectly legal, and it is good style to declare a variable
+inside a block if that variable is used nowhere else but inside the block. A
+variable declared inside a block is completely inaccessible and invisible from
+outside that block. When the computer executes the variable declaration
+statement, it allocates memory to hold the value of the variable (at least conceptually). When the
+block ends, that memory is discarded (that is, made available for reuse). The
+variable is said to be <span class="newword">local</span> to the block. There
+is a general concept called the "scope" of an identifier. The <span class="newword">scope</span> 
+of an identifier is the part of the program in which
+that identifier is valid. The scope of a variable defined inside a block is
+limited to that block, and more specifically to the part of the block that
+comes after the declaration of the variable.</p
+
+
+
+
+</div>
+<hr>
+</div>
+
+
+<div id="UMS_TOOLTIP" style="position: absolute; cursor: pointer; z-index: 2147483647; background: transparent; top: -100000px; left: -100000px;"></div></body><umsdataelement id="UMSSendDataEventElement"></umsdataelement><div id="TAG_ID4TOOLBAR_UMS_GUID" style="display: none;">2EFA1500-0965-CCF6-746C-34750E1F9CC9</div><div id="tmtoolbar_ums_injected" style="display: none;">init_ums</div></html>

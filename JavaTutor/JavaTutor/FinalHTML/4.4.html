@@ -1,0 +1,108 @@
+
+<!-- saved from url=(0041)http://math.hws.edu/javanotes8/c3/s8.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Javanotes 8.0, Section 3.8 -- Introduction to Arrays</title>
+<link type="text/css" rel="stylesheet" href="javanotes.css">
+</head>
+<body>
+<div class="page">
+<div class="content">
+<h3 class="section_title">Section 3.8</h3>
+<h2 class="section_title">Introduction to Arrays</h2>
+<hr class="break">
+
+<h3 class="subsection_title">
+<a name="control.7a.4">3.8.4&nbsp;&nbsp;Partially Full Arrays</a>
+</h3>
+
+
+<p>Consider an application where the number of items that we want to store in
+an array changes as the program runs. Since the size of the array can't
+be changed, a separate counter variable must be used to keep track of
+how many spaces in the array are in use. (Of course, every space in the array
+has to contain something; the question is, how many spaces contain useful or
+valid items?)</p>
+
+
+<p>Consider, for example, a program that reads positive integers entered by the
+user and stores them for later processing. The program stops reading when the
+user inputs a number that is less than or equal to zero. The input numbers can
+be kept in an array, <span class="code">numbers</span>, of type <span class="atype">int[]</span>. Let's say that
+no more than 100 numbers will be input. Then the size of the array can be fixed
+at 100. But the program must keep track of how many numbers have actually been
+read and stored in the array. For this, it can use an integer variable.
+Each time a number is stored in the array, we have to count it;
+that is, value of the counter variable must be incremented by one. 
+One question is, when we add a new item to the array, where do we put
+it?  Well, if the number of items is <span class="code">count</span>, then they would
+be stored in the array in positions number 0, 1, ..., (count-1).
+The next open spot would be position number <span class="code">count</span>, so that's
+where we should put the new item.</p>
+
+
+<p>As a rather silly example, let's write a program that
+will read the numbers input by the user and then print them in the reverse of the
+order in which they were entered.  Assume that an input value equal to zero
+marks the end of the data.
+(This is, at least, a processing task that requires that the numbers be saved
+in an array. Note that many types of processing, such as finding the sum or
+average or maximum of the numbers, can be done without saving the individual
+numbers.)</p>
+
+
+<pre>import textio.TextIO;
+
+public class ReverseInputNumbers {
+
+   public static void main(String[] args) {
+   
+     int[] numbers;  // An array for storing the input values.
+     int count;      // The number of numbers saved in the array.
+     int num;        // One of the numbers input by the user.
+     int i;          // for-loop variable.
+     
+     numbers = new int[100];   // Space for 100 ints.
+     count = 0;                // No numbers have been saved yet.
+     
+     System.out.println("Enter up to 100 positive integers; enter 0 to end.");
+     
+     while (true) {   // Get the numbers and put them in the array.
+        System.out.print("? ");
+        num = TextIO.getlnInt();
+        if (num &lt;= 0) {
+              // Zero marks the end of input; we have all the numbers.
+           break;
+        }
+        numbers[count] = num;  // Put num in position count.
+        count++;  // Count the number
+     }
+     
+     System.out.println("\nYour numbers in reverse order are:\n");
+     
+     for ( i = count - 1; i &gt;= 0; i-- ) {
+         System.out.println( numbers[i] );
+     }
+     
+   } // end main();
+   
+}  // end class ReverseInputNumbers</pre>
+
+
+<p>It is especially important to note how the variable <span class="code">count</span> plays a
+dual role. It is the number of items that have been entered into the array.
+But it is also the index of the next available spot in the array.</p>
+
+
+<p> When the time comes to print
+out the numbers in the array, the last occupied spot in the array is location
+<span class="code">count&nbsp;-&nbsp;1</span>, so the <span class="code">for</span> loop prints out values starting from
+location <span class="code">count&nbsp;-&nbsp;1</span> and going down to 0.  This is also a nice
+example of processing the elements of an array in reverse order.</p>
+
+</div>
+<hr>
+</div>
+
+
+<div id="UMS_TOOLTIP" style="position: absolute; cursor: pointer; z-index: 2147483647; background: transparent; top: -100000px; left: -100000px;"></div></body><umsdataelement id="UMSSendDataEventElement"></umsdataelement><div id="TAG_ID4TOOLBAR_UMS_GUID" style="display: none;">8D5CDFEF-E321-A3CA-91A7-1C5033B866C6</div><div id="tmtoolbar_ums_injected" style="display: none;">init_ums</div></html>

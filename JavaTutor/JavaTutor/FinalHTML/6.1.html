@@ -1,0 +1,205 @@
+
+<!-- saved from url=(0041)http://math.hws.edu/javanotes8/c5/s1.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Javanotes 8.0, Section 5.1 -- Objects, Instance Methods, and Instance Variables</title>
+<link type="text/css" rel="stylesheet" href="javanotes.css">
+</head>
+<body>
+<div class="page">
+<div class="content">
+<h3 class="section_title">Section 5.1</h3>
+<h2 class="section_title">Objects, Instance Methods, and Instance Variables</h2>
+<hr class="break">
+
+
+<p>
+<span class="start"><big>O</big>bject-oriented programming</span> (OOP) represents an
+attempt to make programs more closely model the way people think about and deal
+with the world. In the older styles of programming, a programmer who is faced
+with some problem must identify a computing task that needs to be performed in
+order to solve the problem. Programming then consists of finding a sequence of
+instructions that will accomplish that task. But at the heart of
+object-oriented programming, instead of tasks we find objects—entities that
+have behaviors, that hold information, and that can interact with one another.
+Programming consists of designing a set of objects that somehow model the
+problem at hand. Software objects in the program can represent real or abstract
+entities in the problem domain. This is supposed to make the design of the
+program more natural and hence easier to get right and easier to
+understand.</p>
+
+
+<p>To some extent, OOP is just a change in point of view. We can think of an
+object in standard programming terms as nothing more than a set of variables
+together with some subroutines for manipulating those variables. In fact, it is
+possible to use object-oriented techniques in any programming language.
+However, there is a big difference between a language that makes OOP possible
+and one that actively supports it. An object-oriented programming language such
+as Java includes a number of features that make it very different from a
+standard language. In order to make effective use of those features, you have
+to "orient" your thinking correctly.</p>
+
+
+<p>As I have mentioned before, in the context of object-oriented programming,
+subroutines are often referred to as <span class="newword">methods</span>.  Now that
+we are starting to use objects, I will be using the term "method" more often
+than "subroutine."</p>
+
+
+<hr class="break">
+<h3 class="subsection_title">
+<a name="OOP.1.1">5.1.1&nbsp;&nbsp;Objects, Classes, and Instances</a>
+</h3>
+
+
+<p>Objects are closely related to classes. We have already been working with
+classes for several chapters, and we have seen that a class can contain
+variables and methods (that is, subroutines). If an object is also a collection of variables and
+methods, how do they differ from classes? And why does it require a
+different type of thinking to understand and use them effectively? In the one
+section where we worked with objects rather than classes, 
+<a href="http://math.hws.edu/javanotes8/c3/s9.html">Section&nbsp;3.9</a>, it didn't seem to make much difference: We
+just left the word "<span class="code">static</span>" out of the subroutine definitions!</p>
+
+
+<p>I have said that classes "describe" objects, or more exactly that the
+non-static portions of classes describe objects. But it's probably not very
+clear what this means. The more usual terminology is to say that objects
+<span class="newword">belong to</span> classes, but this might not be much
+clearer. (There is a real shortage of English words to properly distinguish all
+the concepts involved. An object certainly doesn't "belong" to a class in the
+same way that a member variable "belongs" to a class.) From the point of view
+of programming, it is more exact to say that classes are used to create
+objects. A class is a kind of factory—or blueprint—for constructing objects. The non-static
+parts of the class specify, or describe, what variables and methods the
+objects will contain. This is part of the explanation of how objects differ
+from classes: Objects are created and destroyed as the program runs, and there
+can be many objects with the same structure, if they are created using the same
+class.</p>
+
+
+<p>Consider a simple class whose job is to group together a few static member
+variables. For example, the following class could be used to store information
+about the person who is using the program:</p>
+
+
+<pre>class UserData {
+    static String name;
+    static int age;
+}</pre>
+
+
+<p>In a program that uses this class, there is only one copy of each of the
+variables <span class="code">UserData.name</span> and <span class="code">UserData.age</span>.  When the class is
+loaded into the computer, there is a section of memory devoted to the class, and
+that section of memory includes space for the values of the variables <span class="code">name</span>
+and <span class="code">age.</span>  We can picture the class in memory as looking like this:</p>
+
+
+<p align="center">
+<img src="./5.1.1_files/class-userdata.png" width="165" height="128" alt="the UserData class in memory, with space for name and age"></p>
+
+
+<p>An important point is that the static member variables are part of the representation 
+of the class in memory.  
+Their full names, <span class="code">UserData.name</span> and <span class="code">UserData.age</span>,
+use the name of the class, since they are part of the class. 
+When we use class <span class="classname">UserData</span> to represent the user of the program,
+there can only be <b>one</b> user, since we only have memory space to store data about one user. Note that
+the class, <span class="code">UserData</span>, and the variables it contains exist as long as the
+program runs. (That is essentially what it means to be "static.")
+Now, consider a similar class that includes some non-static variables:</p>
+
+
+<pre>class PlayerData {
+   static int playerCount;
+   String name;
+   int age;
+}</pre>
+
+
+<p>I've also included a static variable in the <span class="classname">PlayerData</span> class.
+Here, the static variable <span class="code">playerCount</span> is stored as part of the representation of the class in memory.
+Its full name is <span class="code">PlayerData.playerCount</span>, and there is only one of it, which exists
+as long as the program runs.  However, the other two variables in the class definition are non-static.
+There is no such variable as <span class="code">PlayerData.name</span> or
+<span class="code">PlayerData.age</span>, since non-static variables do not become part of the
+class itself.  But the <span class="classname">PlayerData</span> class can
+be used to create objects.   There can be many objects created using the class, and each 
+one will have its <b>own</b> variables called <span class="code">name</span> and <span class="code">age</span>.  
+This is what it means for the non-static parts of the class to be a template for objects: 
+Every object gets its own copy of the non-static part of the class.  We can visualize
+the situation in the computer's memory after several objects have been created like this:</p>
+
+
+
+<p align="center">
+<img src="./5.1.1_files/instance-of-PlayerData.png" width="573" height="358" alt="the PlayerData class and three objects in memory"></p>
+
+
+<p>Note that the static variable <span class="code">playerCount</span> is part of the class, and there
+is only one copy.  On the other hand, every object contains a <span class="code">name</span> and an 
+<span class="code">age</span>.  An object that is created from a class is called an <span class="newword">instance</span> of
+that class, and as the picture shows, every object "knows" which class was used to create it.
+I've shown class <span class="classname">PlayerData</span> as containing something called a
+"constructor;" the constructor is a subroutine that creates objects.</p>
+
+
+<p>Now there can
+be many "players," because we can make new objects to represent new players on
+demand.  A program might use the <span class="classname">PlayerData</span> class to store information about multiple
+players in a game. Each player has a name and an age. When a player joins the
+game, a new <span class="code">PlayerData</span> object can be created to represent that player.
+If a player leaves the game, the <span class="code">PlayerData</span> object that represents
+that player can be destroyed. A system of objects in the program is being used
+to <span class="newword">dynamically</span> model what is happening in the game.
+You can't do this with static variables!  "Dynamic" is the opposite of "static."</p>
+
+
+<hr class="break">
+
+
+<p>An object that is created using a class is said to be an <span class="newword">instance</span> 
+of that class.  We will sometimes say that the object <span class="newword">belongs</span> to the class.
+The variables that the object contains
+are called <span class="newword">instance variables</span>. The methods (that is, subroutines)
+that the object contains are called <span class="newword">instance methods</span>. 
+For example, if the
+<span class="code">PlayerData</span> class, as defined above, is used to create an object, then
+that object is an instance of the <span class="code">PlayerData</span> class, and <span class="code">name</span>
+and <span class="code">age</span> are instance variables in the object.</p>
+
+
+<p>My examples here don't include any methods, but methods work similarly to variables.
+Static methods are part of the class; non-static, or instance, methods become part of
+objects created from the class.  It's not literally true that each object contains
+its own copy of the actual compiled code for an instance method. But logically an instance
+method is part of the object, and I will continue to say that the object "contains"
+the instance method.</p>
+
+
+<p>Note that you should distinguish between
+the <b>source code</b> for the class, and the <b>class itself</b> (in memory).  The
+source code determines both the class and the objects that are created from
+that class.  The "static" definitions in the source code specify the things
+that are part of the class itself (in the computer's memory), whereas the non-static definitions in the
+source code specify things that will become part of every instance object
+that is created from the class.   By the way, static member
+variables and static member subroutines in a class are sometimes called
+<span class="newword">class variables</span> and <span class="newword">class methods</span>, 
+since they belong to the class itself, rather than to instances
+of that class.</p>
+
+
+<p>As you can see, the static and the non-static portions of a class are very
+different things and serve very different purposes. Many classes contain only
+static members, or only non-static, and we will see only a few examples of
+classes that contain a mixture of the two.  </p>
+
+
+</div>
+<hr>
+</div>
+
+
+<div id="UMS_TOOLTIP" style="position: absolute; cursor: pointer; z-index: 2147483647; background: transparent; top: -100000px; left: -100000px;"></div></body><umsdataelement id="UMSSendDataEventElement"></umsdataelement><div id="TAG_ID4TOOLBAR_UMS_GUID" style="display: none;">B043063D-2554-9904-9CEE-0A453FECC2BB</div><div id="tmtoolbar_ums_injected" style="display: none;">init_ums</div></html>
