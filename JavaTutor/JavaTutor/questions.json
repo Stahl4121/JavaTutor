@@ -466,5 +466,167 @@
         "question":"Which operator takes precedence in an expression?",
         "answers":["*/", "+", "!=", "+="],
         "bloomValue":1
+    },
+    {
+        "module":4,
+        "question":"An array uses what type of indexing?",
+        "answers":["Zero-indexing", "One-indexing"],
+        "bloomValue":1
+    },
+    {
+        "module":4,
+        "question":"The individual items in an Array are ___ of the Array.",
+        "answers":["Base Types", "Child Types", "Subtypes", "Main Types"],
+        "bloomValue":1
+    },
+    {
+        "module":4,
+        "question":"Which statement correctly creates an Array of Strings?",
+        "answers":["list = new String[5]", "new list = String[5]", "new String = list[5]", "new String[5] = list"],
+        "bloomValue":2
+    },
+    {
+        "module":4,
+        "question":"The position in an Array is called the length.",
+        "answers":["False", "True"],
+        "bloomValue":1
+    },
+    {
+        "module":4,
+        "question":"Arrays can have multiple base types in one Array.",
+        "answers":["False", "True"],
+        "bloomValue":1
+    },
+    {
+        "module":4,
+        "question":"A simple way to parse through an Array is to use a...",
+        "answers":["For Loop", "While Loop", "Do-While Loop", "none of the above"],
+        "bloomValue":1
+    },
+    {
+        "module":4,
+        "question":"What is the most common mistake when going through an Array with a For Loop?",
+        "answers":["Indexing out of range", "Reading data", "Creating items", "Writing to console"],
+        "bloomValue":1
+    },
+    {
+        "module":4,
+        "question":"What is the expection received whenever the index of an Array is exceeded?",
+        "answers":["ArrayIndexOutOfBoundsException", "IntegerExpectedException", "CloneNotSupportedException", "IllegalAccessException"],
+        "bloomValue":1
+    },
+    {
+        "module":4,
+        "question":"How many items in an Array are read by \'for(int i = 8; i >= 0; i--)\'?",
+        "answers":["9", "8", "0", "10"],
+        "bloomValue":1
+    },
+    {
+        "module":4,
+        "question":"A two-dimensional Array must use the same base type for each dimension of the Array.",
+        "answers":["True", "False"],
+        "bloomValue":1
+    },
+    {
+        "module":4,
+        "question":"In int[5][5] nums, if you want to access the 3rd item in the 4th list, the index would be...",
+        "answers":["[3][2]", "[3][4]", "[2][3]", "[4][3]"],
+        "bloomValue":2
+    },
+    {
+        "module":4,
+        "question":"If a two-dimensional Array has a max index of [8][9], how many values are in the Array?",
+        "answers":["90", "72", "89", "17"],
+        "bloomValue":1
+    },
+    {
+        "module":6,
+        "question":"Subroutines are often referred to as...",
+        "answers":["Methods", "Classes", "Objects", "Interfaces"],
+        "bloomValue":1
+    },
+    {
+        "module":6,
+        "question":"To access a property of a class you use a(n)...",
+        "answers":["Dot Operator", "Colon", "Semicolon", "Apostrophe"],
+        "bloomValue":1
+    },
+    {
+        "module":6,
+        "question":"A variable can hold an object.",
+        "answers":["False", "True"]
+        "bloomValue":1
+    },
+    {
+        "module":6,
+        "question":"If std is a Student object, how would you declare std to be an empty object?",
+        "answers":["std = null", "std = none", "std = empty", "std = 0"]
+        "bloomValue":1
+    },
+    {
+        "module":6,
+        "question":"Methods that return a variable of a class are called...",
+        "answers":["getters", "setters", "mutators", "returners"],
+        "bloomValue":1
+    },
+    {
+        "module":6,
+        "question":"Every class has a Constructor.",
+        "answers":["True", "False"],
+        "bloomValue":1
+    },
+    {
+        "module":6,
+        "question":"When calling a constructor, what form does the expression have?",
+        "answers":["new className(parameters)", "new className", "className(parameters)", "new(className)(parameters)"],
+        "bloomValue":2
+    },
+    {
+        "module":6,
+        "question":"Object.toString() returns...",
+        "answers":["A string representing Object", "A string with the properties of Object", "The hashcode of Object"],
+        "bloomValue":1
+    },
+    {
+        "module":6,
+        "question":"In Inheritance, the class inheriting structure and behavior is the...",
+        "answers":["subclass", "superclass", "mini-class", "none of the above"],
+        "bloomValue":1
+    },
+    {
+        "module":6,
+        "question":"In Inheritance, the class giving inheritance is the...",
+        "answers":["superclass", "subclass", "hyper-class", "none of the above"],
+        "bloomValue":1
+    },
+    {
+        "module":6,
+        "question":"A set of classes that are related forms a...",
+        "answers":["Class Hierarchy", "Class Family", "Class Nucleus", "Class House"],
+        "bloomValue":1
+    },
+    {
+        "module":6,
+        "question":"Which statement uses \'this\' correctly?",
+        "answers":["this.name = name", "name = this.name", "name.this = this", "name.this = name"],
+        "bloomValue":2
+    },
+    {
+        "module":6,
+        "question":"Which statement uses \'super\' correctly?",
+        "answers":["super.roll()", "roll().super", "roll(super)", "super(roll)"],
+        "bloomValue":2
+    },
+    {
+        "module":6,
+        "question":"Mutliple Inheritance is allowed in Java.",
+        "answers":["False", "True"],
+        "bloomValue":1
+    },
+    {
+        "module":6,
+        "question":"How many interfaces can a Java class implement?",
+        "answers":["Infinite", "One", "Ten", "Three"],
+        "bloomValue":1
     }
 ]
