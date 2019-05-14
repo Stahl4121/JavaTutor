@@ -47,11 +47,11 @@ class StudentRepo: NSObject {
         brushUpTopic = String()
         finishedLessons = [String]()
         
-        quizzesPerModule = [0,0,0,0,0,0,0,0,0,0]
+        quizzesPerModule = [0,0,0,0,0,0]
         totalQuizzes = 0
         quizAvg = 0.0
-        quizAvgPerMod = [0,0,0,0,0,0,0,0,0,0]
-        chaptersFinished = [0,0,0,0,0,0,0,0,0,0]
+        quizAvgPerMod = [0,0,0,0,0,0]
+        chaptersFinished = [0,0,0,0,0,0]
         
         bloomsTaxCorrect = [0,0,0]
         bloomsTaxIncorrect = [0,0,0]

@@ -18,11 +18,11 @@ class OverallProgressVC: UIViewController {
         /*yellow*/ CGPoint(x: 610, y: 250),
         /*lime*/ CGPoint(x: 650, y: 350),
         /*green*/ CGPoint(x: 610, y: 440),
-        /*aqua*/ CGPoint(x: 530, y: 500),
-        /*blue*/ CGPoint(x: 430, y: 500),
-        /*indigo*/ CGPoint(x: 350, y: 440),
-        /*purple*/ CGPoint(x: 325, y: 350),
-        /*pink*/ CGPoint(x: 350, y: 250)
+        /*aqua*/ CGPoint(x: 530, y: 500)
+//        /*blue*/ CGPoint(x: 430, y: 500),
+//        /*indigo*/ CGPoint(x: 350, y: 440),
+//        /*purple*/ CGPoint(x: 325, y: 350),
+//        /*pink*/ CGPoint(x: 350, y: 250)
     ]
     
     var slices : [OverallPieChart] = []
@@ -48,6 +48,7 @@ class OverallProgressVC: UIViewController {
     
     
     func viewLoadSetup() {
+        let segCount = studentRepo.quizAvgPerMod.count - 1
         
         //set up the total background chart to be filled
         let totalChart = OverallPieChart()
@@ -55,17 +56,17 @@ class OverallProgressVC: UIViewController {
         totalChart.frame = CGRect(x: 0, y: 200, width: view.frame.size.width, height: 400)
         
         let initialHue = 0.05
-        for i in 0...9 {
-            totalChart.segments.append(Segment(color: .init(hue: CGFloat(initialHue + (Double(i)/10)), saturation: 0.3, brightness: 0.8, alpha: 1/2), value: 10))
+        for i in 0...segCount {
+            totalChart.segments.append(Segment(color: .init(hue: CGFloat(initialHue + (Double(i)/Double(segCount))), saturation: 0.3, brightness: 0.8, alpha: 1/2), value: 10))
         }
         
-        //set up 10 slices of user's progress so far
-        for i in 0...9 {
+        //set up slices of user's progress so far
+        for i in 0...segCount {
             let newThing = OverallPieChart()
             newThing.radius = CGFloat(min(view.frame.size.width, view.frame.size.height)) * CGFloat(0.25) * CGFloat(studentRepo.quizAvgPerMod[i]/100)
             newThing.frame = CGRect(x: 0, y: 200, width: view.frame.size.width, height: 400)
-            for j in 0...9 {
-                if j == ((i+9)%10){
+            for j in 0...segCount {
+                if j == ((i + segCount - 1) % segCount){
                     newThing.segments.append(Segment(color: .init(hue: CGFloat(initialHue + (Double(j)/10)), saturation: 0.5, brightness: 0.9, alpha: 1), value: 10))
                 } else {
                     newThing.segments.append(Segment(color: .clear, value: 10))

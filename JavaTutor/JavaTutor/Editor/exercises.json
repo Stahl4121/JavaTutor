@@ -19,7 +19,7 @@
   },
   {
     "initial": "class Main {\n  public static void main(String[] args) {\n    int[] numbers = new int[] { 5, 2, 2, 4, 8, 9, 1, 4, 1, 8, 7, 5, 7, 8, 5, 3, 5, 8, 3, 3 };\n\n    // Sort the array and output the result here\n\n    // Create a copy of the sorted array without any duplicates and output here\n    // (there are probably more than 2 unique numbers, but I can't count higher than 2)\n    int uniqueCount = 2;\n    int[] deDuplicated = new int[uniqueCount];\n\n    for (int i = 0; i < uniqueCount; i++)\n      System.out.print(deDuplicated[i] + \", \");\n  }\n}",
-    "description": "McDonads has promoted you to head of their buisness department, so start crunching those numbers.",
+    "description": "McDonalds has promoted you to head of their business department, so start crunching those numbers.",
     "input": "",
     "output": "1, 1, 2, 2, 3, 3, 3, 4, 4, 5, 5, 5, 5, 7, 7, 8, 8, 8, 8, 9, \n1, 2, 3, 4, 5, 7, 8, 9, "
   },

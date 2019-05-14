@@ -81,4 +81,16 @@ class OverallPieChart: UIView {
             startAngle = endAngle
         }
     }
+    
+    public func getPoints() -> [CGPoint] {
+        var points = [CGPoint]()
+        
+        let chunkAngle = .pi * 2 / Double(segments.count)
+        
+        for i in 0..<segments.count {
+            points.append(CGPoint(x: cos(chunkAngle * Double(i)) * Double(radius), y: sin(chunkAngle * Double(i)) * Double(radius)))
+        }
+        
+        return points
+    }
 }
