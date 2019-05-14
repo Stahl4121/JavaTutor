@@ -42,7 +42,7 @@ class StudyVC: UIViewController {
                 let finalDestURL = destURL.appendingPathComponent("Feedback.rtf")
                 try self.feedback.write(to: finalDestURL, atomically: true, encoding: .utf8)
                 //Print Doc Directory
-                print("Doc Directory: \(finalDestURL)")
+                //print("Doc Directory: \(finalDestURL)")
             }
             // Catch if something in feedback breaks
             catch {
