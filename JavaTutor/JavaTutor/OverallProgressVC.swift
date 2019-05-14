@@ -34,9 +34,9 @@ class OverallProgressVC: UIViewController {
         super.viewDidLoad()
         
         //list of user's scores
-        for p in labelPoints {
-            scoreLabels.append(UILabel(frame: CGRect(origin: p, size: CGSize(width: 100, height: 100))))
-        }
+//        for p in labelPoints {
+//            scoreLabels.append(UILabel(frame: CGRect(origin: p, size: CGSize(width: 100, height: 100))))
+//        }
         
         viewLoadSetup()
     }
@@ -48,7 +48,7 @@ class OverallProgressVC: UIViewController {
     
     
     func viewLoadSetup() {
-        let segCount = studentRepo.quizAvgPerMod.count - 1
+        let segCount = studentRepo.quizAvgPerMod.count
         
         //set up the total background chart to be filled
         let totalChart = OverallPieChart()
@@ -56,16 +56,16 @@ class OverallProgressVC: UIViewController {
         totalChart.frame = CGRect(x: 0, y: 200, width: view.frame.size.width, height: 400)
         
         let initialHue = 0.05
-        for i in 0...segCount {
+        for i in 0..<segCount {
             totalChart.segments.append(Segment(color: .init(hue: CGFloat(initialHue + (Double(i)/Double(segCount))), saturation: 0.3, brightness: 0.8, alpha: 1/2), value: 10))
         }
         
         //set up slices of user's progress so far
-        for i in 0...segCount {
+        for i in 0..<segCount {
             let newThing = OverallPieChart()
             newThing.radius = CGFloat(min(view.frame.size.width, view.frame.size.height)) * CGFloat(0.25) * CGFloat(studentRepo.quizAvgPerMod[i]/100)
             newThing.frame = CGRect(x: 0, y: 200, width: view.frame.size.width, height: 400)
-            for j in 0...segCount {
+            for j in 0..<segCount {
                 if j == ((i + segCount - 1) % segCount){
                     newThing.segments.append(Segment(color: .init(hue: CGFloat(initialHue + (Double(j)/10)), saturation: 0.5, brightness: 0.9, alpha: 1), value: 10))
                 } else {
@@ -79,6 +79,14 @@ class OverallProgressVC: UIViewController {
         
         for slice in slices {
             view.addSubview(slice)
+        }
+        
+        scoreLabels = []
+        for point in totalChart.getPoints(radiusPercentage: 0.75) {
+            let frame = CGRect(x: point.x - 60, y: point.y - 50, width: 100, height: 100)
+            let label = UILabel(frame: frame)
+            label.textAlignment = NSTextAlignment.center
+            scoreLabels.append(label)
         }
         
         //add user's score numbers to view

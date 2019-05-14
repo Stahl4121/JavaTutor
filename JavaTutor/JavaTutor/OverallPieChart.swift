@@ -82,13 +82,18 @@ class OverallPieChart: UIView {
         }
     }
     
-    public func getPoints() -> [CGPoint] {
+    public func getPoints(radiusPercentage: Double) -> [CGPoint] {
         var points = [CGPoint]()
         
         let chunkAngle = .pi * 2 / Double(segments.count)
+        let center = CGPoint(x: self.frame.midX, y: self.frame.midY)
+        let scaledR = Double(radius) * radiusPercentage
         
         for i in 0..<segments.count {
-            points.append(CGPoint(x: cos(chunkAngle * Double(i)) * Double(radius), y: sin(chunkAngle * Double(i)) * Double(radius)))
+            points.append(
+                CGPoint(x: cos(chunkAngle * Double(i)) * scaledR + Double(center.x),
+                        y: sin(chunkAngle * Double(i)) * scaledR + Double(center.y))
+            )
         }
         
         return points
