@@ -16,8 +16,8 @@
     let controls = document.querySelector('.controls');
     let labels = ['{', '}', '[', ']', '<', '>', '↵', '→'];
     let overrides = {
-      '↵': "insert('\\n'); codeMirror.execCommand('indentAuto')",
-      '→': "codeMirror.execCommand('insertSoftTab')"
+      '↵': "insert('\\n'); codeMirror.execCommand('indentAuto'); codeMirror.focus();",
+      '→': "codeMirror.execCommand('insertSoftTab'); codeMirror.focus();"
     };
 
     let base = label => `insert('${label}')`;

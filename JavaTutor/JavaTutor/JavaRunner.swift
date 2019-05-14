@@ -11,11 +11,12 @@ import Foundation
 public class JavaRunner {
     private static let endpoint = "http://api.paiza.io:80/runners/"
     
-    public static func Exec(code: String, completion: @escaping (String) -> Void) {
+    public static func Exec(code: String, input: String, completion: @escaping (String) -> Void) {
         var urlC = URLComponents(string: endpoint + "create")!
         
         urlC.queryItems = [
             URLQueryItem(name: "source_code", value: code),
+            URLQueryItem(name: "input", value: input),
             URLQueryItem(name: "language", value: "java"),
             URLQueryItem(name: "api_key", value: "guest")
         ]

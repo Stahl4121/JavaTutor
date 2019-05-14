@@ -1,32 +1,38 @@
 [
   {
-    "initial": "class Main {\n  public static void main(String[] args) {\n    /* xD 0 :P (:\n    System.out.println(\">:D\");\n  }\n}",
+    "initial": "class Main {\n  public static void main(String[] args) {\n    /* xD :P (:\n    System.out.println(\">:D\");\n  }\n}",
     "description": "Oh no, a smiley has escaped its comment cage!\nPut it back, and fix the output.",
+    "input": "",
     "output": "Phew, what a relief"
   },
   {
-    "initial": "class Main {\n  public static void main(String[] args) {\n    /* xD 1 :P (:\n    System.out.println(\">:D\");\n  }\n}",
-    "description": "Oh no, a smiley has escaped its comment cage!\nPut it back, and fix the output.",
-    "output": "Phew, what a relief"
+    "initial": "import java.util.*; \n\nclass Main {\n  public static void main(String[] args) {\n    Scanner scanner = new Scanner(System.in); \n\n    System.out.print(\"Hello, \");\n    // Hint: use that scanner here\n\n    System.out.print(\"Enjoy your \");\n    // Hint: not sure to use a scanner? Try googling something like 'read input java scanner' ...\n  }\n}",
+    "description": "McDonalds needs you to finish their drive thru bot, hop to it you clown.",
+    "input": "Bob\n#7 Big Mac",
+    "output": "Hello, Bob\nEnjoy your #7 Big Mac"
   },
   {
-    "initial": "class Main {\n  public static void main(String[] args) {\n    /* xD 2 :P (:\n    System.out.println(\">:D\");\n  }\n}",
-    "description": "Oh no, a smiley has escaped its comment cage!\nPut it back, and fix the output.",
-    "output": "Phew, what a relief"
+    "initial": "class Main {\n  public static void main(String[] args) {\n    int size = 4;\n\n    for (int spaces = size; spaces >= 0; spaces--) {\n      // Uh oh, looks like someone forgot to grow the tree\n    }\n\n    for (int bottomLength = 0; bottomLength < 1; bottomLength++) {\n      for (int spaces = 0; spaces < size - 1; spaces++) {\n        System.out.print(\" \");\n      }\n\n      System.out.println(\"*\");\n    }\n  }\n}",
+    "description": "We're trying to 3D print our Christmas Tree, but something got lost in the download. See if you can fix it ...",
+    "input": "",
+    "output": "   *\n  ***\n *****\n*******\n   *\n   *"
   },
   {
-    "initial": "class Main {\n  public static void main(String[] args) {\n    /* xD 3 :P (:\n    System.out.println(\">:D\");\n  }\n}",
-    "description": "Oh no, a smiley has escaped its comment cage!\nPut it back, and fix the output.",
-    "output": "Phew, what a relief"
+    "initial": "class Main {\n  public static void main(String[] args) {\n    int[] numbers = new int[] { 5, 2, 2, 4, 8, 9, 1, 4, 1, 8, 7, 5, 7, 8, 5, 3, 5, 8, 3, 3 };\n\n    // Sort the array and output the result here\n\n    // Create a copy of the sorted array without any duplicates and output here\n    // (there are probably more than 2 unique numbers, but I can't count higher than 2)\n    int uniqueCount = 2;\n    int[] deDuplicated = new int[uniqueCount];\n\n    for (int i = 0; i < uniqueCount; i++)\n      System.out.print(deDuplicated[i] + \", \");\n  }\n}",
+    "description": "McDonads has promoted you to head of their buisness department, so start crunching those numbers.",
+    "input": "",
+    "output": "1, 1, 2, 2, 3, 3, 3, 4, 4, 5, 5, 5, 5, 7, 7, 8, 8, 8, 8, 9, \n1, 2, 3, 4, 5, 7, 8, 9, "
   },
   {
     "initial": "class Main {\n  public static void main(String[] args) {\n    /* xD 4 :P (:\n    System.out.println(\">:D\");\n  }\n}",
     "description": "Oh no, a smiley has escaped its comment cage!\nPut it back, and fix the output.",
+    "input": "",
     "output": "Phew, what a relief"
   },
   {
     "initial": "class Main {\n  public static void main(String[] args) {\n    /* xD 5 :P (:\n    System.out.println(\">:D\");\n  }\n}",
     "description": "Oh no, a smiley has escaped its comment cage!\nPut it back, and fix the output.",
+    "input": "",
     "output": "Phew, what a relief"
   }
 ]
