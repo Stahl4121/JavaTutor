@@ -30,7 +30,7 @@ class ExerciseRunnerVC: UIViewController {
                 self.spinner.isHidden = true
                 self.resultText.text = result.contains(self.exercise!.output) ? "Nicely done." : "Hmm, not quite ..."
                 if self.resultText.text == "Nicely done." {
-                    self.studentRepo.bloomsTaxCorrect[1] = self.studentRepo.bloomsTaxCorrect[1] + 1
+                    self.studentRepo.bloomsTaxCorrect[2] = self.studentRepo.bloomsTaxCorrect[2] + 1
                 }
             }
         }
