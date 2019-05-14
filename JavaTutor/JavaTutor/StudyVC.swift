@@ -80,10 +80,6 @@ class StudyVC: UIViewController {
     
     func viewLoadSetup() {
         
-        for i in studentRepo.recentActivities {
-            print("CONTENTS OF RECENT ACTIVS \(i)")
-        }
-        
         lblContinueTopic.text = studentRepo.continueTopic
         lblImproveTopic.text = domainRepo.moduleNames[findLowestScoreIndex()]
         lblWelcomeBack.text = "Welcome back, \(studentRepo.username)!"
