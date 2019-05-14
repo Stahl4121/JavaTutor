@@ -88,6 +88,23 @@ class QuizTVC: UITableViewController {
             
             cell.lblQuestionTitle.text = "\(currQuestion.question)"
             
+            cell.btnHintAction =
+            {
+                let alert = UIAlertController(title: "Here's your hint!", message: "Refer back to module \(self.module + 1) for relevant lesson content!", preferredStyle: UIAlertController.Style.alert)
+                
+                let alertAction = UIAlertAction(title: "OK!", style: UIAlertAction.Style.default)
+                {
+                    (UIAlertAction) -> Void in
+                }
+                
+                alert.addAction(alertAction)
+                
+                self.present(alert, animated: true)
+                {
+                    () -> Void in
+                }
+            }
+            
             return cell
         }
         else{
