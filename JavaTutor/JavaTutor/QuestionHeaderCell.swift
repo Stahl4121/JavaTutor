@@ -9,8 +9,18 @@
 import UIKit
 
 class QuestionHeaderCell: UITableViewCell {
+    
+    var btnHintAction : (() -> Void)?
 
+    
     @IBOutlet weak var lblQuestionTitle: UILabel!
+    
+    @IBAction func tapHint(_ sender: UIButton) {
+        if let btnAction = self.btnHintAction
+        {
+            btnAction()
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
