@@ -12,7 +12,6 @@ class DomainRepo: NSObject {
     
     var moduleNames: [String]
     var lessonNames: [[String]]
-    var finishedLessons: [String]
     var questions: [[Question]]
     var fileUrl: URL?
     
@@ -22,7 +21,6 @@ class DomainRepo: NSObject {
         moduleNames = [String]()
         lessonNames = [[String]]()
         questions = [[Question]]()
-        finishedLessons = [String]()
 
         super.init()
         

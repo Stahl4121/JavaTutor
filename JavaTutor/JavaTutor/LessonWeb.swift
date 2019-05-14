@@ -54,7 +54,7 @@ class LessonWeb: UIViewController, WKUIDelegate {
         
         
         //Check if chapter has been read before
-        if counter > 30 && !domainRepo.finishedLessons.contains(lessonName){
+        if counter > 30 && !studentRepo.finishedLessons.contains(lessonName){
             timer.invalidate()
             
             finished = studentRepo.chaptersFinished[modNum-1]
@@ -62,7 +62,7 @@ class LessonWeb: UIViewController, WKUIDelegate {
             
             if finished < total {
                 studentRepo.chaptersFinished[modNum-1] = studentRepo.chaptersFinished[modNum-1] + 1
-                domainRepo.finishedLessons.append(lessonName)
+                studentRepo.finishedLessons.append(lessonName)
             }
         }
     }
