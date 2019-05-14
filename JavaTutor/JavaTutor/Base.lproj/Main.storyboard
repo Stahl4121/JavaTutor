@@ -295,7 +295,7 @@
                                                         <constraint firstAttribute="height" constant="50" id="hT7-Ot-qit"/>
                                                         <constraint firstAttribute="width" constant="83" id="oNi-pn-7Vp"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="40"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="34"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&gt;" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Hb-8q-wbd">
@@ -3108,8 +3108,8 @@
         <image name="study.png" width="33" height="41"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="0FY-0t-3ff"/>
-        <segue reference="Cdj-Lt-qX3"/>
+        <segue reference="8IZ-Tl-M0T"/>
+        <segue reference="X3u-V7-vfc"/>
         <segue reference="8aR-rA-gmn"/>
     </inferredMetricsTieBreakers>
 </document>

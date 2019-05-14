@@ -17,18 +17,18 @@ class ModuleListTVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
+    
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         row = indexPath.row
         return indexPath
     }
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return domainRepo.moduleNames.count
     }
@@ -37,8 +37,9 @@ class ModuleListTVC: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "moduleCell", for: indexPath) as! ModuleCell
         
+        
         cell.lblModuleTitle?.text = "Module \(indexPath.row + 1): \(domainRepo.moduleNames[indexPath.row])"
-        cell.lblPercComp?.text = "{#}%"
+        cell.lblPercComp?.text = "\(Int((100 * studentRepo.chaptersFinished[indexPath.row]/Double(domainRepo.lessonNames[indexPath.row].count)).rounded()))%"
         
         return cell
     }
@@ -52,5 +53,5 @@ class ModuleListTVC: UITableViewController {
             studentRepo.updateRecentActivities(modIdx: row, lesIdx: -1)
         }
     }
-
+    
 }

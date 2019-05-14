@@ -44,8 +44,17 @@
         override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let cell = tableView.dequeueReusableCell(withIdentifier: "moduleCell", for: indexPath) as! ModuleCell
             
+            let (modNum, lesNum) = domainRepo.findModuleLessonIndices(str: studentRepo.recentActivities[indexPath.row])
+            
             cell.lblModuleTitle?.text = "\(studentRepo.recentActivities[indexPath.row])"
-            cell.lblPercComp?.text = "{#}%"
+            
+            //If this refers to a module
+            if lesNum == -1 {
+                cell.lblPercComp?.text = "\(Int((100 * studentRepo.chaptersFinished[modNum]/Double(domainRepo.lessonNames[modNum].count)).rounded()))%"
+            }
+            else {
+                cell.lblPercComp?.text = ""
+            }
             
             return cell
         }
