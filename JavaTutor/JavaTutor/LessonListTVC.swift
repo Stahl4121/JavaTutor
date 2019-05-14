@@ -37,6 +37,18 @@ class LessonListTVC: UITableViewController {
         return domainRepo.lessonNames[module].count + 2
     }
     
+    /* If you want to change the cell color to mark it as finished
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        if let myCell = cell as? LessonListCell {
+            if myCell.isFinished {
+                cell.backgroundColor = UIColor.green
+            }
+        }
+    }
+    
+    */
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == domainRepo.lessonNames[module].count + 1 {
             return tableView.dequeueReusableCell(withIdentifier: "quizCell", for: indexPath)
@@ -47,7 +59,11 @@ class LessonListTVC: UITableViewController {
         }
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "lessonListCell", for: indexPath) as! LessonListCell
-        cell.lblLessonTitle?.text = "\(domainRepo.lessonNames[module][indexPath.row])"
+        let lessonName = domainRepo.lessonNames[module][indexPath.row]
+        
+        cell.lblLessonTitle?.text = "\(lessonName)"
+        
+        cell.isFinished = studentRepo.finishedLessons.contains(lessonName)
         
         return cell
         //TODO
