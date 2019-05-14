@@ -137,8 +137,6 @@ class StudentRepo: NSObject {
                 // Grab JSON contents
                 let contents = try Data(contentsOf: fileURL)
                 let students = try JSONSerialization.jsonObject(with: contents, options: .mutableContainers) as! [[String: Any]]
-                print("STUDENTS LOADING\n")
-                print(students)
             
                 for stud in students {
                     //Find the current user in local data
@@ -181,9 +179,6 @@ class StudentRepo: NSObject {
             
             //Add the current student back into the json
             students.append(currentUserData)
-            
-            print("STUDENTS WRITING\n")
-            print(students)
             
             let jsonData = try JSONSerialization.data(withJSONObject: students, options: .prettyPrinted)
             try jsonData.write(to: fileURL)
