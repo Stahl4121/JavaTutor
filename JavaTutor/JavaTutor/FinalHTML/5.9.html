@@ -1,0 +1,60 @@
+
+<!-- saved from url=(0041)http://math.hws.edu/javanotes8/c4/s3.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Javanotes 8.0, Section 4.3 -- Parameters</title>
+<link type="text/css" rel="stylesheet" href="javanotes.css">
+</head>
+<body>
+<div class="page">
+<div class="content">
+<h3 class="section_title">Section 4.3</h3>
+<h2 class="section_title">Parameters</h2>
+<hr class="break">
+
+<h3 class="subsection_title">
+<a name="subroutines.3.4a">4.3.5&nbsp;&nbsp;Array Parameters</a>
+</h3>
+
+
+<p>It's possible for the type of a parameter to be an array type.  This means that
+an entire array of values can be passed to the subroutine as a single parameter.
+For example, we might want a subroutine to print all the values in an integer array
+in a neat format, separated by commas and enclosed in a pair of square brackets.
+To tell it which array to print, the subroutine would have a parameter of
+type <span class="atype">int[]</span>:</p>
+
+
+<pre>static void printValuesInList( int[] list ) {
+    System.out.print('[');
+    int i;
+    for ( i = 0; i &lt; list.length; i++ ) {
+        if ( i &gt; 0 )
+            System.out.print(','); // No comma in front of list[0]
+        System.out.print(list[i]);
+    }
+    System.out.println(']');
+}</pre>
+
+
+<p>To use this subroutine, you need an actual array.  Here is a legal, though not very
+realistic, code segment that creates an array just to pass it as an argument to
+the subroutine:</p>
+
+
+<pre>int[] numbers;
+numbers = new int[3];
+numbers[0] = 42;
+numbers[1] = 17;
+numbers[2] = 256;
+printValuesInList( numbers );</pre>
+  
+
+<p>The output produced by the last statement would be <span class="code">[42,17,256]</span>.</p>
+
+</div>
+<hr>
+</div>
+
+
+<div id="UMS_TOOLTIP" style="position: absolute; cursor: pointer; z-index: 2147483647; background: transparent; top: -100000px; left: -100000px;"></div></body><umsdataelement id="UMSSendDataEventElement"></umsdataelement><div id="TAG_ID4TOOLBAR_UMS_GUID" style="display: none;">FF1F1AB0-59F0-E8EF-031C-A51E74809D00</div><div id="tmtoolbar_ums_injected" style="display: none;">init_ums</div></html>

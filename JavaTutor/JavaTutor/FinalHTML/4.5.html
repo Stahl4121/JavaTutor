@@ -1,0 +1,140 @@
+
+<!-- saved from url=(0041)http://math.hws.edu/javanotes8/c3/s8.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Javanotes 8.0, Section 3.8 -- Introduction to Arrays</title>
+<link type="text/css" rel="stylesheet" href="javanotes.css">
+</head>
+<body>
+<div class="page">
+<div class="content">
+<h3 class="section_title">Section 3.8</h3>
+<h2 class="section_title">Introduction to Arrays</h2>
+<hr class="break">
+
+
+<h3 class="subsection_title">
+<a name="control.7a.5">3.8.5&nbsp;&nbsp;Two-dimensional Arrays</a>
+</h3>
+
+
+<p>The arrays that we have considered so far are "one-dimensional."  This means that the
+array consists of a sequence of elements that can be thought of as being laid out along a line.
+It is also possible to have <span class="newword">two-dimensional arrays</span>, where the elements can
+be laid out in a rectangular grid.  We consider them only briefly here, but will return
+to the topic in <a href="http://math.hws.edu/javanotes8/c7/s5.html">Section&nbsp;7.5</a>.</p>
+
+
+<p>In a two-dimensional, or "2D," array, the elements can be
+arranged in rows and columns.  Here, for example, is a 2D array of <span class="ptype">int</span>
+that has five rows and seven columns:</p>
+
+
+<p align="center">
+<img src="./sec3.8.5_files/two-d-array.png" width="" height="" alt="an array of its with 5 rows and 7 columns"></p>
+
+
+<p>This 5-by-7 grid contains a total of 35 elements.
+The rows in a 2D array are numbered 0, 1, 2, ..., up to the number of rows minus one.
+Similarly, the columns are numbered from zero up to the number of columns minus one.  Each individual
+element in the array can be picked out by specifying its row number and its column number.
+(The illustration shown here is not what the array actually looks like in the computer's
+memory, but it does show the logical structure of the array.)</p>
+
+
+<p>In Java, the syntax for two-dimensional arrays is similar to the syntax for one-dimensional
+arrays, except that an extra index is involved, since picking out an element requires both
+a row number and a column number.  For example, if <span class="code">A</span> is a 2D array of <span class="ptype">int</span>, then
+<span class="code">A[3][2]</span> would be the element in row&nbsp;3, column&nbsp;2.  That would pick out the
+number 17 in the array shown above.  The type for <span class="code">A</span>
+would be given as <span class="atype">int[][]</span>, with two pairs of empty brackets.  To declare the
+array variable and create the array, you could say,</p>
+
+
+<pre>int[][]  A;
+A  =  new int[5][7];</pre>
+
+
+<p>The second line creates a 2D array with 5 rows and 7 columns.  Two-dimensional arrays
+are often processed using nested <span class="code">for</span> loops.  For example, the following code 
+segment will print out the elements of <span class="code">A</span> in neat columns:</p>
+
+
+<pre>int row, col;  // loop-control-variables for accessing rows and columns in A
+for ( row = 0; row &lt; 5; row++ ) {
+    for ( col = 0; col &lt; 7; col++ ) {
+        System.out.printf( "%7d",  A[row][col] );
+    }
+    System.out.println();
+}</pre>
+
+
+
+<p>The base type of a 2D array can be anything, so you can have arrays of type
+<span class="atype">double[][]</span>, <span class="atype">String[][]</span>, and so on.</p>
+
+
+<p>There are some natural uses for 2D arrays.  For example,
+a 2D array can be used to store the contents of the board in a game such as
+chess or checkers.  And an example in <a href="http://math.hws.edu/javanotes8/c4/s7.html#subroutines.6.3">Subsection&nbsp;4.7.3</a> uses a 2D array
+to hold the colors of a grid of colored squares.  But sometimes 
+two-dimensional arrays are used in problems in which the grid is
+not so visually obvious. Consider a company that owns 25 stores. Suppose that
+the company has data about the profit earned at each store for each month in
+the year 2018. If the stores are numbered from 0 to 24, and if the twelve
+months from January 2018 through December 2018 are numbered from 0 to 11, then
+the profit data could be stored in an array, <span class="code">profit</span>, created as
+follows:</p>
+
+
+<pre>double[][]  profit;
+profit  =  new double[25][12];</pre>
+
+
+<p>
+<span class="code">profit[3][2]</span> would be the amount of profit earned at store number 3
+in March, and more generally, <span class="code">profit[storeNum][monthNum]</span> would be the
+amount of profit earned in store number <span class="code">storeNum</span> in month number
+<span class="code">monthNum</span> (where the numbering, remember, starts from zero).</p>
+
+
+<p>Let's assume that the <span class="code">profit</span> array has already been filled with
+data. This data can be processed in a lot of interesting ways. For example, the
+total profit for the company—for the whole year from all its stores—can
+be calculated by adding up all the entries in the array:</p>
+
+
+<pre>double totalProfit;  // Company's total profit in 2014.
+int store, month;  // variables for looping through the stores and the months
+totalProfit = 0;
+for ( store = 0; store &lt; 25; store++ ) {
+   for ( month = 0; month &lt; 12; month++ )
+      totalProfit += profit[store][month];
+}</pre>
+
+
+<p>Sometimes it is necessary to process a single row or a single column of an
+array, not the entire array. For example, to compute the total profit earned by
+the company in December, that is, in month number 11, you could use the
+loop:</p>
+
+
+<pre>double decemberProfit;
+int storeNum;
+decemberProfit = 0.0;
+for ( storeNum = 0; storeNum &lt; 25; storeNum++ ) {
+   decemberProfit += profit[storeNum][11];
+}</pre>
+
+
+<p>Two-dimensional arrays are sometimes useful, but they are much less common
+than one-dimensional arrays.  Java actually allows arrays of even higher dimension,
+but they are only rarely encountered in practice.</p>
+
+
+</div>
+<hr>
+</div>
+
+
+<div id="UMS_TOOLTIP" style="position: absolute; cursor: pointer; z-index: 2147483647; background: transparent; top: -100000px; left: -100000px;"></div></body><umsdataelement id="UMSSendDataEventElement"></umsdataelement><div id="TAG_ID4TOOLBAR_UMS_GUID" style="display: none;">8D5CDFEF-E321-A3CA-91A7-1C5033B866C6</div><div id="tmtoolbar_ums_injected" style="display: none;">init_ums</div></html>

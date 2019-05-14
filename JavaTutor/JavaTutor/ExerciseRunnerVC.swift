@@ -24,7 +24,7 @@ class ExerciseRunnerVC: UIViewController {
         
         expectedOutputText.text = exercise!.output
 
-        JavaRunner.Exec(code: sourceCode) { (result) in
+        JavaRunner.Exec(code: sourceCode, input: exercise!.input) { (result) in
             DispatchQueue.main.sync {
                 self.outputText.text = result
                 self.spinner.isHidden = true

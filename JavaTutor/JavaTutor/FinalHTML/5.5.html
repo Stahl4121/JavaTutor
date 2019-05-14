@@ -1,0 +1,187 @@
+
+<!-- saved from url=(0041)http://math.hws.edu/javanotes8/c4/s2.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Javanotes 8.0, Section 4.2 -- Static Subroutines and Static Variables</title>
+<link type="text/css" rel="stylesheet" href="javanotes.css">
+</head>
+<body>
+<div class="page">
+<div class="content">
+<h3 class="section_title">Section 4.2</h3>
+<h2 class="section_title">Static Subroutines and Static Variables</h2>
+
+<hr class="break">
+<h3 class="subsection_title">
+<a name="subroutines.2.3">4.2.3&nbsp;&nbsp;Subroutines in Programs</a>
+</h3>
+
+
+<p>It's time to give an example of what a complete program looks like, when it
+includes other subroutines in addition to the <span class="code">main()</span> routine. Let's
+write a program that plays a guessing game with the user. The computer will
+choose a random number between 1 and 100, and the user will try to guess it.
+The computer tells the user whether the guess is high or low or correct. If the
+user gets the number after six guesses or fewer, the user wins the game. After
+each game, the user has the option of continuing with another game.</p>
+
+
+<p>Since playing one game can be thought of as a single, coherent task, it
+makes sense to write a subroutine that will play one guessing game with the
+user. The <span class="code">main()</span> routine will use a loop to call the
+<span class="code">playGame()</span> subroutine over and over, as many times as the user wants
+to play. We approach the problem of designing the <span class="code">playGame()</span>
+subroutine the same way we write a <span class="code">main()</span> routine: Start with an
+outline of the algorithm and apply stepwise refinement. Here is a short
+pseudocode algorithm for a guessing game routine:</p>
+
+
+<pre>Pick a random number
+while the game is not over:
+    Get the user's guess
+    Tell the user whether the guess is high, low, or correct.</pre>
+
+
+<p>The test for whether the game is over is complicated, since the game ends if
+either the user makes a correct guess or the number of guesses is six. As in
+many cases, the easiest thing to do is to use a "<span class="code">while&nbsp;(true)</span>" loop
+and use <span class="code">break</span> to end the loop whenever we find a reason to do so.
+Also, if we are going to end the game after six guesses, we'll have to keep
+track of the number of guesses that the user has made. Filling out the
+algorithm gives:</p>
+
+
+<pre>Let computersNumber be a random number between 1 and 100
+Let guessCount = 0
+while (true):
+    Get the user's guess
+    Count the guess by adding 1 to guess count
+    if the user's guess equals computersNumber:
+        Tell the user he won
+        break out of the loop
+    if the number of guesses is 6:
+        Tell the user he lost
+        break out of the loop
+    if the user's guess is less than computersNumber:
+        Tell the user the guess was low
+    else if the user's guess is higher than computersNumber:
+        Tell the user the guess was high</pre>
+
+
+<p>With variable declarations added and translated into Java, this becomes the
+definition of the <span class="code">playGame()</span> routine. A random integer between 1 and
+100 can be computed as <span class="code">(int)(100&nbsp;* Math.random())&nbsp;+&nbsp;1</span>. I've cleaned up
+the interaction with the user to make it flow better.</p>
+
+
+<pre>static void playGame() {
+    int computersNumber; // A random number picked by the computer.
+    int usersGuess;      // A number entered by user as a guess.
+    int guessCount;      // Number of guesses the user has made.
+    computersNumber = (int)(100 * Math.random()) + 1;
+             // The value assigned to computersNumber is a randomly
+             //    chosen integer between 1 and 100, inclusive.
+    guessCount = 0;
+    System.out.println();
+    System.out.print("What is your first guess? ");
+    while (true) {
+       usersGuess = TextIO.getInt();  // Get the user's guess.
+       guessCount++;
+       if (usersGuess == computersNumber) {
+          System.out.println("You got it in " + guessCount
+                  + " guesses!  My number was " + computersNumber);
+          break;  // The game is over; the user has won.
+       }
+       if (guessCount == 6) {
+          System.out.println("You didn't get the number in 6 guesses.");
+          System.out.println("You lose.  My number was " + computersNumber);
+          break;  // The game is over; the user has lost.
+       }
+       // If we get to this point, the game continues.
+       // Tell the user if the guess was too high or too low.
+       if (usersGuess &lt; computersNumber)
+          System.out.print("That's too low.  Try again: ");
+       else if (usersGuess &gt; computersNumber)
+          System.out.print("That's too high.  Try again: ");
+    }
+    System.out.println();
+} // end of playGame()</pre>
+
+
+<p>Now, where exactly should you put this? It should be part of the same class
+as the <span class="code">main()</span> routine, but <b>not</b> inside the main routine. It is not
+legal to have one subroutine physically nested inside another. The
+<span class="code">main()</span> routine will <b>call</b> <span class="code">playGame()</span>, but not contain
+its definition, only a call statement. You can put the definition of <span class="code">playGame()</span> either before
+or after the <span class="code">main()</span> routine. Java is not very picky about having the
+subroutine definitions in a class in any particular order.</p>
+
+
+<p>It's pretty easy to write the main routine. You've done things like this
+before. Here's what the complete program looks like (except that a serious
+program needs more comments than I've included here).</p>
+
+
+<pre>import textio.TextIO;
+
+public class GuessingGame {
+
+   public static void main(String[] args) {
+      System.out.println("Let's play a game.  I'll pick a number between");
+      System.out.println("1 and 100, and you try to guess it.");
+      boolean playAgain;
+      do {
+         playGame();  // call subroutine to play one game
+         System.out.print("Would you like to play again? ");
+         playAgain = TextIO.getlnBoolean();
+      } while (playAgain);
+      System.out.println("Thanks for playing.  Goodbye.");
+   } // end of main()            
+   
+   static void playGame() {
+       int computersNumber; // A random number picked by the computer.
+       int usersGuess;      // A number entered by user as a guess.
+       int guessCount;      // Number of guesses the user has made.
+       computersNumber = (int)(100 * Math.random()) + 1;
+                // The value assigned to computersNumber is a randomly
+                //    chosen integer between 1 and 100, inclusive.
+       guessCount = 0;
+       System.out.println();
+       System.out.print("What is your first guess? ");
+       while (true) {
+          usersGuess = TextIO.getInt();  // Get the user's guess.
+          guessCount++;
+          if (usersGuess == computersNumber) {
+             System.out.println("You got it in " + guessCount
+                     + " guesses!  My number was " + computersNumber);
+             break;  // The game is over; the user has won.
+          }
+          if (guessCount == 6) {
+             System.out.println("You didn't get the number in 6 guesses.");
+             System.out.println("You lose.  My number was " + computersNumber);
+             break;  // The game is over; the user has lost.
+          }
+          // If we get to this point, the game continues.
+          // Tell the user if the guess was too high or too low.
+          if (usersGuess &lt; computersNumber)
+             System.out.print("That's too low.  Try again: ");
+          else if (usersGuess &gt; computersNumber)
+             System.out.print("That's too high.  Try again: ");
+       }
+       System.out.println();
+   } // end of playGame()
+               
+} // end of class GuessingGame</pre>
+
+
+<p>Take some time to read the program carefully and figure out how it works.
+And try to convince yourself that even in this relatively simple case, breaking
+up the program into two methods makes the program easier to understand and
+probably made it easier to write each piece.</p>
+
+</div>
+<hr>
+</div>
+
+
+<div id="UMS_TOOLTIP" style="position: absolute; cursor: pointer; z-index: 2147483647; background: transparent; top: -100000px; left: -100000px;"></div></body><umsdataelement id="UMSSendDataEventElement"></umsdataelement><div id="TAG_ID4TOOLBAR_UMS_GUID" style="display: none;">56DBBB80-0EAA-30AE-E3CC-D14D11635E35</div><div id="tmtoolbar_ums_injected" style="display: none;">init_ums</div></html>

@@ -1,0 +1,186 @@
+
+<!-- saved from url=(0041)http://math.hws.edu/javanotes8/c4/s2.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Javanotes 8.0, Section 4.2 -- Static Subroutines and Static Variables</title>
+<link type="text/css" rel="stylesheet" href="javanotes.css">
+</head>
+<body>
+<div class="page">
+<div class="content">
+<h3 class="section_title">Section 4.2</h3>
+<h2 class="section_title">Static Subroutines and Static Variables</h2>
+<hr class="break">
+
+<h3 class="subsection_title">
+<a name="subroutines.2.4">4.2.4&nbsp;&nbsp;Member Variables</a>
+</h3>
+
+
+<p>A class can include other things besides subroutines. In particular, it can
+also include variable declarations. Of course, you can declare variables
+<b>inside</b> subroutines.  Those are called <span class="newword">local variables.</span> 
+However, you can also have variables that are
+not part of any subroutine. To distinguish such variables from local variables,
+we call them <span class="newword">member variables</span>, since they are
+members of a class.  Another term for them is <span class="newword">global variable</span>.</p>
+
+
+<p>Just as with subroutines, member variables can be either static or
+non-static. In this chapter, we'll stick to static variables. A static member
+variable belongs to the class as a whole, and it exists as long as the class
+exists. Memory is allocated for the variable when the class is first loaded by
+the Java interpreter. Any assignment statement that assigns a value to the
+variable changes the content of that memory, no matter where that assignment
+statement is located in the program. Any time the variable is used in an
+expression, the value is fetched from that same memory, no matter where the
+expression is located in the program. This means that the value of a static
+member variable can be set in one subroutine and used in another subroutine.
+Static member variables are "shared" by all the static subroutines in the
+class. A local variable in a subroutine, on the other hand, exists only while
+that subroutine is being executed, and is completely inaccessible from outside
+that one subroutine.</p>
+
+
+<p>The declaration of a member variable looks just like the declaration of a
+local variable except for two things: The member variable is declared outside
+any subroutine (although it still has to be inside a class), and the
+declaration can be marked with modifiers such as <span class="code">static</span>,
+<span class="code">public</span>, and <span class="code">private</span>. Since we are only working with static
+member variables for now, every declaration of a member variable in this
+chapter will include the modifier <span class="code">static</span>.  They might also
+be marked as <span class="code">public</span> or <span class="code">private</span>.  For example:</p>
+
+
+<pre>static String usersName;
+public static int numberOfPlayers;
+private static double velocity, time;</pre>
+
+
+<p>A static member variable that is not declared to be <span class="code">private</span> can be
+accessed from outside the class where it is defined, as well as inside. When it
+is used in some other class, it must be referred to with a compound identifier
+of the form <span class="bnf">class-name</span>.<span class="bnf">variable-name</span>. For example, the <span class="classname">System</span> class
+contains the public static member variable named <span class="code">out</span>, and you use this
+variable in your own classes by referring to <span class="code">System.out</span>.   Similarly,
+<span class="code">Math.PI</span> is a public static member variable in the <span class="classname">Math</span> class.  If
+<span class="code">numberOfPlayers</span> is a public static member variable in a class named
+<span class="code">Poker</span>, then code in the <span class="code">Poker</span> class would refer to it
+simply as <span class="code">numberOfPlayers</span>, while code in another class would refer to
+it as <span class="code">Poker.numberOfPlayers</span>.</p>
+
+
+<p>As an example, let's add a couple of static member variables to the
+<span class="code">GuessingGame</span> class that we wrote earlier in this section.
+We add a variable named <span class="code">gamesPlayed</span> to keep track of how
+many games the user has played and another variable named <span class="code">gamesWon</span>
+to keep track of the number of games that the user has won.  The variables
+are declared as static member variables:</p>
+
+
+<pre>static int gamesPlayed;
+static int gamesWon;</pre>
+
+
+<p>In the <span class="code">playGame()</span> routine, we always add 1 to <span class="code">gamesPlayed</span>,
+and we add 1 to  <span class="code">gamesWon</span> if the user wins the game. 
+At the end of the <span class="code">main()</span> routine, we print out the values of both variables.
+It would be impossible to 
+do the same thing with local variables, since both subroutines need to access the variables,
+and local variables exist in only one subroutine.  Furthermore, global variables keep
+their values between one subroutine call and the next. Local variables do not; a local
+variable gets a new value each time that the subroutine that contains it is called.</p>
+
+
+<p>When you declare a local variable in a subroutine, you have to assign a
+value to that variable before you can do anything with it. Member variables, on
+the other hand are automatically initialized with a default value.  The default
+values are the same as those that are used when initializing the elements of an array:
+For numeric variables, the default value is zero; for <span class="ptype">boolean</span> variables, the
+default is <span class="code">false</span>; for <span class="ptype">char</span> variables, it's the
+character that has Unicode code number zero; and for objects, such as
+<span class="classname">Strings</span>, the default initial value is the special value
+<span class="code">null</span>.</p>
+
+
+<p>Since they are of type <span class="ptype">int</span>, the static member variables <span class="code">gamesPlayed</span>
+and <span class="code">gamesWon</span> automatically get zero as their initial value. This
+happens to be the correct initial value for a variable that is being used as a
+counter. You can, of course, assign a value to a variable at the
+beginning of the <span class="code">main()</span> routine if you are not satisfied with the
+default initial value, or if you want to make the initial value more explicit.</p>
+
+
+<p>Here's the revised version of <span class="code">GuessingGame.java</span>. 
+The changes from the above version are shown in red:</p>
+
+
+<pre>import textio.TextIO;
+
+public class GuessingGame2 {
+ 
+    <span class="newcode">static int gamesPlayed;   // The number of games played.
+    static int gamesWon;      // The number of games won.</span>
+ 
+    public static void main(String[] args) {
+       <span class="newcode">gamesPlayed = 0;
+       gamesWon = 0;  // This is actually redundant, since 0 is 
+                      //                 the default initial value.</span>
+       System.out.println("Let's play a game.  I'll pick a number between");
+       System.out.println("1 and 100, and you try to guess it.");
+       boolean playAgain;
+       do {
+          playGame();  // call subroutine to play one game
+          System.out.print("Would you like to play again? ");
+          playAgain = TextIO.getlnBoolean();
+       } while (playAgain);
+       <span class="newcode">System.out.println();
+       System.out.println("You played " + gamesPlayed + " games,");
+       System.out.println("and you won " + gamesWon + " of those games.");</span>
+       System.out.println("Thanks for playing.  Goodbye.");
+    } // end of main()            
+    
+    static void playGame() {
+        int computersNumber; // A random number picked by the computer.
+        int usersGuess;      // A number entered by user as a guess.
+        int guessCount;      // Number of guesses the user has made.
+        <span class="newcode">gamesPlayed++;  // Count this game.</span>
+        computersNumber = (int)(100 * Math.random()) + 1;
+                 // The value assigned to computersNumber is a randomly
+                 //    chosen integer between 1 and 100, inclusive.
+        guessCount = 0;
+        System.out.println();
+        System.out.print("What is your first guess? ");
+        while (true) {
+           usersGuess = TextIO.getInt();  // Get the user's guess.
+           guessCount++;
+           if (usersGuess == computersNumber) {
+              System.out.println("You got it in " + guessCount
+                      + " guesses!  My number was " + computersNumber);
+              <span class="newcode">gamesWon++;  // Count this win.</span>
+              break;       // The game is over; the user has won.
+           }
+           if (guessCount == 6) {
+              System.out.println("You didn't get the number in 6 guesses.");
+              System.out.println("You lose.  My number was " + computersNumber);
+              break;  // The game is over; the user has lost.
+           }
+           // If we get to this point, the game continues.
+           // Tell the user if the guess was too high or too low.
+           if (usersGuess &lt; computersNumber)
+              System.out.print("That's too low.  Try again: ");
+           else if (usersGuess &gt; computersNumber)
+              System.out.print("That's too high.  Try again: ");
+        }
+        System.out.println();
+    } // end of playGame()
+                
+} // end of class GuessingGame2</pre>
+
+
+</div>
+<hr>
+</div>
+
+
+<div id="UMS_TOOLTIP" style="position: absolute; cursor: pointer; z-index: 2147483647; background: transparent; top: -100000px; left: -100000px;"></div></body><umsdataelement id="UMSSendDataEventElement"></umsdataelement><div id="TAG_ID4TOOLBAR_UMS_GUID" style="display: none;">56DBBB80-0EAA-30AE-E3CC-D14D11635E35</div><div id="tmtoolbar_ums_injected" style="display: none;">init_ums</div></html>

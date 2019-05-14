@@ -1,0 +1,86 @@
+
+<!-- saved from url=(0041)http://math.hws.edu/javanotes8/c4/s3.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Javanotes 8.0, Section 4.3 -- Parameters</title>
+<link type="text/css" rel="stylesheet" href="javanotes.css">
+</head>
+<body>
+<div class="page">
+<div class="content">
+<h3 class="section_title">Section 4.3</h3>
+<h2 class="section_title">Parameters</h2>
+<hr class="break">
+
+
+
+<h3 class="subsection_title">
+<a name="subroutines.3.3">4.3.3&nbsp;&nbsp;Overloading</a>
+</h3>
+
+
+<p>In order to call a subroutine legally, you need to know its name, you need
+to know how many formal parameters it has, and you need to know the type of
+each parameter. This information is called the subroutine's <span class="newword">signature</span>.
+The signature of the subroutine <span class="code">doTask</span>, used as an example above, can
+be expressed as: <span class="code">doTask(int,double,boolean)</span>. Note that the signature does
+<b>not</b> include the names of the parameters; in fact, if you just
+want to <b>use</b> the subroutine, you don't even need to know what
+the formal parameter names are, so the names are not part of the interface.</p>
+
+
+<p>Java is somewhat unusual in that it allows two different subroutines in the
+same class to have the same name, provided that their signatures are different.
+When this happens, we say that
+the name of the subroutine is <span class="newword">overloaded</span> because
+it has several different meanings. The computer doesn't get the subroutines
+mixed up. It can tell which one you want to call by the number and types of the
+actual parameters that you provide in the subroutine call statement. You have
+already seen overloading used with <span class="classname">System.out</span>. This object includes
+many different methods named <span class="code">println</span>, for example. These methods all
+have different signatures, such as:</p>
+
+
+<pre>println(int)                   println(double)
+println(char)                  println(boolean)
+println()</pre>
+
+
+<p>The computer knows which of these subroutines you want to use based on
+the type of the actual parameter that you provide.  <span class="code">System.out.println(17)</span>
+calls the subroutine with signature <span class="code">println(int)</span>, while
+<span class="code">System.out.println('A')</span> calls the subroutine with signature <span class="code">println(char)</span>.
+Of course all these different subroutines are semantically related, which is
+why it is acceptable programming style to use the same name for them all. But
+as far as the computer is concerned, printing out an <span class="ptype">int</span> is very
+different from printing out a <span class="ptype">char</span>, which is different from printing
+out a <span class="ptype">boolean</span>, and so forth—so that each of these operations
+requires a different subroutine.</p>
+
+
+<p>Note, by the way, that the signature does <b>not</b> include the
+subroutine's return type. It is illegal to have two subroutines in the same
+class that have the same signature but that have different return types. For
+example, it would be a syntax error for a class to contain two subroutines defined
+as:</p>
+
+
+<pre>int    getln() { ... }
+double getln() { ... }</pre>
+
+
+<p>This is why in the <span class="classname">TextIO</span> class, the subroutines
+for reading different types are not all named <span class="code">getln()</span>. In a given
+class, there can only be one routine that has the name <span class="code">getln</span> with
+no parameters. So, the input routines in <span class="classname">TextIO</span> are distinguished by
+having different names, such as <span class="code">getlnInt()</span> and
+<span class="code">getlnDouble()</span>.</p>
+   
+
+   
+</div>
+<hr>
+</div>
+
+
+<div id="UMS_TOOLTIP" style="position: absolute; cursor: pointer; z-index: 2147483647; background: transparent; top: -100000px; left: -100000px;"></div></body><umsdataelement id="UMSSendDataEventElement"></umsdataelement><div id="TAG_ID4TOOLBAR_UMS_GUID" style="display: none;">FF1F1AB0-59F0-E8EF-031C-A51E74809D00</div><div id="tmtoolbar_ums_injected" style="display: none;">init_ums</div></html>
