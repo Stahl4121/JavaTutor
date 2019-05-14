@@ -1,0 +1,105 @@
+
+<!-- saved from url=(0041)http://math.hws.edu/javanotes8/c4/s3.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Javanotes 8.0, Section 4.3 -- Parameters</title>
+<link type="text/css" rel="stylesheet" href="javanotes.css">
+</head>
+<body>
+<div class="content">
+<h3 class="section_title">Section 4.3</h3>
+<h2 class="section_title">Parameters</h2>
+<hr class="break">
+
+<h3 class="subsection_title">
+<a name="subroutines.3.2">4.3.2&nbsp;&nbsp;Formal and Actual Parameters</a>
+</h3>
+
+
+<p>Note that the term "parameter" is used to refer to two different, but
+related, concepts. There are parameters that are used in the definitions of
+subroutines, such as <span class="code">startingValue</span> in the above example. And there are
+parameters that are used in subroutine call statements, such as the <span class="code">K</span>
+in the statement "<span class="code">print3NSequence(K);</span>". Parameters in a subroutine
+definition are called <span class="newword">formal parameters</span> or
+<span class="newword">dummy parameters</span>. The parameters that are passed
+to a subroutine when it is called are called <span class="newword">actual parameters</span>
+or <span class="newword">arguments</span>.
+When a subroutine is called, the actual parameters in the
+subroutine call statement are evaluated and the values are assigned to the
+formal parameters in the subroutine's definition. Then the body of the
+subroutine is executed.</p>
+
+
+<p>A formal parameter must be a <b>name</b>, that is, a simple identifier.
+A formal parameter is very much like a variable, and—like a variable—it
+has a specified type such as <span class="ptype">int</span>, <span class="ptype">boolean</span>,
+<span class="classname">String</span>, or <span class="atype">double[]</span>. 
+An actual parameter is a <b>value</b>, and so it can
+be specified by any expression, provided that the expression computes a value
+of the correct type. The type of the actual parameter must be one that could
+legally be assigned to the formal parameter with an assignment statement. For
+example, if the formal parameter is of type <span class="ptype">double</span>, then it would be
+legal to pass an <span class="ptype">int</span> as the actual parameter since <span class="ptype">ints</span> can
+legally be assigned to <span class="ptype">doubles</span>.  When you call a subroutine, you must
+provide one actual parameter for each formal parameter in the subroutine's
+definition. Consider, for example, a subroutine</p>
+
+
+<pre>static void doTask(int N, double x, boolean test) {
+    // statements to perform the task go here
+}</pre>
+
+
+<p>This subroutine might be called with the statement</p>
+
+
+<pre>doTask(17, Math.sqrt(z+1), z &gt;= 10);</pre>
+
+
+<p>When the computer executes this statement, it has essentially the same
+effect as the block of statements:</p>
+
+
+<pre>{
+  int N;       // Allocate memory locations for the formal parameters.
+  double x;
+  boolean test;
+  N = 17;              // Assign 17 to the first formal parameter, N.
+  x = Math.sqrt(z+1);  // Compute Math.sqrt(z+1), and assign it to
+                       //    the second formal parameter, x.
+  test = (z &gt;= 10);    // Evaluate "z &gt;= 10" and assign the resulting
+                       //     true/false value to the third formal 
+                       //     parameter, test.
+   // statements to perform the task go here
+}</pre>
+
+
+<p>(There are a few technical differences between this and
+"<span class="code">doTask(17,Math.sqrt(z+1),z&gt;=10);</span>" —besides the amount of typing—because 
+of questions about scope of variables and what happens when several
+variables or parameters have the same name.)</p>
+
+
+<p>Beginning programming students often find parameters to be surprisingly
+confusing. Calling a subroutine that already exists is not a problem—the
+idea of providing information to the subroutine in a parameter is clear enough.
+Writing the subroutine definition is another matter. A common beginner's mistake is to
+assign values to the formal parameters at the beginning of the subroutine, or
+to ask the user to input their values. <b>This represents a fundamental
+misunderstanding.</b> By the time the computer starts executing the statements in the subroutine, the
+formal parameters have <b>already</b> been assigned initial values!  The computer automatically 
+assigns values to the formal parameters before it starts executing the code inside the
+subroutine. The values come from the actual parameters in the subroutine
+call statement. Remember that a subroutine is not independent. It is called by
+some other routine, and it is the subroutine call statement's responsibility to provide
+appropriate values for the parameters.</p>
+
+
+
+</div>
+<hr>
+</div>
+
+
+<div id="UMS_TOOLTIP" style="position: absolute; cursor: pointer; z-index: 2147483647; background: transparent; top: -100000px; left: -100000px;"></div></body><umsdataelement id="UMSSendDataEventElement"></umsdataelement><div id="TAG_ID4TOOLBAR_UMS_GUID" style="display: none;">B6EB897E-6476-CC87-DD48-15A0CCE3A0E6</div><div id="tmtoolbar_ums_injected" style="display: none;">init_ums</div></html>

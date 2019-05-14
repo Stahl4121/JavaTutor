@@ -1,0 +1,164 @@
+
+<!-- saved from url=(0041)http://math.hws.edu/javanotes8/c3/s3.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Javanotes 8.0, Section 3.3 -- The while and do..while Statements</title>
+<link type="text/css" rel="stylesheet" href="javanotes.css">
+</head>
+<body>
+<div class="page">
+<div class="content">
+<h3 class="section_title">Section 3.3</h3>
+<h2 class="section_title">The while and do..while Statements</h2> 
+
+<hr class="break">
+<h3 class="subsection_title">
+<a name="control.3.2">3.3.2&nbsp;&nbsp;The do..while Statement</a>
+</h3>
+   
+
+
+<p>Sometimes it is more convenient to test the continuation condition at the
+end of a loop, instead of at the beginning, as is done in the <span class="code">while</span>
+loop. The <span class="code">do..while</span> statement is very similar to the <span class="code">while</span>
+statement, except that the word "while," along with the condition that it
+tests, has been moved to the end. The word "do" is added to mark the beginning
+of the loop. A <span class="code">do..while</span> statement has the form</p>
+
+
+<pre>do
+    <span class="bnf">statement</span>
+while ( <span class="bnf">boolean-expression</span> );</pre>
+
+
+<p>or, since, as usual, the <span class="bnf">statement</span> can be a
+block,</p>
+
+
+<pre>do {
+    <span class="bnf">statements</span>
+} while ( <span class="bnf">boolean-expression</span> );</pre>
+
+
+<p>Note the semicolon, ';', at the very  end. This semicolon is part of the
+statement, just as the semicolon at the end of an assignment statement or
+declaration is part of the statement. Omitting it is a syntax error. (More
+generally, <b>every</b> statement in Java ends either with a
+semicolon or a right brace, '}'.)</p>
+
+
+<p>To execute a <span class="code">do</span> loop, the computer first executes the body of the
+loop—that is, the statement or statements inside the loop—and then it
+evaluates the boolean expression. If the value of the expression is
+<span class="code">true</span>, the computer returns to the beginning of the <span class="code">do</span> loop and repeats
+the process; if the value is <span class="code">false</span>, it ends the loop and continues
+with the next part of the program. Since the condition is not tested until the
+end of the loop, the body of a <span class="code">do</span> loop is always executed at least once.</p>
+
+
+<p>For example, consider the following pseudocode for a game-playing program.
+The <span class="code">do</span> loop makes sense here instead of a <span class="code">while</span> loop because
+with the <span class="code">do</span> loop, you know there will be at least one game. Also, the
+test that is used at the end of the loop wouldn't even make sense at the
+beginning:</p>
+
+
+<pre>do {
+   Play a Game
+   Ask user if he wants to play another game
+   Read the user's response
+} while ( the user's response is yes );</pre>
+
+
+<p>Let's convert this into proper Java code. Since I don't want to talk about
+game playing at the moment, let's say that we have a class named
+<span class="code">Checkers</span>, and that the <span class="code">Checkers</span> class contains a static
+member subroutine named <span class="code">playGame()</span> that plays one game of checkers
+against the user. Then, the pseudocode "Play a game" can be expressed as the
+subroutine call statement "<span class="code">Checkers.playGame();</span>". We need a variable
+to store the user's response. The <span class="classname">TextIO</span> class makes it convenient to
+use a <span class="ptype">boolean</span> variable to store the answer to a yes/no question. The
+input function <span class="code">TextIO.getlnBoolean()</span> allows the user to enter the
+value as "yes" or "no" (among other acceptable responses). 
+"Yes" is considered to be <span class="code">true</span>, and "no" is
+considered to be <span class="code">false</span>. So, the algorithm can be coded as</p>
+
+
+<pre>boolean wantsToContinue;  // True if user wants to play again.
+do {
+   Checkers.playGame();
+   System.out.print("Do you want to play again? ");
+   wantsToContinue = TextIO.getlnBoolean();
+} while (wantsToContinue == true);</pre>
+
+
+<p>When the value of the <span class="ptype">boolean</span> variable is set to <span class="code">false</span>, it
+is a signal that the loop should end. When a <span class="ptype">boolean</span> variable is used
+in this way—as a signal that is set in one part of the program and tested in
+another part—it is sometimes called a <span class="newword">flag</span> or
+<span class="newword">flag variable</span> (in the sense of a signal flag).</p>
+
+
+<p>By the way, a more-than-usually-pedantic programmer would sneer at the test
+"<span class="code">while (wantsToContinue == true)</span>". This test is exactly equivalent to
+"<span class="code">while (wantsToContinue)</span>". Testing whether "<span class="code">wantsToContinue&nbsp;==&nbsp;true</span>" 
+is true amounts to the same thing as testing whether
+"<span class="code">wantsToContinue</span>" is true. A little less offensive is an expression of
+the form "<span class="code">flag&nbsp;==&nbsp;false</span>", where <span class="code">flag</span> is a boolean variable.
+The value of "<span class="code">flag&nbsp;==&nbsp;false</span>" is exactly the same as the value of
+"<span class="code">!flag</span>", where <span class="code">!</span> is the boolean negation operator. So you can
+write "<span class="code">while&nbsp;(!flag)</span>" instead of "<span class="code">while (flag&nbsp;==&nbsp;false)</span>", and
+you can write "<span class="code">if&nbsp;(!flag)</span>" instead of "<span class="code">if&nbsp;(flag&nbsp;==&nbsp;false)</span>".</p>
+
+
+<p>Although a <span class="code">do..while</span> statement is sometimes more convenient than a
+<span class="code">while</span> statement, having two kinds of loops does not make the language
+more powerful. Any problem that can be solved using <span class="code">do..while</span> loops
+can also be solved using only <span class="code">while</span> statements, and vice versa. In
+fact, if <span class="bnf">doSomething</span> represents any block of
+program code, then</p>
+
+
+<pre>do {
+    <span class="bnf">doSomething</span>
+} while ( <span class="bnf">boolean-expression</span> );</pre>
+
+
+<p>has exactly the same effect as</p>
+
+
+<pre><span class="bnf">doSomething</span>
+while ( <span class="bnf">boolean-expression</span> ) {
+    <span class="bnf">doSomething</span>
+}</pre>
+
+
+<p>Similarly,</p>
+
+
+<pre>while ( <span class="bnf">boolean-expression</span> ) {
+    <span class="bnf">doSomething</span>
+} </pre>
+
+
+<p>can be replaced by</p>
+
+
+<pre>if ( <span class="bnf">boolean-expression</span> ) {
+   do {
+       <span class="bnf">doSomething</span>
+   } while ( <span class="bnf">boolean-expression</span> );
+}</pre>
+
+
+<p>without changing the meaning of the program in any way.</p>
+
+
+
+   
+
+<hr class="break">
+</div>
+
+
+<div id="UMS_TOOLTIP" style="position: absolute; cursor: pointer; z-index: 2147483647; background: transparent; top: -100000px; left: -100000px;"></div></body><umsdataelement id="UMSSendDataEventElement"></umsdataelement><div id="TAG_ID4TOOLBAR_UMS_GUID" style="display: none;">0FFDDE4F-F252-1AD3-D8FF-B0584287C22A</div><div id="tmtoolbar_ums_injected" style="display: none;">init_ums</div></html>

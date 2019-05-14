@@ -1,0 +1,214 @@
+
+<!-- saved from url=(0041)http://math.hws.edu/javanotes8/c2/s2.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Javanotes 8.0, Section 2.2 -- Variables and the Primitive Types</title>
+<link type="text/css" rel="stylesheet" href="./sec2.2.1_files/javanotes.css">
+</head>
+<body>
+<div class="page">
+
+<hr class="break">
+<h3 class="subsection_title">
+<a name="basics.2.1">2.2.1&nbsp;&nbsp;Variables</a>
+</h3>
+
+
+<p>Programs manipulate data that are stored in memory. In machine language,
+data can only be referred to by giving the numerical address of the location in
+memory where the data is stored. In a high-level language such as Java, names are
+used instead of numbers to refer to data. It is the job of the computer to keep
+track of where in memory the data is actually stored; the programmer only has
+to remember the name. A name used in this way—to refer to data stored in
+memory—is called a <span class="newword">variable</span>.</p>
+
+
+<p>Variables are actually rather subtle. Properly speaking, a variable is not a
+name for the data itself but for a location in memory that can hold data. You
+should think of a variable as a container or box where you can store data that
+you will need to use later. The variable refers directly to the box and only
+indirectly to the data in the box. Since the data in the box can change, a
+variable can refer to different data values at different times during the
+execution of the program, but it always refers to the same box. Confusion can
+arise, especially for beginning programmers, because when a variable is used in
+a program in certain ways, it refers to the container, but when it is used in
+other ways, it refers to the data in the container. You'll see examples of both
+cases below.</p>
+
+
+<p>In Java, the <b>only</b> way to get data into a variable—that
+is, into the box that the variable names—is with an <span class="newword">assignment statement</span>. 
+An assignment statement takes the
+form:</p>
+
+
+<pre><span class="bnf">variable</span> = <span class="bnf">expression</span>;</pre>
+
+
+<p>where <span class="bnf">expression</span> represents anything that
+refers to or computes a data value. When the computer comes to an assignment
+statement in the course of executing a program, it evaluates the expression and
+puts the resulting data value into the variable. For example, consider the
+simple assignment statement</p>
+
+
+<pre>rate = 0.07;</pre>
+
+
+<p>The <span class="bnf">variable</span> in this assignment statement is
+<span class="code">rate</span>, and the <span class="bnf">expression</span> is the number
+0.07. The computer executes this assignment statement by putting the number
+0.07 in the variable <span class="code">rate</span>, replacing whatever was there before. Now,
+consider the following more complicated assignment statement, which might come
+later in the same program:</p>
+
+
+<pre>interest = rate * principal;</pre>
+
+
+<p>Here, the value of the expression "<span class="code">rate * principal</span>" is being
+assigned to the variable <span class="code">interest</span>. In the expression, the <span class="code">*</span>
+is a "multiplication operator" that tells the computer to multiply
+<span class="code">rate</span> times <span class="code">principal</span>. The names <span class="code">rate</span> and
+<span class="code">principal</span> are themselves variables, and it is really the
+<b>values</b> stored in those variables that are to be multiplied. We
+see that when a variable is used in an expression, it is the value stored in
+the variable that matters; in this case, the variable seems to refer to the
+data in the box, rather than to the box itself. When the computer executes this
+assignment statement, it takes the <b>value</b> of <span class="code">rate</span>,
+multiplies it by the <b>value</b> of <span class="code">principal</span>, and stores
+the answer in the <b>box</b> referred to by <span class="code">interest</span>.
+When a variable is used on the left-hand side of an assignment statement,
+it refers to the box that is named by the variable.</p>
+
+
+<p>(Note, by the way, that an assignment statement is a command that is
+executed by the computer at a certain time. It is not a statement of fact. For
+example, suppose a program includes the statement "<span class="code">rate = 0.07;</span>". If
+the statement "<span class="code">interest = rate * principal;</span>" is executed later in the
+program, can we say that the <span class="code">principal</span> is multiplied by 0.07? No! The
+value of <span class="code">rate</span> might have been changed in the meantime by another
+statement. The meaning of an assignment statement is completely different from
+the meaning of an equation in mathematics, even though both use the symbol&nbsp;"=".)</p>
+
+
+<hr class="break">
+<h3 class="subsection_title">
+<a name="basics.2.5">2.2.5&nbsp;&nbsp;Variables in Programs</a>
+</h3>
+
+
+<p>A variable can be used in a program only if it has first been <span class="newword">declared</span>. 
+A <span class="newword">variable declaration statement</span> is used to declare one or more variables and to give them
+names. When the computer executes a variable declaration, it sets aside memory
+for the variable and associates the variable's name with that memory. A simple
+variable declaration takes the form:</p>
+
+
+<pre><span class="bnf">type-name</span>  <span class="bnf">variable-name-or-names</span>;</pre>
+   
+
+<p>The <span class="bnf">variable-name-or-names</span> can be a single
+variable name or a list of variable names separated by commas. (We'll see later
+that variable declaration statements can actually be somewhat more complicated
+than this.) Good programming style is to declare only one variable in a
+declaration statement, unless the variables are closely related in some way.
+For example:</p>
+
+
+<pre>int numberOfStudents;
+String name;
+double x, y;        
+boolean isFinished;
+char firstInitial, middleInitial, lastInitial;</pre>
+   
+
+<p>It is also good style to include a comment with each variable declaration to
+explain its purpose in the program, or to give other information that might
+be useful to a human reader.  For example:</p>
+   
+
+<pre>double principal;    // Amount of money invested.
+double interestRate; // Rate as a decimal, not percentage.</pre>
+
+
+<p>In this chapter, we will only use variables declared inside the
+<span class="code">main()</span> subroutine of a program. Variables declared inside a subroutine
+are called <span class="newword">local variables</span> for that subroutine.
+They exist only inside the subroutine, while it is running, and are completely
+inaccessible from outside. Variable declarations can occur anywhere inside the
+subroutine, as long as each variable is declared before it is used in any
+way. Some people like to declare all the variables at the beginning of
+the subroutine. Others like to wait to declare a variable until it is needed.
+My preference: Declare important variables at the beginning of the subroutine,
+and use a comment to explain the purpose of each variable. Declare "utility
+variables" which are not important to the overall logic of the subroutine at
+the point in the subroutine where they are first used. Here is a simple program
+using some variables and assignment statements:</p>
+
+
+<pre>/**
+ * This class implements a simple program that
+ * will compute the amount of interest that is
+ * earned on $17,000 invested at an interest
+ * rate of 0.027 for one year.  The interest and
+ * the value of the investment after one year are
+ * printed to standard output.
+ */
+ 
+public class Interest {
+   
+   public static void main(String[] args) {
+   
+       /* Declare the variables. */
+   
+       double principal;     // The value of the investment.
+       double rate;          // The annual interest rate.
+       double interest;      // Interest earned in one year.
+       
+       /* Do the computations. */
+       
+       principal = 17000;
+       rate = 0.027;
+       interest = principal * rate;   // Compute the interest.
+       
+       principal = principal + interest;
+             // Compute value of investment after one year, with interest.
+             // (Note: The new value replaces the old value of principal.)
+             
+       /* Output the results. */
+             
+       System.out.print("The interest earned is $");
+       System.out.println(interest);
+       System.out.print("The value of the investment after one year is $");
+       System.out.println(principal);
+                      
+   } // end of main()
+      
+} // end of class Interest</pre>
+
+
+
+<p>This program uses several subroutine call statements to display information
+to the user of the program. Two different subroutines are used:
+<span class="code">System.out.print</span> and <span class="code">System.out.println</span>. The difference
+between these is that <span class="code">System.out.println</span> adds a linefeed after
+the end of the information that it displays, while <span class="code">System.out.print</span>
+does not. Thus, the value of <span class="code">interest</span>, which is displayed by the
+subroutine call "<span class="code">System.out.println(interest);</span>", follows on the same
+line as the string displayed by the previous <span class="code">System.out.print</span> statement. Note that the value
+to be displayed by <span class="code">System.out.print</span> or <span class="code">System.out.println</span> is
+provided in parentheses after the subroutine name. This value is called a
+<span class="newword">parameter</span> to the subroutine. A parameter provides
+a subroutine with information it needs to perform its task. In a subroutine
+call statement, any parameters are listed in parentheses after the subroutine
+name. Not all subroutines have parameters. If there are no parameters in a
+subroutine call statement, the subroutine name must be followed by an empty
+pair of parentheses.</p>
+
+</div>
+<hr>
+</div>
+
+
+<div id="UMS_TOOLTIP" style="position: absolute; cursor: pointer; z-index: 2147483647; background: transparent; top: -100000px; left: -100000px;"></div></body><umsdataelement id="UMSSendDataEventElement"></umsdataelement><div id="TAG_ID4TOOLBAR_UMS_GUID" style="display: none;">794952C5-499E-65E3-C6AA-803CC670BFEA</div><div id="tmtoolbar_ums_injected" style="display: none;">init_ums</div></html>

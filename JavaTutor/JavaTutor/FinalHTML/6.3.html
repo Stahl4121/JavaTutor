@@ -1,0 +1,87 @@
+
+<!-- saved from url=(0041)http://math.hws.edu/javanotes8/c5/s3.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Javanotes 8.0, Section 5.3 -- Programming with Objects</title>
+<link type="text/css" rel="stylesheet" href="javanotes.css">
+</head>
+<body>
+<div class="page">
+<div class="content">
+<h3 class="section_title">Section 5.3</h3>
+<h2 class="section_title">Programming with Objects</h2>
+<hr class="break">
+
+
+<h3 class="subsection_title">
+<a name="OOP.3.3">5.3.2&nbsp;&nbsp;The class "Object"</a>
+</h3>
+
+
+<p>We have already seen that one of the major features of object-oriented programming
+is the ability to create subclasses of a class.   The subclass inherits all the properties
+or behaviors of the class, but can modify and add to what it inherits.  In <a href="http://math.hws.edu/javanotes8/c5/s5.html">Section&nbsp;5.5</a>,
+you'll learn how to create subclasses.   What you don't
+know yet is that <b>every</b> class in Java (with just one exception) is a subclass
+of some other class.  If you create a class and don't explicitly make it a subclass of
+some other class, then it automatically becomes a subclass of the special class
+named <span class="classname">Object</span>, in package <span class="code">java.lang</span>.  (<span class="classname">Object</span> is the one class
+that is not a subclass of any other class.)</p>
+
+
+<p>Class <span class="classname">Object</span> defines several instance methods that are inherited by
+every other class.  These methods can be used with any object whatsoever. I will mention
+just one of them here.  You will encounter more of them later in the book.</p>
+   
+
+<p>The instance method <span class="code">toString()</span> in class <span class="classname">Object</span> returns
+a value of type <span class="classname">String</span> that is supposed to be a string representation
+of the object.  You've already used this method implicitly,  any time you've printed out an object or
+concatenated an object onto a string.  When you use an object in a context that requires a
+string, the object is automatically converted to type <span class="classname">String</span> 
+by calling its <span class="code">toString()</span> method.</p>
+
+
+<p>The version of <span class="code">toString</span> that is defined in <span class="classname">Object</span> just returns
+the name of the class that the object belongs to, concatenated with a code number called the
+<span class="newword">hash code</span> of the object; this is not very useful. When you create a class,
+you can write a new <span class="code">toString()</span> method for it, which will replace the inherited
+version.  For example, we might add the following method to any of the <span class="classname">PairOfDice</span>
+classes from the previous section:</p>
+
+
+<pre>/**
+ * Return a String representation of a pair of dice, where die1
+ * and die2 are instance variables containing the numbers that are
+ * showing on the two dice.
+ */
+public String toString() {
+   if (die1 == die2)
+      return "double " + die1;
+   else
+      return die1 + " and " + die2;
+}</pre>
+   
+
+<p>If <span class="code">dice</span> refers to a <span class="classname">PairOfDice</span> object, then
+<span class="code">dice.toString()</span> will return strings such as "3&nbsp;and&nbsp;6",
+"5&nbsp;and&nbsp;1", and "double&nbsp;2", depending on the numbers showing on the dice.
+This method would be used automatically to convert <span class="code">dice</span> to type
+<span class="classname">String</span> in a statement such as</p>
+   
+
+<pre>System.out.println( "The dice came up " + dice );</pre>
+   
+
+<p>so this statement might output, "The dice came up 5 and&nbsp;1" or "The
+dice came up double 2".  You'll see another example of a <span class="code">toString()</span>
+method in the <a href="http://math.hws.edu/javanotes8/c5/s4.html">next section</a>.</p>
+   
+
+
+</div>
+<hr>
+</div>
+
+
+<div id="UMS_TOOLTIP" style="position: absolute; cursor: pointer; z-index: 2147483647; background: transparent; top: -100000px; left: -100000px;"></div></body><umsdataelement id="UMSSendDataEventElement"></umsdataelement><div id="TAG_ID4TOOLBAR_UMS_GUID" style="display: none;">497E3016-9E99-F25F-3E69-786F61EA0B07</div><div id="tmtoolbar_ums_injected" style="display: none;">init_ums</div></html>

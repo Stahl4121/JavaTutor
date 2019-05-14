@@ -24,15 +24,15 @@
     "output": "1, 1, 2, 2, 3, 3, 3, 4, 4, 5, 5, 5, 5, 7, 7, 8, 8, 8, 8, 9, \n1, 2, 3, 4, 5, 7, 8, 9, "
   },
   {
-    "initial": "class Main {\n  public static void main(String[] args) {\n    /* xD 4 :P (:\n    System.out.println(\">:D\");\n  }\n}",
-    "description": "Oh no, a smiley has escaped its comment cage!\nPut it back, and fix the output.",
-    "input": "",
-    "output": "Phew, what a relief"
+    "initial": "import java.util.*;\n\nclass Main {\n  public static double fahrenheitToCelsius(double temperature) {\n    // Hmm, the conversion code has gone missing, we should really try to stop losing these things\n    return -273.15;\n  }\n\n  public static void main(String[] args) {\n    Scanner input = new Scanner(System.in);\n\n    double fahrenheit = input.nextDouble();\n    System.out.println(\"I want the freezer set to \" + fahrenheit + \"F\");\n    System.out.println(\"Freezer set to \" + fahrenheitToCelsius(fahrenheit) + \"C\");\n\n    input.close();\n  }\n}",
+    "description": "Uh oh, the new shipment of freezers can only be set in Celsius. We need a conversion program ASAP or all the nugs will go bad!",
+    "input": "18",
+    "output": "I want the freezer set to 18.0F\nFreezer set to -7.777777777777778C"
   },
   {
-    "initial": "class Main {\n  public static void main(String[] args) {\n    /* xD 5 :P (:\n    System.out.println(\">:D\");\n  }\n}",
-    "description": "Oh no, a smiley has escaped its comment cage!\nPut it back, and fix the output.",
+    "initial": "class Vehicle {\n  private String carrying = \"nothing\";\n\n  public void go() {\n    System.out.print(\"I am an abstract concept incapable of movement. \");\n    System.out.println(\"I would deliver \" + carrying + \" if I was real\");\n  }\n\n  public void load(String food) {\n    carrying = food;\n  }\n\n  public String getLoad() {\n    return carrying;\n  }\n}\n\n// Well, the guys back at headquarters managed to lose an entire car and plane this time\n// Guess you're the new engineer now, better get rolling.\n\n// Vroom, vroom!\n// *slaps roof of car* This bad boy can fit so many\n\n// Whoosh!\n// I can carry 42,000 pounds of\n\nclass Main {\n  public static void main(String[] args) {\n    Vehicle[] vehicles = new Vehicle[] { new Vehicle(), new Car(), new Airplane() };\n    String[] food = new String[] { \"nugs\", \"burgers\", \"fries\" };\n\n    for (int i = 0; i < vehicles.length; i++) {\n        vehicles[i].go();\n    }\n\n    System.out.println(\"\");\n\n    for (int i = 0; i < vehicles.length; i++) {\n        vehicles[i].load(food[i]);\n        vehicles[i].go();\n    }\n  }\n}",
+    "description": "Well, the guys back at headquarters managed to lose an entire car and plane this time.\nGuess you're the new engineer now, better get rolling.",
     "input": "",
-    "output": "Phew, what a relief"
+    "output": "I am an abstract concept incapable of movement. I would deliver nothing if I was real\nVroom, vroom! *slaps roof of car* This bad boy can fit so many nothing\nWhoosh! I can carry 42,000 pounds of nothing\n\nI am an abstract concept incapable of movement. I would deliver nugs if I was real\nVroom, vroom! *slaps roof of car* This bad boy can fit so many burgers\nWhoosh! I can carry 42,000 pounds of fries"
   }
 ]

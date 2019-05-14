@@ -1,0 +1,100 @@
+
+<!-- saved from url=(0041)http://math.hws.edu/javanotes8/c5/s6.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Javanotes 8.0, Section 5.6 -- this and super</title>
+<link type="text/css" rel="stylesheet" href="javanotes.css">
+</head>
+<body>
+<div class="page">
+<div class="content">
+<h3 class="section_title">Section 5.6</h3>
+<h2 class="section_title">this and super</h2>
+<hr class="break">
+   
+
+<h3 class="subsection_title">
+<a name="OOP.6.2">5.6.2&nbsp;&nbsp;The Special Variable super</a>
+</h3>
+
+
+<p>Java also defines another special variable, named "<span class="code">super</span>", for use
+in the definitions of instance methods. The variable <span class="code">super</span> is for use
+in a subclass. Like <span class="code">this</span>, <span class="code">super</span> refers to the object that
+contains the method. But it's forgetful. It forgets that the object belongs to
+the class you are writing, and it remembers only that it belongs to the
+superclass of that class. The point is that the class can contain additions and
+modifications to the superclass. <span class="code">super</span> doesn't know about any of those
+additions and modifications; it can only be used to refer to methods and
+variables in the superclass.</p>
+
+
+<p>Let's say that the class that you are writing contains an instance method
+named <span class="code">doSomething()</span>. Consider the subroutine call statement
+<span class="code">super.doSomething()</span>. Now, <span class="code">super</span> doesn't know anything about
+the <span class="code">doSomething()</span> method in the subclass. It only knows about things
+in the superclass, so it tries to execute a method named <span class="code">doSomething()</span>
+from the superclass. If there is none—if the <span class="code">doSomething()</span> method
+was an addition rather than a modification—you'll get a syntax error.</p>
+
+
+<p>The reason <span class="code">super</span> exists is so you can get access to things in the
+superclass that are <b>hidden</b> by things in the subclass. For example,
+<span class="code">super.var</span> always refers to an instance variable named <span class="code">var</span> in the
+superclass. This can be useful for the following reason: If a class contains an
+instance variable with the same name as an instance variable in its superclass,
+then an object of that class will actually contain two variables with the same
+name: one defined as part of the class itself and one defined as part of the
+superclass. The variable in the subclass does not <b>replace</b> the
+variable of the same name in the superclass; it merely <b>hides</b>
+it. The variable from the superclass can still be accessed, using
+<span class="code">super</span>.</p>
+
+
+<p>When a subclass contains an instance method that has the same signature as a
+method in its superclass, the method from the superclass is hidden in the same
+way. We say that the method in the subclass <span class="newword">overrides</span> 
+the method from the superclass. Again, however,
+<span class="code">super</span> can be used to access the method from the superclass.</p>
+
+
+<p>The major use of <span class="code">super</span> is to override a method with a new method
+that <b>extends</b> the behavior of the inherited method, instead of
+<b>replacing</b> that behavior entirely. The new method can use
+<span class="code">super</span> to call the method from the superclass, and then it can add
+additional code to provide additional behavior. As an example, suppose you have
+a <span class="classname">PairOfDice</span> class that includes a <span class="code">roll()</span> method. Suppose
+that you want a subclass, <span class="classname">GraphicalDice</span>, to represent a pair of dice
+drawn on the computer screen. The <span class="code">roll()</span> method in the
+<span class="classname">GraphicalDice</span> class should do everything that the <span class="code">roll()</span>
+method in the <span class="classname">PairOfDice</span> class does. We can express this with a call
+to <span class="code">super.roll()</span>, which calls the method in the superclass. 
+But in addition to that, the <span class="code">roll()</span> method
+for a <span class="classname">GraphicalDice</span> object has to redraw the dice to show the new
+values. The <span class="classname">GraphicalDice</span> class might look something like this:</p>
+
+
+<pre>public class GraphicalDice extends PairOfDice {
+
+    public void roll() {
+            // Roll the dice, and redraw them.
+         super.roll();  // Call the roll method from PairOfDice.
+         redraw();      // Call a method to draw the dice.
+    }
+       .
+       .  // More stuff, including definition of redraw().
+       .
+}</pre>
+
+
+<p>Note that this allows you to extend the behavior of the <span class="code">roll()</span>
+method even if you don't know how the method is implemented in the
+superclass!</p>
+   
+
+</div>
+<hr>
+</div>
+
+
+<div id="UMS_TOOLTIP" style="position: absolute; cursor: pointer; z-index: 2147483647; background: transparent; top: -100000px; left: -100000px;"></div></body><umsdataelement id="UMSSendDataEventElement"></umsdataelement><div id="TAG_ID4TOOLBAR_UMS_GUID" style="display: none;">F5C45232-8D00-7218-8286-7506623765AD</div><div id="tmtoolbar_ums_injected" style="display: none;">init_ums</div></html>

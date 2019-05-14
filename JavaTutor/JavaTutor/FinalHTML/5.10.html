@@ -1,0 +1,124 @@
+
+<!-- saved from url=(0041)http://math.hws.edu/javanotes8/c4/s4.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Javanotes 8.0, Section 4.4 -- Return Values</title>
+<link type="text/css" rel="stylesheet" href="javanotes.css">
+</head>
+<body>
+<div class="page">
+<div class="content">
+<h3 class="section_title">Section 4.4</h3>
+<h2 class="section_title">Return Values</h2>
+<hr class="break">
+
+
+<p>
+<span class="start"><big>A</big> subroutine that returns a value</span> is called a
+<span class="newword">function</span>. A given function can only return a value
+of a specified type, called the <span class="newword">return type</span> of the
+function. A function call generally occurs in a position where the computer is
+expecting to find a value, such as the right side of an assignment statement,
+as an actual parameter in a subroutine call, or in the middle of some larger
+expression. A boolean-valued function can even be used as the test condition in
+an <span class="code">if</span>, <span class="code">while</span>, <span class="code">for</span> or <span class="code">do..while</span> statement.</p>
+
+
+<p>(It is also legal to use a function call as a stand-alone statement, just as
+if it were a regular subroutine. In this case, the computer ignores the value
+computed by the subroutine. Sometimes this makes sense. For example, the
+function <span class="code">TextIO.getln()</span>, with a return type of <span class="classname">String</span>, reads
+and returns a line of input typed in by the user. Usually, the line that is
+returned is assigned to a variable to be used later in the program, as in the
+statement "<span class="code">name&nbsp;=&nbsp;TextIO.getln();</span>". However, this function is also
+useful as a subroutine call statement "<span class="code">TextIO.getln();</span>", which still
+reads all input up to and including the next carriage return.  Since the return value
+is not assigned to a variable or used in an expression, it is simply discarded.
+So, the effect of the subroutine call is to read <b>and discard</b> some input.
+Sometimes, discarding unwanted input is exactly what you need to do.)</p>
+
+
+<hr class="break">
+<h3 class="subsection_title">
+<a name="subroutines.4.1">4.4.1&nbsp;&nbsp;The return statement</a>
+</h3>
+   
+
+<p>You've already seen how functions such as <span class="code">Math.sqrt()</span> and
+<span class="code">TextIO.getInt()</span> can be used. What you haven't seen is how to write
+functions of your own. A function takes the same form as a regular subroutine,
+except that you have to specify the value that is to be returned by the
+subroutine. This is done with a <span class="newword">return statement</span>,
+which has the following syntax:</p>
+
+
+<pre>return  <span class="bnf">expression</span> ;</pre>
+
+
+<p>Such a <span class="code">return</span> statement can only occur inside the definition of a
+function, and the type of the <span class="bnf">expression</span> must
+match the return type that was specified for the function. (More exactly, it
+must be an expression that could legally be assigned to a variable whose type is specified by
+the return type of the function.) When the computer executes this <span class="code">return</span> statement, it
+evaluates the expression, terminates execution of the function, and uses the
+value of the expression as the returned value of the function.</p>
+
+
+<p>For example, consider the function definition</p>
+
+
+<pre>static double pythagoras(double x, double y) {
+      // Computes the length of the hypotenuse of a right
+      // triangle, where the sides of the triangle are x and y.
+    return  Math.sqrt( x*x + y*y );
+}</pre>
+
+
+<p>Suppose the computer executes the statement "<span class="code">totalLength = 17 +
+pythagoras(12,5);</span>". When it gets to the term <span class="code">pythagoras(12,5)</span>, it
+assigns the actual parameters <span class="code">12</span> and <span class="code">5</span> to the formal
+parameters <span class="code">x</span> and <span class="code">y</span> in the function. In the body of the
+function, it evaluates <span class="code">Math.sqrt(12.0*12.0&nbsp;+&nbsp;5.0*5.0)</span>, which works out
+to <span class="code">13.0</span>. This value is "returned" by the function, so the <span class="code">13.0</span> essentially
+replaces the function call in the assignment statement, which then has the same effect
+as the statement "<span class="code">totalLength&nbsp;=&nbsp;17+<span class="newcode">13.0</span></span>". 
+The return value is added to <span class="code">17</span>, and the result, 30.0, is stored in the variable,
+<span class="code">totalLength</span>.</p>
+   
+
+<p>Note that a <span class="code">return</span> statement does not have to be the last
+statement in the function definition.  At any point in the function where you
+know the value that you want to return, you can return it.  Returning a value
+will end the function immediately, skipping any subsequent statements in the
+function.  However, it must be the case that the function definitely does
+return some value, no matter what path the execution of the function takes
+through the code.</p>
+
+
+<p>You can use a <span class="code">return</span> statement inside an ordinary subroutine,  one
+with declared return type "<span class="code">void</span>".  Since a void subroutine
+does not return a value, the <span class="code">return</span> statement does not include 
+an expression; it simply takes the form "<span class="code">return;</span>".  The effect
+of this statement is to
+terminate execution of the subroutine and return control back to the point in
+the program from which the subroutine was called. This can be convenient if you
+want to terminate execution somewhere in the middle of the subroutine, but
+<span class="code">return</span> statements are optional in non-function subroutines. In a
+function, on the other hand, a return statement, with expression, is always
+required.</p>
+
+
+<p>Note that a <span class="code">return</span> inside a loop will end the
+loop as well as the subroutine that contains it.  Similarly, a <span class="code">return</span>
+in a <span class="code">switch</span> statement breaks out of the <span class="code">switch</span> statement as well as
+the subroutine.  So, you will sometimes use <span class="code">return</span> in contexts where
+you are used to seeing a <span class="code">break</span>.</p>
+
+
+
+</div>
+<hr>
+</div>
+
+
+<div id="UMS_TOOLTIP" style="position: absolute; cursor: pointer; z-index: 2147483647; background: transparent; top: -100000px; left: -100000px;"></div></body><umsdataelement id="UMSSendDataEventElement"></umsdataelement><div id="TAG_ID4TOOLBAR_UMS_GUID" style="display: none;">BD77477F-9777-DEBE-8B37-3D9CF6A77351</div><div id="tmtoolbar_ums_injected" style="display: none;">init_ums</div></html>
