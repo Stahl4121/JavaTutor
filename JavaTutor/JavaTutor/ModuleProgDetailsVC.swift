@@ -20,10 +20,6 @@ class ModuleProgDetailsVC: UIViewController {
     @IBOutlet weak var mod4prog: UILabel!
     @IBOutlet weak var mod5prog: UILabel!
     @IBOutlet weak var mod6prog: UILabel!
-    @IBOutlet weak var mod7prog: UILabel!
-    @IBOutlet weak var mod8prog: UILabel!
-    @IBOutlet weak var mod9prog: UILabel!
-    @IBOutlet weak var mod10prog: UILabel!
     
     var modProgressArray : [UILabel]!
     
@@ -39,9 +35,9 @@ class ModuleProgDetailsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        modProgressArray = [mod1prog, mod2prog, mod3prog, mod4prog, mod5prog, mod6prog, mod7prog, mod8prog, mod9prog, mod10prog]
+        modProgressArray = [mod1prog, mod2prog, mod3prog, mod4prog, mod5prog, mod6prog]
         
-        for i in 0...9 {
+        for i in 0...(domainRepo.lessonNames.count - 1)  {
             modProgressArray[i].text = "0.0"
         }
         
