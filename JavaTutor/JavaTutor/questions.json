@@ -517,7 +517,7 @@
     },
     {
         "module":4,
-        "question":"How many items in an Array are read by \'for(int i = 8; i >= 0; i--)\'?",
+        "question":"How many items in an Array are read by \"for(int i = 8; i >= 0; i--)\"?",
         "answers":["9", "8", "0", "10"],
         "bloomValue":1
     },
@@ -554,13 +554,13 @@
     {
         "module":6,
         "question":"A variable can hold an object.",
-        "answers":["False", "True"]
+        "answers":["False", "True"],
         "bloomValue":1
     },
     {
         "module":6,
         "question":"If std is a Student object, how would you declare std to be an empty object?",
-        "answers":["std = null", "std = none", "std = empty", "std = 0"]
+        "answers":["std = null", "std = none", "std = empty", "std = 0"],
         "bloomValue":1
     },
     {
@@ -607,19 +607,19 @@
     },
     {
         "module":6,
-        "question":"Which statement uses \'this\' correctly?",
+        "question":"Which statement uses \"this\" correctly?",
         "answers":["this.name = name", "name = this.name", "name.this = this", "name.this = name"],
         "bloomValue":2
     },
     {
         "module":6,
-        "question":"Which statement uses \'super\' correctly?",
+        "question":"Which statement uses \"super\" correctly?",
         "answers":["super.roll()", "roll().super", "roll(super)", "super(roll)"],
         "bloomValue":2
     },
     {
         "module":6,
-        "question":"Mutliple Inheritance is allowed in Java.",
+        "question":"Multiple Inheritance is allowed in Java.",
         "answers":["False", "True"],
         "bloomValue":1
     },
