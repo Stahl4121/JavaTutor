@@ -19,7 +19,7 @@ class StudyVC: UIViewController {
     
     var segueIdxModule : Int = 0
     var segueIdxLesson : Int = -1
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,41 +47,6 @@ class StudyVC: UIViewController {
         }
     }
     
-    /**
-     *  Returns a tuple (moduleIdx, lessonIdx)
-     */
-    func findSegueIndices(str: String) -> (Int,Int) {
-        var modIdx = -1
-        var lesIdx = -1
-        
-        if studentRepo.recentActivities.count > 0 {
-            let stringToMatch = str //studentRepo.recentActivities[0]
-            
-            //Search all the lesson name arrays
-            for mIdx in 0..<domainRepo.lessonNames.count {
-                for (lIdx, s) in domainRepo.lessonNames[mIdx].enumerated() {
-                    if s == stringToMatch {
-                        modIdx = mIdx
-                        lesIdx = lIdx
-                    }
-                }
-            }
-            
-            //Not found in lessons, so look in modules
-            if modIdx == -1 {
-                for (mIdx, s) in domainRepo.moduleNames.enumerated() {
-                    if s == stringToMatch {
-                        modIdx = mIdx
-                    }
-                }
-            }
-        }
-        
-        return (modIdx,lesIdx)
-    }
-    
-
-    
     func findLowestScoreIndex() -> Int {
         var minScore = 100.0
         var indexOfMin = 0
@@ -95,27 +60,15 @@ class StudyVC: UIViewController {
         return indexOfMin
     }
     
-    
-   /* func setVariables(){
-        if studentRepo.recentActivities.count > 0 {
-            continueIndex = findGenericIndex(str: studentRepo.recentActivities[0])
-            brushUpIndex = findGenericIndex(str: studentRepo.recentActivities[studentRepo.recentActivities.count - 1])
-        } else {
-            continueIndex = 0
-            brushUpIndex = 0
-        }
-        lowScoreIndex = findLowestScoreIndex()
-    }*/
-    
     override func shouldPerformSegue(withIdentifier identifier: String?, sender: Any?) -> Bool {
         if identifier != "toModuleCatalogSegue"{
             if studentRepo.recentActivities.count > 0 {
                 if identifier == "continue" {
-                    let idxTuple = findSegueIndices(str: studentRepo.recentActivities[0])
+                    let idxTuple = domainRepo.findModuleLessonIndices(str: studentRepo.recentActivities[0])
                     (segueIdxModule, segueIdxLesson) = idxTuple
                 }
                 else if identifier == "brush"{
-                    let idxTuple = findSegueIndices(str: studentRepo.recentActivities[studentRepo.recentActivities.count - 1])
+                    let idxTuple = domainRepo.findModuleLessonIndices(str: studentRepo.recentActivities[studentRepo.recentActivities.count - 1])
                     (segueIdxModule, segueIdxLesson) = idxTuple
                 }
                 else if identifier == "improvement"{
@@ -125,6 +78,7 @@ class StudyVC: UIViewController {
             }
             else {
                 segueIdxModule = 0
+                segueIdxLesson = -1
             }
             
             studentRepo.updateRecentActivities(modIdx: segueIdxModule, lesIdx: segueIdxLesson)
@@ -135,7 +89,7 @@ class StudyVC: UIViewController {
             else{
                 performSegue(withIdentifier: "toModuleSegue", sender: nil)
             }
-
+            
             return false
         }
         
@@ -152,7 +106,7 @@ class StudyVC: UIViewController {
             child.modNum = segueIdxModule + 1
             child.lessonNum = segueIdxLesson + 1
         }
-
+        
     }
     
     

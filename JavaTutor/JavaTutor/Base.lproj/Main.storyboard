@@ -2559,6 +2559,7 @@
                                 <connections>
                                     <outlet property="lblModuleTitle" destination="XDv-3b-EJW" id="Kw7-6c-ZSU"/>
                                     <outlet property="lblPercComp" destination="HKP-h9-Ktg" id="8T2-sh-zhI"/>
+                                    <segue destination="3g1-11-P7x" kind="show" identifier="toRAModuleSegue" id="Cdj-Lt-qX3"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -2570,6 +2571,9 @@
                     <tabBarItem key="tabBarItem" title="Activity" image="activity.png" id="bib-TM-vgj" userLabel="ActivityTab"/>
                     <navigationItem key="navigationItem" title="Recent Activity" id="gRh-aW-MLP"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <segue destination="3eJ-my-PxL" kind="show" identifier="toRALessonSegue" id="0FY-0t-3ff"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I6S-8z-Guc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -3104,8 +3108,8 @@
         <image name="study.png" width="33" height="41"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="yhZ-Ad-Rtq"/>
-        <segue reference="5WV-sZ-08O"/>
+        <segue reference="0FY-0t-3ff"/>
+        <segue reference="Cdj-Lt-qX3"/>
         <segue reference="8aR-rA-gmn"/>
     </inferredMetricsTieBreakers>
 </document>
