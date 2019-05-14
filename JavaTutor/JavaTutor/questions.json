@@ -519,7 +519,7 @@
         "module":4,
         "question":"How many items in an Array are read by \"for(int i = 8; i >= 0; i--)\"?",
         "answers":["9", "8", "0", "10"],
-        "bloomValue":1
+        "bloomValue":2
     },
     {
         "module":4,
@@ -540,7 +540,31 @@
         "bloomValue":1
     },
     {
-        "module":6,
+        "module":5,
+        "question":"What is the return value of this method?... \n public int addNumbers();",
+        "answers":["int", "boolean", "char", "String"],
+        "bloomValue":2
+    },
+    {
+        "module":5,
+        "question":"What is the return value of this method?... \n public ArrayList<Integer>  reArrange(ArrayList<Double> myParallelograms);",
+        "answers":["ArrayList<Integer>", "boolean", "char", "String"],
+        "bloomValue":2
+    },
+    {
+        "module":5,
+        "question":"How many arguments does this method take?... \n public void fightRobots(Robot rob1, Robot rob2);",
+        "answers":["2", "1", "None", "Invalid code"],
+        "bloomValue":2
+    },
+    {
+        "module":5,
+        "question":"What is the return value of this method?... \n public void adjustChart();",
+        "answers":["void", "boolean", "char", "String"],
+        "bloomValue":1
+    },
+    {
+        "module":5,
         "question":"Subroutines are often referred to as...",
         "answers":["Methods", "Classes", "Objects", "Interfaces"],
         "bloomValue":1
