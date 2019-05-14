@@ -19,15 +19,18 @@ class StudentRepo: NSObject {
     var continueTopic: String
     var improveTopic: String
     var brushUpTopic: String
+    
    
     let fileURL: URL
-    let fields = ["totalQuizzes", "quizAvg", "quizzesPerModule", "quizAvgPerMod", "chaptersFinished", "bloomsTaxCorrect", "bloomsTaxIncorrect", "recentActivities"]
+    let fields = ["totalQuizzes", "quizAvg", "quizzesPerModule", "quizAvgPerMod", "chaptersFinished", "bloomsTaxCorrect", "bloomsTaxIncorrect", "recentActivities", "finishedLessons"]
     
     @objc var totalQuizzes: Int
     @objc var quizAvg: Double
     @objc var quizzesPerModule: [Int]
     @objc var quizAvgPerMod: [Double]
     @objc var chaptersFinished: [Double]
+    @objc var finishedLessons: [String]
+
     
     @objc var bloomsTaxCorrect: [Int]
     @objc var bloomsTaxIncorrect: [Int]
@@ -42,6 +45,7 @@ class StudentRepo: NSObject {
         continueTopic = "No topic has been started."
         improveTopic = String()
         brushUpTopic = String()
+        finishedLessons = [String]()
         
         quizzesPerModule = [0,0,0,0,0,0,0,0,0,0]
         totalQuizzes = 0
@@ -168,6 +172,7 @@ class StudentRepo: NSObject {
             let currentUserData: [String:Any] = [
                 "username":self.username,
                 "recentActivities":self.recentActivities,
+                "finishedLessons":self.finishedLessons,
                 "totalQuizzes":self.totalQuizzes,
                 "quizAvg":self.quizAvg,
                 "quizzesPerModule":self.quizzesPerModule,

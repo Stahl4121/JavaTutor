@@ -10,8 +10,7 @@ import UIKit
 
 class LessonListCell: UITableViewCell {
 
-    //TODO: Some visual way to show the lesson has been already completed
-    //isCompleted = false
+    var isFinished : Bool = false
     
     @IBOutlet weak var lblLessonTitle: UILabel!
     

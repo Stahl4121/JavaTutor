@@ -12,7 +12,6 @@ class DomainRepo: NSObject {
     
     var moduleNames: [String]
     var lessonNames: [[String]]
-    var finishedLessons: [String]
     var questions: [[Question]]
     var fileUrl: URL?
     
@@ -22,12 +21,43 @@ class DomainRepo: NSObject {
         moduleNames = [String]()
         lessonNames = [[String]]()
         questions = [[Question]]()
-        finishedLessons = [String]()
 
         super.init()
         
         loadSectionNames()
         loadQuestions()
+    }
+    
+    /**
+     *  Given a module or lesson name as a String
+     *  Returns a tuple (moduleIdx, lessonIdx)
+     */
+    func findModuleLessonIndices(str: String) -> (Int,Int) {
+        var modIdx = -1
+        var lesIdx = -1
+        
+        let stringToMatch = str //studentRepo.recentActivities[0]
+        
+        //Search all the lesson name arrays
+        for mIdx in 0..<self.lessonNames.count {
+            for (lIdx, s) in self.lessonNames[mIdx].enumerated() {
+                if s == stringToMatch {
+                    modIdx = mIdx
+                    lesIdx = lIdx
+                }
+            }
+        }
+        
+        //Not found in lessons, so look in modules
+        if modIdx == -1 {
+            for (mIdx, s) in self.moduleNames.enumerated() {
+                if s == stringToMatch {
+                    modIdx = mIdx
+                }
+            }
+        }
+        
+        return (modIdx,lesIdx)
     }
 
     /**
