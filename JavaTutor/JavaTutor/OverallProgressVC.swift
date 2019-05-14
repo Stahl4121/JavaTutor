@@ -12,6 +12,7 @@ class OverallProgressVC: UIViewController {
    
     let studentRepo = StudentRepo.instance
     
+    //coordinates of pie chart scores on the screen
     let labelPoints : [CGPoint] = [
         /*red*/ CGPoint(x: 400, y: 200),
         /*orange*/ CGPoint(x: 560, y: 200),
@@ -55,6 +56,7 @@ class OverallProgressVC: UIViewController {
         for i in 0..<segCount {
             totalChart.segments.append(Segment(color: .init(hue: CGFloat(initialHue + (Double(i)/Double(segCount))), saturation: 0.3, brightness: 0.8, alpha: 1/2), value: CGFloat(segCount)))
         }
+ 
         
         //set up slices of user's progress so far
         for i in 0..<segCount {
@@ -63,7 +65,7 @@ class OverallProgressVC: UIViewController {
             newThing.frame = CGRect(x: 0, y: 200, width: view.frame.size.width, height: 400)
             for j in 0..<segCount {
                 if j == ((i + segCount - 1) % segCount){
-                    newThing.segments.append(Segment(color: .init(hue: CGFloat(initialHue + (Double(j)/Double(segCount))), saturation: 0.5, brightness: 0.9, alpha: 1), value: CGFloat(segCount)))
+                    newThing.segments.append(Segment(color: .init(hue: CGFloat(initialHue + (Double(j)/Double(segCount))), saturation: 0.5, brightness: 1, alpha: 1), value: CGFloat(segCount)))
                 } else {
                     newThing.segments.append(Segment(color: .clear, value: CGFloat(segCount)))
                 }
